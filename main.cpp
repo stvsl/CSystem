@@ -1,4 +1,5 @@
 #include "csystemmain/csystemmain.h"
+#include "netWorkConfig/networkconfig.h"
 
 #include <QApplication>
 #include <QScreen>
@@ -6,6 +7,7 @@
 #include <QSplashScreen>
 #include <QLocale>
 #include <QTranslator>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
@@ -34,15 +36,15 @@ int main(int argc, char *argv[])
     //TODO
 
     splash.showMessage("正在连接网络", Qt::AlignBottom, Qt::red);
-    //TODO
 
     splash.showMessage("正在连接数据库", Qt::AlignBottom, Qt::red);
     //TODO
 
+    splash.showMessage("正在启动主界面", Qt::AlignBottom, Qt::red);
     //启动主界面
     CSystemMainWindow w;
     w.show();
-    w.move((mScreen->geometry().width()-w.width()),(mScreen->geometry().height()-w.height())/3);
+    w.move((mScreen->geometry().width()-w.width()/2 +60),(mScreen->geometry().height()-w.height()/2));
     //主界面启动时关闭启动等待页面
     splash.finish(&w);
     return a.exec();
