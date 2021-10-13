@@ -11,11 +11,13 @@ CONFIG += c++11
 SOURCES += \
     csystemmain/csystemmain.cpp \
     DButils/dbutils.cpp \
-    main.cpp
+    main.cpp \
+    netWorkConfig/networkconfig.cpp
 
 HEADERS += \
     csystemmain/csystemmain.h \
-    DButils/dbutils.h
+    DButils/dbutils.h \
+    netWorkConfig/networkconfig.h
 
 FORMS += \
     csystemmain/csystemmain.ui
