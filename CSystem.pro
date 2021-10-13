@@ -9,17 +9,20 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    main.cpp \
-    csystemmainwindow.cpp
+    csystemmain/csystemmain.cpp \
+    DButils/dbutils.cpp \
+    main.cpp
 
 HEADERS += \
-    csystemmainwindow.h
+    csystemmain/csystemmain.h \
+    DButils/dbutils.h
 
 FORMS += \
-    csystemmainwindow.ui
+    csystemmain/csystemmain.ui
 
 TRANSLATIONS += \
     CSystem_zh_CN.ts
+
 CONFIG += lrelease
 CONFIG += embed_translations
 
@@ -27,3 +30,5 @@ CONFIG += embed_translations
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \

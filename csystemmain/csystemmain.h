@@ -1,5 +1,5 @@
-#ifndef CSYSTEMMAINWINDOW_H
-#define CSYSTEMMAINWINDOW_H
+#ifndef CSYSTEMMAIN_H
+#define CSYSTEMMAIN_H
 
 #include <QMainWindow>
 
@@ -18,4 +18,4 @@ public:
 private:
     Ui::CSystemMainWindow *ui;
 };
-#endif // CSYSTEMMAINWINDOW_H
+#endif // CSYSTEMMAIN_H

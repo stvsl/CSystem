@@ -1,4 +1,4 @@
-#include "csystemmainwindow.h"
+#include "csystemmain.h"
 #include "ui_csystemmainwindow.h"
 
 CSystemMainWindow::CSystemMainWindow(QWidget *parent)
