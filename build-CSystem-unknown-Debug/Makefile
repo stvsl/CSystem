@@ -53,16 +53,16 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../configManager/configmanager.cpp \
-		../csystemmain/csystemmain.cpp \
 		../DButils/dbutils.cpp \
+		../csystemmain/csystemmain.cpp \
 		../main.cpp \
 		../netWorkConfig/networkconfig.cpp qrc_qmake_qmake_qm_files.cpp \
 		moc_configmanager.cpp \
 		moc_csystemmain.cpp \
 		moc_networkconfig.cpp
 OBJECTS       = configmanager.o \
-		csystemmain.o \
 		dbutils.o \
+		csystemmain.o \
 		main.o \
 		networkconfig.o \
 		qrc_qmake_qmake_qm_files.o \
@@ -355,7 +355,6 @@ DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/features/qt_config.prf \
 		/usr/lib/qt/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/qt/mkspecs/features/spec_post.prf \
-		../.qmake.stash \
 		/usr/lib/qt/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/qt/mkspecs/features/toolchain.prf \
 		/usr/lib/qt/mkspecs/features/default_pre.prf \
@@ -378,11 +377,11 @@ DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/features/yacc.prf \
 		/usr/lib/qt/mkspecs/features/lex.prf \
 		../../CSystem.pro ../configManager/configmanager.h \
-		../csystemmain/csystemmain.h \
 		../DButils/dbutils.h \
+		../csystemmain/csystemmain.h \
 		../netWorkConfig/networkconfig.h ../configManager/configmanager.cpp \
-		../csystemmain/csystemmain.cpp \
 		../DButils/dbutils.cpp \
+		../csystemmain/csystemmain.cpp \
 		../main.cpp \
 		../netWorkConfig/networkconfig.cpp
 QMAKE_TARGET  = CSystem
@@ -682,7 +681,6 @@ Makefile: ../CSystem.pro /usr/lib/qt/mkspecs/linux-g++/qmake.conf /usr/lib/qt/mk
 		/usr/lib/qt/mkspecs/features/qt_config.prf \
 		/usr/lib/qt/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/qt/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		/usr/lib/qt/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/qt/mkspecs/features/toolchain.prf \
 		/usr/lib/qt/mkspecs/features/default_pre.prf \
@@ -993,7 +991,6 @@ Makefile: ../CSystem.pro /usr/lib/qt/mkspecs/linux-g++/qmake.conf /usr/lib/qt/mk
 /usr/lib/qt/mkspecs/features/qt_config.prf:
 /usr/lib/qt/mkspecs/linux-g++/qmake.conf:
 /usr/lib/qt/mkspecs/features/spec_post.prf:
-.qmake.stash:
 /usr/lib/qt/mkspecs/features/exclusive_builds.prf:
 /usr/lib/qt/mkspecs/features/toolchain.prf:
 /usr/lib/qt/mkspecs/features/default_pre.prf:
@@ -1034,8 +1031,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents ../CSystem_zh_CN.ts $(DISTDIR)/
 	$(COPY_FILE) --parents qmake_qmake_qm_files.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/qt/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../configManager/configmanager.h ../csystemmain/csystemmain.h ../DButils/dbutils.h ../netWorkConfig/networkconfig.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../configManager/configmanager.cpp ../csystemmain/csystemmain.cpp ../DButils/dbutils.cpp ../main.cpp ../netWorkConfig/networkconfig.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../configManager/configmanager.h ../DButils/dbutils.h ../csystemmain/csystemmain.h ../netWorkConfig/networkconfig.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../configManager/configmanager.cpp ../DButils/dbutils.cpp ../csystemmain/csystemmain.cpp ../main.cpp ../netWorkConfig/networkconfig.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../csystemmain/csystemmain.ui $(DISTDIR)/
 	$(COPY_FILE) --parents ../CSystem_zh_CN.ts $(DISTDIR)/
 
@@ -1123,15 +1120,16 @@ compiler_clean: compiler_lrelease_clean compiler_rcc_clean compiler_moc_predefs_
 configmanager.o: ../configManager/configmanager.cpp ../configManager/configmanager.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o configmanager.o ../configManager/configmanager.cpp
 
-csystemmain.o: ../csystemmain/csystemmain.cpp ../csystemmain/csystemmain.h \
-		ui_csystemmainwindow.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o csystemmain.o ../csystemmain/csystemmain.cpp
-
 dbutils.o: ../DButils/dbutils.cpp ../DButils/dbutils.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dbutils.o ../DButils/dbutils.cpp
 
+csystemmain.o: ../csystemmain/csystemmain.cpp ../csystemmain/csystemmain.h \
+		ui_csystemmain.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o csystemmain.o ../csystemmain/csystemmain.cpp
+
 main.o: ../main.cpp ../csystemmain/csystemmain.h \
-		../netWorkConfig/networkconfig.h
+		../netWorkConfig/networkconfig.h \
+		../configManager/configmanager.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../main.cpp
 
 networkconfig.o: ../netWorkConfig/networkconfig.cpp ../netWorkConfig/networkconfig.h

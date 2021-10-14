@@ -1,15 +1,14 @@
 #include "csystemmain.h"
-#include "ui_csystemmainwindow.h"
+#include "ui_csystemmain.h"
 
-CSystemMainWindow::CSystemMainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::CSystemMainWindow)
+CSystemMain::CSystemMain(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::CSystemMain)
 {
     ui->setupUi(this);
 }
 
-CSystemMainWindow::~CSystemMainWindow()
+CSystemMain::~CSystemMain()
 {
     delete ui;
 }
-

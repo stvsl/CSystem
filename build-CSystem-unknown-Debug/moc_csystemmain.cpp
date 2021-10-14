@@ -21,25 +21,25 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_CSystemMainWindow_t {
+struct qt_meta_stringdata_CSystemMain_t {
     QByteArrayData data[1];
-    char stringdata0[18];
+    char stringdata0[12];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_CSystemMainWindow_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_CSystemMain_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_CSystemMainWindow_t qt_meta_stringdata_CSystemMainWindow = {
+static const qt_meta_stringdata_CSystemMain_t qt_meta_stringdata_CSystemMain = {
     {
-QT_MOC_LITERAL(0, 0, 17) // "CSystemMainWindow"
+QT_MOC_LITERAL(0, 0, 11) // "CSystemMain"
 
     },
-    "CSystemMainWindow"
+    "CSystemMain"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_CSystemMainWindow[] = {
+static const uint qt_meta_data_CSystemMain[] = {
 
  // content:
        8,       // revision
@@ -55,7 +55,7 @@ static const uint qt_meta_data_CSystemMainWindow[] = {
        0        // eod
 };
 
-void CSystemMainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void CSystemMain::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     (void)_o;
     (void)_id;
@@ -63,30 +63,30 @@ void CSystemMainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
     (void)_a;
 }
 
-QT_INIT_METAOBJECT const QMetaObject CSystemMainWindow::staticMetaObject = { {
+QT_INIT_METAOBJECT const QMetaObject CSystemMain::staticMetaObject = { {
     QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
-    qt_meta_stringdata_CSystemMainWindow.data,
-    qt_meta_data_CSystemMainWindow,
+    qt_meta_stringdata_CSystemMain.data,
+    qt_meta_data_CSystemMain,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *CSystemMainWindow::metaObject() const
+const QMetaObject *CSystemMain::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *CSystemMainWindow::qt_metacast(const char *_clname)
+void *CSystemMain::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CSystemMainWindow.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CSystemMain.stringdata0))
         return static_cast<void*>(this);
     return QMainWindow::qt_metacast(_clname);
 }
 
-int CSystemMainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int CSystemMain::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QMainWindow::qt_metacall(_c, _id, _a);
     return _id;

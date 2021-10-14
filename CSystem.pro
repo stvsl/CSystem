@@ -10,15 +10,15 @@ CONFIG += c++17
 
 SOURCES += \
     configManager/configmanager.cpp \
-    csystemmain/csystemmain.cpp \
     DButils/dbutils.cpp \
+    csystemmain/csystemmain.cpp \
     main.cpp \
     netWorkConfig/networkconfig.cpp
 
 HEADERS += \
     configManager/configmanager.h \
-    csystemmain/csystemmain.h \
     DButils/dbutils.h \
+    csystemmain/csystemmain.h \
     netWorkConfig/networkconfig.h
 
 FORMS += \

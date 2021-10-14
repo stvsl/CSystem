@@ -3,19 +3,20 @@
 
 #include <QMainWindow>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class CSystemMainWindow; }
-QT_END_NAMESPACE
+namespace Ui {
+class CSystemMain;
+}
 
-class CSystemMainWindow : public QMainWindow
+class CSystemMain : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    CSystemMainWindow(QWidget *parent = nullptr);
-    ~CSystemMainWindow();
+    explicit CSystemMain(QWidget *parent = nullptr);
+    ~CSystemMain();
 
 private:
-    Ui::CSystemMainWindow *ui;
+    Ui::CSystemMain *ui;
 };
+
 #endif // CSYSTEMMAIN_H

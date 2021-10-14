@@ -46,9 +46,9 @@ int main(int argc, char *argv[])
     splash.showMessage("正在启动主界面", Qt::AlignBottom, Qt::red);
     //启动主界面
 
-    CSystemMainWindow w;
+    CSystemMain w;
     w.show();
-    w.move((mScreen->geometry().width()-w.width()/2 +60),(mScreen->geometry().height()-w.height()/2));
+    w.move(((mScreen->geometry().width()-w.width())/2),((mScreen->geometry().height()-w.height())/2));
     //主界面启动时关闭启动等待页面
     splash.finish(&w);
     return a.exec();

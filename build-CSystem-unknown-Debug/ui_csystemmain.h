@@ -18,42 +18,42 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_CSystemMainWindow
+class Ui_CSystemMain
 {
 public:
-    QWidget *centralwidget;
     QMenuBar *menubar;
+    QWidget *centralwidget;
     QStatusBar *statusbar;
 
-    void setupUi(QMainWindow *CSystemMainWindow)
+    void setupUi(QMainWindow *CSystemMain)
     {
-        if (CSystemMainWindow->objectName().isEmpty())
-            CSystemMainWindow->setObjectName(QString::fromUtf8("CSystemMainWindow"));
-        CSystemMainWindow->resize(800, 600);
-        centralwidget = new QWidget(CSystemMainWindow);
-        centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        CSystemMainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(CSystemMainWindow);
+        if (CSystemMain->objectName().isEmpty())
+            CSystemMain->setObjectName(QString::fromUtf8("CSystemMain"));
+        CSystemMain->resize(800, 600);
+        menubar = new QMenuBar(CSystemMain);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        CSystemMainWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(CSystemMainWindow);
+        CSystemMain->setMenuBar(menubar);
+        centralwidget = new QWidget(CSystemMain);
+        centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        CSystemMain->setCentralWidget(centralwidget);
+        statusbar = new QStatusBar(CSystemMain);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        CSystemMainWindow->setStatusBar(statusbar);
+        CSystemMain->setStatusBar(statusbar);
 
-        retranslateUi(CSystemMainWindow);
+        retranslateUi(CSystemMain);
 
-        QMetaObject::connectSlotsByName(CSystemMainWindow);
+        QMetaObject::connectSlotsByName(CSystemMain);
     } // setupUi
 
-    void retranslateUi(QMainWindow *CSystemMainWindow)
+    void retranslateUi(QMainWindow *CSystemMain)
     {
-        CSystemMainWindow->setWindowTitle(QCoreApplication::translate("CSystemMainWindow", "CSystemMainWindow", nullptr));
+        CSystemMain->setWindowTitle(QCoreApplication::translate("CSystemMain", "MainWindow", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class CSystemMainWindow: public Ui_CSystemMainWindow {};
+    class CSystemMain: public Ui_CSystemMain {};
 } // namespace Ui
 
 QT_END_NAMESPACE

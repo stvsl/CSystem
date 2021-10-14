@@ -12,11 +12,13 @@ public:
 
 signals:
 
-private:
+public:
     //配置读取
     void reader();
+    //
+    QString reader(QString group,QString key,QString value);
     //配置写入
-    void writer();
+    void writer(QString group,QString key,QString value);
 
 private:
     QString inipath = "./config/config.data";

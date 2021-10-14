@@ -10,7 +10,12 @@ void configManager::reader()
 
 }
 
-void configManager::writer()
+QString configManager::reader(QString group,QString key,QString value)
 {
-    settings.setValue("","");
+    return settings.value(group + "/" + key,value).toString();
+}
+
+void configManager::writer(QString group,QString key,QString value)
+{
+    settings.setValue(group + "/" + key,value);
 }
