@@ -9,12 +9,14 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    configManager/configmanager.cpp \
     csystemmain/csystemmain.cpp \
     DButils/dbutils.cpp \
     main.cpp \
     netWorkConfig/networkconfig.cpp
 
 HEADERS += \
+    configManager/configmanager.h \
     csystemmain/csystemmain.h \
     DButils/dbutils.h \
     netWorkConfig/networkconfig.h

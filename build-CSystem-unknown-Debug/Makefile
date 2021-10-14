@@ -52,17 +52,23 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../csystemmain/csystemmain.cpp \
+SOURCES       = ../configManager/configmanager.cpp \
+		../csystemmain/csystemmain.cpp \
 		../DButils/dbutils.cpp \
 		../main.cpp \
 		../netWorkConfig/networkconfig.cpp qrc_qmake_qmake_qm_files.cpp \
-		moc_csystemmain.cpp
-OBJECTS       = csystemmain.o \
+		moc_configmanager.cpp \
+		moc_csystemmain.cpp \
+		moc_networkconfig.cpp
+OBJECTS       = configmanager.o \
+		csystemmain.o \
 		dbutils.o \
 		main.o \
 		networkconfig.o \
 		qrc_qmake_qmake_qm_files.o \
-		moc_csystemmain.o
+		moc_configmanager.o \
+		moc_csystemmain.o \
+		moc_networkconfig.o
 DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/common/unix.conf \
 		/usr/lib/qt/mkspecs/common/linux.conf \
@@ -371,9 +377,11 @@ DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/features/exceptions.prf \
 		/usr/lib/qt/mkspecs/features/yacc.prf \
 		/usr/lib/qt/mkspecs/features/lex.prf \
-		../../CSystem.pro ../csystemmain/csystemmain.h \
+		../../CSystem.pro ../configManager/configmanager.h \
+		../csystemmain/csystemmain.h \
 		../DButils/dbutils.h \
-		../netWorkConfig/networkconfig.h ../csystemmain/csystemmain.cpp \
+		../netWorkConfig/networkconfig.h ../configManager/configmanager.cpp \
+		../csystemmain/csystemmain.cpp \
 		../DButils/dbutils.cpp \
 		../main.cpp \
 		../netWorkConfig/networkconfig.cpp
@@ -1026,8 +1034,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents ../CSystem_zh_CN.ts $(DISTDIR)/
 	$(COPY_FILE) --parents qmake_qmake_qm_files.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/qt/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../csystemmain/csystemmain.h ../DButils/dbutils.h ../netWorkConfig/networkconfig.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../csystemmain/csystemmain.cpp ../DButils/dbutils.cpp ../main.cpp ../netWorkConfig/networkconfig.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../configManager/configmanager.h ../csystemmain/csystemmain.h ../DButils/dbutils.h ../netWorkConfig/networkconfig.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../configManager/configmanager.cpp ../csystemmain/csystemmain.cpp ../DButils/dbutils.cpp ../main.cpp ../netWorkConfig/networkconfig.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../csystemmain/csystemmain.ui $(DISTDIR)/
 	$(COPY_FILE) --parents ../CSystem_zh_CN.ts $(DISTDIR)/
 
@@ -1073,13 +1081,23 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/qt/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++1z -Wall -Wextra -dM -E -o moc_predefs.h /usr/lib/qt/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_csystemmain.cpp
+compiler_moc_header_make_all: moc_configmanager.cpp moc_csystemmain.cpp moc_networkconfig.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_csystemmain.cpp
+	-$(DEL_FILE) moc_configmanager.cpp moc_csystemmain.cpp moc_networkconfig.cpp
+moc_configmanager.cpp: ../configManager/configmanager.h \
+		moc_predefs.h \
+		/usr/bin/moc
+	/usr/bin/moc $(DEFINES) --include /home/stvsl/Documents/个人项目/计算机设计竞赛/软件项目/CSystem/build-CSystem-unknown-Debug/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/stvsl/Documents/个人项目/计算机设计竞赛/软件项目/CSystem -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtNetwork -I/usr/include/qt/QtCore -I. -I/usr/include/c++/11.1.0 -I/usr/include/c++/11.1.0/x86_64-pc-linux-gnu -I/usr/include/c++/11.1.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include-fixed -I/usr/include ../configManager/configmanager.h -o moc_configmanager.cpp
+
 moc_csystemmain.cpp: ../csystemmain/csystemmain.h \
 		moc_predefs.h \
 		/usr/bin/moc
 	/usr/bin/moc $(DEFINES) --include /home/stvsl/Documents/个人项目/计算机设计竞赛/软件项目/CSystem/build-CSystem-unknown-Debug/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/stvsl/Documents/个人项目/计算机设计竞赛/软件项目/CSystem -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtNetwork -I/usr/include/qt/QtCore -I. -I/usr/include/c++/11.1.0 -I/usr/include/c++/11.1.0/x86_64-pc-linux-gnu -I/usr/include/c++/11.1.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include-fixed -I/usr/include ../csystemmain/csystemmain.h -o moc_csystemmain.cpp
+
+moc_networkconfig.cpp: ../netWorkConfig/networkconfig.h \
+		moc_predefs.h \
+		/usr/bin/moc
+	/usr/bin/moc $(DEFINES) --include /home/stvsl/Documents/个人项目/计算机设计竞赛/软件项目/CSystem/build-CSystem-unknown-Debug/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/stvsl/Documents/个人项目/计算机设计竞赛/软件项目/CSystem -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtNetwork -I/usr/include/qt/QtCore -I. -I/usr/include/c++/11.1.0 -I/usr/include/c++/11.1.0/x86_64-pc-linux-gnu -I/usr/include/c++/11.1.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include-fixed -I/usr/include ../netWorkConfig/networkconfig.h -o moc_networkconfig.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1102,6 +1120,9 @@ compiler_clean: compiler_lrelease_clean compiler_rcc_clean compiler_moc_predefs_
 
 ####### Compile
 
+configmanager.o: ../configManager/configmanager.cpp ../configManager/configmanager.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o configmanager.o ../configManager/configmanager.cpp
+
 csystemmain.o: ../csystemmain/csystemmain.cpp ../csystemmain/csystemmain.h \
 		ui_csystemmainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o csystemmain.o ../csystemmain/csystemmain.cpp
@@ -1109,7 +1130,8 @@ csystemmain.o: ../csystemmain/csystemmain.cpp ../csystemmain/csystemmain.h \
 dbutils.o: ../DButils/dbutils.cpp ../DButils/dbutils.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dbutils.o ../DButils/dbutils.cpp
 
-main.o: ../main.cpp ../csystemmain/csystemmain.h
+main.o: ../main.cpp ../csystemmain/csystemmain.h \
+		../netWorkConfig/networkconfig.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../main.cpp
 
 networkconfig.o: ../netWorkConfig/networkconfig.cpp ../netWorkConfig/networkconfig.h
@@ -1118,8 +1140,14 @@ networkconfig.o: ../netWorkConfig/networkconfig.cpp ../netWorkConfig/networkconf
 qrc_qmake_qmake_qm_files.o: qrc_qmake_qmake_qm_files.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_qmake_qmake_qm_files.o qrc_qmake_qmake_qm_files.cpp
 
+moc_configmanager.o: moc_configmanager.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_configmanager.o moc_configmanager.cpp
+
 moc_csystemmain.o: moc_csystemmain.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_csystemmain.o moc_csystemmain.cpp
+
+moc_networkconfig.o: moc_networkconfig.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_networkconfig.o moc_networkconfig.cpp
 
 ####### Install
 

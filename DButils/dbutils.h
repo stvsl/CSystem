@@ -4,8 +4,10 @@
 
 class DButils
 {
+
 public:
     DButils();
+
 };
 
 #endif // DBUTILS_H
