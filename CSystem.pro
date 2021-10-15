@@ -13,13 +13,13 @@ SOURCES += \
     DButils/dbutils.cpp \
     csystemmain/csystemmain.cpp \
     main.cpp \
-    netWorkConfig/networkconfig.cpp
+    netWorkUtils/netWorkUtils.cpp
 
 HEADERS += \
     configManager/configmanager.h \
     DButils/dbutils.h \
     csystemmain/csystemmain.h \
-    netWorkConfig/networkconfig.h
+    netWorkUtils/netWorkUtils.h
 
 FORMS += \
     csystemmain/csystemmain.ui

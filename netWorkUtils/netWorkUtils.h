@@ -1,21 +1,22 @@
-#ifndef NETWORKCONFIG_H
-#define NETWORKCONFIG_H
+#ifndef NETWORKUTILS_H
+#define NETWORKUTILS_H
 
 #include <QObject>
 #include <QTcpSocket>
-#include <QHostAddress>
 #include <QDebug>
 #include <QMessageBox>
 
-class netWorkConfig : public QObject
+class netWorkUtils : public QObject
 {
     Q_OBJECT
 public:
-    explicit netWorkConfig(QObject *parent = nullptr);
-    ~netWorkConfig();
+    explicit netWorkUtils(QObject *parent = nullptr);
+    ~netWorkUtils();
 
 signals:
     QString netError();
+    //网络异常时执行的槽函数
+    void onError();
 
 private:
     //网络模块启动
@@ -28,18 +29,14 @@ private:
     void onDisconnected();
     //接受服务器转发的消息的槽函数
     void onReadyRead();
-    //网络异常时执行的槽函数
-    void onError();
+    //网络数据发送
+    void send(QString str);
 
-private:
+public:
     //通信套接字
     QTcpSocket socket;
-    //服务器IP地址
-    QHostAddress serverIP;
-    //服务器端口
-    quint16 serverPort;
     //客户端名称
     QString clientname;
 };
 
-#endif // NETWORKCONFIG_H
+#endif // NETWORKUTILS_H

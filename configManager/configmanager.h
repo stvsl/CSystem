@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QSettings>
+#include <QHostAddress>
 
 class configManager : public QObject
 {
@@ -23,6 +24,15 @@ public:
 private:
     QString inipath = "./config/config.data";
     QSettings settings;
+};
+
+/*网络配置数据全局存储*/
+class net{
+public:
+    //IP连接地址
+    static QHostAddress netIP;
+    //IP端口号
+    static quint16 netport;
 };
 
 #endif // CONFIGMANAGER_H

@@ -1,6 +1,8 @@
-#include "networkconfig.h"
+#include "netWorkUtils.h"
+#include "configManager/configmanager.h"
+#include <QMessageBox>
 
-netWorkConfig::netWorkConfig(QObject *parent) : QObject(parent)
+netWorkUtils::netWorkUtils(QObject *parent) : QObject(parent)
 {
     //建立连接槽函数
     connect(&socket,SIGNAL(connected()),this,SLOT(onConnected()));
@@ -13,19 +15,25 @@ netWorkConfig::netWorkConfig(QObject *parent) : QObject(parent)
 
     /*启动网络组件*/
     netServiceStart();
+    socket.write("OK!");
 }
 
-netWorkConfig::~netWorkConfig()
+netWorkUtils::~netWorkUtils()
 {
     netServiceStop();
 }
 
-void netWorkConfig::netServiceStart()
+void netWorkUtils::netServiceStart()
 {
-
+   socket.connectToHost(net::netIP,net::netport);
 }
 
-void netWorkConfig::netServiceStop()
+void netWorkUtils::netServiceStop()
 {
+    socket.disconnectFromHost();
+}
 
+void netWorkUtils::send(QString str)
+{
+    socket.write(str.toUtf8());
 }
