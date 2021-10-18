@@ -19,6 +19,7 @@ HEADERS += \
     configManager/configmanager.h \
     DButils/dbutils.h \
     csystemmain/csystemmain.h \
+    main.h \
     netWorkUtils/netWorkUtils.h
 
 FORMS += \

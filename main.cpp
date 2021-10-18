@@ -1,5 +1,6 @@
 #include "csystemmain/csystemmain.h"
-#include "netWorkUtils/netWorkUtils.h"
+//#include "main.h"
+//#include "netWorkUtils/netWorkUtils.h"
 #include "configManager/configmanager.h"
 
 #include <QApplication>
@@ -35,10 +36,10 @@ int main(int argc, char *argv[])
 
     splash.showMessage("正在读取配置文件", Qt::AlignBottom, Qt::red);
     //TODO
-    configManager config;
-    config.reader();
+    //configManager config;
 
     splash.showMessage("正在连接网络", Qt::AlignBottom, Qt::red);
+
 
     splash.showMessage("正在连接数据库", Qt::AlignBottom, Qt::red);
     //TODO

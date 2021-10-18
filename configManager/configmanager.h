@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QSettings>
 #include <QHostAddress>
+#include <QFileInfo>
+#include <QDebug>
 
 class configManager : public QObject
 {
@@ -14,15 +16,23 @@ public:
 signals:
 
 public:
-    //配置读取
-    void reader();
-    //
+    //初始第一次运行判定器
+    static bool isFirst;
+    //配置读取（指定加载）
     QString reader(QString group,QString key,QString value);
     //配置写入
     void writer(QString group,QString key,QString value);
+    //初始化
+    void recover();
 
 private:
-    QString inipath = "./config/config.data";
+    //配置读取（预加载）
+    void reader();
+    //配置文件初始化函数
+    void writer();
+
+private:
+    QString inipath = "./config/config";
     QSettings settings;
 };
 

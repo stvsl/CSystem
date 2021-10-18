@@ -11,7 +11,6 @@ class netWorkUtils : public QObject
     Q_OBJECT
 public:
     explicit netWorkUtils(QObject *parent = nullptr);
-    ~netWorkUtils();
 
 signals:
     QString netError();
