@@ -5,6 +5,7 @@
 #include <QTcpSocket>
 #include <QDebug>
 #include <QMessageBox>
+#include <QTimer>
 
 class netWorkUtils : public QObject
 {

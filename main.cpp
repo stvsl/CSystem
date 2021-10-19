@@ -1,15 +1,12 @@
 #include "csystemmain/csystemmain.h"
 //#include "main.h"
-//#include "netWorkUtils/netWorkUtils.h"
+#include "netWorkUtils/netWorkUtils.h"
 #include "configManager/configmanager.h"
 
 #include <QApplication>
 #include <QScreen>
-#include <QGuiApplication>
 #include <QSplashScreen>
-#include <QLocale>
 #include <QTranslator>
-#include <QDebug>
 
 int main(int argc, char *argv[])
 {
@@ -39,12 +36,16 @@ int main(int argc, char *argv[])
     configManager config;
 
     splash.showMessage("正在连接网络", Qt::AlignBottom, Qt::red);
+    netWorkUtils nwu;
+
+    splash.showMessage("正在连接本地数据库", Qt::AlignBottom, Qt::red);
 
 
-    splash.showMessage("正在连接数据库", Qt::AlignBottom, Qt::red);
-    //TODO
-
-    splash.showMessage("正在启动主界面", Qt::AlignBottom, Qt::red);
+    splash.showMessage("加载完成！欢迎！！！", Qt::AlignBottom, Qt::red);
+    //局部事件循环
+    QEventLoop eventloop;
+    QTimer::singleShot(200, &eventloop, SLOT(quit()));
+    eventloop.exec();
     //启动主界面
     CSystemMain w;
     w.show();

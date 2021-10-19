@@ -7,6 +7,7 @@
 #include <QFileInfo>
 #include <QDebug>
 #include <QCoreApplication>
+#include <QHostInfo>
 
 class configManager : public QObject
 {
@@ -44,6 +45,10 @@ public:
     static QHostAddress netIP;
     //IP端口号
     static quint16 netport;
+    //设备名称
+    static QString hostname;
+    //网络中名称
+    static QString netname;
 };
 
 #endif // CONFIGMANAGER_H

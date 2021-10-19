@@ -1,4 +1,4 @@
-QT       += core gui network
+QT       += core gui network sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,12 +13,14 @@ SOURCES += \
     csystemmain/csystemmain.cpp \
     main.cpp \
     netWorkUtils/netWorkUtils.cpp\
+    DButils/dbutils.cpp\
 
 HEADERS += \
     configManager/configmanager.h \
     csystemmain/csystemmain.h \
     main.h \
     netWorkUtils/netWorkUtils.h\
+    DButils/dbutils.h\
 
 FORMS += \
     csystemmain/csystemmain.ui
