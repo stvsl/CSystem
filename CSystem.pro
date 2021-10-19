@@ -2,7 +2,7 @@ QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++17
+CONFIG += c++20
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -10,17 +10,15 @@ CONFIG += c++17
 
 SOURCES += \
     configManager/configmanager.cpp \
-    DButils/dbutils.cpp \
     csystemmain/csystemmain.cpp \
     main.cpp \
-    netWorkUtils/netWorkUtils.cpp
+    netWorkUtils/netWorkUtils.cpp\
 
 HEADERS += \
     configManager/configmanager.h \
-    DButils/dbutils.h \
     csystemmain/csystemmain.h \
     main.h \
-    netWorkUtils/netWorkUtils.h
+    netWorkUtils/netWorkUtils.h\
 
 FORMS += \
     csystemmain/csystemmain.ui

@@ -6,6 +6,7 @@
 #include <QHostAddress>
 #include <QFileInfo>
 #include <QDebug>
+#include <QCoreApplication>
 
 class configManager : public QObject
 {
@@ -32,7 +33,7 @@ private:
     void writer();
 
 private:
-    QString inipath = "./config/config";
+    QString inipath = "/config/config.ini";
     QSettings settings;
 };
 

@@ -15,7 +15,7 @@ bool configManager::isFirst = false;
 
 configManager::configManager(QObject *parent) : QObject(parent)
 {
-    settings.setPath(QSettings::IniFormat,QSettings::UserScope,inipath);
+    QSettings settings(QCoreApplication::applicationDirPath() + inipath,QSettings::IniFormat);
     //执行恢复函数，恢复函数将会先进行判定是否是初次运行随后完成初始化流程
     recover();
 }
@@ -23,12 +23,9 @@ configManager::configManager(QObject *parent) : QObject(parent)
 void configManager::recover()
 {
     qDebug() << inipath;
-    //判断配置文件是否存在，如果不存在，则可确定程序是第一次运行或被误删除，配置文件数据视为不会被人为修改，但保守起见，在配置文件中添加初次判定，便于后期维护
-    QFileInfo exist(inipath);
-    if(exist.isFile() == false){
-        if(settings.value("Global/isfirststart").toString() == "true"){
-            isFirst = true;
-        }
+    if (settings.value("Global/recover").toString() == "ture" ||settings.value("Global/recover").toString() == ""){
+        qDebug() << "配置文件不存在或已被设置重置，即将开始重置";
+        isFirst = true;
     }
     if(isFirst == true){
         writer();
@@ -40,23 +37,26 @@ void configManager::recover()
 //初始化设置函数
 void configManager::writer()
 {
-    qDebug() << "判定为初次启动，正在初始化";
+    qDebug() << "判定为初次启动，正在重置";
     /*全局*/
-    settings.setValue("Global/isfirststart","false");
+    settings.setValue("Global/recover","false");
     /*网络*/
     settings.setValue("Net/IP","127.0.0.1");
     settings.setValue("Net/port","8080");
     /*数据库*/
 
     //调用reader函数进行基本配置的预读取
+    reader();
 
 }
 
 //基础数据预读取函数,由于其特殊性，不暴露且禁止调用
 void configManager::reader()
 {
+    /*网络成员*/
     net::netIP.setAddress(settings.value("Net/IP").toString());
     net::netport = settings.value("Net/port").toUInt();
+    /*数据库成员*/
 }
 
 QString configManager::reader(QString group,QString key,QString value)
