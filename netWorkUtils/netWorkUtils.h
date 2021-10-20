@@ -4,7 +4,6 @@
 #include <QObject>
 #include <QTcpSocket>
 #include <QDebug>
-#include <QMessageBox>
 #include <QTimer>
 
 class netWorkUtils : public QObject
@@ -14,8 +13,11 @@ public:
     explicit netWorkUtils(QObject *parent = nullptr);
 
 signals:
-    QString netError();
-    //网络异常时执行的槽函数
+    void netError();
+
+private slots:
+    void newMsg();
+    //网络组件异常
     void onError();
 
 private:
@@ -23,12 +25,7 @@ private:
     void netServiceStart();
     //网络模块关闭
     void netServiceStop();
-    //和服务器连接成功时执行的槽函数
-    void onConnected();
-    //和服务器断开连接时执行的槽函数
-    void onDisconnected();
     //接受服务器转发的消息的槽函数
-    void onReadyRead();
     //网络数据发送
     void send(QString str);
 
@@ -38,5 +35,7 @@ public:
     //客户端名称
     QString clientname;
 };
+
+
 
 #endif // NETWORKUTILS_H

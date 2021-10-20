@@ -7,16 +7,18 @@ QHostAddress net::netIP;
 quint16 net::netport;
 //hostname：当前设备的主机名，此变量将会暴露到全局，作为运行时必要数据
 QString net::hostname;
-//netname：当前连接后服务器反馈的网络使用名称，作为运行时必要数据
-QString net::netname;
+
+/*数据库成员全局变量*/
+//uname：当前连接后服务器返回，用于打开本地数据库
+QString DB::uname;
+//passwd_dp:当连接后服务器返回，用于打开本地数据库
+QString DB::passwd_dp;
 
 /*全局变量*/
 //isFirst:表示整个程序是否是初次启动，若是则为true；此参数将会在程序启动时被读取，可用于系统重置，此参数将会暴露给main,用于判断是否启动初始设置引导界面
 bool configManager::isFirst = false;
 
-/*数据库变量*/
-
-
+/*构造函数*/
 configManager::configManager(QObject *parent) : QObject(parent)
 {
     QSettings settings(QCoreApplication::applicationDirPath() + inipath,QSettings::IniFormat);
@@ -61,14 +63,16 @@ void configManager::reader()
     /*网络成员*/
     net::netIP.setAddress(settings.value("Net/IP").toString());
     net::netport = settings.value("Net/port").toUInt();
-    /*数据库成员*/
+
 }
 
+//原子组件
 QString configManager::reader(QString group,QString key,QString value)
 {
     return settings.value(group + "/" + key,value).toString();
 }
 
+//原子组件
 void configManager::writer(QString group,QString key,QString value)
 {
     settings.setValue(group + "/" + key,value);

@@ -47,8 +47,15 @@ public:
     static quint16 netport;
     //设备名称
     static QString hostname;
-    //网络中名称
-    static QString netname;
+
+};
+
+class DB{
+public:
+    //数据库用户名
+    static QString uname;
+    //数据库密码残片
+    static QString passwd_dp;
 };
 
 #endif // CONFIGMANAGER_H

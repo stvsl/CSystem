@@ -2,6 +2,7 @@
 //#include "main.h"
 #include "netWorkUtils/netWorkUtils.h"
 #include "configManager/configmanager.h"
+#include "DButils/dbutils.h"
 
 #include <QApplication>
 #include <QScreen>
@@ -39,9 +40,10 @@ int main(int argc, char *argv[])
     netWorkUtils nwu;
 
     splash.showMessage("正在连接本地数据库", Qt::AlignBottom, Qt::red);
-
+    DButils db;
 
     splash.showMessage("加载完成！欢迎！！！", Qt::AlignBottom, Qt::red);
+
     //局部事件循环
     QEventLoop eventloop;
     QTimer::singleShot(200, &eventloop, SLOT(quit()));
