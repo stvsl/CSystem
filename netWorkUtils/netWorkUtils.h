@@ -13,7 +13,7 @@ public:
     explicit netWorkUtils(QObject *parent = nullptr);
 
 signals:
-    void netError();
+    void netError(QString errorStr);
 
 private slots:
     void newMsg();
@@ -22,12 +22,14 @@ private slots:
 
 private:
     //网络模块启动
-    void netServiceStart();
+    void Start();
     //网络模块关闭
-    void netServiceStop();
+    void Stop();
     //接受服务器转发的消息的槽函数
     //网络数据发送
     void send(QString str);
+    //网络重连函数
+    void reConnect();
 
 public:
     //通信套接字

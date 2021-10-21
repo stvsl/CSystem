@@ -1,13 +1,4 @@
-#include "csystemmain/csystemmain.h"
-//#include "main.h"
-#include "netWorkUtils/netWorkUtils.h"
-#include "configManager/configmanager.h"
-#include "DButils/dbutils.h"
-
-#include <QApplication>
-#include <QScreen>
-#include <QSplashScreen>
-#include <QTranslator>
+#include "main.h"
 
 int main(int argc, char *argv[])
 {
@@ -33,8 +24,9 @@ int main(int argc, char *argv[])
     QScreen *mScreen = QGuiApplication::screens().at(0);
 
     splash.showMessage("正在读取配置文件", Qt::AlignBottom, Qt::red);
-    //TODO
-    configManager config;
+
+    configManager *config = new configManager;
+
 
     splash.showMessage("正在连接网络", Qt::AlignBottom, Qt::red);
     netWorkUtils nwu;
@@ -43,13 +35,13 @@ int main(int argc, char *argv[])
     DButils db;
 
     splash.showMessage("加载完成！欢迎！！！", Qt::AlignBottom, Qt::red);
-
     //局部事件循环
     QEventLoop eventloop;
     QTimer::singleShot(200, &eventloop, SLOT(quit()));
     eventloop.exec();
     //启动主界面
     CSystemMain w;
+    w.show();
     w.show();
     w.move(((mScreen->geometry().width()-w.width())/2),((mScreen->geometry().height()-w.height())/2));
     //主界面启动时关闭启动等待页面
