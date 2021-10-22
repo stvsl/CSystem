@@ -24,15 +24,13 @@ int main(int argc, char *argv[])
     QScreen *mScreen = QGuiApplication::screens().at(0);
 
     splash.showMessage("正在读取配置文件", Qt::AlignBottom, Qt::red);
-
-    configManager *config = new configManager;
-
+    configManager config;
 
     splash.showMessage("正在连接网络", Qt::AlignBottom, Qt::red);
     netWorkUtils nwu;
 
     splash.showMessage("正在连接本地数据库", Qt::AlignBottom, Qt::red);
-    DButils db;
+    DButils DB;
 
     splash.showMessage("加载完成！欢迎！！！", Qt::AlignBottom, Qt::red);
     //局部事件循环
