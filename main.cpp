@@ -40,7 +40,6 @@ int main(int argc, char *argv[])
     //启动主界面
     CSystemMain w;
     w.show();
-    w.show();
     w.move(((mScreen->geometry().width()-w.width())/2),((mScreen->geometry().height()-w.height())/2));
     //主界面启动时关闭启动等待页面
     splash.finish(&w);

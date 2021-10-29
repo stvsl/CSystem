@@ -1,8 +1,9 @@
-QT       += core gui network sql
+QT       += core gui network sql webkitwidgets
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++20
+CONFIG += c++17
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -11,6 +12,7 @@ CONFIG += c++20
 SOURCES += \
     configManager/configmanager.cpp \
     csystemmain/csystemmain.cpp \
+    csystemmain/mapview.cpp \
     main.cpp \
     netWorkUtils/netWorkUtils.cpp\
     DButils/dbutils.cpp\
@@ -18,12 +20,14 @@ SOURCES += \
 HEADERS += \
     configManager/configmanager.h \
     csystemmain/csystemmain.h \
+    csystemmain/mapview.h \
     main.h \
     netWorkUtils/netWorkUtils.h\
     DButils/dbutils.h\
 
 FORMS += \
-    csystemmain/csystemmain.ui
+    csystemmain/csystemmain.ui \
+    csystemmain/mapview.ui
 
 TRANSLATIONS += \
     CSystem_zh_CN.ts
@@ -36,4 +40,4 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-DISTFILES += \
+DISTFILES +=
