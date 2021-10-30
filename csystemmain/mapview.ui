@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1513</width>
-    <height>943</height>
+    <width>1400</width>
+    <height>900</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,16 +16,49 @@
   <widget class="QWebView" name="webView">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1451</width>
-     <height>851</height>
+     <x>6</x>
+     <y>46</y>
+     <width>1203</width>
+     <height>804</height>
     </rect>
    </property>
    <property name="url">
     <url>
      <string>about:blank</string>
     </url>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>18</x>
+     <y>13</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>全局视图</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PositionReset">
+   <property name="geometry">
+    <rect>
+     <x>1230</x>
+     <y>50</y>
+     <width>80</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>位置重置</string>
    </property>
   </widget>
  </widget>

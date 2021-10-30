@@ -16,9 +16,6 @@ CSystemMain::~CSystemMain()
     delete ui;
 }
 
-
-
-
 void CSystemMain::on_MenuList_itemSelectionChanged()
 {
     for (int i = 0; i < ui->widget->children().length(); i++) {

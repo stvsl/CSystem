@@ -112,10 +112,10 @@
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>230</x>
       <y>0</y>
-      <width>1701</width>
-      <height>1051</height>
+      <width>1700</width>
+      <height>1000</height>
      </rect>
     </property>
     <property name="sizePolicy">

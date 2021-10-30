@@ -3,6 +3,9 @@
 
 #include <QWidget>
 #include <QUrl>
+#include <QDir>
+#include <QWebChannel>
+#include <QWebFrame>
 
 namespace Ui {
 class MapView;
@@ -18,6 +21,12 @@ public:
 
 public:
 
+
+public slots:
+
+
+private slots:
+    void on_PositionReset_clicked();
 
 private:
     Ui::MapView *ui;
