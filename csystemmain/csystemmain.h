@@ -3,9 +3,11 @@
 
 #include <QMainWindow>
 #include <QListWidgetItem>
+#include "mapview.h"
 
 namespace Ui {
 class CSystemMain;
+class MapView;
 }
 
 class CSystemMain : public QMainWindow

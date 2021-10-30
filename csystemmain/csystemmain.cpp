@@ -1,6 +1,5 @@
 #include "csystemmain.h"
 #include "ui_csystemmain.h"
-#include "mapview.h"
 #include <QDebug>
 
 CSystemMain::CSystemMain(QWidget *parent) :
@@ -8,8 +7,8 @@ CSystemMain::CSystemMain(QWidget *parent) :
     ui(new Ui::CSystemMain)
 {
     ui->setupUi(this);
-//    MapView *mv = new MapView(ui->widget);
-//    mv->show();
+    MapView *mv = new MapView(ui->widget);
+    mv->show();
 }
 
 CSystemMain::~CSystemMain()
@@ -22,22 +21,28 @@ CSystemMain::~CSystemMain()
 
 void CSystemMain::on_MenuList_itemSelectionChanged()
 {
+    for (int i = 0; i < ui->widget->children().length(); i++) {
+        delete  ui->widget->children().at(i);
+    }
     QString str = ui->MenuList->selectedItems().takeFirst()->text();
         if(str == "全局信息概览"){
-            ui->widget->close();
-            ui->widget->show();
             MapView *mv = new MapView(ui->widget);
             mv->show();
         }else if(str == "节点信息详情"){
-            ui->widget->close();
+            MapView *mv = new MapView(ui->widget);
+            mv->show();
         }else if(str == "数据可视化分析"){
-            ui->widget->close();
+            MapView *mv = new MapView(ui->widget);
+            mv->show();
         }else if(str == "智能监控系统"){
-            ui->widget->close();
+            MapView *mv = new MapView(ui->widget);
+            mv->show();
         }else if(str == "数据管理系统"){
-            ui->widget->close();
+            MapView *mv = new MapView(ui->widget);
+            mv->show();
         }else if(str == "系统性能调试"){
-            ui->widget->close();
+            MapView *mv = new MapView(ui->widget);
+            mv->show();
         }
 }
 
