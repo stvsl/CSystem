@@ -14,6 +14,8 @@ QString DB::uname;
 //passwd_dp:当连接后服务器返回，用于打开本地数据库
 QString DB::passwd_dp;
 
+
+
 /*全局变量*/
 //isFirst:表示整个程序是否是初次启动，若是则为true；此参数将会在程序启动时被读取，可用于系统重置，此参数将会暴露给main,用于判断是否启动初始设置引导界面
 bool configManager::isFirst = false;
