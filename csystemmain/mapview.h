@@ -3,9 +3,7 @@
 
 #include <QWidget>
 #include <QUrl>
-#include <QDir>
 #include <QWebChannel>
-#include <QWebFrame>
 
 namespace Ui {
 class MapView;
@@ -19,11 +17,8 @@ public:
     explicit MapView(QWidget *parent = nullptr);
     ~MapView();
 
-public:
-
-
-public slots:
-
+signals:
+    void setcenter();
 
 private slots:
     void on_PositionReset_clicked();

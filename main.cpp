@@ -23,16 +23,20 @@ int main(int argc, char *argv[])
     //检查屏幕状态
     QScreen *mScreen = QGuiApplication::screens().at(0);
 
+    //配置文件加载
     splash.showMessage("正在读取配置文件", Qt::AlignBottom, Qt::red);
     configManager config;
 
+    //网络模块加载
     splash.showMessage("正在连接网络", Qt::AlignBottom, Qt::red);
     netWorkUtils nwu;
 
+    //数据库模块加载
     splash.showMessage("正在连接本地数据库", Qt::AlignBottom, Qt::red);
     DButils DB;
 
     splash.showMessage("加载完成！欢迎！！！", Qt::AlignBottom, Qt::red);
+
     //局部事件循环
     QEventLoop eventloop;
     QTimer::singleShot(200, &eventloop, SLOT(quit()));

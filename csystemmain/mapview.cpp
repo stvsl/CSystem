@@ -5,13 +5,17 @@ MapView::MapView(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MapView)
 {
+    //远程debug
+    qputenv("QTWEBENGINE_REMOTE_DEBUGGING", "1112");
+    //融合进程
+    qputenv("QTWEBENGINE_CHROMIUM_FLAGS", "--single-process");
     ui->setupUi(this);
     this->setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint);
     this->setAttribute(Qt::WA_DeleteOnClose);
-    ui->webView->setUrl(QUrl("file:///" + QDir::currentPath()+ "/Map/map.html"));
-    QWebChannel *channel = new QWebChannel(this);         //定义QWebChannel负责
-    channel->registerObject(QString("person"),this);    //QWebChannel对Widget类，注册一个person的通信介质
-    ui->webView->page()->setWebChannel(channel);
+    ui->webView->setUrl(QUrl("http://127.0.0.1:5500/map.html"));
+    QWebChannel *channel = new QWebChannel(this);       //通讯对象
+    channel->registerObject(QString("trans"),this);    //通信介质注册
+    ui->webView->page()->setWebChannel(channel);        //通讯附加
 }
 
 MapView::~MapView()
@@ -21,5 +25,6 @@ MapView::~MapView()
 
 void MapView::on_PositionReset_clicked()
 {
-    ui->webView->page()->runJavaScript("set");
+    emit setcenter();
 }
+
