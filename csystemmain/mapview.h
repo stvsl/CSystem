@@ -19,9 +19,14 @@ public:
 
 signals:
     void setcenter();
+    void setpoitext();
+    void setpoiicon();
+    void searchp(QString str);
 
 private slots:
     void on_PositionReset_clicked();
+
+    void on_mapSearcher_editingFinished();
 
 private:
     Ui::MapView *ui;

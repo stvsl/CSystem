@@ -18,9 +18,11 @@ CSystemMain::~CSystemMain()
 
 void CSystemMain::on_MenuList_itemSelectionChanged()
 {
+    //原有的内存释放
     for (int i = 0; i < ui->widget->children().length(); i++) {
         delete  ui->widget->children().at(i);
     }
+    //页面重加载
     QString str = ui->MenuList->selectedItems().takeFirst()->text();
         if(str == "全局信息概览"){
             MapView *mv = new MapView(ui->widget);
@@ -38,6 +40,9 @@ void CSystemMain::on_MenuList_itemSelectionChanged()
             MapView *mv = new MapView(ui->widget);
             mv->show();
         }else if(str == "系统性能调试"){
+            MapView *mv = new MapView(ui->widget);
+            mv->show();
+        }else if(str == "地图显示调整"){
             MapView *mv = new MapView(ui->widget);
             mv->show();
         }

@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>source/icon/搜索.png</file>
+    </qresource>
+    <qresource prefix="/loading">
+        <file>source/loading/pixmap.png</file>
+    </qresource>
+</RCC>

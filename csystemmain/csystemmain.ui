@@ -65,6 +65,11 @@
       <string>系统性能调试</string>
      </property>
     </item>
+    <item>
+     <property name="text">
+      <string>地图显示调整</string>
+     </property>
+    </item>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
