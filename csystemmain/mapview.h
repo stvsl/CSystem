@@ -29,6 +29,7 @@ private slots:
     void on_mapSearcher_editingFinished();
 
 private:
+    QWebChannel *channel;
     Ui::MapView *ui;
 };
 

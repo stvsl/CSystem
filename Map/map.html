@@ -43,6 +43,9 @@
         // 添加比例尺控件
         var scaleCtrl = new BMapGL.ScaleControl();
         map.addControl(scaleCtrl);
+        // 添加3D控件
+        var navi3DCtrl = new BMapGL.NavigationControl3D();  
+        map.addControl(navi3DCtrl);
 
         //qt通信组件实例化
         new QWebChannel(qt.webChannelTransport, function (channel) {
@@ -83,7 +86,7 @@
                     map.centerAndZoom(point, 16);
                     map.setZoom(20);
                 } else {
-                    alert('您选择的地址没有解析到结果！');
+                    alert("error:您的输入无效");
                 }
             })
         }

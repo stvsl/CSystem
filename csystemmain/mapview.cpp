@@ -14,13 +14,14 @@ MapView::MapView(QWidget *parent) :
     this->setAttribute(Qt::WA_DeleteOnClose);
     ui->mapSearcher->addAction(QIcon(":/icon/source/icon/搜索.png"),QLineEdit::TrailingPosition);
     ui->webView->setUrl(QUrl("http://127.0.0.1:5500/map.html"));
-    QWebChannel *channel = new QWebChannel(this);       //通讯对象
+    channel = new QWebChannel(this);                    //通讯对象
     channel->registerObject(QString("trans"),this);     //通信介质注册
     ui->webView->page()->setWebChannel(channel);        //通讯附加
 }
 
 MapView::~MapView()
 {
+    delete channel;
     delete ui;
 }
 

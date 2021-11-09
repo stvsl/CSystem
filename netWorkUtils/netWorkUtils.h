@@ -25,13 +25,14 @@ private:
     void Start();
     //网络模块关闭
     void Stop();
-    //接受服务器转发的消息的槽函数
+
+public:
     //网络数据发送
     void send(QString str);
     //网络重连函数
     void reConnect();
 
-public:
+private:
     //通信套接字
     QTcpSocket socket;
     //客户端名称
