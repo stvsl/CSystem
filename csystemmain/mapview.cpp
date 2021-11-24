@@ -13,7 +13,7 @@ MapView::MapView(QWidget *parent) :
     this->setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint);
     this->setAttribute(Qt::WA_DeleteOnClose);
     ui->mapSearcher->addAction(QIcon(":/icon/source/icon/搜索.png"),QLineEdit::TrailingPosition);
-    ui->webView->setUrl(QUrl("http://127.0.0.1:5500/map.html"));
+    ui->webView->setUrl(QUrl("http://127.0.0.1:5500/Map/map.html"));
     channel = new QWebChannel(this);                    //通讯对象
     channel->registerObject(QString("trans"),this);     //通信介质注册
     ui->webView->page()->setWebChannel(channel);        //通讯附加
