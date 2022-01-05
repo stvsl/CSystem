@@ -15,9 +15,12 @@ class runObjectUtils : public QObject
 {
     Q_OBJECT
 
+/***
+ *  系统运行相关
+ */
 public:
     /***
-    *lock:系统运行指示锁
+    *status:系统运行指示锁
     *状态：
     *   0 ～ 初始化
     *   1 ～ 系统正常
@@ -27,7 +30,7 @@ public:
     *   5 ～ 停止运行
     *   6 ～ 委托重启
     ***/
-    int lock = 0;
+    int status = 0;
 };
 
 #endif // MAIN_H

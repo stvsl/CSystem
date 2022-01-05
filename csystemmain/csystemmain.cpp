@@ -7,8 +7,9 @@ CSystemMain::CSystemMain(QWidget *parent) :
     ui(new Ui::CSystemMain)
 {
     ui->setupUi(this);
-    MapView *mv = new MapView(ui->widget);
-    mv->show();
+    CSystemMain::mV = new MapView(ui->widget);
+    CSystemMain::mV->show();
+    CSystemMain::widgetstatus = 1;
 }
 
 CSystemMain::~CSystemMain()
@@ -18,33 +19,41 @@ CSystemMain::~CSystemMain()
 
 void CSystemMain::on_MenuList_itemSelectionChanged()
 {
-    //原有的内存释放
-    for (int i = 0; i < ui->widget->children().length(); i++) {
-        delete  ui->widget->children().at(i);
+
+    if(CSystemMain::widgetstatus == 1){
+        delete CSystemMain::mV;
     }
     //页面重加载
     QString str = ui->MenuList->selectedItems().takeFirst()->text();
-        if(str == "全局信息概览"){
-            MapView *mv = new MapView(ui->widget);
-            mv->show();
-        }else if(str == "节点信息详情"){
-            MapView *mv = new MapView(ui->widget);
-            mv->show();
-        }else if(str == "数据可视化分析"){
-            MapView *mv = new MapView(ui->widget);
-            mv->show();
-        }else if(str == "智能监控系统"){
-            MapView *mv = new MapView(ui->widget);
-            mv->show();
-        }else if(str == "数据管理系统"){
-            MapView *mv = new MapView(ui->widget);
-            mv->show();
-        }else if(str == "系统性能调试"){
-            MapView *mv = new MapView(ui->widget);
-            mv->show();
-        }else if(str == "地图显示调整"){
-            MapView *mv = new MapView(ui->widget);
-            mv->show();
-        }
+
+    if(str == "全局信息概览"){
+        CSystemMain::mV = new MapView(ui->widget);
+        CSystemMain::mV ->show();
+        CSystemMain::widgetstatus = 1;
+    }else if(str == "节点信息详情"){
+        CSystemMain::mV = new MapView(ui->widget);
+        CSystemMain::mV ->show();
+        CSystemMain::widgetstatus = 1;
+    }else if(str == "数据可视化分析"){
+        CSystemMain::mV = new MapView(ui->widget);
+        CSystemMain::mV ->show();
+        CSystemMain::widgetstatus = 1;
+    }else if(str == "智能监控系统"){
+        CSystemMain::mV = new MapView(ui->widget);
+        CSystemMain::mV ->show();
+        CSystemMain::widgetstatus = 1;
+    }else if(str == "数据管理系统"){
+        CSystemMain::mV = new MapView(ui->widget);
+        CSystemMain::mV ->show();
+        CSystemMain::widgetstatus = 1;
+    }else if(str == "系统性能调试"){
+        CSystemMain::mV = new MapView(ui->widget);
+        CSystemMain::mV ->show();
+        CSystemMain::widgetstatus = 1;
+    }else if(str == "地图显示调整"){
+        CSystemMain::mV = new MapView(ui->widget);
+        CSystemMain::mV ->show();
+        CSystemMain::widgetstatus = 1;
+    }
 }
 

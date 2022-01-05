@@ -24,6 +24,11 @@ private slots:
 
 private:
     Ui::CSystemMain *ui;
+    MapView *mV;
+    ///
+    /// \brief 界面呈现状态控制器
+    ///
+    int widgetstatus = 0;
 };
 
 #endif // CSYSTEMMAIN_H

@@ -17,16 +17,53 @@ public:
     explicit MapView(QWidget *parent = nullptr);
     ~MapView();
 
+/***
+ * 与js文件通讯的信号函数
+ */
 signals:
-    void setcenter();
-    void setpoitext();
-    void setpoiicon();
-    void searchp(QString str);
+
+    ///
+    /// \brief 设置中心位置
+    ///
+    void setCenter();
+
+    ///
+    /// \brief 设置地标文字
+    ///
+    void setPoiText(bool);
+
+    ///
+    /// \brief 设置地标图标
+    ///
+    void setPoiIcon(bool);
+
+    ///
+    /// \brief 搜索地址
+    /// \param str
+    ///
+    void searchP(QString str);
+
+    ///
+    /// \brief 地图卫星地球模式
+    ///
+    void setMapType();
 
 private slots:
+
+    ///
+    /// \brief 位置重置按钮实现
+    ///
     void on_PositionReset_clicked();
 
+    ///
+    /// \brief 地图位置搜索功能实现
+    ///
     void on_mapSearcher_editingFinished();
+
+    ///
+    /// \brief 结点搜索功能实现
+    ///
+    void on_node_Searcher_editingFinished();
 
 private:
     QWebChannel *channel;

@@ -11,6 +11,7 @@ CONFIG += c++17
 
 SOURCES += \
     configManager/configmanager.cpp \
+    configManager/mapconfig.cpp \
     csystemmain/csystemmain.cpp \
     csystemmain/mapview.cpp \
     main.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
 
 HEADERS += \
     configManager/configmanager.h \
+    configManager/mapconfig.h \
     csystemmain/csystemmain.h \
     csystemmain/mapview.h \
     main.h \

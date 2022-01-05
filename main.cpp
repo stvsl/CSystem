@@ -3,7 +3,10 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-
+    QCoreApplication::setOrganizationName("stvsl & jc");
+    QCoreApplication::setApplicationName("CSystem");
+    QCoreApplication::setOrganizationDomain("stvsl.github.io");
+    QCoreApplication::setApplicationVersion("v0.0.1");
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
     for (const QString &locale : uiLanguages) {
