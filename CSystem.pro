@@ -11,7 +11,6 @@ CONFIG += c++17
 
 SOURCES += \
     configManager/configmanager.cpp \
-    configManager/mapconfig.cpp \
     csystemmain/csystemmain.cpp \
     csystemmain/mapview.cpp \
     main.cpp \

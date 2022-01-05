@@ -5,12 +5,9 @@
 ///
 /// \brief 地图个性化信息配置管理器
 ///
-class mapConfig : public QObject
+class MAP_CONFIG : public QObject
 {
     Q_OBJECT
-public:
-    explicit mapConfig(QObject *parent = nullptr);
-
 
 public:
 
@@ -49,18 +46,7 @@ public:
     ///
     static bool MAP_AUTO_POSITIONING;
 
-private:
-
-    ///
-    /// \brief 地图配置文件读取器
-    ///
-    void reader();
-
-    ///
-    /// \brief 地图配置文件写入器
-    ///
-    void writer();
-
 };
+
 
 #endif // MAPCONFIG_H

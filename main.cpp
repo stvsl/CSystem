@@ -1,9 +1,11 @@
 #include "main.h"
 
+int MAIN_RUN_CONFIG::SYSTEM_STATUS = -1;
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QCoreApplication::setOrganizationName("stvsl & jc");
+    QCoreApplication::setOrganizationName("stvsl&jc");
     QCoreApplication::setApplicationName("CSystem");
     QCoreApplication::setOrganizationDomain("stvsl.github.io");
     QCoreApplication::setApplicationVersion("v0.0.1");
@@ -29,6 +31,8 @@ int main(int argc, char *argv[])
     //配置文件加载
     splash.showMessage("正在读取配置文件", Qt::AlignBottom, Qt::red);
     configManager config;
+    //首次运行状态数据同步到全局
+    MAIN_RUN_CONFIG::SYSTEM_STATUS = CONFIG_CORE::RUN_FIRST;
 
     //网络模块加载
     splash.showMessage("正在连接网络", Qt::AlignBottom, Qt::red);

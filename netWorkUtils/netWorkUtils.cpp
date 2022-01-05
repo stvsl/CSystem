@@ -4,7 +4,7 @@
 netWorkUtils::netWorkUtils(QObject *parent) : QObject(parent)
 {
     //绑定连接
-    socket.connectToHost(net::netIP,net::netport);
+    socket.connectToHost(CONFIG_CORE::SERVICE_IP,CONFIG_CORE::SERVICE_PORT);
     //表示接收消息的槽函数
     connect(&socket,SIGNAL(readyRead()),this,SLOT(newMsg()));
     //处理网络异常的槽函数
@@ -26,7 +26,7 @@ void netWorkUtils::newMsg(){
 
 //重连槽函数
 void netWorkUtils::reConnect(){
-    socket.connectToHost(net::netIP,net::netport);
+    socket.connectToHost(CONFIG_CORE::SERVICE_IP,CONFIG_CORE::SERVICE_PORT);
 }
 
 void netWorkUtils::Start(){

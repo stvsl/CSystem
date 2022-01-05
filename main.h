@@ -11,7 +11,7 @@
 #include "configManager/configmanager.h"
 #include "DButils/dbutils.h"
 
-class runObjectUtils : public QObject
+class MAIN_RUN_CONFIG : public QObject
 {
     Q_OBJECT
 
@@ -19,10 +19,11 @@ class runObjectUtils : public QObject
  *  系统运行相关
  */
 public:
+
     /***
     *status:系统运行指示锁
     *状态：
-    *   0 ～ 初始化
+    *   0 ～ 首次运行
     *   1 ～ 系统正常
     *   2 ～ 网络异常
     *   3 ～ 本地数据库异常
@@ -30,7 +31,7 @@ public:
     *   5 ～ 停止运行
     *   6 ～ 委托重启
     ***/
-    int status = 0;
+    static int SYSTEM_STATUS;
 };
 
 #endif // MAIN_H

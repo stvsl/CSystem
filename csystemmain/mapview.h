@@ -48,20 +48,23 @@ signals:
     ///
     void setMapType();
 
+/***
+ * 界面按键相关的槽函数
+ */
 private slots:
 
     ///
-    /// \brief 位置重置按钮实现
+    /// \brief 位置重置按钮点击事件
     ///
     void on_PositionReset_clicked();
 
     ///
-    /// \brief 地图位置搜索功能实现
+    /// \brief 地图位置搜索功能输入触发事件
     ///
     void on_mapSearcher_editingFinished();
 
     ///
-    /// \brief 结点搜索功能实现
+    /// \brief 结点搜索功能触发事件
     ///
     void on_node_Searcher_editingFinished();
 

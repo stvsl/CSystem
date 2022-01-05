@@ -15,21 +15,31 @@ public:
     explicit configManager(QObject *parent = nullptr);
 
 private:
+
     ///
     /// \brief 配置文件读取
     ///
     void reader();
+
     ///
     /// \brief 配置文件写入
     ///
     void writer();
+
+public slots:
+    ///
+    /// \brief 系统配置文件被修改时执行的槽函数
+    ///
+    void config_Changed();
 
 private:
     QString inipath = "./config/config.ini";
 
 };
 
-/*网络配置数据全局存储*/
+/***
+ *  系统核心配置
+ */
 class CONFIG_CORE{
 public:
 
@@ -49,15 +59,16 @@ public:
     static quint16 SERVICE_PORT;
 
     ///
-    /// \brief 本地数据库用户名
+    /// \brief 本地数据库用户名片段
     ///
-    static QString DB_USERNAME;
+    static QString DB_USERNAME_PART;
 
     ///
     /// \brief 本地数据库密码残片
     ///
     static QString DB_PASSWD_PART;
-
 };
+
+
 
 #endif // CONFIGMANAGER_H
