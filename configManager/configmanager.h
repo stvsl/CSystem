@@ -37,9 +37,11 @@ private:
 
 };
 
-/***
- *  系统核心配置
- */
+///
+/// \brief 系统核心配置
+/// \author stvsl
+/// \date 2022.1.6
+///
 class CONFIG_CORE{
 public:
 
@@ -67,6 +69,15 @@ public:
     /// \brief 本地数据库密码残片
     ///
     static QString DB_PASSWD_PART;
+
+    ///
+    /// \brief 用户类型
+    ///  0：一般用户
+    ///  1：数据录入人员
+    ///  2：地方管理员
+    ///  3：最高权限管理员
+    ///
+    static int USER_TYPE;
 };
 
 

@@ -11,8 +11,12 @@ CONFIG += c++17
 
 SOURCES += \
     configManager/configmanager.cpp \
+    csystemmain/dataview.cpp \
+    csystemmain/mapsetting.cpp \
     csystemmain/csystemmain.cpp \
     csystemmain/mapview.cpp \
+    csystemmain/nodeinformation.cpp \
+    csystemmain/systemsetting.cpp \
     main.cpp \
     netWorkUtils/netWorkUtils.cpp\
     DButils/dbutils.cpp\
@@ -20,15 +24,23 @@ SOURCES += \
 HEADERS += \
     configManager/configmanager.h \
     configManager/mapconfig.h \
+    csystemmain/dataview.h \
+    csystemmain/mapsetting.h \
     csystemmain/csystemmain.h \
     csystemmain/mapview.h \
+    csystemmain/nodeinformation.h \
+    csystemmain/systemsetting.h \
     main.h \
     netWorkUtils/netWorkUtils.h\
     DButils/dbutils.h\
 
 FORMS += \
     csystemmain/csystemmain.ui \
-    csystemmain/mapview.ui
+    csystemmain/dataview.ui \
+    csystemmain/mapsetting.ui \
+    csystemmain/mapview.ui \
+    csystemmain/nodeinformation.ui \
+    csystemmain/systemsetting.ui
 
 TRANSLATIONS += \
     CSystem_zh_CN.ts

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1542</width>
+    <width>1700</width>
     <height>900</height>
    </rect>
   </property>
@@ -16,8 +16,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>18</x>
-     <y>13</y>
+     <x>30</x>
+     <y>15</y>
      <width>81</width>
      <height>21</height>
     </rect>
@@ -32,26 +32,13 @@
     <string>全局视图</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="PositionReset">
-   <property name="geometry">
-    <rect>
-     <x>1250</x>
-     <y>60</y>
-     <width>80</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>位置重置</string>
-   </property>
-  </widget>
   <widget class="QWebEngineView" name="webView">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>45</y>
-     <width>1218</width>
-     <height>818</height>
+     <x>30</x>
+     <y>50</y>
+     <width>1300</width>
+     <height>850</height>
     </rect>
    </property>
    <property name="url">
@@ -60,53 +47,176 @@
     </url>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QSplitter" name="splitter_5">
    <property name="geometry">
     <rect>
-     <x>1250</x>
-     <y>100</y>
-     <width>212</width>
-     <height>68</height>
+     <x>1350</x>
+     <y>51</y>
+     <width>321</width>
+     <height>861</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>查找位置</string>
-        </property>
-       </widget>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <widget class="QSplitter" name="splitter_2">
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="opaqueResize">
+     <bool>false</bool>
+    </property>
+    <property name="childrenCollapsible">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="1" column="0">
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>查找结点 :  </string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>查找位置 :  </string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="nodeSearcher">
+          <property name="minimumSize">
+           <size>
+            <width>149</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>输入节点号/地名进行搜索</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="mapSearcher">
+          <property name="toolTip">
+           <string>输入节点号/地名进行搜索</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
-      <item>
-       <widget class="QLineEdit" name="mapSearcher">
-        <property name="toolTip">
-         <string>输入节点号/地名进行搜索</string>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>查找 </string>
         </property>
        </widget>
       </item>
      </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>查找结点</string>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
         </property>
-       </widget>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>23</height>
+         </size>
+        </property>
+       </spacer>
       </item>
       <item>
-       <widget class="QLineEdit" name="nodeSearcher">
-        <property name="toolTip">
-         <string>输入节点号/地名进行搜索</string>
+       <widget class="QPushButton" name="PositionReset">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>55</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>55</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>位置重置</string>
         </property>
        </widget>
       </item>
      </layout>
-    </item>
-   </layout>
+    </widget>
+   </widget>
+   <widget class="QSplitter" name="splitter_3">
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>节点列表</string>
+     </property>
+    </widget>
+    <widget class="QListView" name="NodeList">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>300</height>
+      </size>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QSplitter" name="splitter_4">
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <property name="opaqueResize">
+     <bool>true</bool>
+    </property>
+    <property name="handleWidth">
+     <number>7</number>
+    </property>
+    <widget class="QLabel" name="label_7">
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>节点详情</string>
+     </property>
+    </widget>
+    <widget class="QTableView" name="tableView">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>400</height>
+      </size>
+     </property>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <customwidgets>
