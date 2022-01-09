@@ -5,9 +5,11 @@
 #include <QListWidgetItem>
 #include "configManager/configmanager.h"
 #include "mapview.h"
+#include "systemsetting.h"
 #include "nodeinformation.h"
 #include "dataview.h"
 #include "mapsetting.h"
+#include "nodeinstall.h"
 #include <QStandardItemModel>
 
 namespace Ui {
@@ -30,6 +32,9 @@ private slots:
 private:
     Ui::CSystemMain *ui;
 
+    /***
+     * 用户级别指针
+     */
     ///
     /// \brief 默认用户
     ///
@@ -73,6 +78,20 @@ private:
     /// \brief 地图设置指针
     ///
     MapSetting *WINDOW_MAP_SETTING;
+
+    ///
+    /// \brief 系统设置界面指针
+    ///
+    SystemSetting *WINDOW_SYSTEM_SETTING;
+
+    ///
+    /// \brief 节点配置界面指针
+    ///
+    NodeInstall *WINDOW_NODE_INSTALL;
+
+    /***
+     * 内部函数及内部全局值
+     */
 
     ///
     /// \brief 菜单初始化

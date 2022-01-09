@@ -7,6 +7,8 @@ QStandardItem *MAP_VIEW = new QStandardItem("全局信息");            //status
 QStandardItem *Node_Information = new QStandardItem("节点详情");    //status 2
 QStandardItem *DATA_VIEW = new QStandardItem("数据浏览");           //status 3
 QStandardItem *MAP_SETTING = new QStandardItem("地图设置");         //status 4
+QStandardItem *SYSTEM_SETTING = new QStandardItem("系统设置");      //status 5
+QStandardItem *NODE_INSTALL = new QStandardItem("节点配置");        //status 6
 
 CSystemMain::CSystemMain(QWidget *parent) :
     QMainWindow(parent),
@@ -37,6 +39,8 @@ void CSystemMain::initialization()
         CSystemMain::USER_DEFAULT->appendRow(Node_Information);
         CSystemMain::USER_DEFAULT->appendRow(DATA_VIEW);
         CSystemMain::USER_DEFAULT->appendRow(MAP_SETTING);
+        CSystemMain::USER_DEFAULT->appendRow(SYSTEM_SETTING);
+        CSystemMain::USER_DEFAULT->appendRow(NODE_INSTALL);
         ui->side_menu->setModel(CSystemMain::USER_DEFAULT);
     }
 
@@ -57,7 +61,14 @@ void CSystemMain::on_side_menu_clicked(const QModelIndex &index)
             break;
         case 4:
             CSystemMain::WINDOW_MAP_SETTING->close();
-    }
+            break;
+        case 5:
+            CSystemMain::WINDOW_SYSTEM_SETTING->close();
+            break;
+        case 6:
+            CSystemMain::WINDOW_NODE_INSTALL->close();
+            break;
+        }
 
     //打开新的界面并显示，同时设置局部状态为对应状态
     if(index.data().toString() == "全局信息"){
@@ -76,5 +87,13 @@ void CSystemMain::on_side_menu_clicked(const QModelIndex &index)
         CSystemMain::WINDOW_MAP_SETTING = new MapSetting(ui->widget);
         CSystemMain::WINDOW_MAP_SETTING->show();
         CSystemMain::widgetstatus = 4;
+    }else if(index.data().toString() == "系统设置"){
+        CSystemMain::WINDOW_SYSTEM_SETTING = new SystemSetting(ui->widget);
+        CSystemMain::WINDOW_SYSTEM_SETTING->show();
+        CSystemMain::widgetstatus = 5;
+    }else if(index.data().toString() == "节点配置"){
+        CSystemMain::WINDOW_NODE_INSTALL = new NodeInstall(ui->widget);
+        CSystemMain::WINDOW_NODE_INSTALL->show();
+        CSystemMain::widgetstatus = 6;
     }
 }

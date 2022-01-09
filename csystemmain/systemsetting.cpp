@@ -6,6 +6,8 @@ SystemSetting::SystemSetting(QWidget *parent) :
     ui(new Ui::SystemSetting)
 {
     ui->setupUi(this);
+    this->setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint);
+    this->setAttribute(Qt::WA_DeleteOnClose);
 }
 
 SystemSetting::~SystemSetting()
