@@ -11,6 +11,7 @@ CONFIG += c++17
 
 SOURCES += \
     configManager/configmanager.cpp \
+    csystemmain/accountmanagement.cpp \
     csystemmain/dataview.cpp \
     csystemmain/mapsetting.cpp \
     csystemmain/csystemmain.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
 HEADERS += \
     configManager/configmanager.h \
     configManager/mapconfig.h \
+    csystemmain/accountmanagement.h \
     csystemmain/dataview.h \
     csystemmain/mapsetting.h \
     csystemmain/csystemmain.h \
@@ -37,6 +39,7 @@ HEADERS += \
     DButils/dbutils.h\
 
 FORMS += \
+    csystemmain/accountmanagement.ui \
     csystemmain/csystemmain.ui \
     csystemmain/dataview.ui \
     csystemmain/mapsetting.ui \

@@ -10,6 +10,7 @@
 #include "dataview.h"
 #include "mapsetting.h"
 #include "nodeinstall.h"
+#include "accountmanagement.h"
 #include <QStandardItemModel>
 
 namespace Ui {
@@ -24,7 +25,6 @@ class CSystemMain : public QMainWindow
 public:
     explicit CSystemMain(QWidget *parent = nullptr);
     ~CSystemMain();
-
 
 private slots:
     void on_side_menu_clicked(const QModelIndex &index);
@@ -88,6 +88,11 @@ private:
     /// \brief 节点配置界面指针
     ///
     NodeInstall *WINDOW_NODE_INSTALL;
+
+    ///
+    /// \brief 账户管理界面指针
+    ///
+    AccountManagement *WINDOW_ACCOUNT_MANAGEMENT;
 
     /***
      * 内部函数及内部全局值
