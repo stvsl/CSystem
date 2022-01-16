@@ -1,9 +1,5 @@
 #include "dbutils.h"
-/***
- * 数据库组件介绍:
- * 此数据库组件属于客户端的组件，数据库本身除备份外不存储与生产资料有关的任何东西，备份功能将会用来进行紧急数据库还原和运行验证，使用sqllite数据库
-***/
-/*数据库密码*/
+
 
 DButils::DButils()
 {
@@ -13,11 +9,28 @@ DButils::DButils()
     }
     else
     {
-        db = QSqlDatabase::addDatabase("QSQLITE");
+        db = QSqlDatabase::addDatabase("SQLITECIPHER");
         db.setDatabaseName("SDB.db");
-        db.setUserName("test");
         db.setPassword("2060");
+        db.setConnectOptions("QSQLITE_CREATE_KEY");
+        db.setConnectOptions("QSQLITE_USE_CIPHER=aes256cbc");
     }
-    db.open();
+    if (!db.open()) {
+        qDebug() << "Can not open connection: " << db.lastError().driverText();
+    }else{
+        qDebug() << "DB open successful!!!";
+    }
+//    QSqlQuery query;
+//    QString str = QString("CREATE TABLE STUDENT ("
+//                          "id INT PRIMARY KEY NOT NULL,"
+//                          "name TEXT NOT NULL,"
+//                          "grade REAL NOT NULL,"
+//                          "class TEXT NOT NULL)");
+//    if(query.exec(str)){
+//        qDebug() << "未发现数据库表,新的数据库表已创建";
+//    }else{
+//        qDebug() << "数据库已存在" << str;
+//    }
+
     db.close();
 }

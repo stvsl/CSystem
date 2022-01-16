@@ -11,6 +11,7 @@ QStandardItem *SYSTEM_SETTING = new QStandardItem("系统设置");      //status
 QStandardItem *NODE_INSTALL = new QStandardItem("节点配置");        //status 6
 QStandardItem *ACCOUNT_MANAGEMENT = new QStandardItem("账户管理");  //status 7
 
+
 CSystemMain::CSystemMain(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::CSystemMain)
@@ -19,7 +20,6 @@ CSystemMain::CSystemMain(QWidget *parent) :
 
     this->initialization();
     ui->side_menu->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    connect(this,SIGNAL(bottomBarchangeTo()),ui->bottombar,SLOT(indexof(QWidget* widget)));
 }
 
 CSystemMain::~CSystemMain()

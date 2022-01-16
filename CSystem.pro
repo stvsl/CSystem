@@ -18,6 +18,8 @@ SOURCES += \
     csystemmain/mapview.cpp \
     csystemmain/nodeinformation.cpp \
     csystemmain/nodeinstall.cpp \
+    csystemmain/servicecontrol.cpp \
+    csystemmain/serviceimformation.cpp \
     csystemmain/systemsetting.cpp \
     main.cpp \
     netWorkUtils/netWorkUtils.cpp\
@@ -33,6 +35,8 @@ HEADERS += \
     csystemmain/mapview.h \
     csystemmain/nodeinformation.h \
     csystemmain/nodeinstall.h \
+    csystemmain/servicecontrol.h \
+    csystemmain/serviceimformation.h \
     csystemmain/systemsetting.h \
     main.h \
     netWorkUtils/netWorkUtils.h\
@@ -46,6 +50,8 @@ FORMS += \
     csystemmain/mapview.ui \
     csystemmain/nodeinformation.ui \
     csystemmain/nodeinstall.ui \
+    csystemmain/servicecontrol.ui \
+    csystemmain/serviceimformation.ui \
     csystemmain/systemsetting.ui
 
 TRANSLATIONS += \

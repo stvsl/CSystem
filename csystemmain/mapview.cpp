@@ -10,13 +10,13 @@ MapView::MapView(QWidget *parent) :
     //融合进程
     qputenv("QTWEBENGINE_CHROMIUM_FLAGS", "--single-process");
     ui->setupUi(this);
-    this->setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint);
-    this->setAttribute(Qt::WA_DeleteOnClose);
-    ui->mapSearcher->addAction(QIcon(":/icon/source/icon/搜索.png"),QLineEdit::TrailingPosition);
-    ui->webView->setUrl(QUrl("http://127.0.0.1:8011/pages"));
-    channel = new QWebChannel(this);                    //通讯对象
-    channel->registerObject(QString("trans"),this);     //通信介质注册
-    ui->webView->page()->setWebChannel(channel);        //通讯附加
+//    this->setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint);
+//    this->setAttribute(Qt::WA_DeleteOnClose);
+//    ui->mapSearcher->addAction(QIcon(":/icon/source/icon/搜索.png"),QLineEdit::TrailingPosition);
+//    ui->webView->setUrl(QUrl("http://127.0.0.1:8011/pages"));
+//    channel = new QWebChannel(this);                    //通讯对象
+//    channel->registerObject(QString("trans"),this);     //通信介质注册
+//    ui->webView->page()->setWebChannel(channel);        //通讯附加
 }
 
 MapView::~MapView()
