@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     }
 
     //启动等待页面
-    QPixmap pixmap(":/loading/source/loading/pixmap.png");
+    QPixmap pixmap(":/loading/loading/pixmap.png");
     QSplashScreen splash(pixmap);
     splash.show();
     splash.showMessage("系统启动中，请稍候", Qt::AlignBottom, Qt::red);
