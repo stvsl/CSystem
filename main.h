@@ -10,6 +10,7 @@
 #include "netWorkUtils/netWorkUtils.h"
 #include "configManager/configmanager.h"
 #include "DButils/dbutils.h"
+#include "csystemmain/login.h"
 
 class MAIN_RUN_CONFIG : public QObject
 {
@@ -21,8 +22,8 @@ class MAIN_RUN_CONFIG : public QObject
 public:
 
     /***
-    *status:系统运行指示锁
-    *状态：
+    * status:系统运行指示锁
+    * 状态：
     *   0 ～ 首次运行
     *   1 ～ 系统正常
     *   2 ～ 网络异常

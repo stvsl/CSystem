@@ -20,17 +20,5 @@ DButils::DButils()
     }else{
         qDebug() << "DB open successful!!!";
     }
-//    QSqlQuery query;
-//    QString str = QString("CREATE TABLE STUDENT ("
-//                          "id INT PRIMARY KEY NOT NULL,"
-//                          "name TEXT NOT NULL,"
-//                          "grade REAL NOT NULL,"
-//                          "class TEXT NOT NULL)");
-//    if(query.exec(str)){
-//        qDebug() << "未发现数据库表,新的数据库表已创建";
-//    }else{
-//        qDebug() << "数据库已存在" << str;
-//    }
-
     db.close();
 }

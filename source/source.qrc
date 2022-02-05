@@ -2,6 +2,9 @@
     <qresource prefix="/loading">
         <file>loading/pixmap.png</file>
     </qresource>
+    <qresource prefix="/login">
+        <file>login/loginbackground.png</file>
+    </qresource>
     <qresource prefix="/icon">
         <file>icon/搜索.png</file>
     </qresource>

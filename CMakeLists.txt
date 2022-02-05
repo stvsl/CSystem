@@ -15,7 +15,7 @@ find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Sql REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Network REQUIRED)
-find_package(Qt5 COMPONENTS WebEngineWidgets WebChannel REQUIRED)
+find_package(Qt5 COMPONENTS WebEngineWidgets REQUIRED)
 
 set(TS_FILES CSystem-Qt6_zh_CN.ts)
 
@@ -31,6 +31,7 @@ set(PROJECT_SOURCES
        csystemmain/servicecontrol.cpp
        csystemmain/serviceimformation.cpp
        csystemmain/systemsetting.cpp
+       csystemmain/login.cpp
        main.cpp
        netWorkUtils/netWorkUtils.cpp
        DButils/dbutils.cpp
@@ -46,6 +47,7 @@ set(PROJECT_SOURCES
        csystemmain/servicecontrol.h
        csystemmain/serviceimformation.h
        csystemmain/systemsetting.h
+       csystemmain/login.h
        main.h
        netWorkUtils/netWorkUtils.h
        DButils/dbutils.h
@@ -59,6 +61,7 @@ set(PROJECT_SOURCES
        csystemmain/servicecontrol.ui
        csystemmain/serviceimformation.ui
        csystemmain/systemsetting.ui
+       csystemmain/login.ui
        source/source.qrc
         ${TS_FILES}
 )
@@ -95,6 +98,9 @@ target_link_libraries(CSystem-Qt6 PRIVATE Qt${QT_VERSION_MAJOR}::Sql)
 target_link_libraries(CSystem-Qt6 PRIVATE Qt${QT_VERSION_MAJOR}::Network)
 target_link_libraries(CSystem-Qt6 PRIVATE Qt5::WebEngineWidgets)
 target_link_libraries(CSystem-Qt6 PRIVATE Qt5::WebChannel)
+
+target_include_directories(CSystem-Qt6 PRIVATE "${CMAKE_BINARY_DIR}/Test_autogen/include_Debug")
+
 
 set_target_properties(CSystem-Qt6 PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER stvsljl.com
