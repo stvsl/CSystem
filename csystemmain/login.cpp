@@ -4,17 +4,17 @@
 #include "QPalette"
 #include "QPropertyAnimation"
 
-
 Login::Login(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Login)
 {
     // 关闭标题栏
     this->setWindowFlags(Qt::FramelessWindowHint);
-
+    // 绑定按钮状态
+    // ui->auto_login->setChecked(LOGIN_CONFIG::AUTO_LOGIN);
+    // ui->passwd_save->setChecked(LOGIN_CONFIG::SAVE_PASSWD);
     // 启动
     ui->setupUi(this);
-
 }
 
 Login::~Login()

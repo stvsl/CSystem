@@ -3,7 +3,12 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/home/stvsl/Documents/",
+                "/usr/include/qt/QtNetwork",
+                "/usr/include/qt/QtWidgets",
+                "/usr/include/qt6/QtCore",
+                "/usr/include/qt6/QtSql"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",

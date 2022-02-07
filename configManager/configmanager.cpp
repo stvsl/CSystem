@@ -1,16 +1,38 @@
 #include "configmanager.h"
 #include "mapconfig.h"
+#include <QHostInfo>
+#include "QNetworkInterface"
+#include "QCryptographicHash"
 
 //初始默认值
+
 //系统核心配置文件默认值
+
 bool CONFIG_CORE::RUN_FIRST = true;
 QHostAddress CONFIG_CORE::SERVICE_IP = QHostAddress("127.0.0.1");
 quint16 CONFIG_CORE::SERVICE_PORT = 8000;
-QString CONFIG_CORE::DB_USERNAME_PART = "STVSL_JL";
-QString CONFIG_CORE::DB_PASSWD_PART = "DO1900281VE";
+QString CONFIG_CORE::DB_PASSWD_PART = "";
+QString CONFIG_CORE::DB_PASSWD = "DO1900281VE";
 int CONFIG_CORE::USER_TYPE = 0;
 
+// 登录配置默认值
+bool LOGIN_CONFIG::AUTO_LOGIN = false;
+bool LOGIN_CONFIG::SAVE_PASSWD = false;
+QString LOGIN_CONFIG::ID = "";
+QString LOGIN_CONFIG::PASSWD = "";
+QString LOGIN_CONFIG::RSA_PUBLIC_KEY = "";
+QString LOGIN_CONFIG::RSA_PRIVATE_KEY = "";
+
+// 用户配置默认值
+QString USER_CONFIG::USER_NAME = "";
+QString USER_CONFIG::USER_ID = "";
+QString USER_CONFIG::USER_LOCATE = "";
+QString USER_CONFIG::USER_PHONE = "";
+QString USER_CONFIG::ORGANIZATION = "";
+
+
 //地图自定义配置文件默认值
+
 bool MAP_CONFIG::MAP_AUTO_POSITIONING = false;
 bool MAP_CONFIG::MAP_POIICON_ON = true;
 bool MAP_CONFIG::MAP_POITEXT_ON = true;
@@ -31,6 +53,7 @@ configManager::configManager(QObject *parent) : QObject(parent)
     }else{
         reader();
     }
+    getPasswd();
 }
 
 void configManager::writer()
@@ -41,9 +64,9 @@ void configManager::writer()
     settings.setValue("RUN_FIRST",CONFIG_CORE::RUN_FIRST);
     settings.setValue("SERVICE_IP",CONFIG_CORE::SERVICE_IP.toString());
     settings.setValue("SERVICE_PORT",CONFIG_CORE::SERVICE_PORT);
-    settings.setValue("PART1",CONFIG_CORE::DB_USERNAME_PART);
-    settings.setValue("PART2",CONFIG_CORE::DB_PASSWD_PART);
+    settings.setValue("PAR",CONFIG_CORE::DB_PASSWD_PART);
     settings.endGroup();
+
     settings.beginGroup("MAP");
     settings.setValue("MAP_AUTO_POSITIONING",MAP_CONFIG::MAP_DEFAULT_LOCATE);
     settings.setValue("MAP_AUTO_POSITIONING",MAP_CONFIG::MAP_AUTO_POSITIONING);
@@ -63,9 +86,9 @@ void configManager::reader()
     settings.beginGroup("CORE");
     CONFIG_CORE::SERVICE_IP = QHostAddress(settings.value("SERVICE_IP").toString());
     CONFIG_CORE::SERVICE_PORT = settings.value("SERVICE_PORT").toInt();
-    CONFIG_CORE::DB_USERNAME_PART = settings.value("PART1").toString();
-    CONFIG_CORE::DB_PASSWD_PART = settings.value("PART2").toString();
+    CONFIG_CORE::DB_PASSWD_PART = settings.value("PAR").toString();
     settings.endGroup();
+    
     settings.beginGroup("MAP");
     MAP_CONFIG::MAP_AUTO_POSITIONING = settings.value("MAP_AUTO_POSITIONING").Bool;
     MAP_CONFIG::MAP_CONTROL_3D = settings.value("MAP_CONTROL_3D").Bool;
@@ -79,4 +102,55 @@ void configManager::reader()
 
 void configManager::config_Changed(){
     writer();
+}
+
+void configManager::getPasswd(){
+        // 获取主机名
+    QString hostName = QHostInfo::localHostName();
+    // 获取设备类型
+    QString deviceType = QSysInfo::productType();
+    // 获取设备名称
+    QString deviceName = QSysInfo::machineHostName();
+    // 获取设备IP地址
+    QString strIpAddress;
+    QList<QHostAddress> ipAddressesList = QNetworkInterface::allAddresses();
+    // 获取第一个本主机的IPv4地址
+    int nListSize = ipAddressesList.size();
+    for (int i = 0; i < nListSize; ++i)
+    {
+        if (ipAddressesList.at(i) != QHostAddress::LocalHost &&
+            ipAddressesList.at(i).toIPv4Address())
+        {
+            strIpAddress = ipAddressesList.at(i).toString();
+            break;
+        }
+    }
+    // 如果没有找到，则以本地IP地址为IP
+    if (strIpAddress.isEmpty())
+    {
+        strIpAddress = QHostAddress(QHostAddress::LocalHost).toString();
+    }
+    // 获取设备MAC地址
+    QList<QNetworkInterface> nets = QNetworkInterface::allInterfaces(); // 获取所有网络接口列表
+    int nCnt = nets.count();
+    QString strMacAddr = "";
+    for (int i = 0; i < nCnt; i++)
+    {
+        // 如果此网络接口被激活并且正在运行并且不是回环地址，则就是要找的Mac地址
+        if (nets[i].flags().testFlag(QNetworkInterface::IsUp) && nets[i].flags().testFlag(QNetworkInterface::IsRunning) && !nets[i].flags().testFlag(QNetworkInterface::IsLoopBack))
+        {
+            strMacAddr = nets[i].hardwareAddress();
+            break;
+        }
+    }
+    // 计算CONFIG_CORE::DB_PASSWD_PART的SHA256加密值
+    QString dbpart256 = QString(QCryptographicHash::hash(CONFIG_CORE::DB_PASSWD_PART.toUtf8(), QCryptographicHash::Sha256).toHex());
+    // 将设备信息整合成字符串
+    QString sysstr = hostName + deviceType + deviceName + strIpAddress + strMacAddr + "CSystem" + QCoreApplication::applicationVersion() + dbpart256;
+    // 计算syssstr的MD5值
+    QByteArray md5 = QCryptographicHash::hash(sysstr.toUtf8(), QCryptographicHash::Md5);
+    // 将MD5值转换为16进制字符串
+    QString dbpasswd = md5.toHex();
+    // 保存数据库密码
+    CONFIG_CORE::DB_PASSWD = dbpasswd;
 }

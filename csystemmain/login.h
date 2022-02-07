@@ -2,6 +2,7 @@
 #define LOGIN_H
 
 #include <QMainWindow>
+#include "configManager/configmanager.h"
 
 namespace Ui {
 class Login;

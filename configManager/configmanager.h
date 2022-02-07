@@ -13,9 +13,9 @@ class configManager : public QObject
     Q_OBJECT
 public:
     explicit configManager(QObject *parent = nullptr);
+    void getPasswd();
 
 private:
-
     ///
     /// \brief 配置文件读取
     ///
@@ -34,7 +34,6 @@ public slots:
 
 private:
     QString inipath = "./config/config.ini";
-
 };
 
 ///
@@ -42,9 +41,9 @@ private:
 /// \author stvsl
 /// \date 2022.1.6
 ///
-class CONFIG_CORE{
+class CONFIG_CORE
+{
 public:
-
     ///
     /// \brief 系统运行状态
     ///
@@ -61,14 +60,14 @@ public:
     static quint16 SERVICE_PORT;
 
     ///
-    /// \brief 本地数据库用户名片段
-    ///
-    static QString DB_USERNAME_PART;
-
-    ///
     /// \brief 本地数据库密码残片
     ///
     static QString DB_PASSWD_PART;
+
+    ///
+    /// \brief 完整的数据库密码
+    ///
+    static QString DB_PASSWD;
 
     ///
     /// \brief 用户类型
@@ -81,6 +80,76 @@ public:
     static int USER_TYPE;
 };
 
+///
+/// \brief 用户配置数据和信息
+/// \author stvsl
+/// \date 2022.2.6
+class USER_CONFIG
+{
+    public:
+    ///
+    /// \brief 用户真实姓名
+    ///
+    static QString USER_NAME;
 
+    ///
+    /// \brief 用户身份证号
+    ///
+    static QString USER_ID;
+
+    ///
+    /// \brief 用户住址
+    ///
+    static QString USER_LOCATE;
+
+    ///
+    /// \brief 用户联系电话
+    ///
+    static QString USER_PHONE;
+
+    ///
+    /// \brief 帐号所属单位
+    ///
+    static QString ORGANIZATION;
+};
+
+///
+/// \brief 登陆配置
+/// \author stvsl
+/// \date 2022.2.6
+class LOGIN_CONFIG
+{
+public:
+    ///
+    /// \brief 自动登陆状态
+    ///
+    static bool AUTO_LOGIN;
+
+    ///
+    /// \brief 保存密码状态
+    ///
+    static bool SAVE_PASSWD;
+
+    ///
+    /// \brief 账户ID
+    ///
+    static QString ID;
+
+    ///
+    /// \brief 账户密码
+    ///
+    static QString PASSWD;
+
+    ///
+    /// \brief RSA私钥
+    ///
+    static QString RSA_PRIVATE_KEY;
+
+    ///
+    /// \brief RSA公钥
+    ///
+    static QString RSA_PUBLIC_KEY;
+
+};
 
 #endif // CONFIGMANAGER_H

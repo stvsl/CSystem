@@ -1,4 +1,8 @@
 #include "main.h"
+#include "QMessageBox"
+
+int MAIN_RUN_CONFIG::SYSTEM_STATUS = 0;
+QString MAIN_RUN_CONFIG::SYSTEM_TOKEN = "";
 
 int main(int argc, char *argv[])
 {
@@ -9,9 +13,11 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationVersion("v0.0.1");
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
-    for (const QString &locale : uiLanguages) {
+    for (const QString &locale : uiLanguages)
+    {
         const QString baseName = "CSystem_" + QLocale(locale).name();
-        if (translator.load(":/i18n/" + baseName)) {
+        if (translator.load(":/i18n/" + baseName))
+        {
             a.installTranslator(&translator);
             break;
         }
@@ -21,29 +27,42 @@ int main(int argc, char *argv[])
     QPixmap pixmap(":/loading/loading/pixmap.png");
     QSplashScreen splash(pixmap);
     splash.show();
-    splash.showMessage("系统启动中，请稍候", Qt::AlignBottom, Qt::white);
+    splash.showMessage("系统启动中，请稍候", Qt::AlignBottom, Qt::black);
 
+    QEventLoop eventloop;
+    QTimer::singleShot(200, &eventloop, SLOT(quit()));
+    eventloop.exec();
     //检查屏幕状态
     QScreen *mScreen = QGuiApplication::screens().at(0);
 
     //配置文件加载
-    splash.showMessage("正在读取配置文件", Qt::AlignBottom, Qt::white);
+    splash.showMessage("正在读取配置文件", Qt::AlignBottom, Qt::black);
     configManager config;
 
+    //局部事件循环
+    QTimer::singleShot(200, &eventloop, SLOT(quit()));
+    eventloop.exec();
+
     //网络模块加载
-    splash.showMessage("正在连接网络", Qt::AlignBottom, Qt::white);
+    splash.showMessage("正在检查网络", Qt::AlignBottom, Qt::black);
     netWorkUtils nwu;
+    QString err = nwu.ping();
+    if (err != "CX200")
+    {
+        // 弹窗提示，点击确定后关闭程序
+        QMessageBox::critical(nullptr, "错误", "网络连接失败，请检查网络连接！<br>" + err, QMessageBox::Ok);
+        // 关闭splash
+        splash.close();
+        return 0;
+    }
 
     //数据库模块加载
-    splash.showMessage("正在连接本地数据库", Qt::AlignBottom, Qt::white);
-    DButils DB;
+    splash.showMessage("正在连接本地数据库", Qt::AlignBottom, Qt::black);
+    // 初始化数据库
+    DButils *db = new DButils();
+    db->readUserInfo();
 
-    splash.showMessage("加载完成！欢迎！！！", Qt::AlignBottom, Qt::white);
-
-    //局部事件循环
-    QEventLoop eventloop;
-    QTimer::singleShot(90, &eventloop, SLOT(quit()));
-    eventloop.exec();
+    splash.showMessage("正在拉起登录模块", Qt::AlignBottom, Qt::black);
 
     // 启动登录界面
     Login login;

@@ -5,6 +5,11 @@
 #include <QTcpSocket>
 #include <QDebug>
 #include <QTimer>
+#include <QJsonObject>
+#include <QJsonDocument>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include "main.h"
 
 class netWorkUtils : public QObject
 {
@@ -13,32 +18,20 @@ public:
     explicit netWorkUtils(QObject *parent = nullptr);
 
 signals:
-    void netError(QString errorStr);
-
-private slots:
-    void newMsg();
-    //网络组件异常
-    void onError();
-
-private:
-    //网络模块启动
-    void Start();
-    //网络模块关闭
-    void Stop();
-
+   void netError(QString errorStr);
+   
 public:
-    //网络数据发送
-    void send(QString str);
     //网络重连函数
     void reConnect();
 
-private:
-    //通信套接字
-    QTcpSocket socket;
-    //客户端名称
-    QString clientname;
+public:
+    QString ping();
+
+    //获取token
+    void getToken(QString ID,QString passwd);
+
+    // 更新服务器密码残片
+    void updatePasswdPart();
 };
-
-
 
 #endif // NETWORKUTILS_H

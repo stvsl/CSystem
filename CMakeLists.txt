@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.5)
 project(CSystem-Qt6 VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
+set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)

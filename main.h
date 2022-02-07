@@ -33,6 +33,9 @@ public:
     *   6 ～ 委托重启
     ***/
     static int SYSTEM_STATUS;
+
+    // 系统token信息
+    static QString SYSTEM_TOKEN;
 };
 
 #endif // MAIN_H
