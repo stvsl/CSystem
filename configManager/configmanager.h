@@ -32,8 +32,8 @@ public slots:
     ///
     void config_Changed();
 
-private:
-    QString inipath = "./config/config.ini";
+public:
+    void makeRSA();
 };
 
 ///
@@ -78,6 +78,21 @@ public:
     ///  4: 安装维护人员
     ///
     static int USER_TYPE;
+
+    ///
+    /// \brief 本地RSA_PRIVATE_KEY
+    ///
+    static QString RSA_PRIVATE_KEY;
+
+    ///
+    /// \brief 本地RSA_PUBLIC_KEY
+    ///
+    static QString RSA_PUBLIC_KEY;
+
+    ///
+    /// \brief 服务器RSA_PUBLIC_KEY
+    ///
+    static QString RSA_SERVER_PUBLIC_KEY;
 };
 
 ///

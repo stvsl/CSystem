@@ -28,7 +28,7 @@ public:
     QString ping();
 
     //获取token
-    void getToken(QString ID,QString passwd);
+    void getToken();
 
     // 更新服务器密码残片
     void updatePasswdPart();

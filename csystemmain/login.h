@@ -3,6 +3,13 @@
 
 #include <QMainWindow>
 #include "configManager/configmanager.h"
+#include "DButils/dbutils.h"]
+#include "QPixmap"
+#include "QPalette"
+#include "QPropertyAnimation"
+#include "QTimer"
+#include "QDebug"
+#include "netWorkUtils/netWorkUtils.h"
 
 namespace Ui {
 class Login;
@@ -24,6 +31,12 @@ private slots:
     void on_more_btn_clicked();
 
     void on_back_btn_clicked();
+
+    void on_passwd_save_stateChanged(int arg1);
+
+    void on_auto_login_stateChanged(int arg1);
+
+    void on_login_btn_clicked();
 
 private:
     Ui::Login *ui;

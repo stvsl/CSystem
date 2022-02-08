@@ -2,7 +2,7 @@
 
 DButils::DButils()
 {
-    QSqlDatabase::addDatabase("QSQLITE", "default");
+    QSqlDatabase::addDatabase("SQLITECIPHER", "default");
     // 检查数据库文件是否存在
     QFileInfo check_file("./SDB.db");
     if (!check_file.exists() || !check_file.isFile())
@@ -20,23 +20,62 @@ void DButils::readUserInfo()
 {
     // 连接到数据库
     QSqlDatabase db = QSqlDatabase::database("default");
+    db.setDatabaseName("./SDB.db");
     db.setPassword(CONFIG_CORE::DB_PASSWD);
     if (!db.open())
     {
         qDebug() << "数据库连接失败";
         return;
     }
-
-    // 查询ID,密码,自动登陆和记住密码状态
     QSqlQuery query(db);
-    query.exec("SELECT ID,PASSWD,AUTO_LOGIN,SAVE_PASSWD FROM CONFIG");
+    query.exec("SELECT * FROM CONFIG");
     while (query.next())
     {
-        LOGIN_CONFIG::ID = query.value(0).toString();
-        LOGIN_CONFIG::PASSWD = query.value(1).toString();
-        LOGIN_CONFIG::AUTO_LOGIN = query.value(2).toBool();
-        LOGIN_CONFIG::SAVE_PASSWD = query.value(3).toBool();
+        LOGIN_CONFIG::ID = query.value("ID").toString();
+        LOGIN_CONFIG::PASSWD = query.value("PASSWD").toString();
+        LOGIN_CONFIG::AUTO_LOGIN = query.value("AUTO_LOGIN").toBool();
+        LOGIN_CONFIG::SAVE_PASSWD = query.value("SAVE_PASSWD").toBool();
+        LOGIN_CONFIG::RSA_PRIVATE_KEY = query.value("RSA_PRIVATE").toString();
+        LOGIN_CONFIG::RSA_PUBLIC_KEY = query.value("RSA_PUBLIC").toString();
+        CONFIG_CORE::USER_TYPE = query.value("TYPE").toInt();
+        USER_CONFIG::USER_NAME = query.value("USER_NAME").toString();
+        USER_CONFIG::USER_ID = query.value("USER_ID").toString();
+        USER_CONFIG::USER_PHONE = query.value("USER_PHONE").toString();
+        USER_CONFIG::USER_LOCATE = query.value("USER_LOCATE").toString();
+        USER_CONFIG::ORGANIZATION = query.value("ORGANIZATION").toString();
     }
+    db.close();
+}
+
+void DButils::writeUserInfo(){
+    // 连接数据库
+    QSqlDatabase db = QSqlDatabase::contains("default") ? QSqlDatabase::database("default") : QSqlDatabase::addDatabase("QSQLITE", "default");
+    db.setDatabaseName("./SDB.db");
+    db.setPassword(CONFIG_CORE::DB_PASSWD);
+    if (!db.open())
+    {
+        qDebug() << "数据库连接失败";
+        return;
+    }
+    // 清空CONFIG表
+    QSqlQuery query(db);
+    query.exec("DELETE FROM CONFIG");
+    // 写入新数据
+     query.prepare("INSERT INTO CONFIG (ID,PASSWD,AUTO_LOGIN,SAVE_PASSWD,RSA_PRIVATE,RSA_PUBLIC,\"TYPE\",USER_NAME,USER_ID,USER_PHONE,USER_LOCATE,ORGANIZATION) VALUES (:ID,:PASSWD,:AUTO_LOGIN,:SAVE_PASSWD,:RSA_PRIVATE,:RSA_PUBLIC,:TYPE,:USER_NAME,:USER_ID,:USER_PHONE,:USER_LOCATE,:ORGANIZATION)");
+    query.bindValue(":ID", LOGIN_CONFIG::ID);
+    query.bindValue(":PASSWD", LOGIN_CONFIG::PASSWD);
+    query.bindValue(":AUTO_LOGIN", LOGIN_CONFIG::AUTO_LOGIN);
+    query.bindValue(":SAVE_PASSWD", LOGIN_CONFIG::SAVE_PASSWD);
+    query.bindValue(":RSA_PRIVATE", LOGIN_CONFIG::RSA_PRIVATE_KEY);
+    query.bindValue(":RSA_PUBLIC", LOGIN_CONFIG::RSA_PUBLIC_KEY);
+    query.bindValue(":TYPE", CONFIG_CORE::USER_TYPE);
+    query.bindValue(":USER_NAME", USER_CONFIG::USER_NAME);
+    query.bindValue(":USER_ID", USER_CONFIG::USER_ID);
+    query.bindValue(":USER_PHONE", USER_CONFIG::USER_PHONE);
+    query.bindValue(":USER_LOCATE", USER_CONFIG::USER_LOCATE);
+    query.bindValue(":ORGANIZATION", USER_CONFIG::ORGANIZATION);
+    query.exec();
+    query.clear();
 }
 
 bool DButils::initDB()
@@ -124,7 +163,7 @@ bool DButils::initData(){
 void DButils::resetPasswd(QString newpass)
 {
     // 连接到SQLITECIPHER数据库
-    QSqlDatabase dbconn = QSqlDatabase::database("default");
+    QSqlDatabase dbconn = QSqlDatabase::contains("default") ? QSqlDatabase::database("default") : QSqlDatabase::addDatabase("default");
     dbconn.setDatabaseName("SDB.db");
     dbconn.setPassword(CONFIG_CORE::DB_PASSWD);
     dbconn.setConnectOptions("QSQLITE_UPDATE_KEY=" + newpass);

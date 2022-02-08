@@ -475,6 +475,119 @@
     </message>
 </context>
 <context>
+    <name>DigitalSignaturePage</name>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="25"/>
+        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="45"/>
+        <source>Private key:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="25"/>
+        <source>Public key:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="26"/>
+        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="53"/>
+        <source>Text to sign:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="26"/>
+        <source>Text to check sign:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="27"/>
+        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="61"/>
+        <source>Signed text:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="27"/>
+        <source>Result:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="34"/>
+        <source>Sign message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="35"/>
+        <source>Check sign</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>EncryptDecryptPage</name>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="25"/>
+        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="45"/>
+        <source>Public key:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="25"/>
+        <source>Private key:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="26"/>
+        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="53"/>
+        <source>Text to encrypt:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="26"/>
+        <source>Text to decrypt:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="27"/>
+        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="61"/>
+        <source>Encrypted text:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="27"/>
+        <source>Decrypted text:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="34"/>
+        <source>Encrypt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="35"/>
+        <source>Decrypt</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>KeysGeneratePage</name>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/KeysGeneratePage.qml" line="36"/>
+        <source>Public key:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/KeysGeneratePage.qml" line="46"/>
+        <source>Private key:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>LabledText</name>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/modules/LabledText.qml" line="13"/>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Login</name>
     <message>
         <location filename="csystemmain/login.ui" line="14"/>
@@ -483,101 +596,101 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="81"/>
+        <location filename="csystemmain/login.ui" line="80"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="433"/>
         <source>     退出</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="97"/>
+        <location filename="csystemmain/login.ui" line="96"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="434"/>
         <source>made by stvsl jl</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="155"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="435"/>
+        <location filename="csystemmain/login.ui" line="311"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="440"/>
         <source>登录</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="183"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="436"/>
+        <location filename="csystemmain/login.ui" line="391"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="441"/>
         <source>更多选择 &gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="301"/>
-        <location filename="csystemmain/login.ui" line="515"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="438"/>
+        <location filename="csystemmain/login.ui" line="211"/>
+        <location filename="csystemmain/login.ui" line="522"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="436"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="447"/>
         <source>请输入ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="334"/>
-        <location filename="csystemmain/login.ui" line="488"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="440"/>
+        <location filename="csystemmain/login.ui" line="270"/>
+        <location filename="csystemmain/login.ui" line="495"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="438"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="445"/>
         <source>请输入密码</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="349"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="441"/>
+        <location filename="csystemmain/login.ui" line="419"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="442"/>
         <source>自动登录</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="377"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="442"/>
+        <location filename="csystemmain/login.ui" line="440"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="443"/>
         <source>保存密码</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="423"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="443"/>
+        <location filename="csystemmain/login.ui" line="289"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="439"/>
         <source>   登录</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="576"/>
+        <location filename="csystemmain/login.ui" line="582"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="448"/>
         <source>   更多</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="598"/>
+        <location filename="csystemmain/login.ui" line="604"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="449"/>
         <source>忘记密码</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="623"/>
+        <location filename="csystemmain/login.ui" line="629"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="450"/>
         <source>解冻</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="703"/>
+        <location filename="csystemmain/login.ui" line="709"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="451"/>
         <source>&lt; 返回</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="751"/>
+        <location filename="csystemmain/login.ui" line="757"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="452"/>
         <source>冻结</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="788"/>
+        <location filename="csystemmain/login.ui" line="794"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="453"/>
         <source>v 0.0.1 develop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="810"/>
+        <location filename="csystemmain/login.ui" line="816"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="454"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;一个高端大气上档次&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;(尽管还没定下来)的名字&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
@@ -1254,6 +1367,19 @@
     </message>
 </context>
 <context>
+    <name>RsaGenModule</name>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/modules/RsaGenModule.qml" line="22"/>
+        <source>RSA size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/modules/RsaGenModule.qml" line="36"/>
+        <source>Generate</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ServiceControl</name>
     <message>
         <location filename="csystemmain/servicecontrol.ui" line="16"/>
@@ -1561,6 +1687,29 @@
         <location filename="csystemmain/systemsetting.ui" line="1331"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_systemsetting.h" line="876"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;这是测试文本&lt;/p&gt;&lt;p&gt;测试&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/main.qml" line="18"/>
+        <source>Qt-Secret-GUI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/main.qml" line="51"/>
+        <source>Keys generate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/main.qml" line="54"/>
+        <source>Encryption and decryption</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Qt-Secret/Qt-Secret-GUI/main.qml" line="57"/>
+        <source>Digital signature</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

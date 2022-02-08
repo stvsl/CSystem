@@ -47,6 +47,7 @@ int main(int argc, char *argv[])
     splash.showMessage("正在检查网络", Qt::AlignBottom, Qt::black);
     netWorkUtils nwu;
     QString err = nwu.ping();
+    qDebug() << err;
     if (err != "CX200")
     {
         // 弹窗提示，点击确定后关闭程序

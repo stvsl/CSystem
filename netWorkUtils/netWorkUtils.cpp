@@ -16,7 +16,7 @@ QString netWorkUtils::ping()
     QNetworkReply *reply = manager->get(request);
     // 等待响应
     QEventLoop loop;
-    connect(manager, SIGNAL(finished(QNetworkReply*)), &loop, SLOT(quit()));
+    connect(manager, SIGNAL(finished(QNetworkReply *)), &loop, SLOT(quit()));
     loop.exec();
     // 获取响应内容
     QByteArray response = reply->readAll();
@@ -45,12 +45,12 @@ QString netWorkUtils::ping()
     }
 }
 
-void netWorkUtils::getToken(QString id, QString passwd)
+void netWorkUtils::getToken()
 {
     // json对象
     QJsonObject json;
-    json.insert("id", id);
-    json.insert("fragment", passwd);
+    json.insert("id", LOGIN_CONFIG::ID);
+    json.insert("fragment", LOGIN_CONFIG::PASSWD);
     QJsonDocument document;
     document.setObject(json);
     // 获取json字符串
@@ -82,9 +82,9 @@ void netWorkUtils::getToken(QString id, QString passwd)
         QString token = jsonObject.value("token").toString();
         // 存储token
         MAIN_RUN_CONFIG::SYSTEM_TOKEN = token; });
-        reply->close();
-        reply->deleteLater();
-        manager->deleteLater();
+    reply->deleteLater();
+    reply->close();
+    manager->deleteLater();
 }
 
 void netWorkUtils::updatePasswdPart()

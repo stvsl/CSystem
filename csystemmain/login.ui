@@ -29,7 +29,6 @@
     <property name="font">
      <font>
       <pointsize>11</pointsize>
-      <weight>50</weight>
       <bold>false</bold>
      </font>
     </property>
@@ -134,30 +133,18 @@ border-top-left-radius:15px;
 	border-bottom-right-radius:15px;</string>
         </property>
         <layout class="QGridLayout" name="gridLayout">
-         <item row="7" column="4">
-          <widget class="QPushButton" name="pushButton">
-           <property name="minimumSize">
+         <item row="5" column="7">
+          <spacer name="horizontalSpacer_9">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
             <size>
-             <width>131</width>
-             <height>30</height>
+             <width>43</width>
+             <height>20</height>
             </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(39, 145, 244, 1), stop:1 rgba(95, 213, 251, 1));
-border-radius:6px;  
-border:1px;
-color: rgba(50, 50, 50, 215);
-
-
-</string>
-           </property>
-           <property name="text">
-            <string>登录</string>
-           </property>
-           <property name="autoExclusive">
-            <bool>false</bool>
-           </property>
-          </widget>
+          </spacer>
          </item>
          <item row="2" column="1">
           <spacer name="verticalSpacer_3">
@@ -168,44 +155,6 @@ color: rgba(50, 50, 50, 215);
             <size>
              <width>32</width>
              <height>15</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="9" column="0" colspan="6">
-          <widget class="QPushButton" name="more_btn">
-           <property name="styleSheet">
-            <string notr="true">border:0px; 
-color: rgba(75, 75, 75, 205);
-background-color: rgba(255, 255, 255, 0);</string>
-           </property>
-           <property name="text">
-            <string>更多选择 &gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="4">
-          <spacer name="verticalSpacer_5">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>5</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="1" column="2" colspan="3">
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>150</width>
-             <height>20</height>
             </size>
            </property>
           </spacer>
@@ -236,46 +185,7 @@ background-color: rgba(255, 255, 255, 0);</string>
            </property>
           </spacer>
          </item>
-         <item row="7" column="3">
-          <spacer name="horizontalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>54</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="6" column="1">
-          <spacer name="verticalSpacer_4">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>83</width>
-             <height>21</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="10" column="4">
-          <spacer name="verticalSpacer_7">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>9</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="3" column="1" colspan="5">
+         <item row="3" column="1" colspan="6">
           <widget class="QLineEdit" name="inPut_ID">
            <property name="minimumSize">
             <size>
@@ -305,7 +215,33 @@ padding:1px;</string>
            </property>
           </widget>
          </item>
-         <item row="5" column="1" colspan="5">
+         <item row="1" column="2" colspan="4">
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>150</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="10" column="5">
+          <spacer name="verticalSpacer_7">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>9</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="5" column="1" colspan="6">
           <widget class="QLineEdit" name="inPut_Passwd">
            <property name="minimumSize">
             <size>
@@ -335,22 +271,51 @@ padding:1px;</string>
            </property>
           </widget>
          </item>
-         <item row="7" column="1">
-          <widget class="QCheckBox" name="auto_login">
+         <item row="1" column="0" colspan="2">
+          <widget class="QLabel" name="label">
            <property name="font">
             <font>
-             <pointsize>10</pointsize>
+             <family>Noto Sans Adlam</family>
+             <pointsize>18</pointsize>
+             <italic>false</italic>
+             <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+            <string notr="true">color: rgba(3, 7, 75, 200);
+background-color: rgba(255, 255, 255, 0);</string>
            </property>
            <property name="text">
-            <string>自动登录</string>
+            <string>   登录</string>
            </property>
           </widget>
          </item>
-         <item row="7" column="6">
+         <item row="7" column="5">
+          <widget class="QPushButton" name="login_btn">
+           <property name="minimumSize">
+            <size>
+             <width>131</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(39, 145, 244, 1), stop:1 rgba(95, 213, 251, 1));
+border-radius:6px;  
+border:1px;
+color: rgba(50, 50, 50, 215);
+
+
+</string>
+           </property>
+           <property name="text">
+            <string>登录</string>
+           </property>
+           <property name="autoExclusive">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="7">
           <spacer name="horizontalSpacer_5">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -358,34 +323,6 @@ padding:1px;</string>
            <property name="sizeHint" stdset="0">
             <size>
              <width>32</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="7" column="2">
-          <widget class="QCheckBox" name="passwd_save">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
-           </property>
-           <property name="text">
-            <string>保存密码</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="5">
-          <spacer name="horizontalSpacer_3">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>45</width>
              <height>20</height>
             </size>
            </property>
@@ -404,38 +341,108 @@ padding:1px;</string>
            </property>
           </spacer>
          </item>
-         <item row="1" column="0" colspan="2">
-          <widget class="QLabel" name="label">
-           <property name="font">
-            <font>
-             <family>Noto Sans Adlam</family>
-             <pointsize>18</pointsize>
-             <weight>75</weight>
-             <italic>false</italic>
-             <bold>true</bold>
-            </font>
+         <item row="8" column="5">
+          <spacer name="verticalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
            </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgba(3, 7, 75, 200);
-background-color: rgba(255, 255, 255, 0);</string>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>5</height>
+            </size>
            </property>
-           <property name="text">
-            <string>   登录</string>
-           </property>
-          </widget>
+          </spacer>
          </item>
-         <item row="5" column="6">
-          <spacer name="horizontalSpacer_9">
+         <item row="7" column="4">
+          <spacer name="horizontalSpacer_2">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>43</width>
+             <width>54</width>
              <height>20</height>
             </size>
            </property>
           </spacer>
+         </item>
+         <item row="6" column="1">
+          <spacer name="verticalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>83</width>
+             <height>21</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="9" column="0" colspan="7">
+          <widget class="QPushButton" name="more_btn">
+           <property name="styleSheet">
+            <string notr="true">border:0px; 
+color: rgba(75, 75, 75, 205);
+background-color: rgba(255, 255, 255, 0);</string>
+           </property>
+           <property name="text">
+            <string>更多选择 &gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="6">
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>45</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="7" column="3">
+          <widget class="QCheckBox" name="auto_login">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+           </property>
+           <property name="text">
+            <string>自动登录</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+           <property name="tristate">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QCheckBox" name="passwd_save">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+           </property>
+           <property name="text">
+            <string>保存密码</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
@@ -564,7 +571,6 @@ padding:1px;</string>
             <font>
              <family>Noto Sans Adlam</family>
              <pointsize>18</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>

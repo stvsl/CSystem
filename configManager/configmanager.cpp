@@ -154,3 +154,8 @@ void configManager::getPasswd(){
     // 保存数据库密码
     CONFIG_CORE::DB_PASSWD = dbpasswd;
 }
+
+void configManager::makeRSA(){
+    // 生成本地RSA密钥对
+
+}

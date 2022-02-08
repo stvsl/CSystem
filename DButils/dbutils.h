@@ -20,8 +20,11 @@ public:
     bool initDB();
     bool initData();
 
-    // 读取用户名和密码
+    // 读取用户名和密码等等的其他信息到系统数据库
     void readUserInfo();
+
+    // 写入用户名和密码等等的其他信息到系统数据库
+    void writeUserInfo();
 };
 
 #endif // DBUTILS_H
