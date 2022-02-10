@@ -15,14 +15,14 @@ quint16 CONFIG_CORE::SERVICE_PORT = 8000;
 QString CONFIG_CORE::DB_PASSWD_PART = "";
 QString CONFIG_CORE::DB_PASSWD = "DO1900281VE";
 int CONFIG_CORE::USER_TYPE = 0;
+QString CONFIG_CORE::RSA_PRIVATE_KEY = "";
+QString CONFIG_CORE::RSA_PUBLIC_KEY = "";
 
 // 登录配置默认值
 bool LOGIN_CONFIG::AUTO_LOGIN = false;
 bool LOGIN_CONFIG::SAVE_PASSWD = false;
 QString LOGIN_CONFIG::ID = "";
 QString LOGIN_CONFIG::PASSWD = "";
-QString LOGIN_CONFIG::RSA_PUBLIC_KEY = "";
-QString LOGIN_CONFIG::RSA_PRIVATE_KEY = "";
 
 // 用户配置默认值
 QString USER_CONFIG::USER_NAME = "";
@@ -158,5 +158,9 @@ void configManager::getPasswd(){
 
 void configManager::makeRSA(){
     // 生成本地RSA密钥对
-    
+    QByteArray pubKey,privKey;
+    QRSAEncryption rsa(QRSAEncryption::RSA_1024);
+    rsa.generatePairKey(pubKey,privKey);
+    CONFIG_CORE::RSA_PRIVATE_KEY = QString(privKey.toHex());
+    CONFIG_CORE::RSA_PUBLIC_KEY = QString(pubKey.toHex());
 }

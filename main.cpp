@@ -38,6 +38,8 @@ int main(int argc, char *argv[])
     //配置文件加载
     splash.showMessage("正在读取配置文件", Qt::AlignBottom, Qt::black);
     configManager config;
+    config.makeRSA();
+    qDebug() << CONFIG_CORE::RSA_PRIVATE_KEY;
 
     //局部事件循环
     QTimer::singleShot(200, &eventloop, SLOT(quit()));

@@ -154,17 +154,6 @@ public:
     /// \brief 账户密码
     ///
     static QString PASSWD;
-
-    ///
-    /// \brief RSA私钥
-    ///
-    static QString RSA_PRIVATE_KEY;
-
-    ///
-    /// \brief RSA公钥
-    ///
-    static QString RSA_PUBLIC_KEY;
-
 };
 
 #endif // CONFIGMANAGER_H
