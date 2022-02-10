@@ -3,6 +3,7 @@
 #include <QHostInfo>
 #include "QNetworkInterface"
 #include "QCryptographicHash"
+#include "qrsaencryption.h"
 
 //初始默认值
 
@@ -157,5 +158,5 @@ void configManager::getPasswd(){
 
 void configManager::makeRSA(){
     // 生成本地RSA密钥对
-
+    
 }
