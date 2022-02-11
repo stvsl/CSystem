@@ -10,6 +10,7 @@
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include "main.h"
+#include <QSslConfiguration>
 
 class netWorkUtils : public QObject
 {
@@ -19,10 +20,13 @@ public:
 
 signals:
    void netError(QString errorStr);
-   
+
 public:
     //网络重连函数
     void reConnect();
+
+private:
+    QTimer timer;
 
 public:
     QString ping();

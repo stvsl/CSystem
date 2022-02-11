@@ -24,8 +24,16 @@ void DButils::readUserInfo()
     db.setPassword(CONFIG_CORE::DB_PASSWD);
     if (!db.open())
     {
-        qDebug() << "数据库连接失败";
-        return;
+        qDebug() << "数据库连接失败" << db.lastError();
+        return;    ///
+    /// \brief RSA私钥
+    ///
+    static QString RSA_PRIVATE_KEY;
+
+    ///
+    /// \brief RSA公钥
+    ///
+    static QString RSA_PUBLIC_KEY;
     }
     QSqlQuery query(db);
     query.exec("SELECT * FROM CONFIG");
@@ -35,8 +43,8 @@ void DButils::readUserInfo()
         LOGIN_CONFIG::PASSWD = query.value("PASSWD").toString();
         LOGIN_CONFIG::AUTO_LOGIN = query.value("AUTO_LOGIN").toBool();
         LOGIN_CONFIG::SAVE_PASSWD = query.value("SAVE_PASSWD").toBool();
-        LOGIN_CONFIG::RSA_PRIVATE_KEY = query.value("RSA_PRIVATE").toString();
-        LOGIN_CONFIG::RSA_PUBLIC_KEY = query.value("RSA_PUBLIC").toString();
+        CONFIG_CORE::RSA_PRIVATE_KEY = query.value("RSA_PRIVATE").toString();
+        CONFIG_CORE::RSA_PUBLIC_KEY = query.value("RSA_PUBLIC").toString();
         CONFIG_CORE::USER_TYPE = query.value("TYPE").toInt();
         USER_CONFIG::USER_NAME = query.value("USER_NAME").toString();
         USER_CONFIG::USER_ID = query.value("USER_ID").toString();
@@ -54,7 +62,7 @@ void DButils::writeUserInfo(){
     db.setPassword(CONFIG_CORE::DB_PASSWD);
     if (!db.open())
     {
-        qDebug() << "数据库连接失败";
+        qDebug() << "数据库连接失败" << db.lastError();
         return;
     }
     // 清空CONFIG表
@@ -66,8 +74,8 @@ void DButils::writeUserInfo(){
     query.bindValue(":PASSWD", LOGIN_CONFIG::PASSWD);
     query.bindValue(":AUTO_LOGIN", LOGIN_CONFIG::AUTO_LOGIN);
     query.bindValue(":SAVE_PASSWD", LOGIN_CONFIG::SAVE_PASSWD);
-    query.bindValue(":RSA_PRIVATE", LOGIN_CONFIG::RSA_PRIVATE_KEY);
-    query.bindValue(":RSA_PUBLIC", LOGIN_CONFIG::RSA_PUBLIC_KEY);
+    query.bindValue(":RSA_PRIVATE", CONFIG_CORE::RSA_PRIVATE_KEY);
+    query.bindValue(":RSA_PUBLIC", CONFIG_CORE::RSA_PUBLIC_KEY);
     query.bindValue(":TYPE", CONFIG_CORE::USER_TYPE);
     query.bindValue(":USER_NAME", USER_CONFIG::USER_NAME);
     query.bindValue(":USER_ID", USER_CONFIG::USER_ID);
@@ -132,8 +140,8 @@ bool DButils::initData(){
     LOGIN_CONFIG::PASSWD = "";
     LOGIN_CONFIG::AUTO_LOGIN = false;
     LOGIN_CONFIG::SAVE_PASSWD = false;
-    LOGIN_CONFIG::RSA_PRIVATE_KEY = "";
-    LOGIN_CONFIG::RSA_PUBLIC_KEY = "";
+    CONFIG_CORE::RSA_PRIVATE_KEY = "";
+    CONFIG_CORE::RSA_PUBLIC_KEY = "";
     CONFIG_CORE::USER_TYPE = 0;
     USER_CONFIG::USER_NAME = "";
     USER_CONFIG::USER_ID = "";
@@ -145,8 +153,8 @@ bool DButils::initData(){
     query.bindValue(":PASSWD", LOGIN_CONFIG::PASSWD);
     query.bindValue(":AUTO_LOGIN", LOGIN_CONFIG::AUTO_LOGIN);
     query.bindValue(":SAVE_PASSWD", LOGIN_CONFIG::SAVE_PASSWD);
-    query.bindValue(":RSA_PRIVATE", LOGIN_CONFIG::RSA_PRIVATE_KEY);
-    query.bindValue(":RSA_PUBLIC", LOGIN_CONFIG::RSA_PUBLIC_KEY);
+    query.bindValue(":RSA_PRIVATE", CONFIG_CORE::RSA_PRIVATE_KEY);
+    query.bindValue(":RSA_PUBLIC", CONFIG_CORE::RSA_PUBLIC_KEY);
     query.bindValue(":TYPE", CONFIG_CORE::USER_TYPE);
     query.bindValue(":USER_NAME", USER_CONFIG::USER_NAME);
     query.bindValue(":USER_ID", USER_CONFIG::USER_ID);

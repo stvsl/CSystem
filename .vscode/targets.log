@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Feb  5 15:41:33 2022
+# Make data base, printed on Thu Feb 10 21:51:24 2022
 
 # Variables
 
@@ -21,11 +21,11 @@ NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/stvsl/.gtkrc:/home/stvsl/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-37689dd4-2006-485a-adaf-adfe26cba258.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-3e7ed022-791b-4e86-9252-06798012c0a3.sock
 # environment
 LC_NUMERIC = zh_CN.UTF-8
 # environment
-VSCODE_CWD = /home/stvsl/Documents/个人项目/计算机设计竞赛/软件项目/CSystem-Qt6
+VSCODE_CWD = /home/stvsl/Documents/个人项目/计算机设计竞赛/软件项目
 # default
 MAKE_COMMAND := make
 # environment
@@ -39,7 +39,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/stvsl/Documents/个人项目/计算机设计竞赛/软件项目/CSystem-Qt6
+PWD = /home/stvsl/Documents/个人项目/计算机设计竞赛/软件项目/CSystem
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -53,7 +53,7 @@ VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/stvsl/.config/Code/CachedData/899d46d82c4c95423fb7e10e68eba52050e30ba3
+VSCODE_CODE_CACHE_PATH = /home/stvsl/.config/Code/CachedData/d6ee99e4c045a6716e5c653d7da8e9ae6f5a8b03
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
 # environment
@@ -69,11 +69,11 @@ MAKEFLAGS = pqrR
 # environment
 ANDROID_NDK_HOME = /opt/android-ndk
 # makefile
-CURDIR := /home/stvsl/Documents/个人项目/计算机设计竞赛/软件项目/CSystem-Qt6
+CURDIR := /home/stvsl/Documents/个人项目/计算机设计竞赛/软件项目/CSystem
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -101,7 +101,7 @@ LC_COLLATE = zh_CN.UTF-8
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 17517
+VSCODE_PID = 7527
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -109,7 +109,7 @@ XDG_SESSION_TYPE = x11
 # environment
 INPUT_METHOD = fcitx5
 # environment
-SESSION_MANAGER = local/stvsl:@/tmp/.ICE-unix/3626,unix/stvsl:/tmp/.ICE-unix/3626
+SESSION_MANAGER = local/stvsl:@/tmp/.ICE-unix/3562,unix/stvsl:/tmp/.ICE-unix/3562
 # automatic
 *F = $(notdir $*)
 # environment
@@ -119,7 +119,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
-VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"85dc8b33bfa057e31dfd84e9a10f67e1.zh-cn","_translationsConfigFile":"/home/stvsl/.config/Code/clp/85dc8b33bfa057e31dfd84e9a10f67e1.zh-cn/tcf.json","_cacheRoot":"/home/stvsl/.config/Code/clp/85dc8b33bfa057e31dfd84e9a10f67e1.zh-cn","_resolvedLanguagePackCoreLocation":"/home/stvsl/.config/Code/clp/85dc8b33bfa057e31dfd84e9a10f67e1.zh-cn/899d46d82c4c95423fb7e10e68eba52050e30ba3","_corruptedFile":"/home/stvsl/.config/Code/clp/85dc8b33bfa057e31dfd84e9a10f67e1.zh-cn/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"bcb43daf7fc7aee39837fa8516ffebcd.zh-cn","_translationsConfigFile":"/home/stvsl/.config/Code/clp/bcb43daf7fc7aee39837fa8516ffebcd.zh-cn/tcf.json","_cacheRoot":"/home/stvsl/.config/Code/clp/bcb43daf7fc7aee39837fa8516ffebcd.zh-cn","_resolvedLanguagePackCoreLocation":"/home/stvsl/.config/Code/clp/bcb43daf7fc7aee39837fa8516ffebcd.zh-cn/d6ee99e4c045a6716e5c653d7da8e9ae6f5a8b03","_corruptedFile":"/home/stvsl/.config/Code/clp/bcb43daf7fc7aee39837fa8516ffebcd.zh-cn/corrupted.info","_languagePackSupport":true}
 # environment
 BREAKPAD_DUMP_LOCATION = /home/stvsl/.config/Code/exthost Crash Reports
 # default
@@ -133,7 +133,7 @@ MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=fcitx5
 # environment
-SHLVL = 0
+SHLVL = 1
 # environment
 ANDROID_NDK = /opt/android-ndk
 # environment
@@ -141,7 +141,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /home/stvsl/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-ndk:/opt/cxoffice/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/android-ndk:/opt/cxoffice/bin:/usr/lib/jvm/default/bin
+PATH = /home/stvsl/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-ndk:/opt/cxoffice/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 # default
 MAKEFILES := 
 # environment
@@ -152,8 +152,6 @@ LC_MONETARY = zh_CN.UTF-8
 MOTD_SHOWN = pam
 # automatic
 ^F = $(notdir $^)
-# environment
-KCRASH_AUTO_RESTARTED = 1
 # environment
 LC_TIME = zh_CN.UTF-8
 # environment
@@ -187,7 +185,7 @@ XDG_VTNR = 1
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 3484
+SYSTEMD_EXEC_PID = 3441
 # environment
 DISPLAY = :0
 # environment
@@ -219,7 +217,7 @@ QT_IM_MODULE = fcitx5
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-3ae73393-1.63.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-3ae73393-1.64.1-main.sock
 # environment
 HG = /usr/bin/hg
 # environment
@@ -235,14 +233,17 @@ SUFFIXES :=
 # environment
 QT_AUTO_SCREEN_SCALE_FACTOR = 0
 # environment
- 
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
 KDE_SESSION_VERSION = 5
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
 # environment
 KDE_FULL_SESSION = true
 # variable set hash-table stats:
-# Load=114/1024=11%, Rehash=0, Collisions=8/141=6%
+# Load=115/1024=11%, Rehash=0, Collisions=8/142=6%
 
 # Pattern-specific Variable Values
 
@@ -250,9 +251,9 @@ KDE_FULL_SESSION = true
 
 # Directories
 
-# . (device 66313, inode 6221): 17 files, no impossibilities.
+# . (device 66313, inode 6041733): 21 files, no impossibilities.
 
-# 17 files, no impossibilities in 1 directories.
+# 21 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -278,6 +279,7 @@ all:
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
+ 
 #  File has not been updated.
 
 # Not a target:
@@ -302,12 +304,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 25 / storage = 256 B / avg = 10 B
-# current buf: size = 8162 B / used = 256 B / count = 25 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 29 / storage = 304 B / avg = 10 B
+# current buf: size = 8162 B / used = 304 B / count = 29 / avg = 10 B
 
-# strcache performance: lookups = 28 / hit rate = 10%
+# strcache performance: lookups = 32 / hit rate = 9%
 # hash-table stats:
-# Load=25/8192=0%, Rehash=0, Collisions=0/28=0%
-# Finished Make data base on Sat Feb  5 15:41:33 2022
+# Load=29/8192=0%, Rehash=0, Collisions=0/32=0%
+# Finished Make data base on Thu Feb 10 21:51:24 2022
 
  
