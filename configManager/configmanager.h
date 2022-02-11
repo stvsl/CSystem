@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QCoreApplication>
 #include <QHostInfo>
+#include "RSA/rsa.h"
 
 class configManager : public QObject
 {
@@ -58,6 +59,11 @@ public:
     /// \brief 服务器端口号
     ///
     static quint16 SERVICE_PORT;
+
+    ///
+    /// \brief 服务器域名
+    ///
+    static QString SERVICE_DOMAIN;
 
     ///
     /// \brief 本地数据库密码残片

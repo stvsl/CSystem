@@ -24,7 +24,7 @@ void DButils::readUserInfo()
     db.setPassword(CONFIG_CORE::DB_PASSWD);
     if (!db.open())
     {
-        qDebug() << "数据库连接失败";
+        qDebug() << "数据库连接失败" << db.lastError();
         return;    ///
     /// \brief RSA私钥
     ///
@@ -62,7 +62,7 @@ void DButils::writeUserInfo(){
     db.setPassword(CONFIG_CORE::DB_PASSWD);
     if (!db.open())
     {
-        qDebug() << "数据库连接失败";
+        qDebug() << "数据库连接失败" << db.lastError();
         return;
     }
     // 清空CONFIG表

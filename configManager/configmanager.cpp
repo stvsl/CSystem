@@ -3,7 +3,6 @@
 #include <QHostInfo>
 #include "QNetworkInterface"
 #include "QCryptographicHash"
-#include "qrsaencryption.h"
 
 //初始默认值
 
@@ -11,12 +10,16 @@
 
 bool CONFIG_CORE::RUN_FIRST = true;
 QHostAddress CONFIG_CORE::SERVICE_IP = QHostAddress("127.0.0.1");
-quint16 CONFIG_CORE::SERVICE_PORT = 8000;
+quint16 CONFIG_CORE::SERVICE_PORT = 10214;
+// QString CONFIG_CORE::SERVICE_DOMAIN = "stvsljl.com";
+QString CONFIG_CORE::SERVICE_DOMAIN = "127.0.0.1:10214";
+
 QString CONFIG_CORE::DB_PASSWD_PART = "";
 QString CONFIG_CORE::DB_PASSWD = "DO1900281VE";
 int CONFIG_CORE::USER_TYPE = 0;
 QString CONFIG_CORE::RSA_PRIVATE_KEY = "";
 QString CONFIG_CORE::RSA_PUBLIC_KEY = "";
+QString CONFIG_CORE::RSA_SERVER_PUBLIC_KEY = "";
 
 // 登录配置默认值
 bool LOGIN_CONFIG::AUTO_LOGIN = false;
@@ -157,10 +160,6 @@ void configManager::getPasswd(){
 }
 
 void configManager::makeRSA(){
-    // 生成本地RSA密钥对
-    QByteArray pubKey,privKey;
-    QRSAEncryption rsa(QRSAEncryption::RSA_1024);
-    rsa.generatePairKey(pubKey,privKey);
-    CONFIG_CORE::RSA_PRIVATE_KEY = QString(privKey.toHex());
-    CONFIG_CORE::RSA_PUBLIC_KEY = QString(pubKey.toHex());
+    rsa rsa;
+    
 }

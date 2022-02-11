@@ -39,7 +39,6 @@ int main(int argc, char *argv[])
     splash.showMessage("正在读取配置文件", Qt::AlignBottom, Qt::black);
     configManager config;
     config.makeRSA();
-    qDebug() << CONFIG_CORE::RSA_PRIVATE_KEY;
 
     //局部事件循环
     QTimer::singleShot(200, &eventloop, SLOT(quit()));
@@ -58,6 +57,9 @@ int main(int argc, char *argv[])
         splash.close();
         return 0;
     }
+    qDebug() << CONFIG_CORE::RSA_SERVER_PUBLIC_KEY;
+    // 获取token
+    // nwu.getToken();
 
     //数据库模块加载
     splash.showMessage("正在连接本地数据库", Qt::AlignBottom, Qt::black);
@@ -75,5 +77,6 @@ int main(int argc, char *argv[])
     //主界面启动时关闭启动等待页面
     splash.finish(&login);
     login.show();
+    
     return a.exec();
 }

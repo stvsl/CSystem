@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "configManager/configmanager.h"
-#include "DButils/dbutils.h"]
+#include "DButils/dbutils.h"
 #include "QPixmap"
 #include "QPalette"
 #include "QPropertyAnimation"

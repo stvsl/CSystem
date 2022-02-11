@@ -11,13 +11,17 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_subdirectory(Qt-Secret)
-
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Sql REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Network REQUIRED)
 find_package(Qt5 COMPONENTS WebEngineWidgets REQUIRED)
+find_package(OpenSSL REQUIRED)
+if(OPENSSL_FOUND)
+  include_directories(${OPENSSL_INCLUDE_DIRS})
+  message(STATUS "OpenSSL Found!")
+endif()
+
 
 set(TS_FILES CSystem-Qt6_zh_CN.ts)
 
@@ -34,6 +38,7 @@ set(PROJECT_SOURCES
        csystemmain/serviceimformation.cpp
        csystemmain/systemsetting.cpp
        csystemmain/login.cpp
+       RSA/rsa.cpp
        main.cpp
        netWorkUtils/netWorkUtils.cpp
        DButils/dbutils.cpp
@@ -50,6 +55,7 @@ set(PROJECT_SOURCES
        csystemmain/serviceimformation.h
        csystemmain/systemsetting.h
        csystemmain/login.h
+       RSA/rsa.h
        main.h
        netWorkUtils/netWorkUtils.h
        DButils/dbutils.h
@@ -100,7 +106,7 @@ target_link_libraries(CSystem-Qt6 PRIVATE Qt${QT_VERSION_MAJOR}::Sql)
 target_link_libraries(CSystem-Qt6 PRIVATE Qt${QT_VERSION_MAJOR}::Network)
 target_link_libraries(CSystem-Qt6 PRIVATE Qt5::WebEngineWidgets)
 target_link_libraries(CSystem-Qt6 PRIVATE Qt5::WebChannel)
-target_link_libraries(CSystem-Qt6 PUBLIC Qt-Secret)
+target_link_libraries(CSystem-Qt6 PRIVATE OpenSSL::Crypto OpenSSL::SSL)
 
 target_include_directories(CSystem-Qt6 PRIVATE "${CMAKE_BINARY_DIR}/Test_autogen/include_Debug")
 
