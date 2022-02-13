@@ -99,6 +99,11 @@ public:
     /// \brief 服务器RSA_PUBLIC_KEY
     ///
     static QString RSA_SERVER_PUBLIC_KEY;
+
+    ///
+    /// \brief 本次系统特征值
+    ///
+    static QString SYSTEM_FEATURE;
 };
 
 ///

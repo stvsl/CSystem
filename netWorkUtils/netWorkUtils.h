@@ -11,6 +11,7 @@
 #include <QNetworkReply>
 #include "main.h"
 #include <QSslConfiguration>
+#include "RSA/rsa.h"
 
 class netWorkUtils : public QObject
 {
@@ -29,7 +30,11 @@ private:
     QTimer timer;
 
 public:
+    // pingGET请求
     QString ping();
+
+    // pingPOST请求
+    QString pingpost();
 
     //获取token
     void getToken();

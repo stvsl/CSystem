@@ -8,7 +8,7 @@ rsa::~rsa()
 {
 }
 // 使用openssl生成公钥和私钥字符串
-void RSAmake(){
+void rsa::RSAmake(){
     RSA * rsa = RSA_new();
     BIGNUM * bn = BN_new();
     BN_set_word(bn, RSA_F4);
@@ -19,6 +19,8 @@ void RSAmake(){
     char * pub_key = NULL;
     long len = BIO_get_mem_data(bio_pub, &pub_key);
     QString pub_key_str = QString(pub_key);
+    // 去掉-----END RSA PUBLIC KEY-----后面的信息
+    pub_key_str = pub_key_str.mid(0, pub_key_str.indexOf("-----END RSA PUBLIC KEY-----")+29);
     CONFIG_CORE::RSA_PUBLIC_KEY = pub_key_str;
     // 生成私钥
     BIO * bio_pri = BIO_new(BIO_s_mem());
@@ -26,6 +28,8 @@ void RSAmake(){
     char * pri_key = NULL;
     long len2 = BIO_get_mem_data(bio_pri, &pri_key);
     QString pri_key_str = QString(pri_key);
+     // 去掉-----END RSA PUBLIC KEY-----后面的信息
+    pri_key_str = pri_key_str.mid(0, pri_key_str.indexOf("-----END RSA PRIVATE KEY-----")+30);
     CONFIG_CORE::RSA_PRIVATE_KEY = pri_key_str;
 }
 
@@ -37,23 +41,25 @@ QString rsa::rsaPubEncrypt(const QString &strPlainData, const QString &strPubKey
     BIO *pKeyBio = BIO_new_mem_buf(pPubKey, pubKeyArry.length());
     if (pKeyBio == NULL)
     {
-        return "";
+        return "pKeyBio is NULL";
     }
-
+    // 读取公钥
     RSA *pRsa = RSA_new();
     if (strPubKey.contains(BEGIN_RSA_PUBLIC_KEY))
-    {
+    {   
+        // 读取pem格式的公钥
         pRsa = PEM_read_bio_RSAPublicKey(pKeyBio, &pRsa, NULL, NULL);
     }
     else
     {
+        // 读取der格式的公钥
         pRsa = PEM_read_bio_RSA_PUBKEY(pKeyBio, &pRsa, NULL, NULL);
     }
 
     if (pRsa == NULL)
     {
         BIO_free_all(pKeyBio);
-        return "";
+        return "pRsa is NULL";
     }
 
     int nLen = RSA_size(pRsa);
@@ -145,7 +151,6 @@ QString rsa::rsaPriDecrypt(const QString &strDecryptData, const QString &strPriK
             strPlainData += QByteArray(pPlainBuf, nSize);
         }
     }
-
     //释放内存
     delete pPlainBuf;
     BIO_free_all(pKeyBio);

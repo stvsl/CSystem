@@ -3,6 +3,7 @@
 
 int MAIN_RUN_CONFIG::SYSTEM_STATUS = 0;
 QString MAIN_RUN_CONFIG::SYSTEM_TOKEN = "";
+QString MAIN_RUN_CONFIG::MD5_KEY = "";
 
 int main(int argc, char *argv[])
 {
@@ -48,7 +49,6 @@ int main(int argc, char *argv[])
     splash.showMessage("正在检查网络", Qt::AlignBottom, Qt::black);
     netWorkUtils nwu;
     QString err = nwu.ping();
-    qDebug() << err;
     if (err != "CX200")
     {
         // 弹窗提示，点击确定后关闭程序
@@ -57,7 +57,22 @@ int main(int argc, char *argv[])
         splash.close();
         return 0;
     }
-    qDebug() << CONFIG_CORE::RSA_SERVER_PUBLIC_KEY;
+    
+    // 加密协商
+    splash.showMessage("正在协商安全加密", Qt::AlignBottom, Qt::black);
+     err = nwu.pingpost();
+    if (err != "CX200")
+    {
+        // 弹窗提示，点击确定后关闭程序
+        QMessageBox::critical(nullptr, "错误", "网络连接失败，请检查网络连接！<br>" + err, QMessageBox::Ok);
+        // 关闭splash
+        splash.close();
+        return 0;
+    }
+
+    // 获取信任
+    splash.showMessage("正在获取通信凭据", Qt::AlignBottom, Qt::black);
+
     // 获取token
     // nwu.getToken();
 

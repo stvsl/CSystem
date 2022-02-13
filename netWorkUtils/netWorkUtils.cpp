@@ -10,7 +10,7 @@ netWorkUtils::netWorkUtils(QObject *parent) : QObject(parent)
     QSslConfiguration::setDefaultConfiguration(sslConf);
     // 初始化计时器
     // 设置超时时间3秒
-    timer.setInterval(100000);
+    timer.setInterval(5000);
     timer.setSingleShot(true);
 }
 
@@ -32,6 +32,7 @@ QString netWorkUtils::ping()
     QObject::connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
     timer.start();
     loop.exec();
+    QString code;
     // 如果超时
     if (!timer.isActive())
     {
@@ -46,21 +47,109 @@ QString netWorkUtils::ping()
         QJsonDocument jsonDoc = QJsonDocument::fromJson(reply->readAll(), &jsonError);
         if (jsonError.error != QJsonParseError::NoError)
         {
-            return "解析json失败";
+            return "数据通信异常";
         }
         QJsonObject jsonObj = jsonDoc.object();
-        QString code = jsonObj.value("code").toString();
+        code = jsonObj.value("code").toString();
         // 如果code不为CX200
         if (code != "CX200")
         {
-            qDebug () << "ping：code: " << code << "message" << jsonObj.value("message").toString();
-        }else{
+            qDebug() << "ping：code: " << code << "message" << jsonObj.value("message").toString();
+        }
+        else
+        {
             // 获取服务器RSA
             CONFIG_CORE::RSA_SERVER_PUBLIC_KEY = jsonObj.value("RSA_PUBLIC").toString();
         }
-        return code;
     }
+    // 释放资源
+    reply->deleteLater();
+    manager->deleteLater();
+    return code;
+}
 
+QString netWorkUtils::pingpost()
+{
+    // 发送Https形式的的POST请求
+    QNetworkRequest request;
+    request.setUrl(QUrl("https://" + CONFIG_CORE::SERVICE_DOMAIN + "/ping"));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    QSslConfiguration conf;
+    conf.setPeerVerifyMode(QSslSocket::VerifyNone);
+    conf.setProtocol(QSsl::TlsV1SslV3);
+    request.setSslConfiguration(conf);
+    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+    // 使用服务器RSA公钥作为数据种子生成随机字符串
+    MAIN_RUN_CONFIG::MD5_KEY = "";
+    qsrand(QDateTime::currentMSecsSinceEpoch());
+    int idx = 0;
+    for (int i = 0; i < 15; ++i)
+    {
+        idx = qrand() % (256 - 1);
+        QString ch = QString(CONFIG_CORE::RSA_SERVER_PUBLIC_KEY[idx]);
+        MAIN_RUN_CONFIG::MD5_KEY.append(ch);
+    }
+    // 使用服务器RSA加密MD51和特征值
+    rsa rsa;
+    QString md51 = rsa.rsaPubEncrypt(MAIN_RUN_CONFIG::MD5_KEY, CONFIG_CORE::RSA_SERVER_PUBLIC_KEY);
+    QString feature = rsa.rsaPubEncrypt(CONFIG_CORE::SYSTEM_FEATURE, CONFIG_CORE::RSA_SERVER_PUBLIC_KEY);
+    // json生成
+    QJsonObject jsonObj;
+    jsonObj.insert("KEY", md51);
+    jsonObj.insert("FEATURE", feature);
+    jsonObj.insert("RSA", CONFIG_CORE::RSA_PUBLIC_KEY);
+    QJsonDocument jsonDoc(jsonObj);
+    QEventLoop loop;
+    QNetworkReply *reply = manager->post(request, QJsonDocument(jsonObj).toJson());
+    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    QObject::connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
+    timer.start();
+    loop.exec();
+    QString code;
+    // 如果超时
+    if (!timer.isActive())
+    {
+        timer.stop();
+        return "网络连接超时";
+    }
+    // 如果没有超时
+    else
+    {
+        // 解析json
+        QJsonParseError jsonError;
+        QJsonDocument jsonDoc = QJsonDocument::fromJson(reply->readAll(), &jsonError);
+        if (jsonError.error != QJsonParseError::NoError)
+        {
+            // 释放资源
+            reply->deleteLater();
+            manager->deleteLater();
+            return "数据通信异常";
+        }
+        QJsonObject jsonObj = jsonDoc.object();
+        code = jsonObj.value("code").toString();
+        // 如果code不为CX200
+        if (code != "CX200")
+        {
+            qDebug() << "ping：code: " << code << "message" << jsonObj.value("message").toString();
+        }
+        else
+        {
+            // 获取MD5密钥
+            QString md5e = jsonObj.value("KEY").toString();
+            // 解密获取md5信息
+            QString md52 = rsa.rsaPriDecrypt(md5e, CONFIG_CORE::RSA_PRIVATE_KEY);
+            // 拼接MD5信息
+            MAIN_RUN_CONFIG::MD5_KEY.append(md52);
+            // 计算MD5
+            MAIN_RUN_CONFIG::MD5_KEY = QCryptographicHash::hash(MAIN_RUN_CONFIG::MD5_KEY.toUtf8(), QCryptographicHash::Md5).toHex();
+        }
+    }
+             qDebug() << MAIN_RUN_CONFIG::MD5_KEY;
+   
+    // 释放资源
+    reply->deleteLater();
+    manager->deleteLater();
+    return code;
 }
 
 void netWorkUtils::getToken()
@@ -106,7 +195,6 @@ void netWorkUtils::getToken()
         // 存储token
         MAIN_RUN_CONFIG::SYSTEM_TOKEN = token; });
     reply->deleteLater();
-    reply->close();
     manager->deleteLater();
 }
 

@@ -475,119 +475,6 @@
     </message>
 </context>
 <context>
-    <name>DigitalSignaturePage</name>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="25"/>
-        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="45"/>
-        <source>Private key:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="25"/>
-        <source>Public key:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="26"/>
-        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="53"/>
-        <source>Text to sign:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="26"/>
-        <source>Text to check sign:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="27"/>
-        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="61"/>
-        <source>Signed text:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="27"/>
-        <source>Result:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="34"/>
-        <source>Sign message</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/DigitalSignaturePage.qml" line="35"/>
-        <source>Check sign</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>EncryptDecryptPage</name>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="25"/>
-        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="45"/>
-        <source>Public key:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="25"/>
-        <source>Private key:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="26"/>
-        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="53"/>
-        <source>Text to encrypt:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="26"/>
-        <source>Text to decrypt:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="27"/>
-        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="61"/>
-        <source>Encrypted text:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="27"/>
-        <source>Decrypted text:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="34"/>
-        <source>Encrypt</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/EncryptDecryptPage.qml" line="35"/>
-        <source>Decrypt</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>KeysGeneratePage</name>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/KeysGeneratePage.qml" line="36"/>
-        <source>Public key:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/KeysGeneratePage.qml" line="46"/>
-        <source>Private key:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>LabledText</name>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/modules/LabledText.qml" line="13"/>
-        <source>Label</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>Login</name>
     <message>
         <location filename="csystemmain/login.ui" line="14"/>
@@ -1367,19 +1254,6 @@
     </message>
 </context>
 <context>
-    <name>RsaGenModule</name>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/modules/RsaGenModule.qml" line="22"/>
-        <source>RSA size:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/modules/RsaGenModule.qml" line="36"/>
-        <source>Generate</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>ServiceControl</name>
     <message>
         <location filename="csystemmain/servicecontrol.ui" line="16"/>
@@ -1687,29 +1561,6 @@
         <location filename="csystemmain/systemsetting.ui" line="1331"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_systemsetting.h" line="876"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;这是测试文本&lt;/p&gt;&lt;p&gt;测试&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>main</name>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/main.qml" line="18"/>
-        <source>Qt-Secret-GUI</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/main.qml" line="51"/>
-        <source>Keys generate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/main.qml" line="54"/>
-        <source>Encryption and decryption</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="Qt-Secret/Qt-Secret-GUI/main.qml" line="57"/>
-        <source>Digital signature</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -3,6 +3,7 @@
 #include <QHostInfo>
 #include "QNetworkInterface"
 #include "QCryptographicHash"
+#include <QDateTime>
 
 //初始默认值
 
@@ -13,13 +14,13 @@ QHostAddress CONFIG_CORE::SERVICE_IP = QHostAddress("127.0.0.1");
 quint16 CONFIG_CORE::SERVICE_PORT = 10214;
 // QString CONFIG_CORE::SERVICE_DOMAIN = "stvsljl.com";
 QString CONFIG_CORE::SERVICE_DOMAIN = "127.0.0.1:10214";
-
 QString CONFIG_CORE::DB_PASSWD_PART = "";
 QString CONFIG_CORE::DB_PASSWD = "DO1900281VE";
 int CONFIG_CORE::USER_TYPE = 0;
 QString CONFIG_CORE::RSA_PRIVATE_KEY = "";
 QString CONFIG_CORE::RSA_PUBLIC_KEY = "";
 QString CONFIG_CORE::RSA_SERVER_PUBLIC_KEY = "";
+QString CONFIG_CORE::SYSTEM_FEATURE = "";
 
 // 登录配置默认值
 bool LOGIN_CONFIG::AUTO_LOGIN = false;
@@ -157,9 +158,16 @@ void configManager::getPasswd(){
     QString dbpasswd = md5.toHex();
     // 保存数据库密码
     CONFIG_CORE::DB_PASSWD = dbpasswd;
+    // 计算一个系统特征值
+    // 获取当前时间
+    QDateTime current_date_time = QDateTime::currentDateTime();
+    // 随机生成一个20位数的随机数
+    QString random_str = QString::number(qrand() % 100000000000);
+    // 计算特征值
+    CONFIG_CORE::SYSTEM_FEATURE = QCryptographicHash::hash((CONFIG_CORE::DB_PASSWD + current_date_time.toString("yyyyMMddhhmmss") + random_str).toUtf8(), QCryptographicHash::Md5).toHex();
 }
 
 void configManager::makeRSA(){
     rsa rsa;
-    
+    rsa.RSAmake();
 }

@@ -19,8 +19,14 @@ public:
     rsa();
     ~rsa();
 
+
+    // 生成密钥对
+    void RSAmake();
+
+    // 公钥加密
     QString rsaPubEncrypt(const QString &strPlainData, const QString &strPubKey);
 
+    // 私钥解密
     QString rsaPriDecrypt(const QString &strDecryptData, const QString &strPriKey);
 };
 
