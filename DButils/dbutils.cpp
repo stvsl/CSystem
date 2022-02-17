@@ -16,7 +16,7 @@ DButils::~DButils()
     QSqlDatabase::removeDatabase("default");
 }
 
-void DButils::readUserInfo()
+int DButils::readUserInfo()
 {
     // 连接到数据库
     QSqlDatabase db = QSqlDatabase::database("default");
@@ -25,7 +25,7 @@ void DButils::readUserInfo()
     if (!db.open())
     {
         qDebug() << "数据库连接失败" << db.lastError();
-        return;    ///
+        return -1;    ///
     /// \brief RSA私钥
     ///
     static QString RSA_PRIVATE_KEY;
@@ -53,6 +53,7 @@ void DButils::readUserInfo()
         USER_CONFIG::ORGANIZATION = query.value("ORGANIZATION").toString();
     }
     db.close();
+    return 0;
 }
 
 void DButils::writeUserInfo(){

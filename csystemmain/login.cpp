@@ -105,8 +105,10 @@ void Login::on_auto_login_stateChanged(int arg1)
 void Login::on_login_btn_clicked()
 {
     ui->login_btn->setText("登陆中...");
+    LOGIN_CONFIG::ID = ui->inPut_ID->text();
+    LOGIN_CONFIG::PASSWD = ui->inPut_Passwd->text();
     // 获取token
     netWorkUtils nwu;
-    nwu.getToken();
+    qDebug() << nwu.getToken();
 }
 

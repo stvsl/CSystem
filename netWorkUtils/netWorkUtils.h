@@ -12,6 +12,7 @@
 #include "main.h"
 #include <QSslConfiguration>
 #include "RSA/rsa.h"
+#include "AES/aes.h"
 
 class netWorkUtils : public QObject
 {
@@ -37,10 +38,10 @@ public:
     QString pingpost();
 
     //获取token
-    void getToken();
+    QString getToken();
 
     // 更新服务器密码残片
-    void updatePasswdPart();
+    QString updatePasswdPart();
 };
 
 #endif // NETWORKUTILS_H

@@ -110,7 +110,7 @@ void configManager::config_Changed(){
 }
 
 void configManager::getPasswd(){
-        // 获取主机名
+    // 获取主机名
     QString hostName = QHostInfo::localHostName();
     // 获取设备类型
     QString deviceType = QSysInfo::productType();
@@ -152,10 +152,10 @@ void configManager::getPasswd(){
     QString dbpart256 = QString(QCryptographicHash::hash(CONFIG_CORE::DB_PASSWD_PART.toUtf8(), QCryptographicHash::Sha256).toHex());
     // 将设备信息整合成字符串
     QString sysstr = hostName + deviceType + deviceName + strIpAddress + strMacAddr + "CSystem" + QCoreApplication::applicationVersion() + dbpart256;
-    // 计算syssstr的MD5值
-    QByteArray md5 = QCryptographicHash::hash(sysstr.toUtf8(), QCryptographicHash::Md5);
-    // 将MD5值转换为16进制字符串
-    QString dbpasswd = md5.toHex();
+    // 计算syssstr的aes值
+    QByteArray aes = QCryptographicHash::hash(sysstr.toUtf8(), QCryptographicHash::Md5);
+    // 将aes值转换为16进制字符串
+    QString dbpasswd = aes.toHex();
     // 保存数据库密码
     CONFIG_CORE::DB_PASSWD = dbpasswd;
     // 计算一个系统特征值

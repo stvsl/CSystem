@@ -39,6 +39,7 @@ set(PROJECT_SOURCES
        csystemmain/systemsetting.cpp
        csystemmain/login.cpp
        RSA/rsa.cpp
+       AES/aes.cpp
        main.cpp
        netWorkUtils/netWorkUtils.cpp
        DButils/dbutils.cpp
@@ -56,6 +57,7 @@ set(PROJECT_SOURCES
        csystemmain/systemsetting.h
        csystemmain/login.h
        RSA/rsa.h
+       AES/aes.h
        main.h
        netWorkUtils/netWorkUtils.h
        DButils/dbutils.h
