@@ -3,7 +3,7 @@
 
 int MAIN_RUN_CONFIG::SYSTEM_STATUS = 0;
 QString MAIN_RUN_CONFIG::SYSTEM_TOKEN = "";
-QString MAIN_RUN_CONFIG::MD5_KEY = "";
+QString MAIN_RUN_CONFIG::AES_KEY = "";
 
 int main(int argc, char *argv[])
 {
@@ -70,17 +70,21 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    // 获取信任
-    splash.showMessage("正在获取通信凭据", Qt::AlignBottom, Qt::black);
-
-    // 获取token
-    // nwu.getToken();
-
     //数据库模块加载
     splash.showMessage("正在连接本地数据库", Qt::AlignBottom, Qt::black);
     // 初始化数据库
     DButils *db = new DButils();
-    db->readUserInfo();
+    
+    if(db->readUserInfo() == -1){
+        splash.showMessage("系统环境变化，数据库已锁定", Qt::AlignBottom, Qt::red);
+        //局部事件循环
+        QTimer::singleShot(400, &eventloop, SLOT(quit()));
+        eventloop.exec();
+    }
+
+    //局部事件循环
+    QTimer::singleShot(400, &eventloop, SLOT(quit()));
+    eventloop.exec();
 
     splash.showMessage("正在拉起登录模块", Qt::AlignBottom, Qt::black);
 

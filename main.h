@@ -37,8 +37,8 @@ public:
     // 系统token信息
     static QString SYSTEM_TOKEN;
 
-    // MD5加密密钥信息
-    static QString MD5_KEY;
+    // aes加密密钥信息
+    static QString AES_KEY;
 };
 
 #endif // MAIN_H
