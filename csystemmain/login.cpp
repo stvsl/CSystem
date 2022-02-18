@@ -109,6 +109,12 @@ void Login::on_login_btn_clicked()
     LOGIN_CONFIG::PASSWD = ui->inPut_Passwd->text();
     // 获取token
     netWorkUtils nwu;
-    qDebug() << nwu.getToken();
+    ui->login_btn->setText("正在拉取用户信息");
+    UserInterface uif;
+    uif.getUserInformation();
+    if(MAIN_RUN_CONFIG::SYSTEM_STATUS == 3){
+        ui->login_btn->setText("正在请求解锁数据库");
+        
+    }
 }
 

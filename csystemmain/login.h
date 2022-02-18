@@ -10,6 +10,7 @@
 #include "QTimer"
 #include "QDebug"
 #include "netWorkUtils/netWorkUtils.h"
+#include "netWorkUtils/userinterface.h"
 
 namespace Ui {
 class Login;

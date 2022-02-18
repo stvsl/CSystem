@@ -26,7 +26,8 @@ endif()
 set(TS_FILES CSystem-Qt6_zh_CN.ts)
 
 set(PROJECT_SOURCES
-    configManager/configmanager.cpp
+       configManager/configmanager.cpp
+       configManager/encryptionconfig.cpp
        csystemmain/accountmanagement.cpp
        csystemmain/dataview.cpp
        csystemmain/mapsetting.cpp
@@ -42,9 +43,11 @@ set(PROJECT_SOURCES
        AES/aes.cpp
        main.cpp
        netWorkUtils/netWorkUtils.cpp
+       netWorkUtils/userinterface.cpp
        DButils/dbutils.cpp
        configManager/configmanager.h
        configManager/mapconfig.h
+       configManager/encryptionconfig.h
        csystemmain/accountmanagement.h
        csystemmain/dataview.h
        csystemmain/mapsetting.h
@@ -60,6 +63,7 @@ set(PROJECT_SOURCES
        AES/aes.h
        main.h
        netWorkUtils/netWorkUtils.h
+       netWorkUtils/userinterface.h
        DButils/dbutils.h
        csystemmain/accountmanagement.ui
        csystemmain/csystemmain.ui

@@ -10,7 +10,7 @@ netWorkUtils::netWorkUtils(QObject *parent) : QObject(parent)
     QSslConfiguration::setDefaultConfiguration(sslConf);
     // 初始化计时器
     // 设置超时时间3秒
-    timer.setInterval(5000);
+    timer.setInterval(3000);
     timer.setSingleShot(true);
 }
 
