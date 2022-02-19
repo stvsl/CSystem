@@ -152,9 +152,9 @@ void configManager::getPasswd(){
     QString dbpart256 = QString(QCryptographicHash::hash(CONFIG_CORE::DB_PASSWD_PART.toUtf8(), QCryptographicHash::Sha256).toHex());
     // 将设备信息整合成字符串
     QString sysstr = hostName + deviceType + deviceName + strIpAddress + strMacAddr + "CSystem" + QCoreApplication::applicationVersion() + dbpart256;
-    // 计算syssstr的aes值
+    // 计算syssstr的md5值
     QByteArray aes = QCryptographicHash::hash(sysstr.toUtf8(), QCryptographicHash::Md5);
-    // 将aes值转换为16进制字符串
+    // 将md5值转换为16进制字符串
     QString dbpasswd = aes.toHex();
     // 保存数据库密码
     CONFIG_CORE::DB_PASSWD = dbpasswd;
