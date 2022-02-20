@@ -17,6 +17,12 @@ public:
     // AES解密
     QString decrypt(QByteArray Data);
 
+    // AESbyte加密
+    QByteArray encrypt(QByteArray data, QString key);
+
+    // AESbyte解密
+    QByteArray decrypt(QByteArray Data, QString key);
+
 };
 
 #endif // AES_H

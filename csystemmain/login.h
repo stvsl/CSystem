@@ -11,6 +11,8 @@
 #include "QDebug"
 #include "netWorkUtils/netWorkUtils.h"
 #include "netWorkUtils/userinterface.h"
+#include "configManager/encryptionconfig.h"
+#include <QMessageBox>
 
 namespace Ui {
 class Login;

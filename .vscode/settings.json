@@ -8,6 +8,13 @@
         "tuple": "cpp",
         "utility": "cpp",
         "variant": "cpp",
-        "qstring": "cpp"
+        "qstring": "cpp",
+        "fstream": "cpp",
+        "iosfwd": "cpp",
+        "limits": "cpp",
+        "sstream": "cpp",
+        "stop_token": "cpp",
+        "streambuf": "cpp"
     },
+    "C_Cpp.errorSquiggles": "Disabled",
 }

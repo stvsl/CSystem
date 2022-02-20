@@ -8,6 +8,7 @@
 #include <QCoreApplication>
 #include <QHostInfo>
 #include "RSA/rsa.h"
+#include "main.h"
 
 class configManager : public QObject
 {
@@ -112,7 +113,7 @@ public:
 /// \date 2022.2.6
 class USER_CONFIG
 {
-    public:
+public:
     ///
     /// \brief 用户真实姓名
     ///
@@ -165,6 +166,29 @@ public:
     /// \brief 账户密码
     ///
     static QString PASSWD;
+};
+
+class ID_CARD
+{
+
+public:
+    // 账户类型
+    static int TYPE;
+
+    // 用户姓名
+    static QString USERNAME;
+
+    // 身份证号
+    static QString USERID;
+
+    // 电话号码
+    static QString TEL;
+
+    // 家庭住址
+    static QString USERLOCATE;
+
+    // 所属机构代码
+    static QString ORGANIZATION;
 };
 
 #endif // CONFIGMANAGER_H
