@@ -44,6 +44,7 @@ set(PROJECT_SOURCES
        main.cpp
        netWorkUtils/netWorkUtils.cpp
        netWorkUtils/userinterface.cpp
+       netWorkUtils/security.cpp
        DButils/dbutils.cpp
        configManager/configmanager.h
        configManager/mapconfig.h
@@ -64,6 +65,7 @@ set(PROJECT_SOURCES
        main.h
        netWorkUtils/netWorkUtils.h
        netWorkUtils/userinterface.h
+       netWorkUtils/security.h
        DButils/dbutils.h
        csystemmain/accountmanagement.ui
        csystemmain/csystemmain.ui
@@ -128,3 +130,5 @@ set_target_properties(CSystem-Qt6 PROPERTIES
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(CSystem-Qt6)
 endif()
+
+set(CMAKE_EXPORT_COMPILECOMMANDS ON)

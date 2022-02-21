@@ -3,20 +3,12 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**",
-                "/home/stvsl/Documents/",
-                "/usr/include/qt/QtNetwork",
-                "/usr/include/qt/QtWidgets",
-                "/usr/include/qt6/QtCore",
-                "/usr/include/qt6/QtSql",
-                "/usr/include/qt6/QtWidgets",
-                "/usr/include/qt/QtWidgets",
-                "/usr/include/qt6/QtWidgets"
+                "${workspaceFolder}/**"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c17",
-            "cppStandard": "c++14",
+            "cppStandard": "c++17",
             "intelliSenseMode": "linux-clang-x64",
             "configurationProvider": "ms-vscode.cmake-tools"
         }

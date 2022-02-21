@@ -1,230 +1,202 @@
 #include "netWorkUtils.h"
 #include "configManager/configmanager.h"
 
+int netWorkUtils::CONNECTMODE = 1;
+int netWorkUtils::TIMEOUT = 5000;
+bool netWorkUtils::HTTPS = false;
+bool netWorkUtils::SSLVERIFY = true;
+
 netWorkUtils::netWorkUtils(QObject *parent) : QObject(parent)
 {
-    // 初始化SSL配置
-    QSslConfiguration sslConf = QSslConfiguration::defaultConfiguration();
-    sslConf.setPeerVerifyMode(QSslSocket::VerifyNone);
-    sslConf.setProtocol(QSsl::TlsV1SslV3);
-    QSslConfiguration::setDefaultConfiguration(sslConf);
+    // 判断是否开启HTTPS
+    if (netWorkUtils::HTTPS)
+    {
+        // 初始化SSL
+        QSslConfiguration sslConfiguration;
+        if (!netWorkUtils::SSLVERIFY)
+        {
+            sslConfiguration.setPeerVerifyMode(QSslSocket::VerifyNone);
+        }
+        sslConfiguration.setProtocol(QSsl::TlsV1SslV3);
+        QSslConfiguration::setDefaultConfiguration(sslConfiguration);
+    }
     // 初始化计时器
-    // 设置超时时间3秒
-    timer.setInterval(3000);
-    timer.setSingleShot(true);
+    timer->setInterval(netWorkUtils::TIMEOUT);
+    timer->setSingleShot(true);
 }
 
-QString netWorkUtils::ping()
+QString netWorkUtils::CONNECT_MODE()
 {
-    //发送Https形式的的GET请求
-    QNetworkRequest request;
-    request.setUrl(QUrl("https://" + CONFIG_CORE::SERVICE_DOMAIN + "/ping"));
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    QSslConfiguration conf;
-    conf.setPeerVerifyMode(QSslSocket::VerifyNone);
-    conf.setProtocol(QSsl::TlsV1SslV3);
-    request.setSslConfiguration(conf);
-    // manager
-    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
-    QEventLoop loop;
-    QNetworkReply *reply = manager->get(request);
-    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-    QObject::connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
-    timer.start();
-    loop.exec();
-    QString code;
-    // 如果超时
-    if (!timer.isActive())
+    if (netWorkUtils::CONNECTMODE == 0)
     {
-        timer.stop();
-        return "网络连接超时";
+        netWorkUtils::CONNECTMODE = 1;
+        return "域名模式";
     }
-    // 如果没有超时
     else
     {
-        // 解析json
-        QJsonParseError jsonError;
-        QJsonDocument jsonDoc = QJsonDocument::fromJson(reply->readAll(), &jsonError);
-        if (jsonError.error != QJsonParseError::NoError)
-        {
-            return "数据通信异常";
-        }
-        QJsonObject jsonObj = jsonDoc.object();
-        code = jsonObj.value("code").toString();
-        // 如果code不为CX200
-        if (code != "CX200")
-        {
-            qDebug() << "ping：code: " << code << "message" << jsonObj.value("message").toString();
-        }
-        else
-        {
-            // 获取服务器RSA
-            CONFIG_CORE::RSA_SERVER_PUBLIC_KEY = jsonObj.value("RSA_PUBLIC").toString();
-        }
+        return "IP模式";
     }
-    // 释放资源
-    reply->deleteLater();
-    manager->deleteLater();
-    return code;
 }
 
-QString netWorkUtils::pingpost()
+QString netWorkUtils::get(QString url)
 {
-    // 发送Https形式的的POST请求
-    QNetworkRequest request;
-    request.setUrl(QUrl("https://" + CONFIG_CORE::SERVICE_DOMAIN + "/ping"));
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    QSslConfiguration conf;
-    conf.setPeerVerifyMode(QSslSocket::VerifyNone);
-    conf.setProtocol(QSsl::TlsV1SslV3);
-    request.setSslConfiguration(conf);
-    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
-    // 使用服务器RSA公钥作为数据种子生成随机字符串
-    MAIN_RUN_CONFIG::AES_KEY = "";
-    qsrand(QDateTime::currentMSecsSinceEpoch());
-    int idx = 0;
-    for (int i = 0; i < 15; ++i)
+    // 发送get请求
+    // 判断模式
+    QString aim;
+    if (netWorkUtils::CONNECTMODE == 0)
     {
-        idx = qrand() % (200 - 1);
-        QString ch = QString(CONFIG_CORE::RSA_SERVER_PUBLIC_KEY[idx+20]);
-        MAIN_RUN_CONFIG::AES_KEY.append(ch);
+        qDebug() << "状态异常，当前模式不支持get请求,请检查";
+        return "状态异常，当前模式不支持get请求,请检查";
     }
-    // 使用服务器RSA加密aes1和特征值
-    rsa rsa;
-    QString aes1 = rsa.rsaPubEncrypt(MAIN_RUN_CONFIG::AES_KEY, CONFIG_CORE::RSA_SERVER_PUBLIC_KEY);
-    QString feature = rsa.rsaPubEncrypt(CONFIG_CORE::SYSTEM_FEATURE, CONFIG_CORE::RSA_SERVER_PUBLIC_KEY);
-    // json生成
-    QJsonObject jsonObj;
-    jsonObj.insert("KEY", aes1);
-    jsonObj.insert("FEATURE", feature);
-    jsonObj.insert("RSA", CONFIG_CORE::RSA_PUBLIC_KEY);
-    QJsonDocument jsonDoc(jsonObj);
-    QEventLoop loop;
-    QNetworkReply *reply = manager->post(request, QJsonDocument(jsonObj).toJson());
-    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-    QObject::connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
-    timer.start();
-    loop.exec();
-    QString code;
-    // 如果超时
-    if (!timer.isActive())
-    {
-        timer.stop();
-        return "网络连接超时";
-    }
-    // 如果没有超时
     else
     {
-        // 解析json
-        QJsonParseError jsonError;
-        QJsonDocument jsonDoc = QJsonDocument::fromJson(reply->readAll(), &jsonError);
-        if (jsonError.error != QJsonParseError::NoError)
-        {
-            // 释放资源
-            reply->deleteLater();
-            manager->deleteLater();
-            return "数据通信异常";
-        }
-        QJsonObject jsonObj = jsonDoc.object();
-        code = jsonObj.value("code").toString();
-        // 如果code不为CX200
-        if (code != "CX200")
-        {
-            qDebug() << "ping：code: " << code << "message" << jsonObj.value("message").toString();
-        }
-        else
-        {
-            // 获取aes密钥
-            QString aese = jsonObj.value("KEY").toString();
-            // 解密获取aes信息
-            QString aes2 = rsa.rsaPriDecrypt(aese, CONFIG_CORE::RSA_PRIVATE_KEY);
-            // 拼接aes信息
-            MAIN_RUN_CONFIG::AES_KEY.append(aes2);
-            // 计算aes
-            MAIN_RUN_CONFIG::AES_KEY = QCryptographicHash::hash(MAIN_RUN_CONFIG::AES_KEY.toUtf8(), QCryptographicHash::Md5).toHex();
-        }
+        aim = CONFIG_CORE::SERVICE_DOMAIN + url;
     }
-    // 释放资源
-    reply->deleteLater();
-    manager->deleteLater();
-    return code;
-}
-
-QString netWorkUtils::getToken()
-{
-   // 发送https的post请求
-    QNetworkRequest request;
-    request.setUrl(QUrl("https://" + CONFIG_CORE::SERVICE_DOMAIN + "/auth/getauth"));
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    QSslConfiguration conf;
-    conf.setPeerVerifyMode(QSslSocket::VerifyNone);
-    conf.setProtocol(QSsl::TlsV1SslV3);
-    request.setSslConfiguration(conf);
-    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
-    // 计算密码特征
-    QString passwdsha256 = QCryptographicHash::hash(LOGIN_CONFIG::PASSWD.toUtf8(), QCryptographicHash::Sha256).toHex();
-    // 加密
-    rsa rsa;
-    QString feature = rsa.rsaPubEncrypt(CONFIG_CORE::SYSTEM_FEATURE, CONFIG_CORE::RSA_SERVER_PUBLIC_KEY);
-    QString id = rsa.rsaPubEncrypt(LOGIN_CONFIG::ID, CONFIG_CORE::RSA_SERVER_PUBLIC_KEY);
-    QString passwd = rsa.rsaPubEncrypt(passwdsha256, CONFIG_CORE::RSA_SERVER_PUBLIC_KEY);
-    // json生成
-    QJsonObject jsonObj;
-    jsonObj.insert("feature", feature);
-    jsonObj.insert("id", id);
-    jsonObj.insert("passwd", passwd);
-    QJsonDocument jsonDoc(jsonObj);
-    QEventLoop loop;
-    QNetworkReply *reply = manager->post(request, QJsonDocument(jsonObj).toJson());
-    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-    QObject::connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
-    timer.start();
-    loop.exec();
-    QString code;
-    // 如果超时
-    if (!timer.isActive())
+    // 判断是否开启HTTPS
+    if (netWorkUtils::HTTPS)
     {
-        timer.stop();
-        return "网络连接超时";
+        request = new QNetworkRequest(QUrl("https://" + aim));
     }
-    // 如果没有超时
     else
     {
-        // 解析json
-        QJsonParseError jsonError;
-        QJsonDocument jsonDoc = QJsonDocument::fromJson(reply->readAll(), &jsonError);
-        if (jsonError.error != QJsonParseError::NoError)
-        {
-            // 释放资源
-            reply->deleteLater();
-            manager->deleteLater();
-            return "数据通信异常";
-        }
-        QJsonObject jsonObj = jsonDoc.object();
-        code = jsonObj.value("code").toString();
-        // 如果code不为CX200
-        if (code != "CX200")
-        {
-            qDebug() << "ping：code: " << code << "message" << jsonObj.value("message").toString();
-        }
-        else
-        {
-            // 获取token
-            MAIN_RUN_CONFIG::SYSTEM_TOKEN = jsonObj.value("token").toString();
-            // base64解码
-            QByteArray data = QByteArray::fromBase64(MAIN_RUN_CONFIG::SYSTEM_TOKEN.toUtf8());
-            AES aes;
-            // 使用aes密码解密token
-            MAIN_RUN_CONFIG::SYSTEM_TOKEN =  aes.decrypt(data);
-        }
+        request = new QNetworkRequest(QUrl("http://" + aim));
     }
-    // 释放资源
-    reply->deleteLater();
-    manager->deleteLater();
-    return code;
+    request->setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    requestType = 0;
+    return "OK";
 }
 
-QString netWorkUtils::updatePasswdPart()
+QString netWorkUtils::post(QString url)
 {
-   
+    // 发送post请求
+    // 判断模式
+    QString aim;
+    if (netWorkUtils::CONNECTMODE == 0)
+    {
+        qDebug() << "状态异常，当前模式不支持get请求,请检查";
+        return "状态异常，当前模式不支持get请求,请检查";
+    }
+    else
+    {
+        aim = CONFIG_CORE::SERVICE_DOMAIN + url;
+    }
+    // 判断是否开启HTTPS
+    if (netWorkUtils::HTTPS)
+    {
+        request = new QNetworkRequest(QUrl("https://" + aim));
+    }
+    else
+    {
+        request = new QNetworkRequest(QUrl("http://" + aim));
+    }
+    request->setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    requestType = 1;
+    return "OK";
+}
+
+void netWorkUtils::setToken()
+{
+    // 设置token
+    QString token = MAIN_RUN_CONFIG::SYSTEM_TOKEN;
+    if (token != "")
+    {
+        request->setRawHeader("Authorization", ("sintok " + token).toUtf8());
+    }
+}
+
+void netWorkUtils::setHeader(QString header, QString key)
+{
+    // 设置header
+    request->setRawHeader(header.toUtf8(), key.toUtf8());
+}
+
+void netWorkUtils::setTimeout(int timeout)
+{
+    timer->setInterval(timeout);
+}
+
+void netWorkUtils::setGlobalTimeout(int timeout)
+{
+    netWorkUtils::TIMEOUT = timeout;
+    timer->setInterval(timeout);
+}
+
+void netWorkUtils::closeVerify()
+{
+    // 关闭SSL验证
+    QSslConfiguration sslConfiguration;
+    sslConfiguration.setPeerVerifyMode(QSslSocket::VerifyNone);
+    sslConfiguration.setProtocol(QSsl::TlsV1SslV3);
+    QSslConfiguration::setDefaultConfiguration(sslConfiguration);
+    SSLVERIFY = false;
+}
+
+void netWorkUtils::openHttpsGlobal()
+{
+    // 开启HTTPS
+    netWorkUtils::HTTPS = true;
+}
+
+QByteArray netWorkUtils::exec()
+{
+    // 执行请求
+    if (requestType == 0)
+    {
+        reply = manager->get(*request);
+    }
+    else
+    {
+        reply = manager->post(*request, QJsonDocument(jsonObj).toJson());
+    }
+    // 事件循环
+    QEventLoop loop;
+    connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    connect(timer, &QTimer::timeout, &loop, &QEventLoop::quit);
+    timer->start();
+    loop.exec();
+    // 如果超时
+    if (timer->isActive())
+    {
+        emit netError(QString("网络超时"));
+        timer->stop();
+        reply->abort();
+        reply->deleteLater();
+        return "超时";
+    }
+    // 如果请求失败
+    if (reply->error() != QNetworkReply::NoError)
+    {
+        emit netError(reply->errorString());
+        reply->deleteLater();
+        return "请求失败";
+    }
+    // 解析json
+    QJsonParseError jsonError;
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(reply->readAll(), &jsonError);
+    if (jsonError.error != QJsonParseError::NoError)
+    {
+        reply->deleteLater();
+        emit netError(jsonError.errorString());
+        return "解析失败";
+    }
+    reply->deleteLater();
+    QJsonObject jsonObj = jsonDoc.object();
+    QString code = jsonObj.value("code").toString();
+    // 如果code不为CX200
+    if (code != "CX200")
+    {
+        emit netError(code);
+        return "请求失败";
+    }
+    // 返回json
+    return jsonDoc.toJson();
+}
+
+void netWorkUtils::deleteLater()
+{
+    reply->deleteLater();
+    timer->deleteLater();
+    manager->deleteLater();
+    delete request;
+    QObject::deleteLater();
 }

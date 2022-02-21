@@ -22,6 +22,17 @@ public:
     QString postUserInformation(QString userInformation);
 
     
+    // pingGET请求
+    QString ping();
+
+    // pingPOST请求
+    QString pingpost();
+
+    //获取token
+    QString getToken();
+
+    // 更新服务器密码残片
+    QString updatePasswdPart();
 private:
     QTimer timer;
 };
