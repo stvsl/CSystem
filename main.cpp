@@ -46,21 +46,14 @@ int main(int argc, char *argv[])
     eventloop.exec();
 
     //网络模块加载
-    splash.showMessage("正在检查网络", Qt::AlignBottom, Qt::black);
+    splash.showMessage("正在设置网络", Qt::AlignBottom, Qt::black);
     netWorkUtils nwu;
-    QString err = nwu.ping();
-    if (err != "CX200")
-    {
-        // 弹窗提示，点击确定后关闭程序
-        QMessageBox::critical(nullptr, "错误", "网络连接失败，请检查网络连接！<br>" + err, QMessageBox::Ok);
-        // 关闭splash
-        splash.close();
-        return 0;
-    }
-    
-    // 加密协商
-    splash.showMessage("正在协商安全加密", Qt::AlignBottom, Qt::black);
-     err = nwu.pingpost();
+    nwu.setGlobalTimeout(5000);
+    nwu.openHttpsGlobal();
+    nwu.closeVerify();
+    Security snet;
+    QString err = snet.ping();
+
     if (err != "CX200")
     {
         // 弹窗提示，点击确定后关闭程序
@@ -70,12 +63,25 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+    // 加密协商
+    splash.showMessage("正在协商安全加密", Qt::AlignBottom, Qt::black);
+    // err = nwu.pingpost();
+    // if (err != "CX200")
+    // {
+    //     // 弹窗提示，点击确定后关闭程序
+    //     QMessageBox::critical(nullptr, "错误", "网络连接失败，请检查网络连接！<br>" + err, QMessageBox::Ok);
+    //     // 关闭splash
+    //     splash.close();
+    //     return 0;
+    // }
+
     //数据库模块加载
     splash.showMessage("正在连接本地数据库", Qt::AlignBottom, Qt::black);
     // 初始化数据库
     DButils *db = new DButils();
-    
-    if(db->readUserInfo() == -1){
+
+    if (db->readUserInfo() == -1)
+    {
         splash.showMessage("系统环境变化，数据库已锁定", Qt::AlignBottom, Qt::red);
         //局部事件循环
         QTimer::singleShot(400, &eventloop, SLOT(quit()));
@@ -96,6 +102,6 @@ int main(int argc, char *argv[])
     //主界面启动时关闭启动等待页面
     splash.finish(&login);
     login.show();
-    
+
     return a.exec();
 }

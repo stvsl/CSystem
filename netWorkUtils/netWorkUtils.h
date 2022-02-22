@@ -29,16 +29,14 @@ private:
     // 1: 域名模式
     static int CONNECTMODE;
 
-    // 请求类型
-    // 0: GET
-    // 1: POST
-    int requestType;
-
     // 超时时间设置
     static int TIMEOUT;
 
     // HTTPS模式
     static bool HTTPS;
+
+    // 是否携带token
+    static bool takeToken;
 
     // 是否需要认证
     static bool SSLVERIFY;
@@ -46,24 +44,32 @@ private:
     // 发送json
     QJsonObject jsonObj;
 
+    // 请求类型
+    // 0: GET
+    // 1: POST
+    int requestType;
+
+    // 保存请求头
+    QMap<QString, QString> headers;
+
+    // 访问目标
+    QString target;
+
 public:
     // 切换全局连接模式
     QString CONNECT_MODE();
 
     // 发送get请求
-    QString get(QString url);
+    void get(QString url);
 
     // 发送post请求
-    QString post(QString url);
+    void post(QString url);
 
     // 是否携带token(默认不携带)
     void setToken();
 
     // 设置请求头
     void setHeader(QString header, QString key);
-
-    // 设置超时
-    void setTimeout(int timeout);
 
     // 设置全局超时
     void setGlobalTimeout(int timeout);
@@ -83,23 +89,12 @@ public:
     // 网络重连函数
     void reConnect();
 
-    // 释放资源
-    void deleteLater();
-
 private:
-    QTimer *timer;
+    QTimer timer;
 
-    // 创建网络管理器
-    QNetworkAccessManager *manager;
+    QByteArray getRequest();
 
-    // 创建网络请求
-    QNetworkRequest *request;
-
-    // 创建网络响应
-    QNetworkReply *reply;
-
-    // 创建网络错误
-    QNetworkReply::NetworkError error;
+    QByteArray postRequest();
 };
 
 #endif // NETWORKUTILS_H

@@ -114,16 +114,16 @@ void Login::on_login_btn_clicked()
     }
     LOGIN_CONFIG::ID = ui->inPut_ID->text();
     LOGIN_CONFIG::PASSWD = ui->inPut_Passwd->text();
-    // 获取token
-    netWorkUtils nwu;
-    if(nwu.getToken() != "CX200"){
-        // 弹出错误提示
-        QMessageBox::warning(this, "登录失败", "账号或密码错误！", QMessageBox::Ok);
-        ui->login_btn->setText("登录");
-        ui->inPut_ID->clear();
-        ui->inPut_Passwd->clear();
-        return;
-    }
+//    // 获取token
+//    netWorkUtils nwu;
+//    if(nwu.getToken() != "CX200"){
+//        // 弹出错误提示
+//        QMessageBox::warning(this, "登录失败", "账号或密码错误！", QMessageBox::Ok);
+//        ui->login_btn->setText("登录");
+//        ui->inPut_ID->clear();
+//        ui->inPut_Passwd->clear();
+//        return;
+//    }
     ui->login_btn->setText("正在拉取用户信息");
     UserInterface uif;
     QString userinfo = uif.getUserInformation();
