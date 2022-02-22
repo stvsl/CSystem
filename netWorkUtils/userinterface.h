@@ -15,7 +15,12 @@ class UserInterface : public QObject
 public:
     UserInterface();
 
+    // 获取用户信息
     QString getUserInformation();
+
+    // 写用户信息
+    QString postUserInformation(QString userInformation);
+
 private:
     QTimer timer;
 };

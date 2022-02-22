@@ -35,6 +35,13 @@ QString USER_CONFIG::USER_LOCATE = "";
 QString USER_CONFIG::USER_PHONE = "";
 QString USER_CONFIG::ORGANIZATION = "";
 
+// 用户身份信息默认值
+int ID_CARD::TYPE = 0;
+QString ID_CARD::TEL = "18888888888";
+QString ID_CARD::ORGANIZATION = "";
+QString ID_CARD::USERID = "";
+QString ID_CARD::USERLOCATE = "";
+QString ID_CARD::USERNAME = "";
 
 //地图自定义配置文件默认值
 
@@ -49,6 +56,7 @@ bool MAP_CONFIG::MAP_CONTROL_SCALE = true;
 
 configManager::configManager(QObject *parent) : QObject(parent)
 {
+    qDebug() << QCoreApplication::applicationDirPath() + "/config/config.cfg";
     QSettings settings(QCoreApplication::organizationName() ,QCoreApplication::applicationName());
     settings.setPath(QSettings::IniFormat,QSettings::UserScope,"./config");
     qDebug() << settings.fileName();
@@ -56,6 +64,7 @@ configManager::configManager(QObject *parent) : QObject(parent)
     if(CONFIG_CORE::RUN_FIRST){
         writer();
     }else{
+        MAIN_RUN_CONFIG::SYSTEM_STATUS = 1;
         reader();
     }
     getPasswd();

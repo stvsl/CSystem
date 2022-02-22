@@ -1,6 +1,0 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/stvsl/Documents/个人项目/计算机设计竞赛/软件项目/CSystem'
-make: Leaving directory '/home/stvsl/Documents/个人项目/计算机设计竞赛/软件项目/CSystem'
- 
-make: *** No targets specified and no makefile found.  Stop.
- 

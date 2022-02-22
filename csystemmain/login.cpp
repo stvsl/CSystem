@@ -104,17 +104,63 @@ void Login::on_auto_login_stateChanged(int arg1)
 
 void Login::on_login_btn_clicked()
 {
-    ui->login_btn->setText("登陆中...");
+    ui->login_btn->setText("登录中...");
+    // 判断账号密码是否为空
+    if(ui->inPut_ID->text().isEmpty() || ui->inPut_Passwd->text().isEmpty())
+    {
+        QMessageBox::warning(this, "警告", "ID或密码不能为空！");
+        ui->login_btn->setText("登录");
+        return;
+    }
     LOGIN_CONFIG::ID = ui->inPut_ID->text();
     LOGIN_CONFIG::PASSWD = ui->inPut_Passwd->text();
-    // 获取token
-    netWorkUtils nwu;
+//    // 获取token
+//    netWorkUtils nwu;
+//    if(nwu.getToken() != "CX200"){
+//        // 弹出错误提示
+//        QMessageBox::warning(this, "登录失败", "账号或密码错误！", QMessageBox::Ok);
+//        ui->login_btn->setText("登录");
+//        ui->inPut_ID->clear();
+//        ui->inPut_Passwd->clear();
+//        return;
+//    }
     ui->login_btn->setText("正在拉取用户信息");
     UserInterface uif;
-    uif.getUserInformation();
+    QString userinfo = uif.getUserInformation();
+    // 解析为json
+    QJsonParseError json_error;
+    QJsonDocument parse_doucment = QJsonDocument::fromJson(userinfo.toUtf8(), &json_error);
+    // 判断是否解析成功
+    if(json_error.error != QJsonParseError::NoError)
+    {
+        QMessageBox::warning(this, "登录失败", "账号或密码错误！", QMessageBox::Ok);
+        ui->login_btn->setText("登录");
+        ui->inPut_ID->clear();
+        ui->inPut_Passwd->clear();
+        return;
+    }
+    // 获取用户信息
+    QJsonObject obj = parse_doucment.object();
+    // 获取id
+    LOGIN_CONFIG::ID = obj.value("id").toString();
+    ID_CARD::TYPE = obj.value("type").toInt();
+    ID_CARD::USERID = obj.value("userid").toString();
+    ID_CARD::USERLOCATE = obj.value("userlocate").toString();
+    ID_CARD::USERNAME = obj.value("username").toString();
+    ID_CARD::TEL = obj.value("tel").toString();
+    ID_CARD::ORGANIZATION = obj.value("organization").toString();
+
+    EncryptionConfig ec;
     if(MAIN_RUN_CONFIG::SYSTEM_STATUS == 3){
         ui->login_btn->setText("正在请求解锁数据库");
-        
+        // 获取解锁数据库的密码
+        ec.getUnlockPassword();
+        // 重新设置数据库密码
+        CONFIG_CORE::DB_PASSWD = ec.databasePasswd_Old;
+        ui->login_btn->setText("数据库已解锁");
+        MAIN_RUN_CONFIG::SYSTEM_STATUS = 1;
     }
+    // 上传密码残片
+    ec.uploadPasswordFragment();
 }
 

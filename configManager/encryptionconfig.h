@@ -6,6 +6,16 @@
 #include <QCryptographicHash>
 #include <QFile>
 #include <QTextStream>
+#include <QCoreApplication>
+#include <QDebug>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QTimer>
+#include "configManager/configmanager.h"
+#include "main.h"
+#include "AES/aes.h"
 
 class EncryptionConfig : public QObject
 {
@@ -17,15 +27,26 @@ public:
     // 生成密码
     QString generatePassword();
 
+    // 获取解锁密码
+    QString getUnlockPassword();
+
+    // 上传密码残片
+    QString uploadPasswordFragment(); 
+
     // 读取
-    void read(QString passwd);
+    void read();
+
     // 写入
-    void write(QString passd);
+    void write();
 
     // 数据库密码
-    QString databasePasswd_Old;
+    static QString databasePasswd_Old;
 
-signals:
+    // 密钥
+    static QString key;
+
+private:
+    QTimer timer;
 
 };
 
