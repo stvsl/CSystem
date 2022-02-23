@@ -41,8 +41,8 @@ private:
     // 是否需要认证
     static bool SSLVERIFY;
 
-    // 发送json
-    QJsonObject jsonObj;
+    // 要发送的json数据
+    QByteArray jsondata;
 
     // 请求类型
     // 0: GET

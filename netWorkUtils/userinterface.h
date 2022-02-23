@@ -12,6 +12,10 @@
 class UserInterface : public QObject
 {
     Q_OBJECT
+
+signals:
+    void netError(QString err);
+
 public:
     UserInterface();
 
@@ -21,8 +25,8 @@ public:
     // 写用户信息
     QString postUserInformation(QString userInformation);
 
-private:
-    QTimer timer;
+private slots:
+    void onnetError(QString err);
 };
 
 #endif // USERINTERFACE_H

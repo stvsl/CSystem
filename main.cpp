@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     splash.showMessage("系统启动中，请稍候", Qt::AlignBottom, Qt::black);
 
     QEventLoop eventloop;
-    QTimer::singleShot(200, &eventloop, SLOT(quit()));
+    QTimer::singleShot(100, &eventloop, SLOT(quit()));
     eventloop.exec();
     //检查屏幕状态
     QScreen *mScreen = QGuiApplication::screens().at(0);
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
     config.makeRSA();
 
     //局部事件循环
-    QTimer::singleShot(200, &eventloop, SLOT(quit()));
+    QTimer::singleShot(100, &eventloop, SLOT(quit()));
     eventloop.exec();
 
     //网络模块加载
@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
     if (err != "CX200")
     {
         // 弹窗提示，点击确定后关闭程序
-        QMessageBox::critical(nullptr, "错误", "网络连接失败，请检查网络连接！<br>" + err, QMessageBox::Ok);
+        QMessageBox::critical(nullptr, "错误", "当前网络环境可能存在风险！系统已安全退出<br> 错误：" + err, QMessageBox::Ok);
         // 关闭splash
         splash.close();
         return 0;
@@ -65,15 +65,15 @@ int main(int argc, char *argv[])
 
     // 加密协商
     splash.showMessage("正在协商安全加密", Qt::AlignBottom, Qt::black);
-    // err = nwu.pingpost();
-    // if (err != "CX200")
-    // {
-    //     // 弹窗提示，点击确定后关闭程序
-    //     QMessageBox::critical(nullptr, "错误", "网络连接失败，请检查网络连接！<br>" + err, QMessageBox::Ok);
-    //     // 关闭splash
-    //     splash.close();
-    //     return 0;
-    // }
+    err = snet.pingpost();
+    if (err != "CX200")
+    {
+        // 弹窗提示，点击确定后关闭程序
+        QMessageBox::critical(nullptr, "错误", "网络连接失败，请检查网络连接！<br>" + err, QMessageBox::Ok);
+        // 关闭splash
+        splash.close();
+        return 0;
+    }
 
     //数据库模块加载
     splash.showMessage("正在连接本地数据库", Qt::AlignBottom, Qt::black);
@@ -84,13 +84,9 @@ int main(int argc, char *argv[])
     {
         splash.showMessage("系统环境变化，数据库已锁定", Qt::AlignBottom, Qt::red);
         //局部事件循环
-        QTimer::singleShot(400, &eventloop, SLOT(quit()));
+        QTimer::singleShot(200, &eventloop, SLOT(quit()));
         eventloop.exec();
     }
-
-    //局部事件循环
-    QTimer::singleShot(400, &eventloop, SLOT(quit()));
-    eventloop.exec();
 
     splash.showMessage("正在拉起登录模块", Qt::AlignBottom, Qt::black);
 
@@ -102,6 +98,5 @@ int main(int argc, char *argv[])
     //主界面启动时关闭启动等待页面
     splash.finish(&login);
     login.show();
-
     return a.exec();
 }

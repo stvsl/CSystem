@@ -122,6 +122,14 @@ QByteArray netWorkUtils::exec()
     return tmp;
 }
 
+QString netWorkUtils::sendJson(QJsonObject json)
+{
+    // 转换为jsonDocument
+    QJsonDocument jsonDoc(json);
+    jsondata = jsonDoc.toJson();
+    return "OK";
+}
+
 QByteArray netWorkUtils::getRequest()
 {
     // 发送GET请求
@@ -213,6 +221,7 @@ QByteArray netWorkUtils::postRequest()
 {
     // 发送post请求
     QNetworkRequest request;
+    request.setUrl(QUrl(target));
     // 判断是否开启HTTPS
     if (netWorkUtils::HTTPS)
     {
@@ -251,7 +260,7 @@ QByteArray netWorkUtils::postRequest()
     }
     QNetworkAccessManager *manager = new QNetworkAccessManager(this);
     QEventLoop loop;
-    QNetworkReply *reply = manager->post(request, QJsonDocument(jsonObj).toJson());
+    QNetworkReply *reply = manager->post(request, jsondata);
     QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
     QObject::connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
     timer.start();
