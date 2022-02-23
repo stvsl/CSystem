@@ -6,6 +6,10 @@
 #include <QTimer>
 #include <QNetworkRequest>
 #include <QNetworkAccessManager>
+#include <QRandomGenerator>
+#include <QJsonObject>
+#include <QJsonDocument>
+#include <QJsonParseError>
 #include "configManager/configmanager.h"
 #include "main.h"
 #include <QThread>
@@ -35,6 +39,8 @@ public:
 
 private slots:
     void onnetError(QString errStr);
+
+    void panicError(QString errStr);
 };
 
 #endif // SECURITY_H

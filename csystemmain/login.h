@@ -9,13 +9,14 @@
 #include "QPropertyAnimation"
 #include "QTimer"
 #include "QDebug"
-#include "netWorkUtils/netWorkUtils.h"
+#include "netWorkUtils/security.h"
 #include "netWorkUtils/userinterface.h"
 #include "configManager/encryptionconfig.h"
 #include <QMessageBox>
 
-namespace Ui {
-class Login;
+namespace Ui
+{
+    class Login;
 }
 
 class Login : public QMainWindow
@@ -27,7 +28,6 @@ public:
     ~Login();
 
 private:
-
 private slots:
     void on_exit_btn_clicked();
 
