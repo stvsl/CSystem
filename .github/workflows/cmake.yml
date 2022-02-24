@@ -28,7 +28,7 @@ jobs:
       run:  git clone https://github.com/devbean/QtCipherSqlitePlugin.git
 
     - name: cd sqlite
-      run:  cd QtCipherSqlitePlugin
+      run:  cd QtCipherSqlitePlugin/sqlitecipher/
     - name: qmake sqlite
       run:  qmake
     - name: qmake sqlite
