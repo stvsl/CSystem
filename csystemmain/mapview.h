@@ -4,9 +4,11 @@
 #include <QWidget>
 #include <QUrl>
 #include <QWebChannel>
+#include "DButils/nodeinfos.h"
 
-namespace Ui {
-class MapView;
+namespace Ui
+{
+    class MapView;
 }
 
 class MapView : public QWidget
@@ -17,15 +19,18 @@ public:
     explicit MapView(QWidget *parent = nullptr);
     ~MapView();
 
-/***
- * 与js文件通讯的信号函数
- */
+public:
+    void addAllPoint(QVector<NodeInfos> &nodelist);
+
+    /***
+     * 与js文件通讯的信号函数
+     */
 signals:
 
     ///
     /// \brief 设置中心位置
     ///
-    void setCenter();
+    void setCenter(float x, float y);
 
     ///
     /// \brief 设置地标文字
@@ -48,9 +53,14 @@ signals:
     ///
     void setMapType();
 
-/***
- * 界面按键相关的槽函数
- */
+    ///
+    /// \brief 添加结点
+    ///
+    void addPoint(QString name, float x, float y);
+
+    /***
+     * 界面按键相关的槽函数
+     */
 private slots:
 
     ///

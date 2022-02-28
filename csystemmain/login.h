@@ -13,6 +13,7 @@
 #include "netWorkUtils/userinterface.h"
 #include "configManager/encryptionconfig.h"
 #include <QMessageBox>
+#include <QPropertyAnimation>
 
 namespace Ui
 {
@@ -27,7 +28,8 @@ public:
     explicit Login(QWidget *parent = nullptr);
     ~Login();
 
-private:
+signals:
+    void launch();
 private slots:
     void on_exit_btn_clicked();
 

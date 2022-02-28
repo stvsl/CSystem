@@ -46,6 +46,7 @@ set(PROJECT_SOURCES
        netWorkUtils/userinterface.cpp
        netWorkUtils/security.cpp
        DButils/dbutils.cpp
+       DButils/nodeinfos.cpp
        configManager/configmanager.h
        configManager/mapconfig.h
        configManager/encryptionconfig.h
@@ -67,6 +68,7 @@ set(PROJECT_SOURCES
        netWorkUtils/userinterface.h
        netWorkUtils/security.h
        DButils/dbutils.h
+       DButils/nodeinfos.h
        csystemmain/accountmanagement.ui
        csystemmain/csystemmain.ui
        csystemmain/dataview.ui

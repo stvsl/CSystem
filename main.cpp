@@ -1,5 +1,6 @@
 #include "main.h"
 #include "QMessageBox"
+#include <QFile>
 
 int MAIN_RUN_CONFIG::SYSTEM_STATUS = 0;
 QString MAIN_RUN_CONFIG::SYSTEM_TOKEN = "";
@@ -40,6 +41,14 @@ int main(int argc, char *argv[])
     splash.showMessage("正在读取配置文件", Qt::AlignBottom, Qt::black);
     configManager config;
     config.makeRSA();
+    QFile file(":/style/Style/defaultStyle.qss");
+    file.open(QFile::ReadOnly);
+    if (file.isOpen())
+    {
+        QString qss = QLatin1String(file.readAll());
+        qApp->setStyleSheet(qss);
+        file.close();
+    }
 
     //局部事件循环
     QTimer::singleShot(100, &eventloop, SLOT(quit()));
@@ -92,9 +101,12 @@ int main(int argc, char *argv[])
 
     // 启动登录界面
     Login login;
+    CSystemMain m;
+    QObject::connect(&login, SIGNAL(launch()), &m, SLOT(show()));
     // 移动到屏幕中央
     QPoint center = mScreen->geometry().center();
     login.move(center.x() - login.width() / 2, center.y() - login.height() / 2);
+    m.move(center.x() - m.width() / 2, center.y() - m.height() / 2);
     //主界面启动时关闭启动等待页面
     splash.finish(&login);
     login.show();

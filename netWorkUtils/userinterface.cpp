@@ -25,7 +25,7 @@ QString UserInterface::getUserInformation()
     AES aes;
     QString dedata = aes.decrypt(data64);
     // 转换为json
-    QJsonDocument json = QJsonDocument::fromJson(dedata);
+    json = QJsonDocument::fromJson(dedata.toUtf8());
     jsonObj = json.object();
     LOGIN_CONFIG::ID = jsonObj.value("id").toString();
     ID_CARD::TYPE = jsonObj.value("type").toInt();

@@ -28,13 +28,6 @@ bool LOGIN_CONFIG::SAVE_PASSWD = false;
 QString LOGIN_CONFIG::ID = "";
 QString LOGIN_CONFIG::PASSWD = "";
 
-// 用户配置默认值
-QString USER_CONFIG::USER_NAME = "";
-QString USER_CONFIG::USER_ID = "";
-QString USER_CONFIG::USER_LOCATE = "";
-QString USER_CONFIG::USER_PHONE = "";
-QString USER_CONFIG::ORGANIZATION = "";
-
 // 用户身份信息默认值
 int ID_CARD::TYPE = 0;
 QString ID_CARD::TEL = "18888888888";
@@ -44,7 +37,8 @@ QString ID_CARD::USERLOCATE = "";
 QString ID_CARD::USERNAME = "";
 
 //地图自定义配置文件默认值
-
+float MAP_CONFIG::X = 116.404;
+float MAP_CONFIG::Y = 39.915;
 bool MAP_CONFIG::MAP_AUTO_POSITIONING = false;
 bool MAP_CONFIG::MAP_POIICON_ON = true;
 bool MAP_CONFIG::MAP_POITEXT_ON = true;
@@ -53,17 +47,19 @@ QString MAP_CONFIG::MAP_DEFAULT_LOCATE = nullptr;
 bool MAP_CONFIG::MAP_CONTROL_3D = true;
 bool MAP_CONFIG::MAP_CONTROL_SCALE = true;
 
-
 configManager::configManager(QObject *parent) : QObject(parent)
 {
     qDebug() << QCoreApplication::applicationDirPath() + "/config/config.cfg";
-    QSettings settings(QCoreApplication::organizationName() ,QCoreApplication::applicationName());
-    settings.setPath(QSettings::IniFormat,QSettings::UserScope,"./config");
+    QSettings settings(QCoreApplication::organizationName(), QCoreApplication::applicationName());
+    settings.setPath(QSettings::IniFormat, QSettings::UserScope, "./config");
     qDebug() << settings.fileName();
     CONFIG_CORE::RUN_FIRST = settings.value("CORE/RUNFIRST").Bool;
-    if(CONFIG_CORE::RUN_FIRST){
+    if (CONFIG_CORE::RUN_FIRST)
+    {
         writer();
-    }else{
+    }
+    else
+    {
         MAIN_RUN_CONFIG::SYSTEM_STATUS = 1;
         reader();
     }
@@ -72,38 +68,41 @@ configManager::configManager(QObject *parent) : QObject(parent)
 
 void configManager::writer()
 {
-    QSettings settings(QCoreApplication::organizationName() ,QCoreApplication::applicationName());
-    settings.setPath(QSettings::IniFormat,QSettings::UserScope,"./config/config.rc");
+    QSettings settings(QCoreApplication::organizationName(), QCoreApplication::applicationName());
+    settings.setPath(QSettings::IniFormat, QSettings::UserScope, "./config/config.rc");
     settings.beginGroup("CORE");
-    settings.setValue("RUN_FIRST",CONFIG_CORE::RUN_FIRST);
-    settings.setValue("SERVICE_IP",CONFIG_CORE::SERVICE_IP.toString());
-    settings.setValue("SERVICE_PORT",CONFIG_CORE::SERVICE_PORT);
-    settings.setValue("PAR",CONFIG_CORE::DB_PASSWD_PART);
+    settings.setValue("RUN_FIRST", CONFIG_CORE::RUN_FIRST);
+    settings.setValue("SERVICE_IP", CONFIG_CORE::SERVICE_IP.toString());
+    settings.setValue("SERVICE_PORT", CONFIG_CORE::SERVICE_PORT);
+    settings.setValue("PAR", CONFIG_CORE::DB_PASSWD_PART);
     settings.endGroup();
 
     settings.beginGroup("MAP");
-    settings.setValue("MAP_AUTO_POSITIONING",MAP_CONFIG::MAP_DEFAULT_LOCATE);
-    settings.setValue("MAP_AUTO_POSITIONING",MAP_CONFIG::MAP_AUTO_POSITIONING);
-    settings.setValue("MAP_CONTROL_3D",MAP_CONFIG::MAP_CONTROL_3D);
-    settings.setValue("MAP_CONTROL_SCALE",MAP_CONFIG::MAP_CONTROL_SCALE);
-    settings.setValue("MAP_EARTHMODEL",MAP_CONFIG::MAP_EARTHMODEL);
-    settings.setValue("MAP_POIICON_ON",MAP_CONFIG::MAP_POIICON_ON);
-    settings.setValue("MAP_POITEXT_ON",MAP_CONFIG::MAP_POITEXT_ON);
+    settings.setValue("X", MAP_CONFIG::X);
+    settings.setValue("Y", MAP_CONFIG::Y);
+    settings.setValue("MAP_AUTO_POSITIONING", MAP_CONFIG::MAP_DEFAULT_LOCATE);
+    settings.setValue("MAP_AUTO_POSITIONING", MAP_CONFIG::MAP_AUTO_POSITIONING);
+    settings.setValue("MAP_CONTROL_3D", MAP_CONFIG::MAP_CONTROL_3D);
+    settings.setValue("MAP_CONTROL_SCALE", MAP_CONFIG::MAP_CONTROL_SCALE);
+    settings.setValue("MAP_EARTHMODEL", MAP_CONFIG::MAP_EARTHMODEL);
+    settings.setValue("MAP_POIICON_ON", MAP_CONFIG::MAP_POIICON_ON);
+    settings.setValue("MAP_POITEXT_ON", MAP_CONFIG::MAP_POITEXT_ON);
     settings.endGroup();
 }
 
-
 void configManager::reader()
 {
-    QSettings settings(QCoreApplication::organizationName() ,QCoreApplication::applicationName());
-    settings.setPath(QSettings::IniFormat,QSettings::UserScope,"./config/config.rc");
+    QSettings settings(QCoreApplication::organizationName(), QCoreApplication::applicationName());
+    settings.setPath(QSettings::IniFormat, QSettings::UserScope, "./config/config.rc");
     settings.beginGroup("CORE");
     CONFIG_CORE::SERVICE_IP = QHostAddress(settings.value("SERVICE_IP").toString());
     CONFIG_CORE::SERVICE_PORT = settings.value("SERVICE_PORT").toInt();
     CONFIG_CORE::DB_PASSWD_PART = settings.value("PAR").toString();
     settings.endGroup();
-    
+
     settings.beginGroup("MAP");
+    MAP_CONFIG::X = settings.value("X").toFloat();
+    MAP_CONFIG::Y = settings.value("Y").toFloat();
     MAP_CONFIG::MAP_AUTO_POSITIONING = settings.value("MAP_AUTO_POSITIONING").Bool;
     MAP_CONFIG::MAP_CONTROL_3D = settings.value("MAP_CONTROL_3D").Bool;
     MAP_CONFIG::MAP_CONTROL_SCALE = settings.value("MAP_CONTROL_SCALE").Bool;
@@ -114,11 +113,13 @@ void configManager::reader()
     settings.endGroup();
 }
 
-void configManager::config_Changed(){
+void configManager::config_Changed()
+{
     writer();
 }
 
-void configManager::getPasswd(){
+void configManager::getPasswd()
+{
     // 获取主机名
     QString hostName = QHostInfo::localHostName();
     // 获取设备类型
@@ -176,7 +177,8 @@ void configManager::getPasswd(){
     CONFIG_CORE::SYSTEM_FEATURE = QCryptographicHash::hash((CONFIG_CORE::DB_PASSWD + current_date_time.toString("yyyyMMddhhmmss") + random_str).toUtf8(), QCryptographicHash::Md5).toHex();
 }
 
-void configManager::makeRSA(){
+void configManager::makeRSA()
+{
     rsa rsa;
     rsa.RSAmake();
 }

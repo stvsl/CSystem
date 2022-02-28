@@ -8,4 +8,7 @@
     <qresource prefix="/icon">
         <file>icon/搜索.png</file>
     </qresource>
+    <qresource prefix="/style">
+        <file>Style/defaultStyle.qss</file>
+    </qresource>
 </RCC>
