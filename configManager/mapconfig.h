@@ -10,6 +10,15 @@ class MAP_CONFIG : public QObject
     Q_OBJECT
 
 public:
+    ///
+    /// \brief 中央位置坐标X
+    ///
+    static float X;
+
+    ///
+    /// \brief 中央位置坐标Y
+    ///
+    static float Y;
 
     ///
     /// \brief 显示地标(poi)文字
@@ -24,7 +33,7 @@ public:
     ///
     /// \brief 默认地址
     ///
-    static QString  MAP_DEFAULT_LOCATE;
+    static QString MAP_DEFAULT_LOCATE;
 
     ///
     /// \brief 地图卫星地球模式
@@ -45,8 +54,6 @@ public:
     /// \brief 自动定位
     ///
     static bool MAP_AUTO_POSITIONING;
-
 };
-
 
 #endif // MAPCONFIG_H

@@ -30,7 +30,7 @@ Login::Login(QWidget *parent) : QMainWindow(parent),
     if (LOGIN_CONFIG::AUTO_LOGIN)
     {
         // 点击登录按钮
-        on_login_btn_clicked();
+        QTimer::singleShot(1500, this, SLOT(on_login_btn_clicked()));
     }
 }
 
@@ -137,6 +137,25 @@ void Login::on_login_btn_clicked()
         ui->inPut_Passwd->clear();
         return;
     }
+    // 判断是否保存ID和密码
+    if (ui->passwd_save->isChecked())
+    {
+        // 保存ID和密码
+        LOGIN_CONFIG::SAVE_PASSWD = true;
+        LOGIN_CONFIG::ID = ui->inPut_ID->text();
+        LOGIN_CONFIG::PASSWD = ui->inPut_Passwd->text();
+    }
+    else
+    {
+        // 不保存ID和密码
+        LOGIN_CONFIG::SAVE_PASSWD = false;
+        LOGIN_CONFIG::ID = "";
+        LOGIN_CONFIG::PASSWD = "";
+    }
+
+    // 写入数据库
+    DButils db;
+    db.writeUserInfo();
 
     // EncryptionConfig ec;
     // if (MAIN_RUN_CONFIG::SYSTEM_STATUS == 3)
@@ -151,4 +170,14 @@ void Login::on_login_btn_clicked()
     // }
     // // 上传密码残片
     // ec.uploadPasswordFragment();
+    // 逐渐消失
+    QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
+    animation->setDuration(200);
+    animation->setStartValue(1);
+    animation->setEndValue(0);
+    animation->setEasingCurve(QEasingCurve::Linear);
+    animation->start(QAbstractAnimation::DeleteWhenStopped);
+    emit launch();
+    QTimer::singleShot(200, [=]()
+                       { this->close(); });
 }

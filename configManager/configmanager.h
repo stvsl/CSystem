@@ -108,39 +108,6 @@ public:
 };
 
 ///
-/// \brief 用户配置数据和信息
-/// \author stvsl
-/// \date 2022.2.6
-class USER_CONFIG
-{
-public:
-    ///
-    /// \brief 用户真实姓名
-    ///
-    static QString USER_NAME;
-
-    ///
-    /// \brief 用户身份证号
-    ///
-    static QString USER_ID;
-
-    ///
-    /// \brief 用户住址
-    ///
-    static QString USER_LOCATE;
-
-    ///
-    /// \brief 用户联系电话
-    ///
-    static QString USER_PHONE;
-
-    ///
-    /// \brief 帐号所属单位
-    ///
-    static QString ORGANIZATION;
-};
-
-///
 /// \brief 登陆配置
 /// \author stvsl
 /// \date 2022.2.6

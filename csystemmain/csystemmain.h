@@ -2,7 +2,6 @@
 #define CSYSTEMMAIN_H
 
 #include <QMainWindow>
-#include <QListWidgetItem>
 #include "configManager/configmanager.h"
 #include "mapview.h"
 #include "systemsetting.h"
@@ -13,9 +12,10 @@
 #include "accountmanagement.h"
 #include <QStandardItemModel>
 
-namespace Ui {
-class CSystemMain;
-class MapView;
+namespace Ui
+{
+    class CSystemMain;
+    class MapView;
 }
 
 class CSystemMain : public QMainWindow
