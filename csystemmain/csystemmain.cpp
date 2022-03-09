@@ -30,10 +30,10 @@ void CSystemMain::initialization()
     //判断用户类型
     if (CONFIG_CORE::USER_TYPE == 0)
     {
-        // //默认打开信息概览窗口
-        // CSystemMain::WINDOW_MAP_VIEW = new MapView(ui->widget);
-        // CSystemMain::WINDOW_MAP_VIEW->show();
-        // CSystemMain::widgetstatus = 1;
+        //默认打开信息概览窗口
+        CSystemMain::WINDOW_MAP_VIEW = new MapView(ui->widget);
+        CSystemMain::WINDOW_MAP_VIEW->show();
+        CSystemMain::widgetstatus = 1;
         //绑定菜单
         CSystemMain::USER_DEFAULT = new QStandardItemModel();
         CSystemMain::USER_DEFAULT->appendRow(MAP_VIEW);

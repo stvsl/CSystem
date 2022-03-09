@@ -25,6 +25,9 @@ public:
 
     // 写入用户名和密码等等的其他信息到系统数据库
     void writeUserInfo();
+
+    // 存储结点信息的容器
+    static QVector<NodeInfos> nodeList;
 };
 
 #endif // DBUTILS_H

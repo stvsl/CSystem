@@ -78,8 +78,11 @@ public:
     int StaphylococcusCount;
     // 数据成员
 
+    // 状态
+    int status;
+
     // 超级多参初始化
-    bool init(QString Id, QString IP, QString Locate, int Type, QString Belong, QString Principal, QString Installer, QString Maintainer, QString DataConfig, QString SelfInfo, QString LastUpload, QString SelfDate, QString Remark, QString InstallDate, float Lo, float Li, float GasConcentration, float Temperature, float PH, float Density, float Conductivity, float OxygenConcentration, float MetalConcentration, float SolidsConcentration, float FloatingSolidsConcentration, float TotalPhosphorus, float TotalNitrogen, float TotalOrganicCarbon, float BiologicalOxygenDemand, float ChemicalOxygenDemand, int BacteriaCount, int StaphylococcusCount);
+    bool init(QString Id, QString IP, QString Locate, int Type, QString Belong, QString Principal, QString Installer, QString Maintainer, QString DataConfig, QString SelfInfo, QString LastUpload, QString SelfDate, QString Remark, QString InstallDate, float Lo, float Li, float GasConcentration, float Temperature, float PH, float Density, float Conductivity, float OxygenConcentration, float MetalConcentration, float SolidsConcentration, float FloatingSolidsConcentration, float TotalPhosphorus, float TotalNitrogen, float TotalOrganicCarbon, float BiologicalOxygenDemand, float ChemicalOxygenDemand, int BacteriaCount, int StaphylococcusCount, int status);
 };
 
 #endif // NODEINFOS_H

@@ -70,6 +70,12 @@ void netWorkUtils::setHeader(QString header, QString key)
     headers.insert(header, key);
 }
 
+void netWorkUtils::addQuery(QString key, QString value)
+{
+    // 向query内添加
+    querys.insert(key, value);
+}
+
 void netWorkUtils::setGlobalTimeout(int timeout)
 {
     netWorkUtils::TIMEOUT = timeout;
@@ -134,6 +140,21 @@ QByteArray netWorkUtils::getRequest()
 {
     // 发送GET请求
     QNetworkRequest request;
+    // 判断是否有自定义query参数
+    if (querys.size() > 0)
+    {
+        // 添加第一个query
+        target += "?" + querys.firstKey() + "=" + querys.first();
+        // 迭代器，舍弃第一个添加后续query
+        QMapIterator<QString, QString> i(querys);
+        i.next();
+        // 迭代器，添加后续query
+        while (i.hasNext())
+        {
+            target += "&" + i.key() + "=" + i.value();
+            i.next();
+        }
+    }
     request.setUrl(QUrl(target));
     // 判断是否开启HTTPS
     if (netWorkUtils::HTTPS)
@@ -221,6 +242,21 @@ QByteArray netWorkUtils::postRequest()
 {
     // 发送post请求
     QNetworkRequest request;
+    // 判断是否有自定义query参数
+    if (querys.size() > 0)
+    {
+        // 添加第一个query
+        target += "?" + querys.firstKey() + "=" + querys.first();
+        // 迭代器，舍弃第一个添加后续query
+        QMapIterator<QString, QString> i(querys);
+        i.next();
+        // 迭代器，添加后续query
+        while (i.hasNext())
+        {
+            target += "&" + i.key() + "=" + i.value();
+            i.next();
+        }
+    }
     request.setUrl(QUrl(target));
     // 判断是否开启HTTPS
     if (netWorkUtils::HTTPS)

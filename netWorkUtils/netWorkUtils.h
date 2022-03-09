@@ -55,6 +55,9 @@ private:
     // 访问目标
     QString target;
 
+    // query存储器
+    QMap<QString, QString> querys;
+
 public:
     // 切换全局连接模式
     QString CONNECT_MODE();
@@ -70,6 +73,9 @@ public:
 
     // 设置请求头
     void setHeader(QString header, QString key);
+
+    // 添加query
+    void addQuery(QString key, QString value);
 
     // 设置全局超时
     void setGlobalTimeout(int timeout);

@@ -4,7 +4,7 @@ NodeInfos::NodeInfos(QObject *parent) : QObject(parent)
 {
 }
 
-bool NodeInfos::init(QString Idi, QString IPi, QString Locatei, int Typei, QString Belongi, QString Principali, QString Installeri, QString Maintaineri, QString DataConfigi, QString SelfInfoi, QString LastUploadi, QString SelfDatei, QString Remarki, QString InstallDatei, float Loi, float Lii, float GasConcentrationi, float Temperaturei, float PHI, float Densityi, float Conductivityi, float OxygenConcentrationi, float MetalConcentrationi, float SolidsConcentrationi, float FloatingSolidsConcentrationi, float TotalPhosphorusi, float TotalNitrogeni, float TotalOrganicCarboni, float BiologicalOxygenDemandi, float ChemicalOxygenDemandi, int BacteriaCounti, int StaphylococcusCounti)
+bool NodeInfos::init(QString Idi, QString IPi, QString Locatei, int Typei, QString Belongi, QString Principali, QString Installeri, QString Maintaineri, QString DataConfigi, QString SelfInfoi, QString LastUploadi, QString SelfDatei, QString Remarki, QString InstallDatei, float Loi, float Lii, float GasConcentrationi, float Temperaturei, float PHI, float Densityi, float Conductivityi, float OxygenConcentrationi, float MetalConcentrationi, float SolidsConcentrationi, float FloatingSolidsConcentrationi, float TotalPhosphorusi, float TotalNitrogeni, float TotalOrganicCarboni, float BiologicalOxygenDemandi, float ChemicalOxygenDemandi, int BacteriaCounti, int StaphylococcusCounti, int statusi)
 {
     Id = Idi;
     IP = IPi;
@@ -37,5 +37,6 @@ bool NodeInfos::init(QString Idi, QString IPi, QString Locatei, int Typei, QStri
     BiologicalOxygenDemand = BiologicalOxygenDemandi;
     ChemicalOxygenDemand = ChemicalOxygenDemandi;
     BacteriaCount = BacteriaCounti;
+    status = statusi;
     return true;
 }
