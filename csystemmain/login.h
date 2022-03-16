@@ -11,6 +11,7 @@
 #include "QDebug"
 #include "netWorkUtils/security.h"
 #include "netWorkUtils/userinterface.h"
+#include "netWorkUtils/nodeinterface.h"
 #include "configManager/encryptionconfig.h"
 #include <QMessageBox>
 #include <QPropertyAnimation>

@@ -143,17 +143,16 @@ QByteArray netWorkUtils::getRequest()
     // 判断是否有自定义query参数
     if (querys.size() > 0)
     {
-        // 添加第一个query
-        target += "?" + querys.firstKey() + "=" + querys.first();
-        // 迭代器，舍弃第一个添加后续query
-        QMapIterator<QString, QString> i(querys);
-        i.next();
-        // 迭代器，添加后续query
-        while (i.hasNext())
+        // 拼接query
+        QString query = "?";
+        for (auto it = querys.begin(); it != querys.end(); it++)
         {
-            target += "&" + i.key() + "=" + i.value();
-            i.next();
+            query += it.key() + "=" + it.value() + "&";
         }
+        // 去除最后一个&
+        query.chop(1);
+        // 拼接目标
+        target += query;
     }
     request.setUrl(QUrl(target));
     // 判断是否开启HTTPS

@@ -5,6 +5,7 @@
 #include <QSqlError>
 #include <QSqlQuery>
 #include "configManager/configmanager.h"
+#include "DButils/nodeinfos.h"
 #include "QFileInfo"
 
 class DButils

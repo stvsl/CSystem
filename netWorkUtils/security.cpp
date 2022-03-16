@@ -120,7 +120,11 @@ void Security::onnetError(QString errStr)
 
 void Security::panicError(QString errStr)
 {
-    // 弹出错误提示，点击确定后退出程序
-    QMessageBox::critical(nullptr, "错误", "网络连接失败，请检查网络连接！ <br> 错误描述：" + errStr, QMessageBox::Ok);
-    QApplication::exit(0);
+    // 判断是否是CX003
+    if (errStr != "CX003")
+    {
+        // 弹出错误提示，点击确定后退出程序
+        QMessageBox::critical(nullptr, "错误", "网络连接失败，请检查网络连接！ <br> 错误描述：" + errStr, QMessageBox::Ok);
+        QApplication::exit(0);
+    }
 }

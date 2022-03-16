@@ -157,6 +157,11 @@ void Login::on_login_btn_clicked()
     DButils db;
     db.writeUserInfo();
 
+    ui->login_btn->setText("正在获取结点信息");
+    // 获取结点信息
+    NodeInterface nif;
+    nif.getNodeInfo();
+
     // EncryptionConfig ec;
     // if (MAIN_RUN_CONFIG::SYSTEM_STATUS == 3)
     // {
