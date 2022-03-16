@@ -108,7 +108,13 @@ int main(int argc, char *argv[])
     login.move(center.x() - login.width() / 2, center.y() - login.height() / 2);
     m.move(center.x() - m.width() / 2, center.y() - m.height() / 2);
     //主界面启动时关闭启动等待页面
-    splash.finish(&login);
+    splash.close();
+    // 淡入效果
+    QPropertyAnimation *animation = new QPropertyAnimation(&login, "windowOpacity");
+    animation->setDuration(280);
+    animation->setStartValue(0);
+    animation->setEndValue(1);
+    animation->start();
     login.show();
     return a.exec();
 }
