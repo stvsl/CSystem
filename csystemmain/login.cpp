@@ -8,6 +8,7 @@ Login::Login(QWidget *parent) : QMainWindow(parent),
     this->setWindowFlags(Qt::FramelessWindowHint);
     // 启动
     ui->setupUi(this);
+
     // 设置记住密码按钮状态
     if (LOGIN_CONFIG::SAVE_PASSWD)
     {
@@ -177,12 +178,21 @@ void Login::on_login_btn_clicked()
     // ec.uploadPasswordFragment();
     // 逐渐消失
     QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
-    animation->setDuration(200);
+    animation->setDuration(230);
     animation->setStartValue(1);
     animation->setEndValue(0);
-    animation->setEasingCurve(QEasingCurve::Linear);
+    animation->setEasingCurve(QEasingCurve::InQuad);
     animation->start(QAbstractAnimation::DeleteWhenStopped);
     emit launch();
+    QFile file(":/style/Style/defaultStyle.qss");
+    file.open(QFile::ReadOnly);
+    if (file.isOpen())
+    {
+        QString qss = QLatin1String(file.readAll());
+        qApp->setStyleSheet(qss);
+        file.close();
+    }
+    this->hide();
     QTimer::singleShot(200, [=]()
                        { this->close(); });
 }

@@ -41,14 +41,6 @@ int main(int argc, char *argv[])
     splash.showMessage("正在读取配置文件", Qt::AlignBottom, Qt::black);
     configManager config;
     config.makeRSA();
-    QFile file(":/style/Style/defaultStyle.qss");
-    file.open(QFile::ReadOnly);
-    if (file.isOpen())
-    {
-        QString qss = QLatin1String(file.readAll());
-        qApp->setStyleSheet(qss);
-        file.close();
-    }
 
     //局部事件循环
     QTimer::singleShot(100, &eventloop, SLOT(quit()));

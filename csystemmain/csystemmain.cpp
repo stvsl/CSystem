@@ -15,7 +15,13 @@ CSystemMain::CSystemMain(QWidget *parent) : QMainWindow(parent),
                                             ui(new Ui::CSystemMain)
 {
     ui->setupUi(this);
-
+    // 渐入动画
+    QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
+    animation->setDuration(1500);
+    animation->setStartValue(0);
+    animation->setEndValue(1);
+    animation->setEasingCurve(QEasingCurve::InQuad);
+    animation->start(QAbstractAnimation::DeleteWhenStopped);
     this->initialization();
     ui->side_menu->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }

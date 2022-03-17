@@ -1,7 +1,5 @@
 #include "dbutils.h"
 
-QVector<NodeInfos> DButils::nodeList;
-
 DButils::DButils()
 {
     QSqlDatabase::addDatabase("QSQLITE", "default");

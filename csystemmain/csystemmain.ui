@@ -23,8 +23,8 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>-2</x>
-      <y>10</y>
+      <x>0</x>
+      <y>60</y>
       <width>221</width>
       <height>30</height>
      </rect>
@@ -161,10 +161,33 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>40</y>
+      <y>100</y>
       <width>221</width>
-      <height>981</height>
+      <height>921</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>33</x>
+      <y>11</y>
+      <width>150</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>CSystem</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>

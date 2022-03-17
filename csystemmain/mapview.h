@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QUrl>
 #include <QWebChannel>
-#include "DButils/nodeinfos.h"
+#include "cacheManager/CacheManager.h"
 
 namespace Ui
 {
@@ -20,7 +20,7 @@ public:
     ~MapView();
 
 public:
-    void addAllPoint(QVector<NodeInfos> &nodelist);
+    void addAllPoint(QVector<NodeInfo> &nodelist);
 
     /***
      * 与js文件通讯的信号函数
