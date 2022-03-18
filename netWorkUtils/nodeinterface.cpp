@@ -1,8 +1,9 @@
 #include "nodeinterface.h"
 #include "cacheManager/CacheManager.h"
 
-NodeInterface::NodeInterface() : QObject()
+NodeInterface::NodeInterface(QVector<NodeInfo> *list) : QObject()
 {
+    this->nodeInfoList = list;
 }
 
 void NodeInterface::getNodeInfo()
@@ -29,8 +30,6 @@ void NodeInterface::getNodeInfo()
     // 转换为json
     jsondoc = QJsonDocument::fromJson(dedata.toUtf8());
     QVariantList list = jsondoc.toVariant().toList();
-    // 保存列表
-    QVector<NodeInfo> cachelist;
     for (int i = 0; i < list.size(); i++)
     {
         QVariantMap map = list.at(i).toMap();
@@ -75,7 +74,6 @@ void NodeInterface::getNodeInfo()
         nodeInfo.COMTYPE = map.value("comtype").toString();
         nodeInfo.STANDARD = map.value("standard").toString();
         nodeInfo.status = 0;
-        cachelist.append(nodeInfo);
+        this->nodeInfoList->append(nodeInfo);
     }
-    CacheManager::nodeInfolist = &cachelist;
 }

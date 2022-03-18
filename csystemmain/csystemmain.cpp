@@ -1,6 +1,8 @@
 #include "csystemmain.h"
 #include "ui_csystemmain.h"
 #include <QDebug>
+#include <QStringListModel>
+#include <QGraphicsDropShadowEffect>
 
 //菜单项指针
 QStandardItem *MAP_VIEW = new QStandardItem("全局信息");           // status 1
@@ -15,6 +17,12 @@ CSystemMain::CSystemMain(QWidget *parent) : QMainWindow(parent),
                                             ui(new Ui::CSystemMain)
 {
     ui->setupUi(this);
+    QGraphicsDropShadowEffect *effect = new QGraphicsDropShadowEffect(ui->SideBar);
+    effect->setOffset(0, 0);               //设置阴影距离
+    effect->setColor(QColor(0, 0, 0, 90)); //设置阴影颜色
+    effect->setBlurRadius(15);             //设置阴影圆角
+    ui->SideBar->setStyleSheet(".QWidget{background-color:#FFFFFF;border-radius:6px;}");
+    ui->SideBar->setGraphicsEffect(effect);
     // 渐入动画
     QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
     animation->setDuration(1500);
@@ -36,6 +44,11 @@ void CSystemMain::initialization()
     //判断用户类型
     if (CONFIG_CORE::USER_TYPE == 0)
     {
+        ui->Global_Info->setFrameShape(QFrame::NoFrame);
+        QStringListModel *model = new QStringListModel(QStringList() << "正在加载数据...，请稍候");
+        ui->Global_Info->setModel(model);
+        ui->Global_Info->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        ui->Global_Info->setSelectionMode(QAbstractItemView::NoSelection);
         //默认打开信息概览窗口
         CSystemMain::WINDOW_MAP_VIEW = new MapView(ui->widget);
         CSystemMain::WINDOW_MAP_VIEW->show();

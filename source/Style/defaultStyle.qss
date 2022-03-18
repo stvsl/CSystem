@@ -32,11 +32,6 @@ QMenuBar::item {
     background-color: palette(window);
 }
 
-QListView::item:selected:!active,
-SourceTree::item:selected:!active {
-    color: rgb(255,255,255);
-    background-color: rgb(48,47,48);
-}
 
 QListView QLineEdit,
 SourceTree QLineEdit {
@@ -47,22 +42,6 @@ SourceTree QLineEdit {
     border: none;
     border-radius: none;
 }
-
-/* Group Box */
-
-QGroupBox {
-    border: 1px solid palette(base);
-    border-radius: 5px;
-    padding-top: 24px;
-    font-weight: bold;
-}
-
-QGroupBox::title {
-    subcontrol-origin: margin;
-    left: 4px;
-    top: 4px;
-}
-
 
 /* ScrollBars */
 
@@ -168,68 +147,6 @@ QLineEdit, QTextEdit, QPlainTextEdit {
     border-radius: 3px;
     padding: 2px 2px 3px 7px;
 }
-
-/* Spinbox and doubleSpinbox */
-
-QSpinBox, QDoubleSpinBox {
-    background-color: palette(base);
-    border: none;
-    border-radius: 3px;
-    margin: 0px 3px 0px 0px;
-    padding: 2px 2px 3px 7px;
-}
-
-QSpinBox::up-button, QDoubleSpinBox::up-button {
-    subcontrol-origin: margin;
-    subcontrol-position: top right; /* position at the top right corner */
-
-    background-color: rgb(76,76,76);
-    border: 1px solid palette(base);
-    border-radius: 3px;
-    border-width: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom-width: 0;
-}
-
-QSpinBox::down-button, QDoubleSpinBox::down-button {
-    subcontrol-origin: margin;
-    subcontrol-position: bottom right; /* position at the top right corner */
-    background-color: rgb(76,76,76);
-    border: 1px solid palette(base);
-    border-radius: 3px;
-    border-width: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-top-width: 0;
-}
-
-QSpinBox::up-button:hover, QSpinBox::down-button:hover, QDoubleSpinBox::up-button:hover, QDoubleSpinBox::down-button:hover {
-    background-color: rgb(122,121,122); /* light */
-}
-
-QSpinBox::up-button:pressed, QSpinBox::down-button:pressed, QDoubleSpinBox::up-button:pressed, QDoubleSpinBox::down-button:pressed {
-    background-color: palette(window);
-}
-
-QSpinBox::up-button:disabled, QSpinBox::up-button:off, QSpinBox::down-button:disabled, QSpinBox::down-button:off {
-    background-color: palette(window);
-}
-
-QDoubleSpinBox::up-button:disabled, QDoubleSpinBox::up-button:off, QDoubleSpinBox::down-button:disabled, QDoubleSpinBox::down-button:off {
-    background-color: palette(window);
-}
-
-QSpinBox::up-arrow, QDoubleSpinBox::up-arrow {
-    image: url(./Dark/up.svg);
-    width: 100%;
-}
-
-QSpinBox::down-arrow, QDoubleSpinBox::down-arrow {
-    image: url(./Dark/down.svg);
-    width: 100%;
-}
-
 
 /* Buttons */
 
@@ -373,35 +290,6 @@ QHeaderView::section {
     border-radius: 5px;
 }
 
-/* Mute CheckBox */
-
-MuteCheckBox {
-    outline: none;
-}
-
-
-OBSHotkeyLabel[hotkeyPairHover=true] {
-    color: red;
-}
-
-/* Pause */
-PauseCheckBox {
-    outline: none;
-}
-
-/* Group Collapse Checkbox */
-
-SourceTreeSubItemCheckBox {
-    background: transparent;
-    outline: none;
-}
-
-SourceTreeSubItemCheckBox::indicator {
-    width: 10px;
-    height: 10px;
-}
-
-
 /* Label warning/error */
 
 QLabel#warningLabel {
@@ -420,44 +308,6 @@ QLabel#errorLabel {
     font-size: 18px;
     font-weight: bold;
     color: rgb(122,121,122);
-}
-
-/* Locked CheckBox */
-
-LockedCheckBox {
-    outline: none;
-    background: transparent;
-}
-
-LockedCheckBox::indicator:checked {
-}
-
-LockedCheckBox::indicator:unchecked {
-}
-
-/* Visibility CheckBox */
-
-VisibilityCheckBox {
-    outline: none;
-    background: transparent;
-}
-
-VisibilityCheckBox::indicator:checked {
-}
-
-VisibilityCheckBox::indicator:unchecked {
-}
-
-QPushButton#extraPanelDelete {
-    background-color: palette(base);
-}
-
-QPushButton#extraPanelDelete:hover {
-    background-color: rgb(122,121,122);
-}
-
-QPushButton#extraPanelDelete:pressed {
-    background-color: palette(base);
 }
 
 /* Scene Tree */
@@ -523,19 +373,18 @@ QSlider::handle:horizontal[themeID="tBarSlider"] {
 	margin: -24px 0px;
 }
 
-#ytEventList QLabel {
-    color: rgb(225,224,225); /* veryLight */
-    background-color: rgb(76,76,76);
-    border: none;
-    border-radius: 3px;
-    padding: 4px 20px;
+#side_menu::item {
+    background-color: #ffffff;
+    color: #000000;
+    border: transparent;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 8px;
 }
 
-#ytEventList QLabel:hover {
-    background: rgb(122,121,122);
+#side_menu::item:hover {
+    background-color: #f5f5f5;
 }
 
-#ytEventList QLabel[isSelectedEvent=true] {
-    background: rgb(31,30,31);
-    border: none;
+#side_menu::item:selected {
+    border-left: 5px solid #8aa0eb;
 }

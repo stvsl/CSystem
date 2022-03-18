@@ -24,6 +24,7 @@ class CSystemMain : public QMainWindow
 
 public:
     explicit CSystemMain(QWidget *parent = nullptr);
+
     ~CSystemMain();
 
 private slots:
@@ -31,6 +32,8 @@ private slots:
 
 private:
     Ui::CSystemMain *ui;
+
+    QVector<NodeInfo> *nodeInfoList; // 节点数据缓存指针
 
     /***
      * 用户级别指针

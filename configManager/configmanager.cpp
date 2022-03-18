@@ -49,9 +49,6 @@ QString MAP_CONFIG::MAP_DEFAULT_LOCATE = nullptr;
 bool MAP_CONFIG::MAP_CONTROL_3D = true;
 bool MAP_CONFIG::MAP_CONTROL_SCALE = true;
 
-// cacheManager缓存初始化
-QVector<NodeInfo> CacheManager::nodeInfoList = &QVector<NodeInfo>();
-
 configManager::configManager(QObject *parent) : QObject(parent)
 {
     qDebug() << QCoreApplication::applicationDirPath() + "/config/config.cfg";
