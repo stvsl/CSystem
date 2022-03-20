@@ -8,7 +8,6 @@ Login::Login(QWidget *parent) : QMainWindow(parent),
     this->setWindowFlags(Qt::FramelessWindowHint);
     // 启动
     ui->setupUi(this);
-
     // 设置记住密码按钮状态
     if (LOGIN_CONFIG::SAVE_PASSWD)
     {

@@ -7,6 +7,13 @@
     </qresource>
     <qresource prefix="/icon">
         <file>icon/搜索.png</file>
+        <file>icon/账户管理.png</file>
+        <file>icon/系统设置.png</file>
+        <file>icon/数据浏览.png</file>
+        <file>icon/全局信息.png</file>
+        <file>icon/节点详情.png</file>
+        <file>icon/节点配置.png</file>
+        <file>icon/地图设置.png</file>
     </qresource>
     <qresource prefix="/style">
         <file>Style/defaultStyle.qss</file>

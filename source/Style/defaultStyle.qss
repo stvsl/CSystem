@@ -302,77 +302,6 @@ QLabel#errorLabel {
     font-weight: bold;
 }
 
-/* Preview/Program labels */
-
-* [themeID="previewProgramLabels"] {
-    font-size: 18px;
-    font-weight: bold;
-    color: rgb(122,121,122);
-}
-
-/* Scene Tree */
-
-SceneTree {
-    qproperty-gridItemWidth: 150;
-	qproperty-gridItemHeight: 27;
-}
-
-*[gridMode="true"] SceneTree::item {
-    color: palette(window-text);
-    background-color: rgb(76,76,76);
-    border: none;
-    border-radius: 3px;
-    padding: 4px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin: 1px;
-}
-
-*[gridMode="true"] SceneTree::item:selected {
-    background-color: rgb(122,121,122); /* light */
-}
-
-*[gridMode="true"] SceneTree::item:hover {
-    background-color: rgb(122,121,122); /* light */
-}
-
-*[gridMode="true"] SceneTree::item:pressed {
-    background-color: palette(base);
-}
-
-*[gridMode="true"] SceneTree::item:checked {
-    background-color: rgb(122,121,122); /* light */
-}
-
-/* Save icon */
-
-* [themeID="replayIconSmall"] {
-}
-
-/* Studio Mode T-Bar */
-
-QSlider[themeID="tBarSlider"] {
-	height: 24px;
-}
-
-QSlider::groove:horizontal[themeID="tBarSlider"] {
-	border: 1px solid rgb(76,76,76);
-	height: 5px;
-	background: palette(base);
-}
-
-QSlider::sub-page:horizontal[themeID="tBarSlider"] {
-	background: palette(base);;
-	border: 1px solid rgb(76,76,76);
-}
-
-QSlider::handle:horizontal[themeID="tBarSlider"] {
-	background-color: rgb(210,210,210);
-	width: 12px;
-	height: 24px;
-	margin: -24px 0px;
-}
-
 #side_menu::item {
     background-color: #ffffff;
     color: #000000;
@@ -387,4 +316,19 @@ QSlider::handle:horizontal[themeID="tBarSlider"] {
 
 #side_menu::item:selected {
     border-left: 5px solid #8aa0eb;
+}
+
+QGroupBox {
+    /* 圆角 */
+    border-radius: 5px;
+    /* 边框 */
+    border: 0px;
+    margin-top:0ex;
+}
+
+QGroupBox::title {
+    color: #383838;
+    subcontrol-origin: margin;
+    position: relative;
+    left: 12px;
 }

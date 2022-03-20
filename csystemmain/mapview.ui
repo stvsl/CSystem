@@ -6,60 +6,42 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1700</width>
-    <height>900</height>
+    <width>1670</width>
+    <height>895</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QWidget" name="widget" native="true">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>15</y>
-     <width>81</width>
-     <height>21</height>
+     <x>0</x>
+     <y>0</y>
+     <width>1671</width>
+     <height>891</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>全局视图</string>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(250, 250, 250);</string>
    </property>
   </widget>
-  <widget class="QWebEngineView" name="webView">
+  <widget class="QSplitter" name="SideBar">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>50</y>
-     <width>1300</width>
-     <height>850</height>
+     <x>1335</x>
+     <y>45</y>
+     <width>331</width>
+     <height>837</height>
     </rect>
    </property>
-   <property name="url">
-    <url>
-     <string>about:blank</string>
-    </url>
-   </property>
-  </widget>
-  <widget class="QSplitter" name="splitter_5">
-   <property name="geometry">
-    <rect>
-     <x>1350</x>
-     <y>51</y>
-     <width>321</width>
-     <height>861</height>
-    </rect>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(250, 250, 250);</string>
    </property>
    <property name="orientation">
     <enum>Qt::Vertical</enum>
    </property>
-   <widget class="QSplitter" name="splitter_2">
+   <widget class="QSplitter" name="splitter_5">
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
@@ -69,19 +51,19 @@
     <property name="childrenCollapsible">
      <bool>true</bool>
     </property>
-    <widget class="QWidget" name="layoutWidget">
-     <layout class="QGridLayout" name="gridLayout_2">
+    <widget class="QWidget" name="layoutWidget_3">
+     <layout class="QGridLayout" name="gridLayout_3">
       <item row="1" column="0">
-       <layout class="QGridLayout" name="gridLayout">
+       <layout class="QGridLayout" name="gridLayout_4">
         <item row="1" column="0">
-         <widget class="QLabel" name="label_3">
+         <widget class="QLabel" name="label_6">
           <property name="text">
            <string>查找结点 :  </string>
           </property>
          </widget>
         </item>
         <item row="0" column="0">
-         <widget class="QLabel" name="label_2">
+         <widget class="QLabel" name="label_8">
           <property name="text">
            <string>查找位置 :  </string>
           </property>
@@ -110,7 +92,7 @@
        </layout>
       </item>
       <item row="0" column="0">
-       <widget class="QLabel" name="label_4">
+       <widget class="QLabel" name="label_9">
         <property name="font">
          <font>
           <pointsize>12</pointsize>
@@ -123,10 +105,10 @@
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="layoutWidget">
-     <layout class="QVBoxLayout" name="verticalLayout">
+    <widget class="QWidget" name="layoutWidget_4">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <spacer name="verticalSpacer">
+       <spacer name="verticalSpacer_2">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
@@ -160,16 +142,16 @@
      </layout>
     </widget>
    </widget>
-   <widget class="QSplitter" name="splitter_3">
+   <widget class="QSplitter" name="splitter_6">
     <property name="orientation">
      <enum>Qt::Vertical</enum>
     </property>
-    <widget class="QSplitter" name="splitter">
+    <widget class="QSplitter" name="splitter_7">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
     </widget>
-    <widget class="QLabel" name="label_5">
+    <widget class="QLabel" name="label_10">
      <property name="font">
       <font>
        <pointsize>12</pointsize>
@@ -179,16 +161,19 @@
       <string>节点列表</string>
      </property>
     </widget>
-    <widget class="QListView" name="NodeList">
+    <widget class="QListView" name="NodeList_2">
      <property name="minimumSize">
       <size>
        <width>0</width>
        <height>300</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
     </widget>
    </widget>
-   <widget class="QSplitter" name="splitter_4">
+   <widget class="QSplitter" name="splitter_8">
     <property name="orientation">
      <enum>Qt::Vertical</enum>
     </property>
@@ -198,7 +183,7 @@
     <property name="handleWidth">
      <number>7</number>
     </property>
-    <widget class="QLabel" name="label_7">
+    <widget class="QLabel" name="label_11">
      <property name="font">
       <font>
        <pointsize>12</pointsize>
@@ -208,15 +193,53 @@
       <string>节点详情</string>
      </property>
     </widget>
-    <widget class="QTableView" name="tableView">
+    <widget class="QTableView" name="tableView_2">
      <property name="minimumSize">
       <size>
        <width>0</width>
        <height>400</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
     </widget>
    </widget>
+  </widget>
+  <widget class="QWebEngineView" name="webView">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>45</y>
+     <width>1300</width>
+     <height>838</height>
+    </rect>
+   </property>
+   <property name="url">
+    <url>
+     <string>about:blank</string>
+    </url>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>16</x>
+     <y>13</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>全局视图</string>
+   </property>
   </widget>
  </widget>
  <customwidgets>

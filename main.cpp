@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
     // 启动登录界面
     Login login;
     CSystemMain m;
-    QObject::connect(&login, SIGNAL(launch()), &m, SLOT(show()));
+    QObject::connect(&login, SIGNAL(launch()), &m, SLOT(showEvent()));
     // 移动到屏幕中央
     QPoint center = mScreen->geometry().center();
     login.move(center.x() - login.width() / 2, center.y() - login.height() / 2);

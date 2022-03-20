@@ -1,12 +1,11 @@
 #include "nodeinterface.h"
 #include "cacheManager/CacheManager.h"
 
-NodeInterface::NodeInterface(QVector<NodeInfo> *list) : QObject()
+NodeInterface::NodeInterface() : QObject()
 {
-    this->nodeInfoList = list;
 }
 
-void NodeInterface::getNodeInfo()
+QVector<NodeInfo> *NodeInterface::getNodeInfo()
 {
     netWorkUtils nwu;
     connect(&nwu, SIGNAL(netError(QString)), this, SLOT(onnetError(QString)));
@@ -22,6 +21,12 @@ void NodeInterface::getNodeInfo()
     QJsonObject jsonObj = jsondoc.object();
     // 读取data
     QString data = jsonObj.value("data").toString();
+    if (data == "")
+    {
+        emit netError("服务器返回为null");
+        qDebug() << "服务器返回为null";
+        return nullptr;
+    }
     // base64解码
     QByteArray data64 = QByteArray::fromBase64(data.toUtf8());
     // AES解密
@@ -30,6 +35,8 @@ void NodeInterface::getNodeInfo()
     // 转换为json
     jsondoc = QJsonDocument::fromJson(dedata.toUtf8());
     QVariantList list = jsondoc.toVariant().toList();
+    // 最终数据储存
+    QVector<NodeInfo> *nodeInfoList = new QVector<NodeInfo>();
     for (int i = 0; i < list.size(); i++)
     {
         QVariantMap map = list.at(i).toMap();
@@ -74,6 +81,11 @@ void NodeInterface::getNodeInfo()
         nodeInfo.COMTYPE = map.value("comtype").toString();
         nodeInfo.STANDARD = map.value("standard").toString();
         nodeInfo.status = 0;
-        this->nodeInfoList->append(nodeInfo);
+        nodeInfoList->append(nodeInfo);
     }
+    return nodeInfoList;
+}
+void NodeInterface::onnetError(QString err)
+{
+    emit netError(err);
 }

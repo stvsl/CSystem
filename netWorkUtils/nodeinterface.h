@@ -11,14 +11,13 @@ class NodeInterface : public QObject
 signals:
     void netError(QString err);
 
+public slots:
+    void onnetError(QString err);
+
 public:
-    NodeInterface(QVector<NodeInfo> *nodeInfoList);
-
+    NodeInterface();
     // 获取最新的结点信息
-    void getNodeInfo();
-
-private:
-    QVector<NodeInfo> *nodeInfoList; // 节点数据缓存附指针
+    QVector<NodeInfo> *getNodeInfo();
 };
 
 #endif // NODEINTERFACE_H

@@ -220,50 +220,50 @@
     <name>CSystemMain</name>
     <message>
         <location filename="csystemmain/csystemmain.ui" line="20"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="179"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="234"/>
         <source>MainWindow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/csystemmain.ui" line="71"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="180"/>
-        <source>全局信息</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/csystemmain.ui" line="104"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="181"/>
-        <source>提醒</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/csystemmain.ui" line="117"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="182"/>
-        <source>警报</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/csystemmain.ui" line="134"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="183"/>
-        <source>功能说明</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/csystemmain.ui" line="149"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="184"/>
-        <source>系统警告</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/csystemmain.ui" line="183"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="185"/>
+        <location filename="csystemmain/csystemmain.ui" line="79"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="235"/>
         <source>CSystem</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/csystemmain.ui" line="209"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="186"/>
+        <location filename="csystemmain/csystemmain.ui" line="121"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="236"/>
         <source>键入以搜索功能......</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/csystemmain.ui" line="218"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="237"/>
+        <source>全局信息</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/csystemmain.ui" line="275"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="238"/>
+        <source>提醒</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/csystemmain.ui" line="312"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="239"/>
+        <source>警报</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/csystemmain.ui" line="332"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="240"/>
+        <source>功能说明</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/csystemmain.ui" line="350"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="241"/>
+        <source>系统警告</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -484,107 +484,107 @@
     <name>Login</name>
     <message>
         <location filename="csystemmain/login.ui" line="14"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="432"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="435"/>
         <source>MainWindow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="80"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="433"/>
+        <location filename="csystemmain/login.ui" line="81"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="436"/>
         <source>     退出</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="96"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="434"/>
+        <location filename="csystemmain/login.ui" line="97"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="437"/>
         <source>made by stvsl jl</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="311"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="440"/>
-        <source>登录</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/login.ui" line="391"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="441"/>
-        <source>更多选择 &gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/login.ui" line="211"/>
-        <location filename="csystemmain/login.ui" line="522"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="436"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="447"/>
+        <location filename="csystemmain/login.ui" line="212"/>
+        <location filename="csystemmain/login.ui" line="524"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="439"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="450"/>
         <source>请输入ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="270"/>
-        <location filename="csystemmain/login.ui" line="495"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="438"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="445"/>
+        <location filename="csystemmain/login.ui" line="271"/>
+        <location filename="csystemmain/login.ui" line="497"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="441"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="448"/>
         <source>请输入密码</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="419"/>
+        <location filename="csystemmain/login.ui" line="291"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="442"/>
-        <source>自动登录</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/login.ui" line="440"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="443"/>
-        <source>保存密码</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/login.ui" line="289"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="439"/>
         <source>   登录</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="582"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="448"/>
+        <location filename="csystemmain/login.ui" line="313"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="443"/>
+        <source>登录</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/login.ui" line="393"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="444"/>
+        <source>更多选择 &gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/login.ui" line="421"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="445"/>
+        <source>自动登录</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/login.ui" line="442"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="446"/>
+        <source>保存密码</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/login.ui" line="585"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="451"/>
         <source>   更多</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="604"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="449"/>
+        <location filename="csystemmain/login.ui" line="607"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="452"/>
         <source>忘记密码</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="629"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="450"/>
+        <location filename="csystemmain/login.ui" line="632"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="453"/>
         <source>解冻</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="709"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="451"/>
+        <location filename="csystemmain/login.ui" line="712"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="454"/>
         <source>&lt; 返回</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="757"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="452"/>
+        <location filename="csystemmain/login.ui" line="760"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="455"/>
         <source>冻结</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="794"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="453"/>
+        <location filename="csystemmain/login.ui" line="797"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="456"/>
         <source>v 0.0.1 develop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="816"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="454"/>
+        <location filename="csystemmain/login.ui" line="819"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="457"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;一个高端大气上档次&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;(尽管还没定下来)的名字&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -757,63 +757,63 @@
     <name>MapView</name>
     <message>
         <location filename="csystemmain/mapview.ui" line="14"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="177"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="186"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapview.ui" line="32"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="178"/>
-        <source>全局视图</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/mapview.ui" line="46"/>
-        <source>about:blank</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/mapview.ui" line="79"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="179"/>
+        <location filename="csystemmain/mapview.ui" line="61"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="187"/>
         <source>查找结点 :  </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapview.ui" line="86"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="180"/>
+        <location filename="csystemmain/mapview.ui" line="68"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="188"/>
         <source>查找位置 :  </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapview.ui" line="99"/>
-        <location filename="csystemmain/mapview.ui" line="106"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="182"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="185"/>
+        <location filename="csystemmain/mapview.ui" line="81"/>
+        <location filename="csystemmain/mapview.ui" line="88"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="190"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="193"/>
         <source>输入节点号/地名进行搜索</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapview.ui" line="120"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="187"/>
+        <location filename="csystemmain/mapview.ui" line="102"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="195"/>
         <source>查找 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapview.ui" line="156"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="188"/>
+        <location filename="csystemmain/mapview.ui" line="138"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="196"/>
         <source>位置重置</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapview.ui" line="179"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="189"/>
+        <location filename="csystemmain/mapview.ui" line="161"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="197"/>
         <source>节点列表</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapview.ui" line="208"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="190"/>
+        <location filename="csystemmain/mapview.ui" line="193"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="198"/>
         <source>节点详情</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/mapview.ui" line="220"/>
+        <source>about:blank</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/mapview.ui" line="241"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="199"/>
+        <source>全局视图</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

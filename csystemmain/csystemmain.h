@@ -11,6 +11,7 @@
 #include "nodeinstall.h"
 #include "accountmanagement.h"
 #include <QStandardItemModel>
+#include <configManager/configmanager.h>
 
 namespace Ui
 {
@@ -24,16 +25,19 @@ class CSystemMain : public QMainWindow
 
 public:
     explicit CSystemMain(QWidget *parent = nullptr);
+    static QVector<NodeInfo> *nodeInfoList; // 节点数据缓存指针
 
     ~CSystemMain();
 
 private slots:
     void on_side_menu_clicked(const QModelIndex &index);
 
+public slots:
+    void bottombarchanged();
+    void showEvent();
+
 private:
     Ui::CSystemMain *ui;
-
-    QVector<NodeInfo> *nodeInfoList; // 节点数据缓存指针
 
     /***
      * 用户级别指针

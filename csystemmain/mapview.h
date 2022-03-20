@@ -19,9 +19,6 @@ public:
     explicit MapView(QWidget *parent = nullptr);
     ~MapView();
 
-public:
-    void addAllPoint(QVector<NodeInfo> &nodelist);
-
     /***
      * 与js文件通讯的信号函数
      */
@@ -56,11 +53,17 @@ signals:
     ///
     /// \brief 添加结点
     ///
-    void addPoint(QString name, float x, float y);
+    void addPoint(QString info, float x, float y);
 
     /***
      * 界面按键相关的槽函数
      */
+public slots:
+    ///
+    /// \brief初始化
+    ///
+    void init();
+
 private slots:
 
     ///
