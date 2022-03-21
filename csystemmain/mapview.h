@@ -81,6 +81,10 @@ private slots:
     ///
     void on_node_Searcher_editingFinished();
 
+    void on_NodeList_clicked(const QModelIndex &index);
+
+    void on_NodeList_doubleClicked(const QModelIndex &index);
+
 private:
     QWebChannel *channel;
     Ui::MapView *ui;

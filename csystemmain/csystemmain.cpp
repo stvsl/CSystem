@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QStringListModel>
 #include <QGraphicsDropShadowEffect>
+#include <QTimer>
 
 //菜单项指针
 QStandardItem *MAP_VIEW = new QStandardItem("全局信息");           // status 1
@@ -27,6 +28,10 @@ QGraphicsDropShadowEffect *effectsgroupbox5;
 QGraphicsDropShadowEffect *effectsbottombar;
 
 QVector<NodeInfo> *CSystemMain::nodeInfoList;
+
+QStringList global_list;
+QStringList warn_list;
+QStringList disaster_list;
 
 int bottombarindex = 0;
 
@@ -137,8 +142,6 @@ void CSystemMain::initialization()
     if (CONFIG_CORE::USER_TYPE == 0)
     {
         ui->Global_Info->setFrameShape(QFrame::NoFrame);
-        QStringListModel *model = new QStringListModel(QStringList() << "正在加载数据...，请稍候");
-        ui->Global_Info->setModel(model);
         ui->Global_Info->setEditTriggers(QAbstractItemView::NoEditTriggers);
         ui->Global_Info->setSelectionMode(QAbstractItemView::NoSelection);
         //默认打开信息概览窗口
@@ -196,13 +199,13 @@ void CSystemMain::on_side_menu_clicked(const QModelIndex &index)
     {
         CSystemMain::WINDOW_MAP_VIEW = new MapView(ui->widget);
         CSystemMain::WINDOW_MAP_VIEW->show();
-        CSystemMain::WINDOW_MAP_VIEW->init();
         this->ui->bottombar->setCurrentWidget(ui->page1);
         if (CSystemMain::widgetstatus > 5)
         {
             animationbootombar->start();
         }
         CSystemMain::widgetstatus = 1;
+        QTimer::singleShot(300, this, SLOT(showEvent()));
     }
     else if (index.data().toString() == "节点详情")
     {
@@ -289,8 +292,13 @@ void CSystemMain::bottombarchanged()
 void CSystemMain::showEvent()
 {
     this->show();
+    global_list.append("正在加载数据...请稍候...");
+    QStringListModel *model = new QStringListModel(global_list);
+    ui->Global_Info->setModel(model);
     NodeInterface ni;
     //  拉取数据
     CSystemMain::nodeInfoList = ni.getNodeInfo();
     CSystemMain::WINDOW_MAP_VIEW->init();
+    global_list.append("数据加载完成");
+    model->setStringList(global_list);
 }

@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(250, 250, 250);</string>
+    <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.5, y2:1, stop:0 rgba(223,233,243, 0), stop:1 rgba(240,240,241, 255));</string>
    </property>
   </widget>
   <widget class="QSplitter" name="SideBar">
@@ -36,12 +36,17 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(250, 250, 250);</string>
+    <string notr="true">background-color: rgb(250, 250, 250,0);</string>
    </property>
    <property name="orientation">
     <enum>Qt::Vertical</enum>
    </property>
    <widget class="QSplitter" name="splitter_5">
+    <property name="styleSheet">
+     <string notr="true">QSplitter{
+border-radius: 5px;
+border-color: rgb(255, 255, 255);}</string>
+    </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
@@ -53,8 +58,50 @@
     </property>
     <widget class="QWidget" name="layoutWidget_3">
      <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_9">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>查找 </string>
+        </property>
+       </widget>
+      </item>
       <item row="1" column="0">
        <layout class="QGridLayout" name="gridLayout_4">
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="nodeSearcher">
+          <property name="minimumSize">
+           <size>
+            <width>132</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>输入节点号/地名进行搜索</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border:0px;
+border-bottom: 2px solid ;
+border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #868f96, stop:1#596164);</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="mapSearcher">
+          <property name="toolTip">
+           <string>输入节点号/地名进行搜索</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border:0px;
+border-bottom: 2px solid ;
+border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #868f96, stop:1#596164);</string>
+          </property>
+         </widget>
+        </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_6">
           <property name="text">
@@ -69,39 +116,20 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="nodeSearcher">
-          <property name="minimumSize">
+        <item row="2" column="1">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
            <size>
-            <width>149</width>
-            <height>0</height>
+            <width>20</width>
+            <height>54</height>
            </size>
           </property>
-          <property name="toolTip">
-           <string>输入节点号/地名进行搜索</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="mapSearcher">
-          <property name="toolTip">
-           <string>输入节点号/地名进行搜索</string>
-          </property>
-         </widget>
+         </spacer>
         </item>
        </layout>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_9">
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>查找 </string>
-        </property>
-       </widget>
       </item>
      </layout>
     </widget>
@@ -134,6 +162,20 @@
           <height>55</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{background-color: #ffffff;
+color: rgb(120, 120, 120);
+border-radius: 5px;
+border:1px soild #6e83bd;
+border-right: 1px solid #6e83bd;
+border-bottom: 1px solid #6e83bd;
+padding: 4px;
+padding-left: 20px;
+padding-right: 20px;}
+QPushButton:pressed {
+    background-color:#c5c5c5 ;
+}</string>
+        </property>
         <property name="text">
          <string>位置重置</string>
         </property>
@@ -161,7 +203,7 @@
       <string>节点列表</string>
      </property>
     </widget>
-    <widget class="QListView" name="NodeList_2">
+    <widget class="QListView" name="NodeList">
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -169,7 +211,11 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
+      <string notr="true">background-color: rgb(255, 255, 255);
+ border-radius: 5px;</string>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
      </property>
     </widget>
    </widget>
@@ -193,7 +239,7 @@
       <string>节点详情</string>
      </property>
     </widget>
-    <widget class="QTableView" name="tableView_2">
+    <widget class="QTableWidget" name="nodeinfoview">
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -201,8 +247,22 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
+      <string notr="true">background-color: rgb(255, 255, 255);
+ border-radius: 5px;</string>
      </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <column>
+      <property name="text">
+       <string>监测项目</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>监测值</string>
+      </property>
+     </column>
     </widget>
    </widget>
   </widget>
@@ -214,6 +274,11 @@
      <width>1300</width>
      <height>838</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:0px;
+border-bottom: 2px solid ;
+border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #868f96, stop:1#596164);</string>
    </property>
    <property name="url">
     <url>

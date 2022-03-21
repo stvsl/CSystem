@@ -151,39 +151,24 @@ QLineEdit, QTextEdit, QPlainTextEdit {
 /* Buttons */
 
 QPushButton {
-    color: palette(window-text);
-    background-color: rgb(247, 248, 255);
-    border: none;
-    border-radius: 3px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #6e83bd;
     padding: 4px;
     padding-left: 20px;
     padding-right: 20px;
-}
-
-QPushButton::flat {
-    background-color: palette(window);
 }
 
 QPushButton:checked {
     background-color: palette(base);
 }
 
-QPushButton:hover {
-    background-color: rgb(197, 197, 197); /* light */
-}
-
 QPushButton:pressed {
-    background-color: palette(base);
+    background-color: #c5c5c5;
 }
 
 QPushButton:disabled {
-    background-color: rgb(236, 236, 236);
-}
-
-QPushButton::menu-indicator {
-    subcontrol-position: right;
-    subcontrol-origin: padding;
-    width: 25px;
+    background-color: #e7e7e7;
 }
 
 /* Sliders */
@@ -277,29 +262,23 @@ QStatusBar::item {
     border: none;
 }
 
-/* Table View */
-
-QTableView {
-    gridline-color: palette(light);
-}
-
-QHeaderView::section {
-    background-color: palette(window);
-    color: palette(window-text);
-    border: 1px solid palette(base);
+QGroupBox {
     border-radius: 5px;
+    border: 0px;
+    margin-top:0ex;
 }
 
-/* Label warning/error */
 
-QLabel#warningLabel {
-    color: rgb(192,128,0);
-    font-weight: bold;
+QGroupBox::title {
+    color: #383838;
+    subcontrol-origin: margin;
+    position: relative;
+    left: 12px;
 }
 
-QLabel#errorLabel {
-    color: rgb(192,0,0);
-    font-weight: bold;
+QListView#side_menu{
+    border: none;
+    background-color: palette(base);
 }
 
 #side_menu::item {
@@ -308,6 +287,8 @@ QLabel#errorLabel {
     border: transparent;
     border-bottom: 1px solid #dbdbdb;
     padding: 8px;
+    padding: 5px;
+    height: 40px;
 }
 
 #side_menu::item:hover {
@@ -318,17 +299,76 @@ QLabel#errorLabel {
     border-left: 5px solid #8aa0eb;
 }
 
-QGroupBox {
-    /* 圆角 */
-    border-radius: 5px;
-    /* 边框 */
-    border: 0px;
-    margin-top:0ex;
+QListView#Global_Info{
+    color: #555555;
+    font-size: 12px;
 }
 
-QGroupBox::title {
-    color: #383838;
-    subcontrol-origin: margin;
-    position: relative;
-    left: 12px;
+QListView::item#Global_Info{
+    height: 20px;
+    border: none;
+    padding: 5px;
+}
+
+QListView::item:hover#Global_Info{
+    background-color: #FFFFFF;
+}
+
+QListView::item:selected#Global_Info{
+    background-color: #FFFFFF;
+}
+
+QListView::item#NodeList{
+    height: 20px;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+QListView::item:selected#NodeList {
+    height: 21px;
+    background-color: #7da4ff;
+}
+
+/* 滚动条样式 */
+QScrollBar:vertical
+{
+    border: none;
+    background: #ffffff;
+    width: 5px;
+}
+
+QTableWidget{
+    font-size: 12px;
+}
+
+QHeaderView::selected {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+QHeaderView::section {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+QTableWidget::section{
+    background-color: #ffffff;
+    border: none;
+}
+
+QTableWidget::item{
+    border: none;
+}
+
+QTableWidget::item:selected{
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+QTableWidget::item:hover{
+    background-color: #7da4ff;
+    color: #000000;
+    border-radius: 5px;
 }

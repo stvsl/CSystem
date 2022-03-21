@@ -757,62 +757,74 @@
     <name>MapView</name>
     <message>
         <location filename="csystemmain/mapview.ui" line="14"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="186"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="225"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapview.ui" line="61"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="187"/>
+        <location filename="csystemmain/mapview.ui" line="108"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="233"/>
         <source>查找结点 :  </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapview.ui" line="68"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="188"/>
+        <location filename="csystemmain/mapview.ui" line="115"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="234"/>
         <source>查找位置 :  </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapview.ui" line="81"/>
-        <location filename="csystemmain/mapview.ui" line="88"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="190"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="193"/>
+        <location filename="csystemmain/mapview.ui" line="84"/>
+        <location filename="csystemmain/mapview.ui" line="96"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="228"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="231"/>
         <source>输入节点号/地名进行搜索</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapview.ui" line="102"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="195"/>
+        <location filename="csystemmain/mapview.ui" line="69"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="226"/>
         <source>查找 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapview.ui" line="138"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="196"/>
+        <location filename="csystemmain/mapview.ui" line="180"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="235"/>
         <source>位置重置</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapview.ui" line="161"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="197"/>
+        <location filename="csystemmain/mapview.ui" line="203"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="236"/>
         <source>节点列表</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapview.ui" line="193"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="198"/>
+        <location filename="csystemmain/mapview.ui" line="239"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="237"/>
         <source>节点详情</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapview.ui" line="220"/>
+        <location filename="csystemmain/mapview.ui" line="258"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="239"/>
+        <source>监测项目</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/mapview.ui" line="263"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="241"/>
+        <source>监测值</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/mapview.ui" line="285"/>
         <source>about:blank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapview.ui" line="241"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="199"/>
+        <location filename="csystemmain/mapview.ui" line="306"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="242"/>
         <source>全局视图</source>
         <translation type="unfinished"></translation>
     </message>
