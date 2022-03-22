@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QUrl>
 #include <QWebChannel>
-#include "DButils/nodeinfos.h"
+#include "cacheManager/CacheManager.h"
 
 namespace Ui
 {
@@ -18,9 +18,6 @@ class MapView : public QWidget
 public:
     explicit MapView(QWidget *parent = nullptr);
     ~MapView();
-
-public:
-    void addAllPoint(QVector<NodeInfos> &nodelist);
 
     /***
      * 与js文件通讯的信号函数
@@ -56,11 +53,17 @@ signals:
     ///
     /// \brief 添加结点
     ///
-    void addPoint(QString name, float x, float y);
+    void addPoint(QString info, float x, float y);
 
     /***
      * 界面按键相关的槽函数
      */
+public slots:
+    ///
+    /// \brief初始化
+    ///
+    void init();
+
 private slots:
 
     ///
@@ -77,6 +80,10 @@ private slots:
     /// \brief 结点搜索功能触发事件
     ///
     void on_node_Searcher_editingFinished();
+
+    void on_NodeList_clicked(const QModelIndex &index);
+
+    void on_NodeList_doubleClicked(const QModelIndex &index);
 
 private:
     QWebChannel *channel;

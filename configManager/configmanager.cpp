@@ -4,6 +4,8 @@
 #include "QNetworkInterface"
 #include "QCryptographicHash"
 #include <QDateTime>
+#include "RSA/rsa.h"
+#include "cacheManager/CacheManager.h"
 
 //初始默认值
 

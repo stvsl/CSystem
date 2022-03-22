@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1920</width>
-    <height>1047</height>
+    <height>1054</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,153 +19,343 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>-2</x>
-      <y>10</y>
-      <width>221</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="font">
-        <font>
-         <pointsize>13</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>   搜索  </string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="lineEdit"/>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="widget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
+      <x>0</x>
       <y>0</y>
-      <width>1700</width>
-      <height>900</height>
+      <width>1920</width>
+      <height>1080</height>
      </rect>
     </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
+    <property name="styleSheet">
+     <string notr="true">QFrame#background{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(180, 198, 222, 255), stop:1 rgba(230, 231, 255, 255));border:none;}
+</string>
     </property>
-   </widget>
-   <widget class="QStackedWidget" name="bottombar">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>900</y>
-      <width>1641</width>
-      <height>122</height>
-     </rect>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
     </property>
-    <property name="currentIndex">
-     <number>0</number>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QWidget" name="page1">
-     <property name="maximumSize">
-      <size>
-       <width>1641</width>
-       <height>118</height>
-      </size>
+    <widget class="QWidget" name="SideBar" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>231</width>
+       <height>1021</height>
+      </rect>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <property name="styleSheet">
+      <string notr="true">border:none;</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QGroupBox" name="groupBox">
+       <widget class="QLabel" name="label_2">
         <property name="minimumSize">
          <size>
-          <width>820</width>
-          <height>111</height>
+          <width>0</width>
+          <height>55</height>
          </size>
         </property>
-        <property name="title">
-         <string>全局信息</string>
+        <property name="font">
+         <font>
+          <pointsize>16</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(40, 40, 142, 110), stop:1 rgba(27, 126, 255, 199));
+border: none;
+color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>CSystem</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QGroupBox" name="groupBox_3">
-        <property name="minimumSize">
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
          <size>
-          <width>0</width>
-          <height>111</height>
+          <width>20</width>
+          <height>5</height>
          </size>
         </property>
-        <property name="title">
-         <string>提醒</string>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="focusPolicy">
+         <enum>Qt::ClickFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(38, 40, 46, 255), stop:1 rgba(45, 45, 113, 255));
+border-color: rgb(18, 2, 72);
+border-style:solid;
+border-top-width:0px;
+border-right-width:0px;
+border-bottom-width:1px;
+border-left-width:0px;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string>键入以搜索功能......</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QGroupBox" name="groupBox_2">
-        <property name="minimumSize">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Minimum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
          <size>
-          <width>0</width>
-          <height>111</height>
+          <width>20</width>
+          <height>8</height>
          </size>
         </property>
-        <property name="title">
-         <string>警报</string>
+       </spacer>
+      </item>
+      <item alignment="Qt::AlignHCenter">
+       <widget class="QListView" name="side_menu">
+        <property name="styleSheet">
+         <string notr="true">outline: none;</string>
+        </property>
+        <property name="textElideMode">
+         <enum>Qt::ElideMiddle</enum>
         </property>
        </widget>
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="page2">
-     <widget class="QGroupBox" name="groupBox_4">
+    <widget class="QWidget" name="widget" native="true">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>-3</y>
+       <width>1670</width>
+       <height>895</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+    <widget class="QWidget" name="widget_2" native="true">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>892</y>
+       <width>1691</width>
+       <height>124</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(245, 245, 245);</string>
+     </property>
+     <widget class="QStackedWidget" name="bottombar">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>1641</width>
-        <height>111</height>
+        <x>19</x>
+        <y>3</y>
+        <width>1651</width>
+        <height>121</height>
        </rect>
       </property>
-      <property name="title">
-       <string>功能说明</string>
+      <property name="currentIndex">
+       <number>0</number>
       </property>
+      <widget class="QWidget" name="page1">
+       <property name="maximumSize">
+        <size>
+         <width>1641</width>
+         <height>118</height>
+        </size>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="minimumSize">
+           <size>
+            <width>694</width>
+            <height>111</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="title">
+           <string>全局信息</string>
+          </property>
+          <widget class="QListView" name="Global_Info">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="geometry">
+            <rect>
+             <x>11</x>
+             <y>25</y>
+             <width>681</width>
+             <height>80</height>
+            </rect>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgba(255, 255, 255, 0);
+</string>
+           </property>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="Line" name="line">
+          <property name="minimumSize">
+           <size>
+            <width>10</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="minimumSize">
+           <size>
+            <width>450</width>
+            <height>111</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="title">
+           <string>提醒</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Line" name="line_2">
+          <property name="minimumSize">
+           <size>
+            <width>10</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="minimumSize">
+           <size>
+            <width>450</width>
+            <height>111</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="title">
+           <string>警报</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page2">
+       <widget class="QGroupBox" name="groupBox_4">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>1641</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="title">
+         <string>功能说明</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page3">
+       <widget class="QGroupBox" name="groupBox_5">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>1641</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="title">
+         <string>系统警告</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="page3">
-     <widget class="QGroupBox" name="groupBox_5">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>1641</width>
-        <height>111</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>系统警告</string>
-      </property>
-     </widget>
-    </widget>
-   </widget>
-   <widget class="QListView" name="side_menu">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>40</y>
-      <width>221</width>
-      <height>981</height>
-     </rect>
-    </property>
+    <zorder>widget_2</zorder>
+    <zorder>widget</zorder>
+    <zorder>SideBar</zorder>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -179,6 +369,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../source/source.qrc"/>
+ </resources>
  <connections/>
 </ui>

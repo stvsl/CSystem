@@ -157,11 +157,6 @@ void Login::on_login_btn_clicked()
     DButils db;
     db.writeUserInfo();
 
-    ui->login_btn->setText("正在获取结点信息");
-    // 获取结点信息
-    NodeInterface nif;
-    nif.getNodeInfo();
-
     // EncryptionConfig ec;
     // if (MAIN_RUN_CONFIG::SYSTEM_STATUS == 3)
     // {
@@ -177,12 +172,21 @@ void Login::on_login_btn_clicked()
     // ec.uploadPasswordFragment();
     // 逐渐消失
     QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
-    animation->setDuration(200);
+    animation->setDuration(230);
     animation->setStartValue(1);
     animation->setEndValue(0);
-    animation->setEasingCurve(QEasingCurve::Linear);
+    animation->setEasingCurve(QEasingCurve::InQuad);
     animation->start(QAbstractAnimation::DeleteWhenStopped);
     emit launch();
+    QFile file(":/style/Style/defaultStyle.qss");
+    file.open(QFile::ReadOnly);
+    if (file.isOpen())
+    {
+        QString qss = QLatin1String(file.readAll());
+        qApp->setStyleSheet(qss);
+        file.close();
+    }
+    this->hide();
     QTimer::singleShot(200, [=]()
                        { this->close(); });
 }

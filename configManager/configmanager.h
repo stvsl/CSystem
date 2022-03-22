@@ -7,7 +7,6 @@
 #include <QDebug>
 #include <QCoreApplication>
 #include <QHostInfo>
-#include "RSA/rsa.h"
 #include "main.h"
 
 class configManager : public QObject

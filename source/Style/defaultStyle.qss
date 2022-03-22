@@ -1,1 +1,374 @@
-/* 蓝色风格界面 */
+/* General style, we override only what is needed. */
+QWidget {
+    background-color: palette(window);
+    alternate-background-color: palette(base);
+    color: palette(window-text);
+    selection-background-color: palette(highlight);
+    selection-color: palette(highlighted-text);
+}
+
+* [frameShape="1"], * [frameShape="2"], * [frameShape="3"], * [frameShape="4"], * [frameShape="5"], * [frameShape="6"] {
+    border: 1px solid palette(base);
+}
+
+
+/* Misc */
+
+QWidget::disabled {
+    color: 2px solid palette(bright-text);
+}
+
+QAbstractItemView, QStackedWidget#stackedMixerArea QWidget {
+    background-color: palette(base);
+}
+
+QToolTip {
+    background-color: palette(base);
+    color: rgb(205,205,205);
+    border: none;
+}
+
+QMenuBar::item {
+    background-color: palette(window);
+}
+
+
+QListView QLineEdit,
+SourceTree QLineEdit {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0;
+    padding-left: 2px;
+    border: none;
+    border-radius: none;
+}
+
+/* ScrollBars */
+
+::corner {
+    background-color: palette(window);
+    border: none;
+}
+
+QScrollBar:vertical {
+    background-color: palette(window);
+    width: 14px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: rgb(76,76,76);
+    min-height: 20px;
+    margin: 2px;
+    border-radius: 5px;
+    border-width: 1px;
+    border: 1px solid rgb(76,76,76);
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none;
+    background: none;
+    height: 0px;
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical, QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    border: none;
+    background: none;
+    color: none;
+}
+
+QScrollBar:horizontal {
+    background-color: palette(window);
+    height: 14px;
+    margin: 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: rgb(76,76,76);
+    min-width: 20px;
+    margin: 2px;
+    border-radius: 5px;
+    border-width: 1px;
+    border: 1px solid rgb(76,76,76);
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    border: none;
+    background: none;
+    width: 0px;
+}
+
+QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal, QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    border: none;
+    background: none;
+    color: none;
+}
+
+/* Scenes and Sources toolbar */
+
+QToolBar {
+    background-color: palette(window);
+    border: none;
+}
+
+QToolButton:hover {
+    background-color: rgb(122,121,122); /* light */
+    border-radius: none;
+}
+
+QToolButton:pressed {
+    background-color: palette(base);
+    border-radius: none;
+}
+
+/* Tab Widget */
+
+QTabWidget::pane { /* The tab widget frame */
+    border-top: 1px solid palette(base); /* veryDark */
+}
+
+QTabWidget::tab-bar {
+    alignment: left;
+}
+
+QTabBar::tab {
+    background-color: rgb(76,76,76);
+    border: none;
+    padding: 5px;
+    min-width: 50px;
+    margin: 1px;
+}
+
+/* Textedits etc */
+
+QLineEdit, QTextEdit, QPlainTextEdit {
+    background-color: palette(base);
+    border: none;
+    border-radius: 3px;
+    padding: 2px 2px 3px 7px;
+}
+
+/* Buttons */
+
+QPushButton {
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #6e83bd;
+    padding: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+QPushButton:checked {
+    background-color: palette(base);
+}
+
+QPushButton:pressed {
+    background-color: #c5c5c5;
+}
+
+QPushButton:disabled {
+    background-color: #e7e7e7;
+}
+
+/* Sliders */
+
+QSlider::groove:horizontal {
+    background-color: rgb(76,76,76);
+    height: 4px;
+    border: none;
+    border-radius: 2px;
+}
+
+QSlider::handle:horizontal {
+    background-color: rgb(210,210,210);
+    border: 1px solid palette(window);
+    border-radius: 3px;
+    height: 10px;
+    width: 18px;
+    margin: -3px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+}
+
+QSlider::handle:horizontal:pressed {
+    background-color: rgb(210,210,210);
+}
+
+QSlider::sub-page:horizontal {
+    background-color: palette(highlight);
+    border-radius: 2px;
+}
+
+QSlider::sub-page:horizontal:disabled {
+    background-color: rgb(50,49,50); /* dark */
+    border-radius: 2px;
+}
+
+QSlider::groove:vertical {
+    background-color: rgb(76,76,76);
+    width: 4px;
+    border: none;
+    border-radius: 2px;
+}
+
+QSlider::handle:vertical {
+    background-color: rgb(210,210,210);
+    border: 1px solid palette(window);
+    border-radius: 3px;
+    width: 10px;
+    height: 18px;
+    margin: 0 -3px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+}
+
+QSlider::handle:vertical:pressed {
+    background-color: rgb(210,210,210);
+}
+
+QSlider::add-page:vertical {
+    background-color: palette(highlight);
+    border-radius: 2px;
+}
+
+QSlider::add-page:vertical:disabled {
+    background-color: rgb(50,49,50); /* dark */
+    border-radius: 2px;
+}
+
+QSlider::handle:hover {
+    background-color: palette(bright-text);
+}
+
+QSlider::handle:disabled {
+    background-color: rgb(122,121,122); /* light */
+}
+
+/* Volume Control */
+
+VolumeMeter {
+    qproperty-backgroundNominalColor: rgb(38,127,38);
+    qproperty-backgroundWarningColor: rgb(127,127,38);
+    qproperty-backgroundErrorColor: rgb(127,38,38);
+    qproperty-foregroundNominalColor: rgb(76,255,76);
+    qproperty-foregroundWarningColor: rgb(255,255,76);
+    qproperty-foregroundErrorColor: rgb(255,76,76);
+    qproperty-magnitudeColor: rgb(0,0,0);
+    qproperty-majorTickColor: palette(window-text);
+    qproperty-minorTickColor: rgb(122,121,122); /* light */
+}
+
+
+/* Status Bar */
+
+QStatusBar::item {
+    border: none;
+}
+
+QGroupBox {
+    border-radius: 5px;
+    border: 0px;
+    margin-top:0ex;
+}
+
+
+QGroupBox::title {
+    color: #383838;
+    subcontrol-origin: margin;
+    position: relative;
+    left: 12px;
+}
+
+QListView#side_menu{
+    border: none;
+    background-color: palette(base);
+}
+
+#side_menu::item {
+    background-color: #ffffff;
+    color: #000000;
+    border: transparent;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 8px;
+    padding: 5px;
+    height: 40px;
+}
+
+#side_menu::item:hover {
+    background-color: #f5f5f5;
+}
+
+#side_menu::item:selected {
+    border-left: 5px solid #8aa0eb;
+}
+
+QListView#Global_Info{
+    color: #555555;
+    font-size: 12px;
+}
+
+QListView::item#Global_Info{
+    height: 20px;
+    border: none;
+    padding: 5px;
+}
+
+QListView::item:hover#Global_Info{
+    background-color: #FFFFFF;
+}
+
+QListView::item:selected#Global_Info{
+    background-color: #FFFFFF;
+}
+
+QListView::item#NodeList{
+    height: 20px;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+QListView::item:selected#NodeList {
+    height: 21px;
+    background-color: #7da4ff;
+}
+
+/* 滚动条样式 */
+QScrollBar:vertical
+{
+    border: none;
+    background: #ffffff;
+    width: 5px;
+}
+
+QTableWidget{
+    font-size: 12px;
+}
+
+QHeaderView::selected {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+QHeaderView::section {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+QTableWidget::section{
+    background-color: #ffffff;
+    border: none;
+}
+
+QTableWidget::item{
+    border: none;
+}
+
+QTableWidget::item:selected{
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+QTableWidget::item:hover{
+    background-color: #7da4ff;
+    color: #000000;
+    border-radius: 5px;
+}

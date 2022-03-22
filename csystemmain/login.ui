@@ -29,6 +29,7 @@
     <property name="font">
      <font>
       <pointsize>11</pointsize>
+      <weight>50</weight>
       <bold>false</bold>
      </font>
     </property>
@@ -277,6 +278,7 @@ padding:1px;</string>
             <font>
              <family>Noto Sans Adlam</family>
              <pointsize>18</pointsize>
+             <weight>75</weight>
              <italic>false</italic>
              <bold>true</bold>
             </font>
@@ -571,6 +573,7 @@ padding:1px;</string>
             <font>
              <family>Noto Sans Adlam</family>
              <pointsize>18</pointsize>
+             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>

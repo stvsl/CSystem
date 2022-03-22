@@ -41,14 +41,6 @@ int main(int argc, char *argv[])
     splash.showMessage("正在读取配置文件", Qt::AlignBottom, Qt::black);
     configManager config;
     config.makeRSA();
-    QFile file(":/style/Style/defaultStyle.qss");
-    file.open(QFile::ReadOnly);
-    if (file.isOpen())
-    {
-        QString qss = QLatin1String(file.readAll());
-        qApp->setStyleSheet(qss);
-        file.close();
-    }
 
     //局部事件循环
     QTimer::singleShot(100, &eventloop, SLOT(quit()));
@@ -102,7 +94,7 @@ int main(int argc, char *argv[])
     // 启动登录界面
     Login login;
     CSystemMain m;
-    QObject::connect(&login, SIGNAL(launch()), &m, SLOT(show()));
+    QObject::connect(&login, SIGNAL(launch()), &m, SLOT(showEvent()));
     // 移动到屏幕中央
     QPoint center = mScreen->geometry().center();
     login.move(center.x() - login.width() / 2, center.y() - login.height() / 2);
