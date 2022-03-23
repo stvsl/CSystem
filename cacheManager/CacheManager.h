@@ -63,4 +63,70 @@ public:
     int status;
 };
 
+class NodeData
+{
+public:
+    QString id;           // 节点ID信息    json："id"
+    QString Community;    // 检测机构名称    json："community"
+    QString ComId;        // 检测机构的账户ID    json："comId"
+    QString Time;         // 记录时间        json："time"
+    int Status;           // 检测结果状态    json："status"
+    float PhDirectHigh;   // PH直接排放上限  json:"phdirecthigh"
+    float PhDirectLow;    // PH直接排放下限  json:"phdirectlow"
+    float PhIndirectHigh; // PH间接排放上限  json:"phindirecthigh"
+    float PhIndirectLow;  // PH间接排放下限  json:"phindirectlow"
+    float CODDirect;      // 化学需氧量直接  json:"coddirect"
+    float CODIndirect;    // 化学需氧量间接  json:"codindirect"
+    float TPDirect;       // 总磷直接  json:"tpdirect"
+    float TPIndirect;     // 总磷间接  json:"tpindirect"
+    float TNDirect;       // 总氮直接  json:"tndirect"
+    float IPIndirect;     // 总氮间接  json:"ipindirect"
+    float ANDirect;       // 氨氮直接  json:"andirect"
+    float ANINDirect;     // 氨氮间接  json:"anindirect"
+    float OCCDirect;      // 石油类直接  json:"occdirect"
+    float OCCIndirect;    // 石油类间接  json:"occindirect"
+    float FSCDirectT;     // 悬浮物直接T  json:"fscdirectt"
+    float FSCIndirectT;   // 悬浮物间接T  json:"fscindirectt"
+    float FSCDirectO;     // 悬浮物直接O  json:"fscdirecto"
+    float FSCIndirectO;   // 悬浮物间接O  json:"fscindirecto"
+    float SADirect;       // 硫化物直接  json:"sadirect"
+    float SAIndirect;     // 硫化物间接  json:"saindirect"
+    float FDirect;        // 氟化物直接  json:"fdirect"
+    float FIndirect;      // 氟化物间接  json:"findirect"
+    float Cu;             // 总铜   json:"cu"
+    float Zn;             // 总锌   json:"zn"
+    float Sn;             // 总锡   json:"sn"
+    float Sb;             // 总锑   json:"sb"
+    float Hg;             // 总汞   json:"hg"
+    float Cd;             // 总镉   json:"cd"
+    float Pb;             // 总铅   json:"pb"
+    float As;             // 总砷   json:"as"
+    float Cr6;            // 六价铬 json:"cr6"
+    float Gc;             // 气体浓度   json:"gc"
+    float Density;        // 浊度   json:"density"
+    float Conductivity;   // 电导率    json:"conductivity"
+    float Mc;             // 重金属  json:"mc"
+    float Sc;             // 溶解性固体 json:"sc"
+    float Toc;            // 总有机碳   json:"toc"
+    float BOD5Direct;     // 五日生化需氧量直接  json:"bod5direct"
+    float BOD5Indirect;   // 五日生化需氧量间接    json:"bod5indirect"
+    float BOD;            // 生物需氧量  json:"bod"
+    float PDirect;        // 总磷直接   json:"pdirect"
+    float BC;             // 细菌总数   json:"bc"
+    float SLC;            // 大肠杆菌数   json:"slc"
+    float COLORDirect;    // 色度直接   json:"colordirect"
+    float COLORIndirect;  // 色度间接   json:"colorindirect"
+    float AFDirect;       // 动植物油直接   json:"afdirect"
+    float AFINDirect;     // 动植物油间接   json:"afindirect"
+    float CLDirect;       // 氯离子直接   json:"cldirect"
+    float CLIndirect;     // 氯离子间接   json:"clindirect"
+    float PINDirect;      // 总磷间接   json:"pindirect"
+    float Cr;             // 总铬   json:"cr"
+    float Ton;            // 单位   json:"ton"
+};
+
+class Standard
+{
+};
+
 #endif // CACHEMANAGER_H

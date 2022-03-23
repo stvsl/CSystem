@@ -15,6 +15,9 @@ public:
     explicit nodeinformation(QWidget *parent = nullptr);
     ~nodeinformation();
 
+private slots:
+    void on_NodeList_clicked(const QModelIndex &index);
+
 private:
     Ui::nodeinformation *ui;
 };

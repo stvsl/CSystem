@@ -26,6 +26,7 @@ class CSystemMain : public QMainWindow
 public:
     explicit CSystemMain(QWidget *parent = nullptr);
     static QVector<NodeInfo> *nodeInfoList; // 节点数据缓存指针
+    static QVector<NodeData> *nodeDataList; // 节点详细数据缓存指针
 
     ~CSystemMain();
 

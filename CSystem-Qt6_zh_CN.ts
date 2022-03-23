@@ -1586,115 +1586,148 @@
     <name>nodeinformation</name>
     <message>
         <location filename="csystemmain/nodeinformation.ui" line="14"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="280"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="371"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="32"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="281"/>
+        <location filename="csystemmain/nodeinformation.ui" line="583"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="403"/>
         <source>节点详情</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="52"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="282"/>
-        <source>节点选择</source>
+        <location filename="csystemmain/nodeinformation.ui" line="44"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="372"/>
+        <source>节点列表</source>
+        <oldsource>节点选择</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="67"/>
-        <location filename="csystemmain/nodeinformation.ui" line="195"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="283"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="293"/>
+        <location filename="csystemmain/nodeinformation.ui" line="487"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="397"/>
         <source>监控信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="80"/>
-        <location filename="csystemmain/nodeinformation.ui" line="188"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="284"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="292"/>
+        <location filename="csystemmain/nodeinformation.ui" line="244"/>
+        <location filename="csystemmain/nodeinformation.ui" line="480"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="387"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="396"/>
         <source>位置信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="97"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="285"/>
+        <location filename="csystemmain/nodeinformation.ui" line="88"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="373"/>
+        <source>详细监控信息</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinformation.ui" line="131"/>
+        <location filename="csystemmain/nodeinformation.ui" line="146"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="375"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="381"/>
+        <source>监测项目</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinformation.ui" line="136"/>
+        <location filename="csystemmain/nodeinformation.ui" line="151"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="377"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="383"/>
+        <source>监测值</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinformation.ui" line="141"/>
+        <location filename="csystemmain/nodeinformation.ui" line="156"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="379"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="385"/>
+        <source>标准值</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinformation.ui" line="189"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="386"/>
         <source>节点配置信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="110"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="286"/>
+        <location filename="csystemmain/nodeinformation.ui" line="267"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="388"/>
         <source>负责机构及人员信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="127"/>
-        <location filename="csystemmain/nodeinformation.ui" line="202"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="287"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="294"/>
+        <location filename="csystemmain/nodeinformation.ui" line="328"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="389"/>
         <source>设备自检信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="151"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="288"/>
+        <location filename="csystemmain/nodeinformation.ui" line="345"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="390"/>
         <source>信息导出</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="160"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="289"/>
+        <location filename="csystemmain/nodeinformation.ui" line="422"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="393"/>
         <source>文件路径：</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="170"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="290"/>
+        <location filename="csystemmain/nodeinformation.ui" line="454"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="394"/>
         <source>选择路径</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="181"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="291"/>
+        <location filename="csystemmain/nodeinformation.ui" line="473"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="395"/>
         <source>导出内容：</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="209"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="295"/>
-        <source>负责人员信息</source>
+        <location filename="csystemmain/nodeinformation.ui" line="494"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="398"/>
+        <source>自检信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="233"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="296"/>
-        <source>连带导出监控数据</source>
+        <location filename="csystemmain/nodeinformation.ui" line="501"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="399"/>
+        <source>负责人信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="240"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="297"/>
-        <source>从</source>
+        <location filename="csystemmain/nodeinformation.ui" line="533"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="400"/>
+        <source>导出从</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="250"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="298"/>
+        <location filename="csystemmain/nodeinformation.ui" line="543"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="401"/>
         <source>到</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="291"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="299"/>
+        <location filename="csystemmain/nodeinformation.ui" line="553"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="402"/>
+        <source>的数据</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinformation.ui" line="378"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="391"/>
         <source>导出</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="304"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="300"/>
+        <location filename="csystemmain/nodeinformation.ui" line="391"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="392"/>
         <source>清除</source>
         <translation type="unfinished"></translation>
     </message>

@@ -255,9 +255,6 @@ VolumeMeter {
     qproperty-minorTickColor: rgb(122,121,122); /* light */
 }
 
-
-/* Status Bar */
-
 QStatusBar::item {
     border: none;
 }
@@ -268,7 +265,6 @@ QGroupBox {
     margin-top:0ex;
 }
 
-
 QGroupBox::title {
     color: #383838;
     subcontrol-origin: margin;
@@ -276,7 +272,14 @@ QGroupBox::title {
     left: 12px;
 }
 
-QListView#side_menu{
+QGroupBox::item {
+    height: 18px;
+    margin: 0px;
+    border: none;
+}
+
+/* 主界面侧边菜单栏 */
+#side_menu{
     border: none;
     background-color: palette(base);
 }
@@ -299,23 +302,25 @@ QListView#side_menu{
     border-left: 5px solid #8aa0eb;
 }
 
-QListView#Global_Info{
+#Global_Info{
     color: #555555;
     font-size: 12px;
 }
 
-QListView::item#Global_Info{
-    height: 20px;
+Q#Global_Info::item {
+    height: 16px;
     border: none;
     padding: 5px;
 }
 
-QListView::item:hover#Global_Info{
+#Global_Info::item:hover{
     background-color: #FFFFFF;
+    height: 16px;
 }
 
-QListView::item:selected#Global_Info{
+#Global_Info::item:selected{
     background-color: #FFFFFF;
+    height: 18px;
 }
 
 QListView::item#NodeList{
@@ -371,4 +376,122 @@ QTableWidget::item:hover{
     background-color: #7da4ff;
     color: #000000;
     border-radius: 5px;
+}
+
+
+#nodeinfogroup1 {
+    background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    margin-top:0ex;
+    border-right: 1px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+}
+#nodeinfogroup2 {
+    background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    border-right: 1px solid #7da4ff;
+    border-bottom: 1px solid #7da4ff;
+    margin-top:0ex;
+}
+#nodeinfogroup3 {
+    background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    border-right: 1px solid #7da4ff;
+    border-bottom: 1px solid #7da4ff;
+    margin-top:0ex;
+}
+#nodeinfogroup4 {
+    background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    border-right: 1px solid #7da4ff;
+    border-bottom: 1px solid #7da4ff;
+    margin-top:0ex;
+}
+#nodeinfogroup5 {
+    background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    border-right: 1px solid #7da4ff;
+    border-bottom: 1px solid #7da4ff;
+    margin-top:0ex;
+}
+#nodeinfogroup6 {
+    background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    /* 右边和底部2px */
+    border-right: 1px solid #8aa0eb;
+    border-bottom: 1px solid #8aa0eb;
+    margin-top:0ex;
+}
+#nodeinfogroup7 {
+    background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    /* 右边和底部2px */
+    border-right: 2px solid #7da4ff;
+    border-bottom: 2px solid #7da4ff;
+    margin-top:0ex;
+}
+#nodeinfogroup8 {
+    background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    /* 右边和底部2px */
+    border-right: 1px solid #8aa0eb;
+    border-bottom: 1px solid #8aa0eb;
+    margin-top:0ex;
+}
+
+#nodeinfogroup1::title{
+    color: #383838;
+    subcontrol-origin: margin;
+    position: relative;
+    left: 11px;
+}
+#nodeinfogroup2::title{
+    color: #383838;
+    subcontrol-origin: margin;
+    position: relative;
+    left: 11px;
+}
+#nodeinfogroup3::title{
+    color: #383838;
+    subcontrol-origin: margin;
+    position: relative;
+    left: 11px;
+}
+#nodeinfogroup4::title{
+    color: #383838;
+    subcontrol-origin: margin;
+    position: relative;
+    left: 11px;
+}
+#nodeinfogroup5::title{
+    color: #383838;
+    subcontrol-origin: margin;
+    position: relative;
+    left: 11px;
+}
+#nodeinfogroup6::title{
+    color: #383838;
+    subcontrol-origin: margin;
+    position: relative;
+    left: 11px;
+}
+#nodeinfogroup7::title{
+    color: #383838;
+    subcontrol-origin: margin;
+    position: relative;
+    left: 11px;
+}
+#nodeinfogroup8::title{
+    color: #383838;
+    subcontrol-origin: margin;
+    position: relative;
+    left: 11px;
 }

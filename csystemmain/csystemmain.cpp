@@ -28,6 +28,7 @@ QGraphicsDropShadowEffect *effectsgroupbox5;
 QGraphicsDropShadowEffect *effectsbottombar;
 
 QVector<NodeInfo> *CSystemMain::nodeInfoList;
+QVector<NodeData> *CSystemMain::nodeDataList;
 
 QStringList global_list;
 QStringList warn_list;
@@ -297,8 +298,10 @@ void CSystemMain::showEvent()
     ui->Global_Info->setModel(model);
     NodeInterface ni;
     //  拉取数据
+    // 网络错误弹出提示
     CSystemMain::nodeInfoList = ni.getNodeInfo();
     CSystemMain::WINDOW_MAP_VIEW->init();
+    CSystemMain::nodeDataList = ni.getNodeData();
     global_list.append("数据加载完成");
     model->setStringList(global_list);
 }

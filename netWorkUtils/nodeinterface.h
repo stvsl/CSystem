@@ -18,6 +18,8 @@ public:
     NodeInterface();
     // 获取最新的结点信息
     QVector<NodeInfo> *getNodeInfo();
+    // 获取结点当前详情
+    QVector<NodeData> *getNodeData();
 };
 
 #endif // NODEINTERFACE_H
