@@ -60,8 +60,12 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
     // 清空QListView内对象
     ui->resplist->clear();
     ui->nodeinfo->clearContents();
+    ui->configwidget->clearContents();
+    ui->locateinfo->clear();
+    ui->selflist->clear();
     // 设置表格行数
     ui->nodeinfo->setRowCount(25);
+    ui->configwidget->setRowCount(14);
     // 获取点击的节点编号
     QString nodeid = ui->NodeList->model()->data(index).toString();
     nodeid.remove(QRegExp("\\s"));
@@ -176,9 +180,9 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
             ui->nodeinfo->setItem(24, 1, new QTableWidgetItem(QString::number(CSystemMain::nodeDataList->at(index.row()).Cr)));
             ui->nodeinfo->setItem(24, 3, new QTableWidgetItem("单位"));
             ui->nodeinfo->setItem(24, 4, new QTableWidgetItem(QString::number(CSystemMain::nodeDataList->at(index.row()).Ton)));
+            break;
         }
     }
-    i--;
     // // 居中显示
     // for (int i = 0; i < 6; i++)
     // {
@@ -187,11 +191,65 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
     //         ui->nodeinfo->item(i, j)->setTextAlignment(Qt::AlignCenter);
     //     }
     // }
-    // 向qlistwidget中添加数据
     QStringList resplist;
     resplist << "   机构号:    " + CSystemMain::nodeInfoList->at(i).belong;
     resplist << "   负责人:    " + CSystemMain::nodeInfoList->at(i).principal;
     resplist << "   安装人:    " + CSystemMain::nodeInfoList->at(i).installer;
     resplist << "   维护人:    " + CSystemMain::nodeInfoList->at(i).maintainer;
     ui->resplist->addItems(resplist);
+
+    ui->configwidget->setItem(0, 0, new QTableWidgetItem("特殊气体浓度"));
+    ui->configwidget->setItem(0, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(0) == 0 ? "否" : "是"));
+    ui->configwidget->setItem(1, 0, new QTableWidgetItem("温度"));
+    ui->configwidget->setItem(1, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(1) == 0 ? "否" : "是"));
+    ui->configwidget->setItem(2, 0, new QTableWidgetItem("PH"));
+    ui->configwidget->setItem(2, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(2) == 0 ? "否" : "是"));
+    ui->configwidget->setItem(3, 0, new QTableWidgetItem("浊度"));
+    ui->configwidget->setItem(3, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(3) == 0 ? "否" : "是"));
+    ui->configwidget->setItem(4, 0, new QTableWidgetItem("电导率"));
+    ui->configwidget->setItem(4, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(4) == 0 ? "否" : "是"));
+    ui->configwidget->setItem(5, 0, new QTableWidgetItem("含氧量"));
+    ui->configwidget->setItem(5, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(5) == 0 ? "否" : "是"));
+    ui->configwidget->setItem(6, 0, new QTableWidgetItem("重金属"));
+    ui->configwidget->setItem(6, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(6) == 0 ? "否" : "是"));
+    ui->configwidget->setItem(7, 0, new QTableWidgetItem("溶解性固体"));
+    ui->configwidget->setItem(7, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(7) == 0 ? "否" : "是"));
+    ui->configwidget->setItem(8, 0, new QTableWidgetItem("悬浮性固体"));
+    ui->configwidget->setItem(8, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(8) == 0 ? "否" : "是"));
+    ui->configwidget->setItem(9, 0, new QTableWidgetItem("总氮"));
+    ui->configwidget->setItem(9, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(9) == 0 ? "否" : "是"));
+    ui->configwidget->setItem(10, 0, new QTableWidgetItem("总磷"));
+    ui->configwidget->setItem(10, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(10) == 0 ? "否" : "是"));
+    ui->configwidget->setItem(11, 0, new QTableWidgetItem("总有机碳"));
+    ui->configwidget->setItem(11, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(11) == 0 ? "否" : "是"));
+    ui->configwidget->setItem(12, 0, new QTableWidgetItem("生物需氧量"));
+    ui->configwidget->setItem(12, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(12) == 0 ? "否" : "是"));
+    ui->configwidget->setItem(13, 0, new QTableWidgetItem("化学需氧量"));
+    ui->configwidget->setItem(13, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(13) == 0 ? "否" : "是"));
+    ui->configwidget->setItem(14, 0, new QTableWidgetItem("细菌总数"));
+    ui->configwidget->setItem(14, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(14) == 0 ? "否" : "是"));
+    ui->configwidget->setItem(15, 0, new QTableWidgetItem("大肠杆菌数"));
+    ui->configwidget->setItem(15, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(15) == 0 ? "否" : "是"));
+
+    // 居中
+    for (int i = 0; i < ui->configwidget->rowCount(); i++)
+    {
+        for (int j = 0; j < ui->configwidget->columnCount(); j++)
+        {
+            ui->configwidget->item(i, j)->setTextAlignment(Qt::AlignCenter);
+        }
+    }
+
+    QStringList locatelist;
+    locatelist << " 经度(伪):    " + QString::number(CSystemMain::nodeInfoList->at(i).lo);
+    locatelist << " 纬度(伪):    " + QString::number(CSystemMain::nodeInfoList->at(i).li);
+    locatelist << " 地址:          " + CSystemMain::nodeInfoList->at(i).locate;
+    ui->locateinfo->addItems(locatelist);
+
+    QStringList selflist;
+    selflist << "   安装日期:               " + CSystemMain::nodeInfoList->at(i).installDate.toString("yyyy-MM-dd-hh-mm-ss");
+    selflist << "   上次更新日期:       " + CSystemMain::nodeInfoList->at(i).lastUpload.toString("yyyy-MM-dd-hh-mm-ss");
+    selflist << "   上次自检日期:       " + CSystemMain::nodeInfoList->at(i).selfDate.toString("yyyy-MM-dd-hh-mm-ss");
+    selflist << "   自检结果:               " + CSystemMain::nodeInfoList->at(i).selfInfo;
+    ui->selflist->addItems(selflist);
 }

@@ -182,7 +182,7 @@
         </spacer>
        </item>
        <item row="0" column="2">
-        <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0,0">
+        <layout class="QGridLayout" name="gridLayout" rowstretch="5,1,11,1,4" rowminimumheight="0,0,0,0,0">
          <property name="horizontalSpacing">
           <number>10</number>
          </property>
@@ -200,7 +200,7 @@
            <property name="sizeHint" stdset="0">
             <size>
              <width>17</width>
-             <height>15</height>
+             <height>10</height>
             </size>
            </property>
           </spacer>
@@ -216,7 +216,7 @@
            <property name="sizeHint" stdset="0">
             <size>
              <width>17</width>
-             <height>15</height>
+             <height>10</height>
             </size>
            </property>
           </spacer>
@@ -238,7 +238,7 @@
               <x>1</x>
               <y>30</y>
               <width>381</width>
-              <height>111</height>
+              <height>95</height>
              </rect>
             </property>
            </widget>
@@ -261,7 +261,7 @@
               <x>1</x>
               <y>32</y>
               <width>381</width>
-              <height>111</height>
+              <height>125</height>
              </rect>
             </property>
            </widget>
@@ -284,7 +284,7 @@
               <x>1</x>
               <y>30</y>
               <width>381</width>
-              <height>301</height>
+              <height>320</height>
              </rect>
             </property>
             <column>
@@ -347,9 +347,9 @@
           </size>
          </property>
          <property name="title">
-          <string>设备自检信息</string>
+          <string>设备信息</string>
          </property>
-         <widget class="QListWidget" name="secflist">
+         <widget class="QListWidget" name="selflist">
           <property name="geometry">
            <rect>
             <x>1</x>

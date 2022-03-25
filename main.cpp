@@ -103,7 +103,7 @@ int main(int argc, char *argv[])
     splash.close();
     // 淡入效果
     QPropertyAnimation *animation = new QPropertyAnimation(&login, "windowOpacity");
-    animation->setDuration(280);
+    animation->setDuration(300);
     animation->setStartValue(0);
     animation->setEndValue(1);
     animation->start();

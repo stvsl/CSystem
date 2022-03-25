@@ -15,15 +15,17 @@
 MapView::MapView(QWidget *parent) : QWidget(parent),
                                     ui(new Ui::MapView)
 {
-    //远程debug
-    qputenv("QTWEBENGINE_REMOTE_DEBUGGING", "1112");
+    // debug
+    // qputenv("QTWEBENGINE_REMOTE_DEBUGGING", "1112");
     ui->setupUi(this);
     this->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
     this->setAttribute(Qt::WA_DeleteOnClose);
     ui->webView->setUrl(QUrl("http://127.0.0.1:10241/pages/default/map"));
-    channel = new QWebChannel(this);                 //通讯对象
-    channel->registerObject(QString("trans"), this); //通信介质注册
-    ui->webView->page()->setWebChannel(channel);     //通讯附加
+
+    channel = new QWebChannel(this);             //通讯对象
+    channel->registerObject("trans", this);      //通信介质注册
+    ui->webView->page()->setWebChannel(channel); //通讯附加
+
     ui->nodeinfoview->setHorizontalHeaderLabels(QStringList() << "监测项目"
                                                               << "检测值");
     ui->nodeinfoview->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch); //自适应宽度
@@ -33,8 +35,6 @@ MapView::MapView(QWidget *parent) : QWidget(parent),
     ui->nodeinfoview->verticalHeader()->setVisible(false);                            //隐藏表头
     ui->nodeinfoview->setSelectionBehavior(QAbstractItemView::SelectRows);            //整行选中
     ui->nodeinfoview->horizontalHeader()->setHighlightSections(false);                //去除选中时的高亮
-    // 设置坐标居中（1.15秒后执行）
-    QTimer ::singleShot(1150, this, SLOT(on_PositionReset_clicked()));
 }
 
 MapView::~MapView()
@@ -79,6 +79,8 @@ void MapView::init()
         list.append("   " + CSystemMain::nodeInfoList->at(i).id);
     }
     ui->NodeList->setModel(new QStringListModel(list));
+    QTimer ::singleShot(1400, [=]()
+                        { emit setCenter(MAP_CONFIG::X, MAP_CONFIG::Y); });
 }
 
 void MapView::on_PositionReset_clicked()

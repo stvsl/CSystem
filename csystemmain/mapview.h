@@ -55,10 +55,16 @@ signals:
     ///
     void addPoint(QString info, float x, float y);
 
+    ///
+    /// \brief 请求获取地址信息
+    ///
+    void requestPointLocate(QString str);
+
     /***
      * 界面按键相关的槽函数
      */
 public slots:
+
     ///
     /// \brief初始化
     ///

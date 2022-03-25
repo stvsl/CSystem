@@ -30,7 +30,7 @@ Login::Login(QWidget *parent) : QMainWindow(parent),
     if (LOGIN_CONFIG::AUTO_LOGIN)
     {
         // 点击登录按钮
-        QTimer::singleShot(1500, this, SLOT(on_login_btn_clicked()));
+        QTimer::singleShot(1000, this, SLOT(on_login_btn_clicked()));
     }
 }
 

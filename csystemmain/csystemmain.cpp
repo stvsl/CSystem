@@ -63,14 +63,14 @@ CSystemMain::CSystemMain(QWidget *parent) : QMainWindow(parent),
     animationload->start(QAbstractAnimation::DeleteWhenStopped);
     // 从左侧渐出动画
     animationsidebar = new QPropertyAnimation(ui->SideBar, "geometry");
-    animationsidebar->setDuration(2000);
+    animationsidebar->setDuration(1500);
     animationsidebar->setStartValue(QRect(0, 0, 0, 1021));
     animationsidebar->setEndValue(QRect(0, 0, 231, 1021));
     animationsidebar->setEasingCurve(QEasingCurve::InQuart);
-    animationsidebar->start();
+    animationsidebar->start(QAbstractAnimation::DeleteWhenStopped);
     // 底部渐入动画
     animationbootombar = new QPropertyAnimation(ui->widget_2, "geometry");
-    animationbootombar->setDuration(2000);
+    animationbootombar->setDuration(1500);
     animationbootombar->setStartValue(QRect(230, 1024, 1691, 124));
     animationbootombar->setEndValue(QRect(230, 900, 1691, 124));
     animationbootombar->setEasingCurve(QEasingCurve::InQuart);
@@ -148,7 +148,6 @@ void CSystemMain::initialization()
         //默认打开信息概览窗口
         CSystemMain::WINDOW_MAP_VIEW = new MapView(ui->widget);
         CSystemMain::WINDOW_MAP_VIEW->show();
-        connect(this, SIGNAL(nodeInfoChanged()), WINDOW_MAP_VIEW, SLOT(init()));
         CSystemMain::widgetstatus = 1;
         //绑定菜单
         CSystemMain::USER_DEFAULT = new QStandardItemModel();
@@ -297,7 +296,7 @@ void CSystemMain::showEvent()
     QStringListModel *model = new QStringListModel(global_list);
     ui->Global_Info->setModel(model);
     NodeInterface ni;
-    //  拉取数据
+    // 拉取数据
     // 网络错误弹出提示
     CSystemMain::nodeInfoList = ni.getNodeInfo();
     CSystemMain::WINDOW_MAP_VIEW->init();

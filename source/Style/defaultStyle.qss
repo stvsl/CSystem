@@ -348,6 +348,10 @@ QTableWidget{
     font-size: 12px;
 }
 
+QHeaderView{
+    font-size: 13px;
+}
+
 QHeaderView::selected {
     background-color: #ffffff;
     color: #000000;
@@ -447,55 +451,6 @@ QTableWidget::item:hover{
     margin-top:0ex;
 }
 
-#nodeinfogroup1::title{
-    color: #383838;
-    subcontrol-origin: margin;
-    position: relative;
-    left: 11px;
-}
-#nodeinfogroup2::title{
-    color: #383838;
-    subcontrol-origin: margin;
-    position: relative;
-    left: 11px;
-}
-#nodeinfogroup3::title{
-    color: #383838;
-    subcontrol-origin: margin;
-    position: relative;
-    left: 11px;
-}
-#nodeinfogroup4::title{
-    color: #383838;
-    subcontrol-origin: margin;
-    position: relative;
-    left: 11px;
-}
-#nodeinfogroup5::title{
-    color: #383838;
-    subcontrol-origin: margin;
-    position: relative;
-    left: 11px;
-}
-#nodeinfogroup6::title{
-    color: #383838;
-    subcontrol-origin: margin;
-    position: relative;
-    left: 11px;
-}
-#nodeinfogroup7::title{
-    color: #383838;
-    subcontrol-origin: margin;
-    position: relative;
-    left: 11px;
-}
-#nodeinfogroup8::title{
-    color: #383838;
-    subcontrol-origin: margin;
-    position: relative;
-    left: 11px;
-}
-
 #resplist::item{
     height: 26px;
     border: none;
@@ -506,5 +461,29 @@ QTableWidget::item:hover{
 }
 
 #resplist::item:hover{
+    background-color: #7da4ff;
+}
+
+#locateinfo::item{
+    height: 30px;
+    border: none;
+}
+
+#locateinfo::item:selected{
+    background-color: #ffffff;
+}
+#locateinfo::item:hover{
+    background-color: #7da4ff;
+}
+
+#selflist::item{
+    height: 26px;
+    border: none;
+}
+
+#selflist::item:selected{
+    background-color: #ffffff;
+}
+#selflist::item:hover{
     background-color: #7da4ff;
 }
