@@ -85,7 +85,7 @@ private slots:
     ///
     /// \brief 结点搜索功能触发事件
     ///
-    void on_node_Searcher_editingFinished();
+    void on_nodeSearcher_editingFinished();
 
     void on_NodeList_clicked(const QModelIndex &index);
 

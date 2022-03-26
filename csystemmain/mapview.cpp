@@ -110,17 +110,45 @@ void MapView::on_mapSearcher_editingFinished()
 }
 
 //结点搜索功能实现
-void MapView::on_node_Searcher_editingFinished()
+void MapView::on_nodeSearcher_editingFinished()
 {
     QString str = ui->nodeSearcher->text();
-    // TODO搜索结点
+    // 判断输入是否为空
+    if (str[0] == nullptr)
+    {
+        ui->nodeSearcher->setText("输入无效");
+    }
+    else
+    {
+        bool flag = false;
+        // 检索节点ID
+        for (int i = 0; i < CSystemMain::nodeInfoList->size(); i++)
+        {
+            if (str == CSystemMain::nodeInfoList->at(i).id)
+            {
+                ui->NodeList->setCurrentIndex(ui->NodeList->model()->index(i, 0));
+                on_NodeList_clicked(ui->NodeList->currentIndex());
+                flag = true;
+                break;
+            }
+        }
+        if (flag == false)
+        {
+            ui->nodeSearcher->setText("未找到该节点");
+        }
+        else
+        {
+            ui->nodeSearcher->setText("搜索成功!");
+        }
+    }
+    QTimer::singleShot(2000, [=]()
+                       { ui->nodeSearcher->clear(); });
 }
 
 void MapView::on_NodeList_clicked(const QModelIndex &index)
 {
     // 清空表格
     ui->nodeinfoview->clearContents();
-    // 数据显示
     ui->nodeinfoview->setRowCount(16);
     // 获取点击的结点编号
     QString id = ui->NodeList->model()->data(index).toString();
@@ -177,7 +205,6 @@ void MapView::on_NodeList_doubleClicked(const QModelIndex &index)
 {
     // 获取点击的结点编号
     QString id = ui->NodeList->model()->data(index).toString();
-    // 去除空格
     id.remove(QRegExp("\\s"));
     // 在节点列表中查找结点
     int i = 0;
@@ -185,7 +212,6 @@ void MapView::on_NodeList_doubleClicked(const QModelIndex &index)
     {
         if (id == CSystemMain::nodeInfoList->at(i).id)
         {
-            // 获取结点坐标
             float x = CSystemMain::nodeInfoList->at(i).lo;
             float y = CSystemMain::nodeInfoList->at(i).li;
             // 设置地图中心

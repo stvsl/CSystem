@@ -31,10 +31,10 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>41</y>
-      <width>1621</width>
-      <height>831</height>
+      <x>22</x>
+      <y>40</y>
+      <width>1631</width>
+      <height>841</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_5" rowstretch="60,1,13" columnstretch="1,1,6">
@@ -588,21 +588,30 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>10</y>
+      <x>15</x>
+      <y>13</y>
       <width>91</width>
       <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 8px;
+border-right-color: rgb(161, 161, 161);
+border-bottom-color: rgb(167, 167, 167);</string>
     </property>
     <property name="text">
      <string>节点详情</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
