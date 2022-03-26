@@ -104,41 +104,6 @@ QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal, QScrollBa
     color: none;
 }
 
-/* Scenes and Sources toolbar */
-
-QToolBar {
-    background-color: palette(window);
-    border: none;
-}
-
-QToolButton:hover {
-    background-color: rgb(122,121,122); /* light */
-    border-radius: none;
-}
-
-QToolButton:pressed {
-    background-color: palette(base);
-    border-radius: none;
-}
-
-/* Tab Widget */
-
-QTabWidget::pane { /* The tab widget frame */
-    border-top: 1px solid palette(base); /* veryDark */
-}
-
-QTabWidget::tab-bar {
-    alignment: left;
-}
-
-QTabBar::tab {
-    background-color: rgb(76,76,76);
-    border: none;
-    padding: 5px;
-    min-width: 50px;
-    margin: 1px;
-}
-
 /* Textedits etc */
 
 QLineEdit, QTextEdit, QPlainTextEdit {
@@ -241,20 +206,6 @@ QSlider::handle:disabled {
     background-color: rgb(122,121,122); /* light */
 }
 
-/* Volume Control */
-
-VolumeMeter {
-    qproperty-backgroundNominalColor: rgb(38,127,38);
-    qproperty-backgroundWarningColor: rgb(127,127,38);
-    qproperty-backgroundErrorColor: rgb(127,38,38);
-    qproperty-foregroundNominalColor: rgb(76,255,76);
-    qproperty-foregroundWarningColor: rgb(255,255,76);
-    qproperty-foregroundErrorColor: rgb(255,76,76);
-    qproperty-magnitudeColor: rgb(0,0,0);
-    qproperty-majorTickColor: palette(window-text);
-    qproperty-minorTickColor: rgb(122,121,122); /* light */
-}
-
 QStatusBar::item {
     border: none;
 }
@@ -342,6 +293,21 @@ QScrollBar:vertical
     border: none;
     background: #ffffff;
     width: 5px;
+}
+
+/* 水平滚动条 */
+QScrollBar:horizontal
+{
+    border: none;
+    background: #ffffff;
+    height: 10px;
+}
+
+QScrollBar::handle:horizontal
+{
+    border: none;
+    background: #7da4ff;
+    border-radius: 10px;
 }
 
 QTableWidget{
@@ -486,4 +452,24 @@ QTableWidget::item:hover{
 }
 #selflist::item:hover{
     background-color: #7da4ff;
+}
+
+QTabWidget{
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+QTabWidget::pane{ /* The tab widget frame */
+    position: absolute;
+    top: 11px;
+    background: #ffffff33;
+    border-radius: 8px;
+}
+
+QTabWidget::tab-bar {
+    height: 26px;
+    alignment: left;
+    border-radius: 8px;
+    border: 1px solid #7da4ff;
 }
