@@ -29,6 +29,8 @@ QGraphicsDropShadowEffect *effectsbottombar;
 
 QVector<NodeInfo> *CSystemMain::nodeInfoList;
 QVector<NodeData> *CSystemMain::nodeDataList;
+QVector<InfluxData> *CSystemMain::nodeinfluxData_temp;
+QVector<ProData> *CSystemMain::nodePro_temp;
 
 QStringList global_list;
 QStringList warn_list;
@@ -292,15 +294,23 @@ void CSystemMain::bottombarchanged()
 void CSystemMain::showEvent()
 {
     this->show();
-    global_list.append("正在加载数据...请稍候...");
-    QStringListModel *model = new QStringListModel(global_list);
-    ui->Global_Info->setModel(model);
-    NodeInterface ni;
-    // 拉取数据
-    // 网络错误弹出提示
-    CSystemMain::nodeInfoList = ni.getNodeInfo();
-    CSystemMain::WINDOW_MAP_VIEW->init();
-    CSystemMain::nodeDataList = ni.getNodeData();
-    global_list.append("数据加载完成");
-    model->setStringList(global_list);
+    if (CSystemMain::nodeInfoList == nullptr || CSystemMain::nodeDataList == nullptr)
+    {
+
+        global_list.append("正在加载数据...请稍候...");
+        QStringListModel *model = new QStringListModel(global_list);
+        ui->Global_Info->setModel(model);
+        NodeInterface ni;
+        // 拉取数据
+        // 网络错误弹出提示
+        CSystemMain::nodeInfoList = ni.getNodeInfo();
+        CSystemMain::WINDOW_MAP_VIEW->init();
+        CSystemMain::nodeDataList = ni.getNodeData();
+        global_list.append("数据加载完成,正在计算数据...");
+        model->setStringList(global_list);
+    }
+    else
+    {
+        CSystemMain::WINDOW_MAP_VIEW->init();
+    }
 }

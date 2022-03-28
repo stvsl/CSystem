@@ -334,7 +334,7 @@
     <rect>
      <x>1320</x>
      <y>307</y>
-     <width>331</width>
+     <width>340</width>
      <height>185</height>
     </rect>
    </property>
@@ -475,7 +475,7 @@
     <rect>
      <x>1320</x>
      <y>54</y>
-     <width>331</width>
+     <width>340</width>
      <height>211</height>
     </rect>
    </property>
@@ -614,7 +614,7 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
     <rect>
      <x>1320</x>
      <y>531</y>
-     <width>331</width>
+     <width>340</width>
      <height>351</height>
     </rect>
    </property>

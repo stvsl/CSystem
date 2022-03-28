@@ -220,49 +220,49 @@
     <name>CSystemMain</name>
     <message>
         <location filename="csystemmain/csystemmain.ui" line="20"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="234"/>
-        <source>MainWindow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/csystemmain.ui" line="79"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="235"/>
-        <source>CSystem</source>
+        <source>水质数据监测平台  v1.0.1 alpha</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/csystemmain.ui" line="121"/>
+        <location filename="csystemmain/csystemmain.ui" line="82"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="236"/>
+        <source>水质数据监测平台</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/csystemmain.ui" line="124"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="237"/>
         <source>键入以搜索功能......</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/csystemmain.ui" line="218"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="237"/>
+        <location filename="csystemmain/csystemmain.ui" line="221"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="238"/>
         <source>全局信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/csystemmain.ui" line="275"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="238"/>
+        <location filename="csystemmain/csystemmain.ui" line="278"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="239"/>
         <source>提醒</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/csystemmain.ui" line="312"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="239"/>
+        <location filename="csystemmain/csystemmain.ui" line="315"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="240"/>
         <source>警报</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/csystemmain.ui" line="332"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="240"/>
+        <location filename="csystemmain/csystemmain.ui" line="335"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="241"/>
         <source>功能说明</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/csystemmain.ui" line="350"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="241"/>
+        <location filename="csystemmain/csystemmain.ui" line="353"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="242"/>
         <source>系统警告</source>
         <translation type="unfinished"></translation>
     </message>
@@ -695,7 +695,8 @@
     <message>
         <location filename="csystemmain/login.ui" line="97"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="437"/>
-        <source>made by stvsl jl</source>
+        <source>developed by stvsl jl</source>
+        <oldsource>made by stvsl jl</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -777,13 +778,15 @@
     <message>
         <location filename="csystemmain/login.ui" line="797"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="456"/>
-        <source>v 0.0.1 develop</source>
+        <source>v 1.0.1 alpha</source>
+        <oldsource>v 0.0.1 develop</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/login.ui" line="819"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="457"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;一个高端大气上档次&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;(尽管还没定下来)的名字&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt;&quot;&gt;水质数据监测平台&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;一个高端大气上档次&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;(尽管还没定下来)的名字&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
         <translation type="unfinished"></translation>
     </message>
 </context>

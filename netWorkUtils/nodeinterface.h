@@ -20,6 +20,10 @@ public:
     QVector<NodeInfo> *getNodeInfo();
     // 获取结点当前详情
     QVector<NodeData> *getNodeData();
+    // 获取时序数据
+    QVector<InfluxData> *getNodeInfluxData(QString startTime, QString endTime);
+    // 获取机构监测数据
+    QVector<ProData> *getNodeProData(QString startTime, QString endTime);
 };
 
 #endif // NODEINTERFACE_H

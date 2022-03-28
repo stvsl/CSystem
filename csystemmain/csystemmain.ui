@@ -17,7 +17,10 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>水质数据监测平台  v1.0.1 alpha</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -66,8 +69,8 @@
         <property name="font">
          <font>
           <pointsize>16</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="styleSheet">
@@ -76,7 +79,7 @@ border: none;
 color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
-         <string>CSystem</string>
+         <string>水质数据监测平台</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>

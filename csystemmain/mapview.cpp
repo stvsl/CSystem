@@ -26,7 +26,6 @@ MapView::MapView(QWidget *parent) : QWidget(parent),
     channel = new QWebChannel(this);             //通讯对象
     channel->registerObject("trans", this);      //通信介质注册
     ui->webView->page()->setWebChannel(channel); //通讯附加
-
     ui->nodeinfoview->setHorizontalHeaderLabels(QStringList() << "监测项目"
                                                               << "检测值");
     ui->nodeinfoview->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch); //自适应宽度
