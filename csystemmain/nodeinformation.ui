@@ -32,7 +32,7 @@
     <property name="geometry">
      <rect>
       <x>22</x>
-      <y>40</y>
+      <y>44</y>
       <width>1631</width>
       <height>841</height>
      </rect>
@@ -591,7 +591,7 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
       <x>15</x>
       <y>13</y>
       <width>91</width>
-      <height>21</height>
+      <height>26</height>
      </rect>
     </property>
     <property name="font">

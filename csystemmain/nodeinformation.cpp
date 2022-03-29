@@ -8,6 +8,7 @@
 
 QGraphicsDropShadowEffect *shadow1;
 QGraphicsDropShadowEffect *shadow2;
+QGraphicsDropShadowEffect *shadow3;
 
 nodeinformation::nodeinformation(QWidget *parent) : QWidget(parent),
                                                     ui(new Ui::nodeinformation)
@@ -26,6 +27,12 @@ nodeinformation::nodeinformation(QWidget *parent) : QWidget(parent),
     shadow2->setColor(QColor(125, 164, 255, 60));
     shadow2->setBlurRadius(20);
     ui->nodeinfogroup2->setGraphicsEffect(shadow2);
+    // 阴影效果
+    shadow3 = new QGraphicsDropShadowEffect(ui->label);
+    shadow3->setOffset(0, 0);
+    shadow3->setColor(QColor(125, 164, 255, 80));
+    shadow3->setBlurRadius(10);
+    ui->label->setGraphicsEffect(shadow3);
     QStringList nodelist;
     // 初始化结点列表
     for (int i = 0; i < CSystemMain::nodeInfoList->size(); i++)
@@ -53,6 +60,7 @@ nodeinformation::~nodeinformation()
     delete ui;
     delete shadow1;
     delete shadow2;
+    delete shadow3;
 }
 
 void nodeinformation::on_NodeList_clicked(const QModelIndex &index)

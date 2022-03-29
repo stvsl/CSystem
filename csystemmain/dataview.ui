@@ -23,20 +23,24 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
      <string>采集数据</string>
     </attribute>
-    <widget class="QTableWidget" name="tableWidget">
+    <widget class="QTableWidget" name="fluxTable">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>1</x>
        <y>0</y>
-       <width>1281</width>
+       <width>1290</width>
        <height>831</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 255);
+border-radius:8px;</string>
      </property>
      <attribute name="horizontalHeaderCascadingSectionResizes">
       <bool>false</bool>
@@ -53,7 +57,7 @@
      </column>
      <column>
       <property name="text">
-       <string>气体浓度</string>
+       <string> 气体浓度 </string>
       </property>
      </column>
      <column>
@@ -88,12 +92,12 @@
      </column>
      <column>
       <property name="text">
-       <string>溶解性固体</string>
+       <string>  溶解性固体  </string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>悬浮性固体</string>
+       <string>  悬浮性固体  </string>
       </property>
      </column>
      <column>
@@ -113,27 +117,22 @@
      </column>
      <column>
       <property name="text">
-       <string>生物需氧量</string>
+       <string>  生物需氧量  </string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>化学需氧量</string>
+       <string>  化学需氧量  </string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>细菌总数</string>
+       <string> 细菌总数 </string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>大肠杆菌数</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string/>
+       <string>  大肠杆菌数  </string>
       </property>
      </column>
     </widget>
@@ -142,13 +141,13 @@
     <attribute name="title">
      <string>机构数据</string>
     </attribute>
-    <widget class="QTableWidget" name="tableWidget_2">
+    <widget class="QTableWidget" name="proTable">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>1</x>
        <y>0</y>
-       <width>1301</width>
-       <height>834</height>
+       <width>1290</width>
+       <height>831</height>
       </rect>
      </property>
      <column>
@@ -223,6 +222,11 @@
      </column>
      <column>
       <property name="text">
+       <string>总锡</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
        <string>总锑</string>
       </property>
      </column>
@@ -278,7 +282,7 @@
      </column>
      <column>
       <property name="text">
-       <string>悬浮性固体</string>
+       <string>总有机碳</string>
       </property>
      </column>
      <column>
@@ -480,7 +484,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>搜索</string>
+    <string>节点筛选</string>
    </property>
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
@@ -507,7 +511,7 @@
         <string notr="true">background-color: rgba(255, 255, 255,0);</string>
        </property>
        <property name="text">
-        <string>搜索ID  </string>
+        <string>根据ID筛选  </string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -559,7 +563,7 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
         <string notr="true">background-color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
-        <string>区域搜索</string>
+        <string>根据区域筛选</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -586,7 +590,7 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
         <string notr="true">background-color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
-        <string>归属搜索</string>
+        <string>根据归属筛选</string>
        </property>
       </widget>
      </item>
@@ -619,7 +623,7 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
     </rect>
    </property>
    <property name="title">
-    <string>数据筛选</string>
+    <string>数据过滤</string>
    </property>
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
@@ -640,6 +644,50 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
      <property name="verticalSpacing">
       <number>5</number>
      </property>
+     <item row="9" column="1">
+      <widget class="QPushButton" name="pushButton_6">
+       <property name="text">
+        <string>清除</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="2">
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="text">
+        <string>确定</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QCheckBox" name="checkBox_3">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>普通</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QCheckBox" name="checkBox_7">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>缫丝工业</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1" colspan="2">
+      <widget class="QCheckBox" name="checkBox_5">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>制革及毛皮加工工业</string>
+       </property>
+      </widget>
+     </item>
      <item row="1" column="1">
       <widget class="QCheckBox" name="checkBox">
        <property name="styleSheet">
@@ -648,6 +696,16 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
        </property>
        <property name="text">
         <string>正常数据</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QRadioButton" name="radioButton_3">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255, 255, 255,0);</string>
+       </property>
+       <property name="text">
+        <string>按数据</string>
        </property>
       </widget>
      </item>
@@ -667,13 +725,6 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
        </property>
       </widget>
      </item>
-     <item row="9" column="2">
-      <widget class="QPushButton" name="pushButton_5">
-       <property name="text">
-        <string>确定</string>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="2">
       <widget class="QCheckBox" name="checkBox_2">
        <property name="styleSheet">
@@ -681,79 +732,6 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
        </property>
        <property name="text">
         <string>异常数据</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QRadioButton" name="radioButton_3">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgba(255, 255, 255,0);</string>
-       </property>
-       <property name="text">
-        <string>按数据筛选</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QCheckBox" name="checkBox_3">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>普通</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1" colspan="2">
-      <widget class="QCheckBox" name="checkBox_5">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>制革及毛皮加工工业</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="1" colspan="2">
-      <widget class="QCheckBox" name="checkBox_6">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>柠檬酸工业</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="1">
-      <widget class="QCheckBox" name="checkBox_7">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>缫丝工业</string>
-       </property>
-      </widget>
-     </item>
-     <item row="9" column="1">
-      <widget class="QPushButton" name="pushButton_6">
-       <property name="text">
-        <string>清除</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QRadioButton" name="radioButton_4">
-       <property name="maximumSize">
-        <size>
-         <width>100</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>按类型筛选</string>
        </property>
       </widget>
      </item>
@@ -772,6 +750,32 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
         </size>
        </property>
       </spacer>
+     </item>
+     <item row="6" column="1" colspan="2">
+      <widget class="QCheckBox" name="checkBox_6">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>柠檬酸工业</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QRadioButton" name="radioButton_4">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>按节点类型</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>

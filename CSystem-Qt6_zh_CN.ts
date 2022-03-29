@@ -271,410 +271,451 @@
     <name>DataView</name>
     <message>
         <location filename="csystemmain/dataview.ui" line="14"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="427"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="429"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="61"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="435"/>
+        <location filename="csystemmain/dataview.ui" line="55"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="433"/>
+        <source>节点ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/dataview.ui" line="65"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="437"/>
         <source>温度</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="66"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="437"/>
+        <location filename="csystemmain/dataview.ui" line="70"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="439"/>
         <source>PH</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="71"/>
-        <location filename="csystemmain/dataview.ui" line="261"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="439"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="508"/>
+        <location filename="csystemmain/dataview.ui" line="75"/>
+        <location filename="csystemmain/dataview.ui" line="265"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="441"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="512"/>
         <source>浊度</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="76"/>
-        <location filename="csystemmain/dataview.ui" line="266"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="441"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="510"/>
+        <location filename="csystemmain/dataview.ui" line="80"/>
+        <location filename="csystemmain/dataview.ui" line="270"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="443"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="514"/>
         <source>电导率</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="86"/>
-        <location filename="csystemmain/dataview.ui" line="271"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="445"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="512"/>
+        <location filename="csystemmain/dataview.ui" line="90"/>
+        <location filename="csystemmain/dataview.ui" line="275"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="447"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="516"/>
         <source>重金属</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="342"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="536"/>
+        <location filename="csystemmain/dataview.ui" line="346"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="540"/>
         <source>范围设置</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="622"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="547"/>
-        <source>数据筛选</source>
+        <location filename="csystemmain/dataview.ui" line="626"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="551"/>
+        <source>数据过滤</source>
+        <oldsource>数据筛选</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="703"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="553"/>
+        <location filename="csystemmain/dataview.ui" line="667"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="554"/>
         <source>普通</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="666"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="549"/>
+        <location filename="csystemmain/dataview.ui" line="724"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="559"/>
         <source>锡、锑、汞工业</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="713"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="554"/>
+        <location filename="csystemmain/dataview.ui" line="687"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="556"/>
         <source>制革及毛皮加工工业</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="723"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="555"/>
+        <location filename="csystemmain/dataview.ui" line="760"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="561"/>
         <source>柠檬酸工业</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="733"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="556"/>
+        <location filename="csystemmain/dataview.ui" line="677"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="555"/>
         <source>缫丝工业</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="483"/>
-        <location filename="csystemmain/dataview.ui" line="572"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="541"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="544"/>
+        <location filename="csystemmain/dataview.ui" line="576"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="548"/>
         <source>搜索</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="589"/>
+        <location filename="csystemmain/dataview.ui" line="593"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="550"/>
+        <source>根据归属筛选</source>
+        <oldsource>归属搜索</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/dataview.ui" line="514"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="546"/>
-        <source>归属搜索</source>
-        <oldsource>搜索所属</oldsource>
+        <source>根据ID筛选  </source>
+        <oldsource>搜索ID  </oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="510"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="542"/>
-        <source>搜索ID  </source>
-        <oldsource>搜索结点  </oldsource>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/dataview.ui" line="579"/>
-        <location filename="csystemmain/dataview.ui" line="740"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="545"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="557"/>
+        <location filename="csystemmain/dataview.ui" line="583"/>
+        <location filename="csystemmain/dataview.ui" line="650"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="549"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="552"/>
         <source>清除</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="392"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="537"/>
+        <location filename="csystemmain/dataview.ui" line="396"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="541"/>
         <source>从 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="417"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="538"/>
+        <location filename="csystemmain/dataview.ui" line="421"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="542"/>
         <source>到 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="427"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="539"/>
+        <location filename="csystemmain/dataview.ui" line="431"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="543"/>
         <source>撤回</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="450"/>
-        <location filename="csystemmain/dataview.ui" line="673"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="540"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="550"/>
+        <location filename="csystemmain/dataview.ui" line="454"/>
+        <location filename="csystemmain/dataview.ui" line="657"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="544"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="553"/>
         <source>确定</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="650"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="548"/>
+        <location filename="csystemmain/dataview.ui" line="698"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="557"/>
         <source>正常数据</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="683"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="551"/>
+        <location filename="csystemmain/dataview.ui" line="734"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="560"/>
         <source>异常数据</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/dataview.ui" line="30"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="464"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="466"/>
         <source>采集数据</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="46"/>
-        <location filename="csystemmain/dataview.ui" line="156"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="429"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="466"/>
+        <location filename="csystemmain/dataview.ui" line="50"/>
+        <location filename="csystemmain/dataview.ui" line="155"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="431"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="468"/>
         <source>时间</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="51"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="431"/>
-        <source>节点ID</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/dataview.ui" line="56"/>
-        <location filename="csystemmain/dataview.ui" line="256"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="433"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="506"/>
+        <location filename="csystemmain/dataview.ui" line="260"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="510"/>
         <source>气体浓度</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="81"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="443"/>
+        <location filename="csystemmain/dataview.ui" line="85"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="445"/>
         <source>含氧量</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="91"/>
-        <location filename="csystemmain/dataview.ui" line="276"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="447"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="514"/>
+        <location filename="csystemmain/dataview.ui" line="280"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="518"/>
         <source>溶解性固体</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="96"/>
-        <location filename="csystemmain/dataview.ui" line="281"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="449"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="516"/>
-        <source>悬浮性固体</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/dataview.ui" line="101"/>
-        <location filename="csystemmain/dataview.ui" line="181"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="451"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="476"/>
+        <location filename="csystemmain/dataview.ui" line="105"/>
+        <location filename="csystemmain/dataview.ui" line="180"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="453"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="478"/>
         <source>总氮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="106"/>
-        <location filename="csystemmain/dataview.ui" line="176"/>
-        <location filename="csystemmain/dataview.ui" line="296"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="453"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="474"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="522"/>
+        <location filename="csystemmain/dataview.ui" line="110"/>
+        <location filename="csystemmain/dataview.ui" line="175"/>
+        <location filename="csystemmain/dataview.ui" line="300"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="455"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="476"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="526"/>
         <source>总磷</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="111"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="455"/>
+        <location filename="csystemmain/dataview.ui" line="115"/>
+        <location filename="csystemmain/dataview.ui" line="285"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="457"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="520"/>
         <source>总有机碳</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="116"/>
-        <location filename="csystemmain/dataview.ui" line="291"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="457"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="520"/>
+        <location filename="csystemmain/dataview.ui" line="295"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="524"/>
         <source>生物需氧量</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="121"/>
-        <location filename="csystemmain/dataview.ui" line="171"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="459"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="472"/>
+        <location filename="csystemmain/dataview.ui" line="170"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="474"/>
         <source>化学需氧量</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="126"/>
-        <location filename="csystemmain/dataview.ui" line="301"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="461"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="524"/>
+        <location filename="csystemmain/dataview.ui" line="305"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="528"/>
         <source>细菌总数</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="131"/>
-        <location filename="csystemmain/dataview.ui" line="306"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="463"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="526"/>
+        <location filename="csystemmain/dataview.ui" line="310"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="530"/>
         <source>大肠杆菌数</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="143"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="535"/>
+        <location filename="csystemmain/dataview.ui" line="142"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="539"/>
         <source>机构数据</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="161"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="468"/>
+        <location filename="csystemmain/dataview.ui" line="60"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="435"/>
+        <source> 气体浓度 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/dataview.ui" line="95"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="449"/>
+        <source>  溶解性固体  </source>
+        <oldsource> 溶解性固体 </oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/dataview.ui" line="100"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="451"/>
+        <source>  悬浮性固体  </source>
+        <oldsource> 悬浮性固体 </oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/dataview.ui" line="120"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="459"/>
+        <source>  生物需氧量  </source>
+        <oldsource> 生物需氧量 </oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/dataview.ui" line="125"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="461"/>
+        <source>  化学需氧量  </source>
+        <oldsource> 化学需氧量 </oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/dataview.ui" line="130"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="463"/>
+        <source> 细菌总数 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/dataview.ui" line="135"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="465"/>
+        <source>  大肠杆菌数  </source>
+        <oldsource> 大肠杆菌数 </oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/dataview.ui" line="160"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="470"/>
         <source>节点编号</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="166"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="470"/>
+        <location filename="csystemmain/dataview.ui" line="165"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="472"/>
         <source>PH排放</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="186"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="478"/>
+        <location filename="csystemmain/dataview.ui" line="185"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="480"/>
         <source>氨氮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="191"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="480"/>
+        <location filename="csystemmain/dataview.ui" line="190"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="482"/>
         <source>石油类</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="196"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="482"/>
+        <location filename="csystemmain/dataview.ui" line="195"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="484"/>
         <source>悬浮物</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="201"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="484"/>
+        <location filename="csystemmain/dataview.ui" line="200"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="486"/>
         <source>悬浮物(其它)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="206"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="486"/>
+        <location filename="csystemmain/dataview.ui" line="205"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="488"/>
         <source>硫化物</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="211"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="488"/>
+        <location filename="csystemmain/dataview.ui" line="210"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="490"/>
         <source>氟化物</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="216"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="490"/>
+        <location filename="csystemmain/dataview.ui" line="215"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="492"/>
         <source>总铜</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="221"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="492"/>
+        <location filename="csystemmain/dataview.ui" line="220"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="494"/>
         <source>总锌</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="226"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="494"/>
+        <location filename="csystemmain/dataview.ui" line="225"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="496"/>
+        <source>总锡</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/dataview.ui" line="230"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="498"/>
         <source>总锑</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="231"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="496"/>
+        <location filename="csystemmain/dataview.ui" line="235"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="500"/>
         <source>总汞</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="236"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="498"/>
+        <location filename="csystemmain/dataview.ui" line="240"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="502"/>
         <source>总镉</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="241"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="500"/>
+        <location filename="csystemmain/dataview.ui" line="245"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="504"/>
         <source>总铅</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="246"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="502"/>
+        <location filename="csystemmain/dataview.ui" line="250"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="506"/>
         <source>总砷</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="251"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="504"/>
+        <location filename="csystemmain/dataview.ui" line="255"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="508"/>
         <source>六价铬</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="286"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="518"/>
+        <location filename="csystemmain/dataview.ui" line="290"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="522"/>
         <source>五日生化需氧量</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="311"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="528"/>
+        <location filename="csystemmain/dataview.ui" line="315"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="532"/>
         <source>色度</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="316"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="530"/>
+        <location filename="csystemmain/dataview.ui" line="320"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="534"/>
         <source>动植物油</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="321"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="532"/>
+        <location filename="csystemmain/dataview.ui" line="325"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="536"/>
         <source>氯离子</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="326"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="534"/>
+        <location filename="csystemmain/dataview.ui" line="330"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="538"/>
         <source>总铬</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="562"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="543"/>
-        <source>区域搜索</source>
+        <location filename="csystemmain/dataview.ui" line="487"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="545"/>
+        <source>节点筛选</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="756"/>
+        <location filename="csystemmain/dataview.ui" line="566"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="547"/>
+        <source>根据区域筛选</source>
+        <oldsource>区域搜索</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/dataview.ui" line="708"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="558"/>
-        <source>按类型筛选</source>
+        <source>按数据</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="693"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="552"/>
-        <source>按数据筛选</source>
+        <location filename="csystemmain/dataview.ui" line="776"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="562"/>
+        <source>按节点类型</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
