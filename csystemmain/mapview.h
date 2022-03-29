@@ -55,10 +55,16 @@ signals:
     ///
     void addPoint(QString info, float x, float y);
 
+    ///
+    /// \brief 请求获取地址信息
+    ///
+    void requestPointLocate(QString str);
+
     /***
      * 界面按键相关的槽函数
      */
 public slots:
+
     ///
     /// \brief初始化
     ///
@@ -79,7 +85,7 @@ private slots:
     ///
     /// \brief 结点搜索功能触发事件
     ///
-    void on_node_Searcher_editingFinished();
+    void on_nodeSearcher_editingFinished();
 
     void on_NodeList_clicked(const QModelIndex &index);
 

@@ -86,7 +86,7 @@ background-color: rgba(255, 255, 255, 0);</string>
        <rect>
         <x>9</x>
         <y>599</y>
-        <width>121</width>
+        <width>161</width>
         <height>22</height>
        </rect>
       </property>
@@ -94,7 +94,7 @@ background-color: rgba(255, 255, 255, 0);</string>
        <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
       </property>
       <property name="text">
-       <string>made by stvsl jl</string>
+       <string>developed by stvsl jl</string>
       </property>
      </widget>
      <widget class="QStackedWidget" name="mode_changer">
@@ -784,7 +784,7 @@ color: rgba(50, 50, 50, 215);
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>280</x>
+        <x>282</x>
         <y>599</y>
         <width>121</width>
         <height>22</height>
@@ -794,14 +794,14 @@ color: rgba(50, 50, 50, 215);
        <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
       </property>
       <property name="text">
-       <string>v 0.0.1 develop</string>
+       <string>v 1.0.1 alpha</string>
       </property>
      </widget>
     </widget>
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>70</x>
        <y>140</y>
        <width>421</width>
        <height>121</height>
@@ -816,7 +816,7 @@ color: rgba(50, 50, 50, 215);
       <string notr="true">color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(80, 80, 131, 100), stop:1rgba(87, 87, 158, 100));</string>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;一个高端大气上档次&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;(尽管还没定下来)的名字&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt;&quot;&gt;水质数据监测平台&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </widget>

@@ -3,6 +3,9 @@
         "*.tcc": "cpp",
         "fstream": "cpp",
         "array": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "*.ipp": "cpp",
+        "optional": "cpp",
+        "system_error": "cpp"
     }
 }

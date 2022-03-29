@@ -3,8 +3,9 @@
 
 #include <QWidget>
 
-namespace Ui {
-class DataView;
+namespace Ui
+{
+    class DataView;
 }
 
 class DataView : public QWidget
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::DataView *ui;
+    void initTable();
 };
 
 #endif // DATAVIEW_H

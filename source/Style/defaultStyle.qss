@@ -104,41 +104,6 @@ QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal, QScrollBa
     color: none;
 }
 
-/* Scenes and Sources toolbar */
-
-QToolBar {
-    background-color: palette(window);
-    border: none;
-}
-
-QToolButton:hover {
-    background-color: rgb(122,121,122); /* light */
-    border-radius: none;
-}
-
-QToolButton:pressed {
-    background-color: palette(base);
-    border-radius: none;
-}
-
-/* Tab Widget */
-
-QTabWidget::pane { /* The tab widget frame */
-    border-top: 1px solid palette(base); /* veryDark */
-}
-
-QTabWidget::tab-bar {
-    alignment: left;
-}
-
-QTabBar::tab {
-    background-color: rgb(76,76,76);
-    border: none;
-    padding: 5px;
-    min-width: 50px;
-    margin: 1px;
-}
-
 /* Textedits etc */
 
 QLineEdit, QTextEdit, QPlainTextEdit {
@@ -241,23 +206,6 @@ QSlider::handle:disabled {
     background-color: rgb(122,121,122); /* light */
 }
 
-/* Volume Control */
-
-VolumeMeter {
-    qproperty-backgroundNominalColor: rgb(38,127,38);
-    qproperty-backgroundWarningColor: rgb(127,127,38);
-    qproperty-backgroundErrorColor: rgb(127,38,38);
-    qproperty-foregroundNominalColor: rgb(76,255,76);
-    qproperty-foregroundWarningColor: rgb(255,255,76);
-    qproperty-foregroundErrorColor: rgb(255,76,76);
-    qproperty-magnitudeColor: rgb(0,0,0);
-    qproperty-majorTickColor: palette(window-text);
-    qproperty-minorTickColor: rgb(122,121,122); /* light */
-}
-
-
-/* Status Bar */
-
 QStatusBar::item {
     border: none;
 }
@@ -268,7 +216,6 @@ QGroupBox {
     margin-top:0ex;
 }
 
-
 QGroupBox::title {
     color: #383838;
     subcontrol-origin: margin;
@@ -276,7 +223,14 @@ QGroupBox::title {
     left: 12px;
 }
 
-QListView#side_menu{
+QGroupBox::item {
+    height: 18px;
+    margin: 0px;
+    border: none;
+}
+
+/* 主界面侧边菜单栏 */
+#side_menu{
     border: none;
     background-color: palette(base);
 }
@@ -299,23 +253,25 @@ QListView#side_menu{
     border-left: 5px solid #8aa0eb;
 }
 
-QListView#Global_Info{
+#Global_Info{
     color: #555555;
     font-size: 12px;
 }
 
-QListView::item#Global_Info{
-    height: 20px;
+Q#Global_Info::item {
+    height: 16px;
     border: none;
     padding: 5px;
 }
 
-QListView::item:hover#Global_Info{
+#Global_Info::item:hover{
     background-color: #FFFFFF;
+    height: 16px;
 }
 
-QListView::item:selected#Global_Info{
+#Global_Info::item:selected{
     background-color: #FFFFFF;
+    height: 18px;
 }
 
 QListView::item#NodeList{
@@ -339,8 +295,27 @@ QScrollBar:vertical
     width: 5px;
 }
 
+/* 水平滚动条 */
+QScrollBar:horizontal
+{
+    border: none;
+    background: #ffffff;
+    height: 10px;
+}
+
+QScrollBar::handle:horizontal
+{
+    border: none;
+    background: #7da4ff;
+    border-radius: 10px;
+}
+
 QTableWidget{
     font-size: 12px;
+}
+
+QHeaderView{
+    font-size: 13px;
 }
 
 QHeaderView::selected {
@@ -371,4 +346,130 @@ QTableWidget::item:hover{
     background-color: #7da4ff;
     color: #000000;
     border-radius: 5px;
+}
+
+
+#nodeinfogroup1 {
+    background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    margin-top:0ex;
+    border-right: 1px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+}
+#nodeinfogroup2 {
+    background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    border-right: 1px solid #7da4ff;
+    border-bottom: 1px solid #7da4ff;
+    margin-top:0ex;
+}
+#nodeinfogroup3 {
+    background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    border-right: 1px solid #7da4ff;
+    border-bottom: 1px solid #7da4ff;
+    margin-top:0ex;
+}
+#nodeinfogroup4 {
+    background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    border-right: 1px solid #7da4ff;
+    border-bottom: 1px solid #7da4ff;
+    margin-top:0ex;
+}
+#nodeinfogroup5 {
+    background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    border-right: 1px solid #7da4ff;
+    border-bottom: 1px solid #7da4ff;
+    margin-top:0ex;
+}
+#nodeinfogroup6 {
+    background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    /* 右边和底部2px */
+    border-right: 1px solid #8aa0eb;
+    border-bottom: 1px solid #8aa0eb;
+    margin-top:0ex;
+}
+#nodeinfogroup7 {
+    background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    /* 右边和底部2px */
+    border-right: 2px solid #7da4ff;
+    border-bottom: 2px solid #7da4ff;
+    margin-top:0ex;
+}
+#nodeinfogroup8 {
+    background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    /* 右边和底部2px */
+    border-right: 1px solid #8aa0eb;
+    border-bottom: 1px solid #8aa0eb;
+    margin-top:0ex;
+}
+
+#resplist::item{
+    height: 26px;
+    border: none;
+}
+
+#resplist::item:selected{
+    background-color: #ffffff;
+}
+
+#resplist::item:hover{
+    background-color: #7da4ff;
+}
+
+#locateinfo::item{
+    height: 30px;
+    border: none;
+}
+
+#locateinfo::item:selected{
+    background-color: #ffffff;
+}
+#locateinfo::item:hover{
+    background-color: #7da4ff;
+}
+
+#selflist::item{
+    height: 26px;
+    border: none;
+}
+
+#selflist::item:selected{
+    background-color: #ffffff;
+}
+#selflist::item:hover{
+    background-color: #7da4ff;
+}
+
+QTabWidget{
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+QTabWidget::pane{ /* The tab widget frame */
+    position: absolute;
+    top: 11px;
+    background: #ffffff33;
+    border-radius: 8px;
+}
+
+QTabWidget::tab-bar {
+    height: 26px;
+    alignment: left;
+    border-radius: 8px;
+    border: 1px solid #7da4ff;
 }

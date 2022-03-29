@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1670</width>
-    <height>895</height>
+    <height>891</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,8 +23,57 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.5, y2:1, stop:0 rgba(223,233,243, 0), stop:1 rgba(240,240,241, 255));</string>
+    <string notr="true"/>
    </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>13</y>
+      <width>91</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 8px;
+border-right-color: rgb(161, 161, 161);
+border-bottom-color: rgb(167, 167, 167);</string>
+    </property>
+    <property name="text">
+     <string>全局视图</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QWebEngineView" name="webView">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>50</y>
+      <width>1300</width>
+      <height>831</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:0px;
+border-bottom: 2px solid ;
+border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #868f96, stop:1#596164);</string>
+    </property>
+    <property name="url">
+     <url>
+      <string>about:blank</string>
+     </url>
+    </property>
+   </widget>
   </widget>
   <widget class="QSplitter" name="SideBar">
    <property name="geometry">
@@ -265,46 +314,6 @@ QPushButton:pressed {
      </column>
     </widget>
    </widget>
-  </widget>
-  <widget class="QWebEngineView" name="webView">
-   <property name="geometry">
-    <rect>
-     <x>15</x>
-     <y>45</y>
-     <width>1300</width>
-     <height>838</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border:0px;
-border-bottom: 2px solid ;
-border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #868f96, stop:1#596164);</string>
-   </property>
-   <property name="url">
-    <url>
-     <string>about:blank</string>
-    </url>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>16</x>
-     <y>13</y>
-     <width>81</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>全局视图</string>
-   </property>
   </widget>
  </widget>
  <customwidgets>
