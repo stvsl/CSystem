@@ -54,6 +54,40 @@ public:
     /// \brief 自动定位
     ///
     static bool MAP_AUTO_POSITIONING;
-};
 
+    ///
+    /// \brief 键盘控制
+    ///
+    static bool MAP_KEYBOARD_CONTROL;
+
+    ///
+    /// \brief 鼠标滚轮缩放
+    ///
+    static bool MAP_MOUSE_SCROLL_ZOOM;
+
+    ///
+    /// \brief 移除地图动画
+    ///
+    static bool MAP_REMOVE_ANIMATION;
+
+    ///
+    /// \brief 使用内部HTML文件
+    ///
+    static bool MAP_USE_INTERNAL_HTML;
+
+    ///
+    /// \brief 自动清除缓存
+    ///
+    static bool MAP_AUTO_CLEAR_CACHE;
+
+    ///
+    /// \brief 拖拽控制
+    ///
+    static bool MAP_DRAG_CONTROL;
+
+    ///
+    /// \brief 惯性拖拽
+    ///
+    static bool MAP_INERTIAL_DRAG;
+};
 #endif // MAPCONFIG_H

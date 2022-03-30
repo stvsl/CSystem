@@ -201,9 +201,10 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
     // }
     QStringList resplist;
     resplist << "   机构号:    " + CSystemMain::nodeInfoList->at(i).belong;
+    resplist << "   企业名称:  " + CSystemMain::nodeInfoList->at(i).COMNAME;
     resplist << "   负责人:    " + CSystemMain::nodeInfoList->at(i).principal;
-    resplist << "   安装人:    " + CSystemMain::nodeInfoList->at(i).installer;
-    resplist << "   维护人:    " + CSystemMain::nodeInfoList->at(i).maintainer;
+    resplist << "   安装人:    " + CSystemMain::nodeInfoList->at(i).installer + "                 维护人:    " + CSystemMain::nodeInfoList->at(i).maintainer;
+    resplist << "   执行标准:  " + CSystemMain::nodeInfoList->at(i).STANDARD;
     ui->resplist->addItems(resplist);
 
     ui->configwidget->setItem(0, 0, new QTableWidgetItem("特殊气体浓度"));

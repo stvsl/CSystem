@@ -13,6 +13,8 @@
 #include <QTableWidgetItem>
 #include <QGraphicsDropShadowEffect>
 
+QGraphicsDropShadowEffect *mapviewshadow;
+
 MapView::MapView(QWidget *parent) : QWidget(parent),
                                     ui(new Ui::MapView)
 {
@@ -36,16 +38,17 @@ MapView::MapView(QWidget *parent) : QWidget(parent),
     ui->nodeinfoview->setSelectionBehavior(QAbstractItemView::SelectRows);            //整行选中
     ui->nodeinfoview->horizontalHeader()->setHighlightSections(false);                //去除选中时的高亮
     // 阴影效果
-    QGraphicsDropShadowEffect *shadow_effect = new QGraphicsDropShadowEffect(ui->label);
-    shadow_effect->setOffset(0, 0);
-    shadow_effect->setColor(QColor(125, 164, 255, 80));
-    shadow_effect->setBlurRadius(10);
-    ui->label->setGraphicsEffect(shadow_effect);
+    mapviewshadow = new QGraphicsDropShadowEffect(ui->label);
+    mapviewshadow->setOffset(0, 0);
+    mapviewshadow->setColor(QColor(125, 164, 255, 80));
+    mapviewshadow->setBlurRadius(10);
+    ui->label->setGraphicsEffect(mapviewshadow);
 }
 
 MapView::~MapView()
 {
     delete channel;
+    delete mapviewshadow;
     delete ui;
 }
 

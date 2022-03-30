@@ -33,6 +33,8 @@ public slots:
     ///
     void config_Changed();
 
+    void config_Recovery();
+
 public:
     void makeRSA();
 };

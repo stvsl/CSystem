@@ -98,8 +98,8 @@
            <rect>
             <x>1</x>
             <y>30</y>
-            <width>962</width>
-            <height>631</height>
+            <width>970</width>
+            <height>641</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -182,9 +182,9 @@
         </spacer>
        </item>
        <item row="0" column="2">
-        <layout class="QGridLayout" name="gridLayout" rowstretch="5,1,11,1,4" rowminimumheight="0,0,0,0,0">
+        <layout class="QGridLayout" name="gridLayout" rowstretch="7,1,10,1,5" rowminimumheight="0,0,0,0,0">
          <property name="horizontalSpacing">
-          <number>10</number>
+          <number>5</number>
          </property>
          <property name="verticalSpacing">
           <number>2</number>
@@ -226,7 +226,7 @@
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>0</height>
+             <height>135</height>
             </size>
            </property>
            <property name="title">
@@ -238,7 +238,7 @@
               <x>1</x>
               <y>30</y>
               <width>381</width>
-              <height>95</height>
+              <height>101</height>
              </rect>
             </property>
            </widget>
@@ -261,7 +261,7 @@
               <x>1</x>
               <y>32</y>
               <width>381</width>
-              <height>125</height>
+              <height>141</height>
              </rect>
             </property>
            </widget>
@@ -284,7 +284,7 @@
               <x>1</x>
               <y>30</y>
               <width>381</width>
-              <height>320</height>
+              <height>301</height>
              </rect>
             </property>
             <column>

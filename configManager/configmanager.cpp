@@ -48,30 +48,52 @@ bool MAP_CONFIG::MAP_EARTHMODEL = false;
 QString MAP_CONFIG::MAP_DEFAULT_LOCATE = nullptr;
 bool MAP_CONFIG::MAP_CONTROL_3D = true;
 bool MAP_CONFIG::MAP_CONTROL_SCALE = true;
+bool MAP_CONFIG::MAP_KEYBOARD_CONTROL = true;
+bool MAP_CONFIG::MAP_MOUSE_SCROLL_ZOOM = true;
+bool MAP_CONFIG::MAP_REMOVE_ANIMATION = true;
+bool MAP_CONFIG::MAP_USE_INTERNAL_HTML = false;
+bool MAP_CONFIG::MAP_AUTO_CLEAR_CACHE = false;
+bool MAP_CONFIG::MAP_DRAG_CONTROL = true;
+bool MAP_CONFIG::MAP_INERTIAL_DRAG = true;
 
 configManager::configManager(QObject *parent) : QObject(parent)
 {
-    qDebug() << QCoreApplication::applicationDirPath() + "/config/config.cfg";
     QSettings settings(QCoreApplication::organizationName(), QCoreApplication::applicationName());
     settings.setPath(QSettings::IniFormat, QSettings::UserScope, "./config");
-    qDebug() << settings.fileName();
-    CONFIG_CORE::RUN_FIRST = settings.value("CORE/RUNFIRST").Bool;
-    if (CONFIG_CORE::RUN_FIRST)
+    settings.beginGroup("CORE");
+    bool firststatus = settings.value("RUN_FIRST", true).toBool();
+    if (firststatus)
     {
         writer();
     }
     else
     {
-        MAIN_RUN_CONFIG::SYSTEM_STATUS = 1;
-        reader();
+        if (!MAIN_RUN_CONFIG::SYSTEM_STATUS == 1)
+        {
+            MAIN_RUN_CONFIG::SYSTEM_STATUS = 1;
+            reader();
+        }
     }
+    CONFIG_CORE::RUN_FIRST = false;
     getPasswd();
 }
 
 void configManager::writer()
 {
+    // 打印系统信息
+    qDebug() << "System Information:";
+    qDebug() << MAP_CONFIG::X;
+    qDebug() << MAP_CONFIG::Y;
+    qDebug() << MAP_CONFIG::MAP_AUTO_POSITIONING;
+    qDebug() << MAP_CONFIG::MAP_POIICON_ON;
+    qDebug() << MAP_CONFIG::MAP_POITEXT_ON;
+    qDebug() << MAP_CONFIG::MAP_EARTHMODEL;
+    qDebug() << MAP_CONFIG::MAP_DEFAULT_LOCATE;
+    qDebug() << MAP_CONFIG::MAP_CONTROL_3D;
+    qDebug() << MAP_CONFIG::MAP_CONTROL_SCALE;
+
     QSettings settings(QCoreApplication::organizationName(), QCoreApplication::applicationName());
-    settings.setPath(QSettings::IniFormat, QSettings::UserScope, "./config/config.rc");
+    settings.setPath(QSettings::IniFormat, QSettings::UserScope, "./config");
     settings.beginGroup("CORE");
     settings.setValue("RUN_FIRST", CONFIG_CORE::RUN_FIRST);
     settings.setValue("SERVICE_IP", CONFIG_CORE::SERVICE_IP.toString());
@@ -89,13 +111,20 @@ void configManager::writer()
     settings.setValue("MAP_EARTHMODEL", MAP_CONFIG::MAP_EARTHMODEL);
     settings.setValue("MAP_POIICON_ON", MAP_CONFIG::MAP_POIICON_ON);
     settings.setValue("MAP_POITEXT_ON", MAP_CONFIG::MAP_POITEXT_ON);
+    settings.setValue("MAP_CONTROL_3D", MAP_CONFIG::MAP_CONTROL_3D);
+    settings.setValue("MAP_CONTROL_SCALE", MAP_CONFIG::MAP_CONTROL_SCALE);
+    settings.setValue("MAP_REMOVE_ANIMATION", MAP_CONFIG::MAP_REMOVE_ANIMATION);
+    settings.setValue("MAP_USE_INTERNAL_HTML", MAP_CONFIG::MAP_USE_INTERNAL_HTML);
+    settings.setValue("MAP_AUTO_CLEAR_CACHE", MAP_CONFIG::MAP_AUTO_CLEAR_CACHE);
+    settings.setValue("MAP_DRAG_CONTROL", MAP_CONFIG::MAP_DRAG_CONTROL);
+    settings.setValue("MAP_INERTIAL_DRAG", MAP_CONFIG::MAP_INERTIAL_DRAG);
     settings.endGroup();
 }
 
 void configManager::reader()
 {
     QSettings settings(QCoreApplication::organizationName(), QCoreApplication::applicationName());
-    settings.setPath(QSettings::IniFormat, QSettings::UserScope, "./config/config.rc");
+    settings.setPath(QSettings::IniFormat, QSettings::UserScope, "./config");
     settings.beginGroup("CORE");
     CONFIG_CORE::SERVICE_IP = QHostAddress(settings.value("SERVICE_IP").toString());
     CONFIG_CORE::SERVICE_PORT = settings.value("SERVICE_PORT").toInt();
@@ -112,6 +141,13 @@ void configManager::reader()
     MAP_CONFIG::MAP_EARTHMODEL = settings.value("MAP_EARTHMODEL").Bool;
     MAP_CONFIG::MAP_POIICON_ON = settings.value("MAP_POIICON_ON").Bool;
     MAP_CONFIG::MAP_POITEXT_ON = settings.value("MAP_POITEXT_ON").Bool;
+    MAP_CONFIG::MAP_KEYBOARD_CONTROL = settings.value("MAP_KEYBOARD_CONTROL").Bool;
+    MAP_CONFIG::MAP_MOUSE_SCROLL_ZOOM = settings.value("MAP_MOUSE_SCROLL_ZOOM").Bool;
+    MAP_CONFIG::MAP_REMOVE_ANIMATION = settings.value("MAP_REMOVE_ANIMATION").Bool;
+    MAP_CONFIG::MAP_USE_INTERNAL_HTML = settings.value("MAP_USE_INTERNAL_HTML").Bool;
+    MAP_CONFIG::MAP_AUTO_CLEAR_CACHE = settings.value("MAP_AUTO_CLEAR_CACHE").Bool;
+    MAP_CONFIG::MAP_DRAG_CONTROL = settings.value("MAP_DRAG_CONTROL").Bool;
+    MAP_CONFIG::MAP_INERTIAL_DRAG = settings.value("MAP_INERTIAL_DRAG").Bool;
     settings.endGroup();
 }
 
@@ -183,4 +219,9 @@ void configManager::makeRSA()
 {
     rsa rsa;
     rsa.RSAmake();
+}
+
+void configManager::config_Recovery()
+{
+    reader();
 }
