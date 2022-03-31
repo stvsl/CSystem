@@ -18,6 +18,8 @@ public:
 private slots:
     void on_NodeList_clicked(const QModelIndex &index);
 
+    void on_modSwitch_btn_clicked();
+
 private:
     Ui::nodeinformation *ui;
 };

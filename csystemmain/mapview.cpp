@@ -77,7 +77,7 @@ void MapView::init()
                        CSystemMain::nodeInfoList->at(i).lastUpload.toString("yyyy-MM-dd-hh-mm-ss") + "</td>" +
                        "</tr>"
                        "<tr>"
-                       "<td>数据上传时间</td>"
+                       "<td>系统自检日期</td>"
                        "<td>" +
                        CSystemMain::nodeInfoList->at(i).selfDate.toString("yyyy-MM-dd-hh-mm-ss") + "</td>" +
                        "</tr>"

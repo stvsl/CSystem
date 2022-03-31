@@ -14,6 +14,7 @@ class configManager : public QObject
     Q_OBJECT
 public:
     explicit configManager(QObject *parent = nullptr);
+    ~configManager();
     void getPasswd();
 
 private:

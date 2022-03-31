@@ -9,6 +9,7 @@
 QGraphicsDropShadowEffect *shadow1;
 QGraphicsDropShadowEffect *shadow2;
 QGraphicsDropShadowEffect *shadow3;
+QGraphicsDropShadowEffect *shadow4;
 
 nodeinformation::nodeinformation(QWidget *parent) : QWidget(parent),
                                                     ui(new Ui::nodeinformation)
@@ -33,6 +34,12 @@ nodeinformation::nodeinformation(QWidget *parent) : QWidget(parent),
     shadow3->setColor(QColor(125, 164, 255, 80));
     shadow3->setBlurRadius(10);
     ui->label->setGraphicsEffect(shadow3);
+    // 阴影效果
+    shadow4 = new QGraphicsDropShadowEffect(ui->modSwitch_btn);
+    shadow4->setOffset(0, 0);
+    shadow4->setColor(QColor(125, 164, 255, 80));
+    shadow4->setBlurRadius(10);
+    ui->modSwitch_btn->setGraphicsEffect(shadow4);
     QStringList nodelist;
     // 初始化结点列表
     for (int i = 0; i < CSystemMain::nodeInfoList->size(); i++)
@@ -53,7 +60,7 @@ nodeinformation::nodeinformation(QWidget *parent) : QWidget(parent),
     ui->configwidget->verticalHeader()->setVisible(false);                            //
     ui->nodeinfo->horizontalHeader()->setHighlightSections(false);                    //去除选中高亮
     ui->configwidget->horizontalHeader()->setHighlightSections(false);                //
-    ui->nodeinfo->verticalHeader()->setDefaultSectionSize(12);                        //设置行高
+    ui->nodeinfo->verticalHeader()->setDefaultSectionSize(25);                        //设置表格默认行高
 }
 nodeinformation::~nodeinformation()
 {
@@ -61,6 +68,7 @@ nodeinformation::~nodeinformation()
     delete shadow1;
     delete shadow2;
     delete shadow3;
+    delete shadow4;
 }
 
 void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
@@ -261,4 +269,19 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
     selflist << "   上次自检日期:       " + CSystemMain::nodeInfoList->at(i).selfDate.toString("yyyy-MM-dd-hh-mm-ss");
     selflist << "   自检结果:               " + CSystemMain::nodeInfoList->at(i).selfInfo;
     ui->selflist->addItems(selflist);
+}
+
+void nodeinformation::on_modSwitch_btn_clicked()
+{
+    // 判断当前文字
+    if (ui->modSwitch_btn->text() == "可视化浏览")
+    {
+        ui->modSwitch_btn->setText("数据浏览");
+        ui->stackSwitcher->setCurrentIndex(1);
+    }
+    else
+    {
+        ui->modSwitch_btn->setText("可视化浏览");
+        ui->stackSwitcher->setCurrentIndex(0);
+    }
 }
