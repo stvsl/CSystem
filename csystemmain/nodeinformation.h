@@ -2,9 +2,13 @@
 #define NODEINFORMATION_H
 
 #include <QWidget>
+#include <QtCharts/QChart>
+#include <QChartView>
 
-namespace Ui {
-class nodeinformation;
+namespace Ui
+{
+    class nodeinformation;
+    QT_CHARTS_USE_NAMESPACE
 }
 
 class nodeinformation : public QWidget
