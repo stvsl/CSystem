@@ -32,9 +32,9 @@
     <widget class="QTableWidget" name="fluxTable">
      <property name="geometry">
       <rect>
-       <x>1</x>
+       <x>3</x>
        <y>0</y>
-       <width>1290</width>
+       <width>1287</width>
        <height>831</height>
       </rect>
      </property>

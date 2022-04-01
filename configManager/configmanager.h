@@ -14,6 +14,7 @@ class configManager : public QObject
     Q_OBJECT
 public:
     explicit configManager(QObject *parent = nullptr);
+    ~configManager();
     void getPasswd();
 
 private:
@@ -32,6 +33,8 @@ public slots:
     /// \brief 系统配置文件被修改时执行的槽函数
     ///
     void config_Changed();
+
+    void config_Recovery();
 
 public:
     void makeRSA();

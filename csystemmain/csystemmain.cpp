@@ -157,9 +157,9 @@ void CSystemMain::initialization()
         CSystemMain::USER_DEFAULT->appendRow(Node_Information);
         CSystemMain::USER_DEFAULT->appendRow(DATA_VIEW);
         CSystemMain::USER_DEFAULT->appendRow(MAP_SETTING);
-        CSystemMain::USER_DEFAULT->appendRow(SYSTEM_SETTING);
+        // CSystemMain::USER_DEFAULT->appendRow(SYSTEM_SETTING);
         CSystemMain::USER_DEFAULT->appendRow(NODE_INSTALL);
-        CSystemMain::USER_DEFAULT->appendRow(ACCOUNT_MANAGEMENT);
+        // CSystemMain::USER_DEFAULT->appendRow(ACCOUNT_MANAGEMENT);
         ui->side_menu->setModel(CSystemMain::USER_DEFAULT);
     }
 }

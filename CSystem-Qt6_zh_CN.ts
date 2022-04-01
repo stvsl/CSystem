@@ -835,163 +835,175 @@
     <name>MapSetting</name>
     <message>
         <location filename="csystemmain/mapsetting.ui" line="14"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="372"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="330"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="32"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="373"/>
+        <location filename="csystemmain/mapsetting.ui" line="42"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="331"/>
         <source>地图设置</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="65"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="374"/>
-        <source>3D控件支持</source>
+        <location filename="csystemmain/mapsetting.ui" line="119"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;1. &lt;/span&gt;大多数功能选择后将在点击保存并应用按钮后立即生效，部分功能需要重启生效，点击重置按钮将恢复到默认值状态。&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;2.&lt;/span&gt; 如果加载地图后存在卡顿情况，请开启移除地图动画选项，并尽量不要使用卫星地球模式。&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;3. &lt;/span&gt;若网络条件不佳，请开启使用内置控制器选项，并禁用不使用缓存数据选项,这将降低系统对网络部分的依赖。&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;4. &lt;/span&gt;若地图加载异常或长时间无法正常加载，请开启不使用缓存数据选项。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="77"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="375"/>
-        <source>地图控件设置</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/mapsetting.ui" line="84"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="376"/>
-        <source>比例尺控件支持</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/mapsetting.ui" line="126"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="377"/>
-        <source>地图地标设置</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/mapsetting.ui" line="146"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="378"/>
+        <location filename="csystemmain/mapsetting.ui" line="458"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="355"/>
         <source>显示地标标记</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="153"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="379"/>
+        <location filename="csystemmain/mapsetting.ui" line="522"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="356"/>
+        <source>保存并应用</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/mapsetting.ui" line="451"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="354"/>
         <source>显示地标文字</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="182"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="380"/>
-        <source>地图操作</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/mapsetting.ui" line="189"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="381"/>
+        <location filename="csystemmain/mapsetting.ui" line="310"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="346"/>
         <source>启用惯性拖拽</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="209"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="382"/>
+        <location filename="csystemmain/mapsetting.ui" line="303"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="345"/>
         <source>键盘控制</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="216"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="383"/>
+        <location filename="csystemmain/mapsetting.ui" line="317"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="347"/>
         <source>启用拖拽</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="223"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="384"/>
+        <location filename="csystemmain/mapsetting.ui" line="296"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="344"/>
         <source>鼠标滚轮缩放</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="260"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="385"/>
+        <location filename="csystemmain/mapsetting.ui" line="406"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="352"/>
         <source>移除地图动画</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="275"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="386"/>
-        <source>地图性能优化</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/mapsetting.ui" line="282"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="387"/>
-        <source>内置控制器</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/mapsetting.ui" line="311"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="388"/>
-        <source>地图模式（重启生效）</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/mapsetting.ui" line="331"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="389"/>
+        <location filename="csystemmain/mapsetting.ui" line="241"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="342"/>
         <source>卫星地球模式</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="373"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="390"/>
-        <source>地图定位（重启生效）</source>
+        <location filename="csystemmain/mapsetting.ui" line="399"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="351"/>
+        <source>使用内置控制器</source>
+        <oldsource>地图定位（重启生效）</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="393"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="391"/>
+        <location filename="csystemmain/mapsetting.ui" line="169"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="338"/>
+        <source>控件设置</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/mapsetting.ui" line="183"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="340"/>
+        <source>启用3D控件支持</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/mapsetting.ui" line="176"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="339"/>
+        <source>启用比例尺控件支持</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/mapsetting.ui" line="444"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="353"/>
+        <source>显示设置</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/mapsetting.ui" line="324"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="348"/>
+        <source>操作设置</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/mapsetting.ui" line="372"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="349"/>
+        <source>性能设置</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/mapsetting.ui" line="379"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="350"/>
+        <source>不使用缓存数据</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/mapsetting.ui" line="248"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="343"/>
         <source>锚点自动定位</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="428"/>
-        <source>about:blank</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/mapsetting.ui" line="454"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="392"/>
+        <location filename="csystemmain/mapsetting.ui" line="58"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="332"/>
         <source>效果预览</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="482"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="393"/>
-        <source>功能描述</source>
+        <location filename="csystemmain/mapsetting.ui" line="77"/>
+        <source>about:blank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="494"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="394"/>
-        <source>这是测试的功能描述</source>
+        <location filename="csystemmain/mapsetting.ui" line="151"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="337"/>
+        <source>个性化选项</source>
+        <oldsource>选项</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="533"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="395"/>
+        <location filename="csystemmain/mapsetting.ui" line="234"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="341"/>
+        <source>其它设置</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/mapsetting.ui" line="529"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="357"/>
         <source>取消</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="540"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="396"/>
+        <location filename="csystemmain/mapsetting.ui" line="536"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="358"/>
         <source>重置</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/mapsetting.ui" line="547"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="397"/>
-        <source>确认</source>
+        <location filename="csystemmain/mapsetting.ui" line="98"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="333"/>
+        <source>注意事项:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_mapsetting.h" line="334"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;1. &lt;/span&gt;大多数功能选择后将在点击保存并应用按钮后立即生效，部分功能需要重启生效，点击重置按钮将恢复到默认值状态。&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;2.&lt;/span&gt; 如果加载地图后存在卡顿情况，请开启移除地���动画选项，并尽量不要使用卫星地球模式。&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;3. &lt;/span&gt;若网络条件不佳，请开启使用内置控制器选项，并禁用不使用缓存数据选项,这将降低系统对网络部分的依赖。&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;4. &lt;/span&gt;若地图加载异���或长时间无法正常加载，请开启不使用缓存数据选项。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1828,161 +1840,177 @@
     <name>nodeinformation</name>
     <message>
         <location filename="csystemmain/nodeinformation.ui" line="14"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="392"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="438"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="csystemmain/nodeinformation.ui" line="224"/>
+        <location filename="csystemmain/nodeinformation.ui" line="483"/>
         <location filename="csystemmain/nodeinformation.ui" line="611"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="428"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="446"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="466"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="474"/>
+        <source>位置信息</source>
+        <oldsource>地理信息</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinformation.ui" line="624"/>
+        <source>about:blank</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinformation.ui" line="654"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="475"/>
         <source>节点详情</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="44"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="393"/>
+        <location filename="csystemmain/nodeinformation.ui" line="678"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="476"/>
+        <source>可视化浏览</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinformation.ui" line="691"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="477"/>
         <source>节点列表</source>
         <oldsource>节点选择</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="509"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="422"/>
+        <location filename="csystemmain/nodeinformation.ui" line="231"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="447"/>
         <source>监控信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="233"/>
-        <location filename="csystemmain/nodeinformation.ui" line="502"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="407"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="421"/>
-        <source>位置信息</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinformation.ui" line="91"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="394"/>
+        <location filename="csystemmain/nodeinformation.ui" line="341"/>
+        <location filename="csystemmain/nodeinformation.ui" line="579"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="453"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="473"/>
         <source>详细监控信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="137"/>
-        <location filename="csystemmain/nodeinformation.ui" line="152"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="396"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="402"/>
+        <location filename="csystemmain/nodeinformation.ui" line="387"/>
+        <location filename="csystemmain/nodeinformation.ui" line="402"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="455"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="461"/>
         <source>监测项目</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="142"/>
-        <location filename="csystemmain/nodeinformation.ui" line="157"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="398"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="404"/>
+        <location filename="csystemmain/nodeinformation.ui" line="392"/>
+        <location filename="csystemmain/nodeinformation.ui" line="407"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="457"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="463"/>
         <source>监测值</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="147"/>
-        <location filename="csystemmain/nodeinformation.ui" line="162"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="400"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="406"/>
+        <location filename="csystemmain/nodeinformation.ui" line="397"/>
+        <location filename="csystemmain/nodeinformation.ui" line="412"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="459"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="465"/>
         <source>标准值</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="279"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="409"/>
+        <location filename="csystemmain/nodeinformation.ui" line="529"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="468"/>
         <source>节点配置信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="256"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="408"/>
+        <location filename="csystemmain/nodeinformation.ui" line="506"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="467"/>
         <source>负责机构及人员信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="292"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="411"/>
+        <location filename="csystemmain/nodeinformation.ui" line="542"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="470"/>
         <source>配置项目</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="297"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="413"/>
+        <location filename="csystemmain/nodeinformation.ui" line="547"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="472"/>
         <source>配置状态</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="350"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="414"/>
+        <location filename="csystemmain/nodeinformation.ui" line="72"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="439"/>
         <source>设备信息</source>
         <oldsource>设备自检信息</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="367"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="415"/>
+        <location filename="csystemmain/nodeinformation.ui" line="89"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="440"/>
         <source>信息导出</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="444"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="418"/>
+        <location filename="csystemmain/nodeinformation.ui" line="166"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="443"/>
         <source>文件路径：</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="476"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="419"/>
+        <location filename="csystemmain/nodeinformation.ui" line="198"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="444"/>
         <source>选择路径</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="495"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="420"/>
+        <location filename="csystemmain/nodeinformation.ui" line="217"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="445"/>
         <source>导出内容：</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="516"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="423"/>
+        <location filename="csystemmain/nodeinformation.ui" line="238"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="448"/>
         <source>自检信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="523"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="424"/>
+        <location filename="csystemmain/nodeinformation.ui" line="245"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="449"/>
         <source>负责人信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="555"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="425"/>
+        <location filename="csystemmain/nodeinformation.ui" line="277"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="450"/>
         <source>导出从</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="565"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="426"/>
+        <location filename="csystemmain/nodeinformation.ui" line="287"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="451"/>
         <source>到</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="575"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="427"/>
+        <location filename="csystemmain/nodeinformation.ui" line="297"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="452"/>
         <source>的数据</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="400"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="416"/>
+        <location filename="csystemmain/nodeinformation.ui" line="122"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="441"/>
         <source>导出</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinformation.ui" line="413"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="417"/>
+        <location filename="csystemmain/nodeinformation.ui" line="135"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinformation.h" line="442"/>
         <source>清除</source>
         <translation type="unfinished"></translation>
     </message>

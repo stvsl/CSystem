@@ -9,10 +9,10 @@ QString MAIN_RUN_CONFIG::AES_KEY = "";
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QCoreApplication::setOrganizationName("stvsl&jl");
+    QCoreApplication::setOrganizationName("stvsljl");
     QCoreApplication::setApplicationName("CSystem");
     QCoreApplication::setOrganizationDomain("stvsl.github.io");
-    QCoreApplication::setApplicationVersion("v0.0.1");
+    QCoreApplication::setApplicationVersion("v1.0.1 alpha");
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
     for (const QString &locale : uiLanguages)

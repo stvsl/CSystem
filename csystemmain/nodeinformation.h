@@ -2,9 +2,13 @@
 #define NODEINFORMATION_H
 
 #include <QWidget>
+#include <QtCharts/QChart>
+#include <QChartView>
 
-namespace Ui {
-class nodeinformation;
+namespace Ui
+{
+    class nodeinformation;
+    QT_CHARTS_USE_NAMESPACE
 }
 
 class nodeinformation : public QWidget
@@ -17,6 +21,8 @@ public:
 
 private slots:
     void on_NodeList_clicked(const QModelIndex &index);
+
+    void on_modSwitch_btn_clicked();
 
 private:
     Ui::nodeinformation *ui;

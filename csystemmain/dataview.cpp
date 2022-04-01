@@ -22,8 +22,8 @@ DataView::DataView(QWidget *parent) : QWidget(parent),
     {
         NodeInterface nif;
         // 获取时间戳
-        QString startTime = QString::number(QDateTime::currentDateTime().addMonths(-4).toTime_t());
-        QString endTime = QString::number(QDateTime::currentDateTime().toTime_t());
+        QString startTime = QString::number(QDateTime::currentDateTimeUtc().addMonths(-4).toTime_t());
+        QString endTime = QString::number(QDateTime::currentDateTimeUtc().toTime_t());
         // 获取数据
         CSystemMain::nodeinfluxData_temp = nif.getNodeInfluxData(startTime, endTime);
         CSystemMain::nodePro_temp = nif.getNodeProData(startTime, endTime);
@@ -44,7 +44,6 @@ DataView::DataView(QWidget *parent) : QWidget(parent),
     ui->proTable->setSelectionMode(QAbstractItemView::SingleSelection); //只能选中一行
     ui->proTable->horizontalHeader()->setHighlightSections(false);      //点击表头不高亮
     ui->proTable->verticalHeader()->setHighlightSections(false);        //点击表头不高亮
-    ui->proTable->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->proTable->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     initTable();
 }

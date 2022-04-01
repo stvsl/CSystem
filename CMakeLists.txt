@@ -14,6 +14,12 @@ find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Sql REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Network REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS WebEngine REQUIRED)
+find_package(Qt5Charts)    
+
+include_directories( ${QT_INCLUDE_DIR} )
+set (LIBS ${LIBS} ${Qt5Charts_LIBRARIES} )
+
 find_package(Qt5 COMPONENTS WebEngineWidgets REQUIRED)
 find_package(OpenSSL REQUIRED)
 if(OPENSSL_FOUND)
@@ -117,7 +123,9 @@ target_link_libraries(CSystem-Qt6 PRIVATE Qt${QT_VERSION_MAJOR}::Sql)
 target_link_libraries(CSystem-Qt6 PRIVATE Qt${QT_VERSION_MAJOR}::Network)
 target_link_libraries(CSystem-Qt6 PRIVATE Qt5::WebEngineWidgets)
 target_link_libraries(CSystem-Qt6 PRIVATE Qt5::WebChannel)
+target_link_libraries(CSystem-Qt6 PRIVATE Qt5::Charts)
 target_link_libraries(CSystem-Qt6 PRIVATE OpenSSL::Crypto OpenSSL::SSL)
+
 
 target_include_directories(CSystem-Qt6 PRIVATE "${CMAKE_BINARY_DIR}/Test_autogen/include_Debug")
 

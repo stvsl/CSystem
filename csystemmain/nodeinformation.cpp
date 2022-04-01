@@ -5,10 +5,16 @@
 #include <QStringList>
 #include <QStringListModel>
 #include <QTableWidgetItem>
+#include <QStackedBarSeries>
+#include <QBarSet>
+#include <QHorizontalBarSeries>
+#include <QBarCategoryAxis>
+#include <QValueAxis>
 
 QGraphicsDropShadowEffect *shadow1;
 QGraphicsDropShadowEffect *shadow2;
 QGraphicsDropShadowEffect *shadow3;
+QGraphicsDropShadowEffect *shadow4;
 
 nodeinformation::nodeinformation(QWidget *parent) : QWidget(parent),
                                                     ui(new Ui::nodeinformation)
@@ -33,6 +39,12 @@ nodeinformation::nodeinformation(QWidget *parent) : QWidget(parent),
     shadow3->setColor(QColor(125, 164, 255, 80));
     shadow3->setBlurRadius(10);
     ui->label->setGraphicsEffect(shadow3);
+    // 阴影效果
+    shadow4 = new QGraphicsDropShadowEffect(ui->modSwitch_btn);
+    shadow4->setOffset(0, 0);
+    shadow4->setColor(QColor(125, 164, 255, 80));
+    shadow4->setBlurRadius(10);
+    ui->modSwitch_btn->setGraphicsEffect(shadow4);
     QStringList nodelist;
     // 初始化结点列表
     for (int i = 0; i < CSystemMain::nodeInfoList->size(); i++)
@@ -53,7 +65,7 @@ nodeinformation::nodeinformation(QWidget *parent) : QWidget(parent),
     ui->configwidget->verticalHeader()->setVisible(false);                            //
     ui->nodeinfo->horizontalHeader()->setHighlightSections(false);                    //去除选中高亮
     ui->configwidget->horizontalHeader()->setHighlightSections(false);                //
-    ui->nodeinfo->verticalHeader()->setDefaultSectionSize(12);                        //设置行高
+    ui->nodeinfo->verticalHeader()->setDefaultSectionSize(25);                        //设置表格默认行高
 }
 nodeinformation::~nodeinformation()
 {
@@ -61,6 +73,7 @@ nodeinformation::~nodeinformation()
     delete shadow1;
     delete shadow2;
     delete shadow3;
+    delete shadow4;
 }
 
 void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
@@ -190,7 +203,94 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
             ui->nodeinfo->setItem(24, 4, new QTableWidgetItem(QString::number(CSystemMain::nodeDataList->at(index.row()).Ton)));
             break;
         }
+        // 绘制横向条形统计图
+        QtCharts::QBarSet *set0 = new QtCharts::QBarSet("PH直接排放(上限)");
+        QtCharts::QBarSet *set1 = new QtCharts::QBarSet("PH直接排放(下限)");
+        QtCharts::QBarSet *set2 = new QtCharts::QBarSet("PH间接排放(上限)");
+        QtCharts::QBarSet *set3 = new QtCharts::QBarSet("PH间接排放(下限)");
+        QtCharts::QBarSet *set4 = new QtCharts::QBarSet("化学需氧量(直接)");
+        QtCharts::QBarSet *set5 = new QtCharts::QBarSet("化学需氧量(间接)");
+        QtCharts::QBarSet *set6 = new QtCharts::QBarSet("总磷(直接)");
+        QtCharts::QBarSet *set7 = new QtCharts::QBarSet("总磷(间接)");
+        QtCharts::QBarSet *set8 = new QtCharts::QBarSet("总氮(直接)");
+        QtCharts::QBarSet *set9 = new QtCharts::QBarSet("总氮(间接)");
+        QtCharts::QBarSet *set10 = new QtCharts::QBarSet("氨氮(直接)");
+        QtCharts::QBarSet *set11 = new QtCharts::QBarSet("氨氮(间接)");
+        QtCharts::QBarSet *set12 = new QtCharts::QBarSet("石油类(直接)");
+        QtCharts::QBarSet *set13 = new QtCharts::QBarSet("石油类(间接)");
+        QtCharts::QBarSet *set14 = new QtCharts::QBarSet("悬浮物采选(直接)");
+        QtCharts::QBarSet *set15 = new QtCharts::QBarSet("悬浮物采选(间接)");
+        QtCharts::QBarSet *set16 = new QtCharts::QBarSet("悬浮物其它(直接)");
+        QtCharts::QBarSet *set17 = new QtCharts::QBarSet("悬浮物其它(间接)");
+        QtCharts::QBarSet *set18 = new QtCharts::QBarSet("硫化物(直接)");
+        QtCharts::QBarSet *set19 = new QtCharts::QBarSet("硫化物(间接)");
+        QtCharts::QBarSet *set20 = new QtCharts::QBarSet("氟化物(直接)");
+        QtCharts::QBarSet *set21 = new QtCharts::QBarSet("氟化物(间接)");
+        QtCharts::QBarSet *set22 = new QtCharts::QBarSet("总氮(直接)");
+        QtCharts::QBarSet *set23 = new QtCharts::QBarSet("总氮(间接)");
+        *set0 << CSystemMain::nodeDataList->at(index.row()).PhDirectHigh;
+        *set1 << CSystemMain::nodeDataList->at(index.row()).PhDirectLow;
+        *set2 << CSystemMain::nodeDataList->at(index.row()).PhIndirectHigh;
+        *set3 << CSystemMain::nodeDataList->at(index.row()).PhIndirectLow;
+        *set4 << CSystemMain::nodeDataList->at(index.row()).CODDirect;
+        *set5 << CSystemMain::nodeDataList->at(index.row()).CODIndirect;
+        *set6 << CSystemMain::nodeDataList->at(index.row()).TPDirect;
+        *set7 << CSystemMain::nodeDataList->at(index.row()).TPIndirect;
+        *set8 << CSystemMain::nodeDataList->at(index.row()).TNDirect;
+        *set9 << CSystemMain::nodeDataList->at(index.row()).IPIndirect;
+        *set10 << CSystemMain::nodeDataList->at(index.row()).ANDirect;
+        *set11 << CSystemMain::nodeDataList->at(index.row()).ANINDirect;
+        *set12 << CSystemMain::nodeDataList->at(index.row()).OCCDirect;
+        *set13 << CSystemMain::nodeDataList->at(index.row()).OCCIndirect;
+        *set14 << CSystemMain::nodeDataList->at(index.row()).FSCDirectT;
+        *set15 << CSystemMain::nodeDataList->at(index.row()).FSCIndirectT;
+        *set16 << CSystemMain::nodeDataList->at(index.row()).FSCDirectO;
+        *set17 << CSystemMain::nodeDataList->at(index.row()).FSCIndirectO;
+        *set18 << CSystemMain::nodeDataList->at(index.row()).SADirect;
+        *set19 << CSystemMain::nodeDataList->at(index.row()).SAIndirect;
+        *set20 << CSystemMain::nodeDataList->at(index.row()).FDirect;
+        *set21 << CSystemMain::nodeDataList->at(index.row()).FIndirect;
+
+        QtCharts::QHorizontalBarSeries *series = new QtCharts::QHorizontalBarSeries();
+        series->append(set0);
+        series->append(set1);
+        series->append(set2);
+        series->append(set3);
+        series->append(set4);
+        series->append(set5);
+        series->append(set6);
+        series->append(set7);
+        series->append(set8);
+        series->append(set9);
+        series->append(set10);
+        series->append(set11);
+        series->append(set12);
+        series->append(set13);
+        series->append(set14);
+        series->append(set15);
+        series->append(set16);
+        series->append(set17);
+        series->append(set18);
+        series->append(set19);
+        series->append(set20);
+        series->append(set21);
+        QtCharts::QChart *chart = new QtCharts::QChart();
+        chart->addSeries(series);
+        chart->setTitle("PH排放统计图");
+
+        chart->setAnimationOptions(QtCharts::QChart::SeriesAnimations);
+        chart->legend()->setVisible(true);
+        chart->legend()->setAlignment(Qt::AlignRight);
+        QtCharts::QValueAxis *axisX = new QtCharts::QValueAxis();
+        axisX->setRange(0, CSystemMain::nodeDataList->at(index.row()).PhDirectHigh + CSystemMain::nodeDataList->at(index.row()).PhIndirectHigh);
+        axisX->setLabelFormat("%i");
+        chart->addAxis(axisX, Qt::AlignBottom);
+        series->attachAxis(axisX);
+        series->setLabelsPosition(QtCharts::QAbstractBarSeries::LabelsInsideEnd);
+        series->setLabelsVisible(true);
+        ui->graphicsView->setChart(chart);
     }
+
     // // 居中显示
     // for (int i = 0; i < 6; i++)
     // {
@@ -201,9 +301,10 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
     // }
     QStringList resplist;
     resplist << "   机构号:    " + CSystemMain::nodeInfoList->at(i).belong;
+    resplist << "   企业名称:  " + CSystemMain::nodeInfoList->at(i).COMNAME;
     resplist << "   负责人:    " + CSystemMain::nodeInfoList->at(i).principal;
-    resplist << "   安装人:    " + CSystemMain::nodeInfoList->at(i).installer;
-    resplist << "   维护人:    " + CSystemMain::nodeInfoList->at(i).maintainer;
+    resplist << "   安装人:    " + CSystemMain::nodeInfoList->at(i).installer + "                 维护人:    " + CSystemMain::nodeInfoList->at(i).maintainer;
+    resplist << "   执行标准:  " + CSystemMain::nodeInfoList->at(i).STANDARD;
     ui->resplist->addItems(resplist);
 
     ui->configwidget->setItem(0, 0, new QTableWidgetItem("特殊气体浓度"));
@@ -260,4 +361,19 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
     selflist << "   上次自检日期:       " + CSystemMain::nodeInfoList->at(i).selfDate.toString("yyyy-MM-dd-hh-mm-ss");
     selflist << "   自检结果:               " + CSystemMain::nodeInfoList->at(i).selfInfo;
     ui->selflist->addItems(selflist);
+}
+
+void nodeinformation::on_modSwitch_btn_clicked()
+{
+    // 判断当前文字
+    if (ui->modSwitch_btn->text() == "可视化浏览")
+    {
+        ui->modSwitch_btn->setText("数据浏览");
+        ui->stackSwitcher->setCurrentIndex(1);
+    }
+    else
+    {
+        ui->modSwitch_btn->setText("可视化浏览");
+        ui->stackSwitcher->setCurrentIndex(0);
+    }
 }
