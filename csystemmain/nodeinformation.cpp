@@ -10,6 +10,8 @@
 #include <QHorizontalBarSeries>
 #include <QBarCategoryAxis>
 #include <QValueAxis>
+#include <QBarSeries>
+#include <QSplineSeries>
 
 QGraphicsDropShadowEffect *shadow1;
 QGraphicsDropShadowEffect *shadow2;
@@ -66,6 +68,19 @@ nodeinformation::nodeinformation(QWidget *parent) : QWidget(parent),
     ui->nodeinfo->horizontalHeader()->setHighlightSections(false);                    //去除选中高亮
     ui->configwidget->horizontalHeader()->setHighlightSections(false);                //
     ui->nodeinfo->verticalHeader()->setDefaultSectionSize(25);                        //设置表格默认行高
+    if (CSystemMain::nodeinfluxData_temp == nullptr)
+    {
+        NodeInterface nif;
+        // 获取时间戳
+        QString startTime = QString::number(QDateTime::currentDateTimeUtc().addMonths(-4).toTime_t());
+        QString endTime = QString::number(QDateTime::currentDateTimeUtc().toTime_t());
+        // 获取数据
+        CSystemMain::nodeinfluxData_temp = nif.getNodeInfluxData(startTime, endTime);
+        CSystemMain::nodePro_temp = nif.getNodeProData(startTime, endTime);
+    }
+    // 自动点击第一个
+    ui->NodeList->setCurrentIndex(ui->NodeList->model()->index(0, 0));
+    on_NodeList_clicked(ui->NodeList->currentIndex());
 }
 nodeinformation::~nodeinformation()
 {
@@ -78,12 +93,13 @@ nodeinformation::~nodeinformation()
 
 void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
 {
-    // 清空QListView内对象
+    // 清空原有数据
     ui->resplist->clear();
     ui->nodeinfo->clearContents();
     ui->configwidget->clearContents();
     ui->locateinfo->clear();
     ui->selflist->clear();
+    ui->graphicsView->chart()->removeAllSeries();
     // 设置表格行数
     ui->nodeinfo->setRowCount(25);
     ui->configwidget->setRowCount(14);
@@ -203,92 +219,105 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
             ui->nodeinfo->setItem(24, 4, new QTableWidgetItem(QString::number(CSystemMain::nodeDataList->at(index.row()).Ton)));
             break;
         }
-        // 绘制横向条形统计图
-        QtCharts::QBarSet *set0 = new QtCharts::QBarSet("PH直接排放(上限)");
-        QtCharts::QBarSet *set1 = new QtCharts::QBarSet("PH直接排放(下限)");
-        QtCharts::QBarSet *set2 = new QtCharts::QBarSet("PH间接排放(上限)");
-        QtCharts::QBarSet *set3 = new QtCharts::QBarSet("PH间接排放(下限)");
-        QtCharts::QBarSet *set4 = new QtCharts::QBarSet("化学需氧量(直接)");
-        QtCharts::QBarSet *set5 = new QtCharts::QBarSet("化学需氧量(间接)");
-        QtCharts::QBarSet *set6 = new QtCharts::QBarSet("总磷(直接)");
-        QtCharts::QBarSet *set7 = new QtCharts::QBarSet("总磷(间接)");
-        QtCharts::QBarSet *set8 = new QtCharts::QBarSet("总氮(直接)");
-        QtCharts::QBarSet *set9 = new QtCharts::QBarSet("总氮(间接)");
-        QtCharts::QBarSet *set10 = new QtCharts::QBarSet("氨氮(直接)");
-        QtCharts::QBarSet *set11 = new QtCharts::QBarSet("氨氮(间接)");
-        QtCharts::QBarSet *set12 = new QtCharts::QBarSet("石油类(直接)");
-        QtCharts::QBarSet *set13 = new QtCharts::QBarSet("石油类(间接)");
-        QtCharts::QBarSet *set14 = new QtCharts::QBarSet("悬浮物采选(直接)");
-        QtCharts::QBarSet *set15 = new QtCharts::QBarSet("悬浮物采选(间接)");
-        QtCharts::QBarSet *set16 = new QtCharts::QBarSet("悬浮物其它(直接)");
-        QtCharts::QBarSet *set17 = new QtCharts::QBarSet("悬浮物其它(间接)");
-        QtCharts::QBarSet *set18 = new QtCharts::QBarSet("硫化物(直接)");
-        QtCharts::QBarSet *set19 = new QtCharts::QBarSet("硫化物(间接)");
-        QtCharts::QBarSet *set20 = new QtCharts::QBarSet("氟化物(直接)");
-        QtCharts::QBarSet *set21 = new QtCharts::QBarSet("氟化物(间接)");
-        QtCharts::QBarSet *set22 = new QtCharts::QBarSet("总氮(直接)");
-        QtCharts::QBarSet *set23 = new QtCharts::QBarSet("总氮(间接)");
-        *set0 << CSystemMain::nodeDataList->at(index.row()).PhDirectHigh;
-        *set1 << CSystemMain::nodeDataList->at(index.row()).PhDirectLow;
-        *set2 << CSystemMain::nodeDataList->at(index.row()).PhIndirectHigh;
-        *set3 << CSystemMain::nodeDataList->at(index.row()).PhIndirectLow;
-        *set4 << CSystemMain::nodeDataList->at(index.row()).CODDirect;
-        *set5 << CSystemMain::nodeDataList->at(index.row()).CODIndirect;
-        *set6 << CSystemMain::nodeDataList->at(index.row()).TPDirect;
-        *set7 << CSystemMain::nodeDataList->at(index.row()).TPIndirect;
-        *set8 << CSystemMain::nodeDataList->at(index.row()).TNDirect;
-        *set9 << CSystemMain::nodeDataList->at(index.row()).IPIndirect;
-        *set10 << CSystemMain::nodeDataList->at(index.row()).ANDirect;
-        *set11 << CSystemMain::nodeDataList->at(index.row()).ANINDirect;
-        *set12 << CSystemMain::nodeDataList->at(index.row()).OCCDirect;
-        *set13 << CSystemMain::nodeDataList->at(index.row()).OCCIndirect;
-        *set14 << CSystemMain::nodeDataList->at(index.row()).FSCDirectT;
-        *set15 << CSystemMain::nodeDataList->at(index.row()).FSCIndirectT;
-        *set16 << CSystemMain::nodeDataList->at(index.row()).FSCDirectO;
-        *set17 << CSystemMain::nodeDataList->at(index.row()).FSCIndirectO;
-        *set18 << CSystemMain::nodeDataList->at(index.row()).SADirect;
-        *set19 << CSystemMain::nodeDataList->at(index.row()).SAIndirect;
-        *set20 << CSystemMain::nodeDataList->at(index.row()).FDirect;
-        *set21 << CSystemMain::nodeDataList->at(index.row()).FIndirect;
+        // 绘制折线图
+        QtCharts::QSplineSeries *series0ph = new QtCharts::QSplineSeries();
+        series0ph->setPen(QPen(QColor(0, 152, 255)));
+        for (int i = 1; i <= 8; i++)
+        {
+            series0ph->append(i, CSystemMain::nodeinfluxData_temp->at(CSystemMain::nodeinfluxData_temp->size() - i).pH);
+        }
+        series0ph->setName("PH");
+        series0ph->setUseOpenGL(true);
 
-        QtCharts::QHorizontalBarSeries *series = new QtCharts::QHorizontalBarSeries();
-        series->append(set0);
-        series->append(set1);
-        series->append(set2);
-        series->append(set3);
-        series->append(set4);
-        series->append(set5);
-        series->append(set6);
-        series->append(set7);
-        series->append(set8);
-        series->append(set9);
-        series->append(set10);
-        series->append(set11);
-        series->append(set12);
-        series->append(set13);
-        series->append(set14);
-        series->append(set15);
-        series->append(set16);
-        series->append(set17);
-        series->append(set18);
-        series->append(set19);
-        series->append(set20);
-        series->append(set21);
+        QtCharts::QSplineSeries *series0temp = new QtCharts::QSplineSeries();
+        series0temp->setPen(QPen(QColor(33, 95, 215)));
+        for (int i = 1; i <= 8; i++)
+        {
+            series0temp->append(i, CSystemMain::nodeinfluxData_temp->at(CSystemMain::nodeinfluxData_temp->size() - i).COD);
+        }
+        series0temp->setName("温度");
+        series0temp->setUseOpenGL(true);
+
+        QtCharts::QSplineSeries *series0gas = new QtCharts::QSplineSeries();
+        series0gas->setPen(QPen(QColor(11, 191, 182)));
+        for (int i = 1; i <= 8; i++)
+        {
+            series0gas->append(i, CSystemMain::nodeinfluxData_temp->at(CSystemMain::nodeinfluxData_temp->size() - i).gasConcentration);
+        }
+        series0gas->setName("气体浓度");
+        series0gas->setUseOpenGL(true);
+
+        QtCharts::QSplineSeries *series0cod = new QtCharts::QSplineSeries();
+        series0cod->setPen(QPen(QColor(117, 222, 141)));
+        for (int i = 1; i <= 8; i++)
+        {
+            series0cod->append(i, CSystemMain::nodeinfluxData_temp->at(CSystemMain::nodeinfluxData_temp->size() - i).COD);
+        }
+        series0cod->setName("电导率");
+        series0cod->setUseOpenGL(true);
+
+        QtCharts::QSplineSeries *series0den = new QtCharts::QSplineSeries();
+        series0den->setPen(QPen(QColor(15, 132, 52)));
+        for (int i = 1; i <= 8; i++)
+        {
+            series0den->append(i, CSystemMain::nodeinfluxData_temp->at(CSystemMain::nodeinfluxData_temp->size() - i).density);
+        }
+        series0den->setName("浊度");
+        series0den->setUseOpenGL(true);
+
+        QtCharts::QSplineSeries *series0oxy = new QtCharts::QSplineSeries();
+        series0oxy->setPen(QPen(QColor(237, 180, 0)));
+        for (int i = 1; i <= 8; i++)
+        {
+            series0oxy->append(i, CSystemMain::nodeinfluxData_temp->at(CSystemMain::nodeinfluxData_temp->size() - i).oxygenConcentration);
+        }
+        series0oxy->setName("含氧量");
+        series0oxy->setUseOpenGL(true);
+
         QtCharts::QChart *chart = new QtCharts::QChart();
-        chart->addSeries(series);
-        chart->setTitle("PH排放统计图");
-
-        chart->setAnimationOptions(QtCharts::QChart::SeriesAnimations);
-        chart->legend()->setVisible(true);
+        chart->addSeries(series0ph);
+        chart->addSeries(series0temp);
+        chart->addSeries(series0gas);
+        chart->addSeries(series0cod);
+        chart->addSeries(series0den);
+        chart->addSeries(series0oxy);
         chart->legend()->setAlignment(Qt::AlignRight);
-        QtCharts::QValueAxis *axisX = new QtCharts::QValueAxis();
-        axisX->setRange(0, CSystemMain::nodeDataList->at(index.row()).PhDirectHigh + CSystemMain::nodeDataList->at(index.row()).PhIndirectHigh);
-        axisX->setLabelFormat("%i");
-        chart->addAxis(axisX, Qt::AlignBottom);
-        series->attachAxis(axisX);
-        series->setLabelsPosition(QtCharts::QAbstractBarSeries::LabelsInsideEnd);
-        series->setLabelsVisible(true);
+        chart->createDefaultAxes();
+        chart->axisX()->setVisible(false);
+        chart->setAnimationOptions(QtCharts::QChart::AllAnimations);
         ui->graphicsView->setChart(chart);
+        // QtCharts::QBarSet *set0 = new QtCharts::QBarSet("PH");
+        // for (int i = 1; i <= 8; i++)
+        // {
+        //     *set0 << CSystemMain::nodeinfluxData_temp->at(CSystemMain::nodeinfluxData_temp->size() - i).pH;
+        // }
+        // // 添加折线
+        // QtCharts::QBarSeries *series0 = new QtCharts::QBarSeries();
+        // series0->append(set0);
+        // // 创建折线图
+        // QtCharts::QChart *chart0 = new QtCharts::QChart();
+        // chart0->addSeries(series0);
+        // chart0->setTitle("PH");
+        // chart0->setAnimationOptions(QtCharts::QChart::SeriesAnimations);
+        // ui->graphicsView->setChart(chart0);
+        // QtCharts::QHorizontalBarSeries *series = new QtCharts::QHorizontalBarSeries();
+        // series->append(set0);
+
+        // QtCharts::QChart *chart = new QtCharts::QChart();
+        // chart->addSeries(series);
+        // chart->setTitle("PH排放统计图");
+
+        // chart->setAnimationOptions(QtCharts::QChart::SeriesAnimations);
+        // chart->legend()->setVisible(true);
+        // chart->legend()->setAlignment(Qt::AlignRight);
+        // QtCharts::QValueAxis *axisX = new QtCharts::QValueAxis();
+        // axisX->setRange(0, CSystemMain::nodeDataList->at(index.row()).PhDirectHigh + CSystemMain::nodeDataList->at(index.row()).PhIndirectHigh);
+        // axisX->setLabelFormat("%i");
+        // chart->addAxis(axisX, Qt::AlignBottom);
+        // series->attachAxis(axisX);
+        // series->setLabelsPosition(QtCharts::QAbstractBarSeries::LabelsInsideEnd);
+        // series->setLabelsVisible(true);
+        // ui->graphicsView->setChart(chart);
     }
 
     // // 居中显示
