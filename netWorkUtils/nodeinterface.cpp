@@ -243,6 +243,8 @@ QVector<InfluxData> *NodeInterface::getNodeInfluxData(QString startTime, QString
     // 快速排序
     qSort(influxList->begin(), influxList->end(), [](const InfluxData &a, const InfluxData &b)
           { return a.time < b.time; });
+    // 逆置
+    std::reverse(influxList->begin(), influxList->end());
     return influxList;
 }
 
@@ -338,6 +340,8 @@ QVector<ProData> *NodeInterface::getNodeProData(QString startTime, QString endTi
         proInfo.Cr = map.value("cr").toFloat();
         proList->append(proInfo);
     }
+    // 逆置
+    std::reverse(proList->begin(), proList->end());
     return proList;
 }
 

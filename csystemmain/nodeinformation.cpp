@@ -7,7 +7,7 @@
 #include <QTableWidgetItem>
 #include <QStackedBarSeries>
 #include <QBarSet>
-#include <QHorizontalBarSeries>
+#include <QHorizontalPercentBarSeries>
 #include <QBarCategoryAxis>
 #include <QValueAxis>
 #include <QBarSeries>
@@ -100,6 +100,7 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
     ui->locateinfo->clear();
     ui->selflist->clear();
     ui->graphicsView->chart()->removeAllSeries();
+    ui->graphicsViewIron->chart()->removeAllSeries();
     // 设置表格行数
     ui->nodeinfo->setRowCount(25);
     ui->configwidget->setRowCount(14);
@@ -217,179 +218,189 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
             ui->nodeinfo->setItem(24, 1, new QTableWidgetItem(QString::number(CSystemMain::nodeDataList->at(index.row()).Cr)));
             ui->nodeinfo->setItem(24, 3, new QTableWidgetItem("单位"));
             ui->nodeinfo->setItem(24, 4, new QTableWidgetItem(QString::number(CSystemMain::nodeDataList->at(index.row()).Ton)));
+
+            // 绘制折线图
+            QtCharts::QSplineSeries *series0ph = new QtCharts::QSplineSeries();
+            series0ph->setPen(QPen(QColor(0, 152, 255)));
+            for (int i = 0; i <= 10; i++)
+            {
+                series0ph->append(i, CSystemMain::nodeinfluxData_temp->at(i).pH);
+            }
+            series0ph->setName("PH");
+            series0ph->setUseOpenGL(true);
+
+            QtCharts::QSplineSeries *series0temp = new QtCharts::QSplineSeries();
+            series0temp->setPen(QPen(QColor(33, 95, 215)));
+            for (int i = 0; i <= 10; i++)
+            {
+                series0temp->append(i, CSystemMain::nodeinfluxData_temp->at(i).COD);
+            }
+            series0temp->setName("温度");
+            series0temp->setUseOpenGL(true);
+
+            QtCharts::QSplineSeries *series0gas = new QtCharts::QSplineSeries();
+            series0gas->setPen(QPen(QColor(11, 191, 182)));
+            for (int i = 0; i <= 10; i++)
+            {
+                series0gas->append(i, CSystemMain::nodeinfluxData_temp->at(i).gasConcentration);
+            }
+            series0gas->setName("气体浓度");
+            series0gas->setUseOpenGL(true);
+
+            QtCharts::QSplineSeries *series0cod = new QtCharts::QSplineSeries();
+            series0cod->setPen(QPen(QColor(117, 222, 141)));
+            for (int i = 0; i <= 10; i++)
+            {
+                series0cod->append(i, CSystemMain::nodeinfluxData_temp->at(i).COD);
+            }
+            series0cod->setName("电导率");
+            series0cod->setUseOpenGL(true);
+
+            QtCharts::QSplineSeries *series0den = new QtCharts::QSplineSeries();
+            series0den->setPen(QPen(QColor(15, 132, 52)));
+            for (int i = 0; i <= 10; i++)
+            {
+                series0den->append(i, CSystemMain::nodeinfluxData_temp->at(i).density);
+            }
+            series0den->setName("浊度");
+            series0den->setUseOpenGL(true);
+
+            QtCharts::QSplineSeries *series0oxy = new QtCharts::QSplineSeries();
+            series0oxy->setPen(QPen(QColor(237, 180, 0)));
+            for (int i = 0; i <= 10; i++)
+            {
+                series0oxy->append(i, CSystemMain::nodeinfluxData_temp->at(i).oxygenConcentration);
+            }
+            series0oxy->setName("含氧量");
+            series0oxy->setUseOpenGL(true);
+
+            QtCharts::QChart *chart = new QtCharts::QChart();
+            chart->addSeries(series0ph);
+            chart->addSeries(series0temp);
+            chart->addSeries(series0gas);
+            chart->addSeries(series0cod);
+            chart->addSeries(series0den);
+            chart->addSeries(series0oxy);
+            chart->legend()->setAlignment(Qt::AlignRight);
+            chart->createDefaultAxes();
+            chart->axisX()->setVisible(false);
+            chart->setAnimationOptions(QtCharts::QChart::AllAnimations);
+            ui->graphicsView->setChart(chart);
+            ui->graphicsView->setRenderHint(QPainter::Antialiasing);
+            // // 居中显示
+            // for (int i = 0; i < 6; i++)
+            // {
+            //     for (int j = 0; j < 23; j++)
+            //     {
+            //         ui->nodeinfo->item(i, j)->setTextAlignment(Qt::AlignCenter);
+            //     }
+            // }
+
+            // 重金属水平条形图
+            QtCharts::QBarSet *set0 = new QtCharts::QBarSet("总铜");
+            *set0 << CSystemMain::nodeDataList->at(index.row()).Cu;
+            QtCharts::QBarSet *set1 = new QtCharts::QBarSet("总锌");
+            *set1 << CSystemMain::nodeDataList->at(index.row()).Zn;
+            QtCharts::QBarSet *set2 = new QtCharts::QBarSet("总锡");
+            *set2 << CSystemMain::nodeDataList->at(index.row()).Sn;
+            QtCharts::QBarSet *set3 = new QtCharts::QBarSet("总锑");
+            *set3 << CSystemMain::nodeDataList->at(index.row()).Sb;
+            QtCharts::QBarSet *set4 = new QtCharts::QBarSet("总汞");
+            *set4 << CSystemMain::nodeDataList->at(index.row()).Hg;
+            QtCharts::QBarSet *set5 = new QtCharts::QBarSet("总镉");
+            *set5 << CSystemMain::nodeDataList->at(index.row()).Cd;
+            QtCharts::QBarSet *set6 = new QtCharts::QBarSet("总铅");
+            *set6 << CSystemMain::nodeDataList->at(index.row()).Pb;
+            QtCharts::QBarSet *set7 = new QtCharts::QBarSet("总砷");
+            *set7 << CSystemMain::nodeDataList->at(index.row()).As;
+            QtCharts::QBarSet *set8 = new QtCharts::QBarSet("六价铬");
+            *set8 << CSystemMain::nodeDataList->at(index.row()).Cr6;
+            QtCharts::QBarSet *set9 = new QtCharts::QBarSet("总铬");
+            *set9 << CSystemMain::nodeDataList->at(index.row()).Cr;
+            QtCharts::QHorizontalPercentBarSeries *series11 = new QtCharts::QHorizontalPercentBarSeries();
+            series11->append(set0);
+            series11->append(set1);
+            series11->append(set2);
+            series11->append(set3);
+            series11->append(set4);
+            series11->append(set5);
+            series11->append(set6);
+            series11->append(set7);
+            series11->append(set8);
+            series11->append(set9);
+            QtCharts::QChart *chart11 = new QtCharts::QChart();
+            chart11->addSeries(series11);
+            QtCharts::QValueAxis *axisX11 = new QtCharts::QValueAxis();
+            axisX11->setRange(0, 10);
+            chart11->setAxisX(axisX11, series11);
+            chart11->legend()->setAlignment(Qt::AlignRight);
+            ui->graphicsViewIron->setChart(chart11);
+
+            QStringList resplist;
+            resplist << "   机构号:    " + CSystemMain::nodeInfoList->at(i).belong;
+            resplist << "   企业名称:  " + CSystemMain::nodeInfoList->at(i).COMNAME;
+            resplist << "   负责人:    " + CSystemMain::nodeInfoList->at(i).principal;
+            resplist << "   安装人:    " + CSystemMain::nodeInfoList->at(i).installer + "                 维护人:    " + CSystemMain::nodeInfoList->at(i).maintainer;
+            resplist << "   执行标准:  " + CSystemMain::nodeInfoList->at(i).STANDARD;
+            ui->resplist->addItems(resplist);
+
+            ui->configwidget->setItem(0, 0, new QTableWidgetItem("特殊气体浓度"));
+            ui->configwidget->setItem(0, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(0) == 0 ? "否" : "是"));
+            ui->configwidget->setItem(1, 0, new QTableWidgetItem("温度"));
+            ui->configwidget->setItem(1, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(1) == 0 ? "否" : "是"));
+            ui->configwidget->setItem(2, 0, new QTableWidgetItem("PH"));
+            ui->configwidget->setItem(2, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(2) == 0 ? "否" : "是"));
+            ui->configwidget->setItem(3, 0, new QTableWidgetItem("浊度"));
+            ui->configwidget->setItem(3, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(3) == 0 ? "否" : "是"));
+            ui->configwidget->setItem(4, 0, new QTableWidgetItem("电导率"));
+            ui->configwidget->setItem(4, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(4) == 0 ? "否" : "是"));
+            ui->configwidget->setItem(5, 0, new QTableWidgetItem("含氧量"));
+            ui->configwidget->setItem(5, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(5) == 0 ? "否" : "是"));
+            ui->configwidget->setItem(6, 0, new QTableWidgetItem("重金属"));
+            ui->configwidget->setItem(6, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(6) == 0 ? "否" : "是"));
+            ui->configwidget->setItem(7, 0, new QTableWidgetItem("溶解性固体"));
+            ui->configwidget->setItem(7, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(7) == 0 ? "否" : "是"));
+            ui->configwidget->setItem(8, 0, new QTableWidgetItem("悬浮性固体"));
+            ui->configwidget->setItem(8, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(8) == 0 ? "否" : "是"));
+            ui->configwidget->setItem(9, 0, new QTableWidgetItem("总氮"));
+            ui->configwidget->setItem(9, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(9) == 0 ? "否" : "是"));
+            ui->configwidget->setItem(10, 0, new QTableWidgetItem("总磷"));
+            ui->configwidget->setItem(10, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(10) == 0 ? "否" : "是"));
+            ui->configwidget->setItem(11, 0, new QTableWidgetItem("总有机碳"));
+            ui->configwidget->setItem(11, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(11) == 0 ? "否" : "是"));
+            ui->configwidget->setItem(12, 0, new QTableWidgetItem("生物需氧量"));
+            ui->configwidget->setItem(12, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(12) == 0 ? "否" : "是"));
+            ui->configwidget->setItem(13, 0, new QTableWidgetItem("化学需氧量"));
+            ui->configwidget->setItem(13, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(13) == 0 ? "否" : "是"));
+            ui->configwidget->setItem(14, 0, new QTableWidgetItem("细菌总数"));
+            ui->configwidget->setItem(14, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(14) == 0 ? "否" : "是"));
+            ui->configwidget->setItem(15, 0, new QTableWidgetItem("大肠杆菌数"));
+            ui->configwidget->setItem(15, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(15) == 0 ? "否" : "是"));
+
+            // 居中
+            for (int i = 0; i < ui->configwidget->rowCount(); i++)
+            {
+                for (int j = 0; j < ui->configwidget->columnCount(); j++)
+                {
+                    ui->configwidget->item(i, j)->setTextAlignment(Qt::AlignCenter);
+                }
+            }
+
+            QStringList locatelist;
+            locatelist << " 经度(伪):    " + QString::number(CSystemMain::nodeInfoList->at(i).lo);
+            locatelist << " 纬度(伪):    " + QString::number(CSystemMain::nodeInfoList->at(i).li);
+            locatelist << " 地址:          " + CSystemMain::nodeInfoList->at(i).locate;
+            ui->locateinfo->addItems(locatelist);
+
+            QStringList selflist;
+            selflist << "   安装日期:               " + CSystemMain::nodeInfoList->at(i).installDate.toString("yyyy-MM-dd-hh-mm-ss");
+            selflist << "   上次更新日期:       " + CSystemMain::nodeInfoList->at(i).lastUpload.toString("yyyy-MM-dd-hh-mm-ss");
+            selflist << "   上次自检日期:       " + CSystemMain::nodeInfoList->at(i).selfDate.toString("yyyy-MM-dd-hh-mm-ss");
+            selflist << "   自检结果:               " + CSystemMain::nodeInfoList->at(i).selfInfo;
+            ui->selflist->addItems(selflist);
             break;
         }
-        // 绘制折线图
-        QtCharts::QSplineSeries *series0ph = new QtCharts::QSplineSeries();
-        series0ph->setPen(QPen(QColor(0, 152, 255)));
-        for (int i = 1; i <= 8; i++)
-        {
-            series0ph->append(i, CSystemMain::nodeinfluxData_temp->at(CSystemMain::nodeinfluxData_temp->size() - i).pH);
-        }
-        series0ph->setName("PH");
-        series0ph->setUseOpenGL(true);
-
-        QtCharts::QSplineSeries *series0temp = new QtCharts::QSplineSeries();
-        series0temp->setPen(QPen(QColor(33, 95, 215)));
-        for (int i = 1; i <= 8; i++)
-        {
-            series0temp->append(i, CSystemMain::nodeinfluxData_temp->at(CSystemMain::nodeinfluxData_temp->size() - i).COD);
-        }
-        series0temp->setName("温度");
-        series0temp->setUseOpenGL(true);
-
-        QtCharts::QSplineSeries *series0gas = new QtCharts::QSplineSeries();
-        series0gas->setPen(QPen(QColor(11, 191, 182)));
-        for (int i = 1; i <= 8; i++)
-        {
-            series0gas->append(i, CSystemMain::nodeinfluxData_temp->at(CSystemMain::nodeinfluxData_temp->size() - i).gasConcentration);
-        }
-        series0gas->setName("气体浓度");
-        series0gas->setUseOpenGL(true);
-
-        QtCharts::QSplineSeries *series0cod = new QtCharts::QSplineSeries();
-        series0cod->setPen(QPen(QColor(117, 222, 141)));
-        for (int i = 1; i <= 8; i++)
-        {
-            series0cod->append(i, CSystemMain::nodeinfluxData_temp->at(CSystemMain::nodeinfluxData_temp->size() - i).COD);
-        }
-        series0cod->setName("电导率");
-        series0cod->setUseOpenGL(true);
-
-        QtCharts::QSplineSeries *series0den = new QtCharts::QSplineSeries();
-        series0den->setPen(QPen(QColor(15, 132, 52)));
-        for (int i = 1; i <= 8; i++)
-        {
-            series0den->append(i, CSystemMain::nodeinfluxData_temp->at(CSystemMain::nodeinfluxData_temp->size() - i).density);
-        }
-        series0den->setName("浊度");
-        series0den->setUseOpenGL(true);
-
-        QtCharts::QSplineSeries *series0oxy = new QtCharts::QSplineSeries();
-        series0oxy->setPen(QPen(QColor(237, 180, 0)));
-        for (int i = 1; i <= 8; i++)
-        {
-            series0oxy->append(i, CSystemMain::nodeinfluxData_temp->at(CSystemMain::nodeinfluxData_temp->size() - i).oxygenConcentration);
-        }
-        series0oxy->setName("含氧量");
-        series0oxy->setUseOpenGL(true);
-
-        QtCharts::QChart *chart = new QtCharts::QChart();
-        chart->addSeries(series0ph);
-        chart->addSeries(series0temp);
-        chart->addSeries(series0gas);
-        chart->addSeries(series0cod);
-        chart->addSeries(series0den);
-        chart->addSeries(series0oxy);
-        chart->legend()->setAlignment(Qt::AlignRight);
-        chart->createDefaultAxes();
-        chart->axisX()->setVisible(false);
-        chart->setAnimationOptions(QtCharts::QChart::AllAnimations);
-        ui->graphicsView->setChart(chart);
-        // QtCharts::QBarSet *set0 = new QtCharts::QBarSet("PH");
-        // for (int i = 1; i <= 8; i++)
-        // {
-        //     *set0 << CSystemMain::nodeinfluxData_temp->at(CSystemMain::nodeinfluxData_temp->size() - i).pH;
-        // }
-        // // 添加折线
-        // QtCharts::QBarSeries *series0 = new QtCharts::QBarSeries();
-        // series0->append(set0);
-        // // 创建折线图
-        // QtCharts::QChart *chart0 = new QtCharts::QChart();
-        // chart0->addSeries(series0);
-        // chart0->setTitle("PH");
-        // chart0->setAnimationOptions(QtCharts::QChart::SeriesAnimations);
-        // ui->graphicsView->setChart(chart0);
-        // QtCharts::QHorizontalBarSeries *series = new QtCharts::QHorizontalBarSeries();
-        // series->append(set0);
-
-        // QtCharts::QChart *chart = new QtCharts::QChart();
-        // chart->addSeries(series);
-        // chart->setTitle("PH排放统计图");
-
-        // chart->setAnimationOptions(QtCharts::QChart::SeriesAnimations);
-        // chart->legend()->setVisible(true);
-        // chart->legend()->setAlignment(Qt::AlignRight);
-        // QtCharts::QValueAxis *axisX = new QtCharts::QValueAxis();
-        // axisX->setRange(0, CSystemMain::nodeDataList->at(index.row()).PhDirectHigh + CSystemMain::nodeDataList->at(index.row()).PhIndirectHigh);
-        // axisX->setLabelFormat("%i");
-        // chart->addAxis(axisX, Qt::AlignBottom);
-        // series->attachAxis(axisX);
-        // series->setLabelsPosition(QtCharts::QAbstractBarSeries::LabelsInsideEnd);
-        // series->setLabelsVisible(true);
-        // ui->graphicsView->setChart(chart);
     }
-
-    // // 居中显示
-    // for (int i = 0; i < 6; i++)
-    // {
-    //     for (int j = 0; j < 23; j++)
-    //     {
-    //         ui->nodeinfo->item(i, j)->setTextAlignment(Qt::AlignCenter);
-    //     }
-    // }
-    QStringList resplist;
-    resplist << "   机构号:    " + CSystemMain::nodeInfoList->at(i).belong;
-    resplist << "   企业名称:  " + CSystemMain::nodeInfoList->at(i).COMNAME;
-    resplist << "   负责人:    " + CSystemMain::nodeInfoList->at(i).principal;
-    resplist << "   安装人:    " + CSystemMain::nodeInfoList->at(i).installer + "                 维护人:    " + CSystemMain::nodeInfoList->at(i).maintainer;
-    resplist << "   执行标准:  " + CSystemMain::nodeInfoList->at(i).STANDARD;
-    ui->resplist->addItems(resplist);
-
-    ui->configwidget->setItem(0, 0, new QTableWidgetItem("特殊气体浓度"));
-    ui->configwidget->setItem(0, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(0) == 0 ? "否" : "是"));
-    ui->configwidget->setItem(1, 0, new QTableWidgetItem("温度"));
-    ui->configwidget->setItem(1, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(1) == 0 ? "否" : "是"));
-    ui->configwidget->setItem(2, 0, new QTableWidgetItem("PH"));
-    ui->configwidget->setItem(2, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(2) == 0 ? "否" : "是"));
-    ui->configwidget->setItem(3, 0, new QTableWidgetItem("浊度"));
-    ui->configwidget->setItem(3, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(3) == 0 ? "否" : "是"));
-    ui->configwidget->setItem(4, 0, new QTableWidgetItem("电导率"));
-    ui->configwidget->setItem(4, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(4) == 0 ? "否" : "是"));
-    ui->configwidget->setItem(5, 0, new QTableWidgetItem("含氧量"));
-    ui->configwidget->setItem(5, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(5) == 0 ? "否" : "是"));
-    ui->configwidget->setItem(6, 0, new QTableWidgetItem("重金属"));
-    ui->configwidget->setItem(6, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(6) == 0 ? "否" : "是"));
-    ui->configwidget->setItem(7, 0, new QTableWidgetItem("溶解性固体"));
-    ui->configwidget->setItem(7, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(7) == 0 ? "否" : "是"));
-    ui->configwidget->setItem(8, 0, new QTableWidgetItem("悬浮性固体"));
-    ui->configwidget->setItem(8, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(8) == 0 ? "否" : "是"));
-    ui->configwidget->setItem(9, 0, new QTableWidgetItem("总氮"));
-    ui->configwidget->setItem(9, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(9) == 0 ? "否" : "是"));
-    ui->configwidget->setItem(10, 0, new QTableWidgetItem("总磷"));
-    ui->configwidget->setItem(10, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(10) == 0 ? "否" : "是"));
-    ui->configwidget->setItem(11, 0, new QTableWidgetItem("总有机碳"));
-    ui->configwidget->setItem(11, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(11) == 0 ? "否" : "是"));
-    ui->configwidget->setItem(12, 0, new QTableWidgetItem("生物需氧量"));
-    ui->configwidget->setItem(12, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(12) == 0 ? "否" : "是"));
-    ui->configwidget->setItem(13, 0, new QTableWidgetItem("化学需氧量"));
-    ui->configwidget->setItem(13, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(13) == 0 ? "否" : "是"));
-    ui->configwidget->setItem(14, 0, new QTableWidgetItem("细菌总数"));
-    ui->configwidget->setItem(14, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(14) == 0 ? "否" : "是"));
-    ui->configwidget->setItem(15, 0, new QTableWidgetItem("大肠杆菌数"));
-    ui->configwidget->setItem(15, 1, new QTableWidgetItem(CSystemMain::nodeInfoList->at(i).dataConfig.at(15) == 0 ? "否" : "是"));
-
-    // 居中
-    for (int i = 0; i < ui->configwidget->rowCount(); i++)
-    {
-        for (int j = 0; j < ui->configwidget->columnCount(); j++)
-        {
-            ui->configwidget->item(i, j)->setTextAlignment(Qt::AlignCenter);
-        }
-    }
-
-    QStringList locatelist;
-    locatelist << " 经度(伪):    " + QString::number(CSystemMain::nodeInfoList->at(i).lo);
-    locatelist << " 纬度(伪):    " + QString::number(CSystemMain::nodeInfoList->at(i).li);
-    locatelist << " 地址:          " + CSystemMain::nodeInfoList->at(i).locate;
-    ui->locateinfo->addItems(locatelist);
-
-    QStringList selflist;
-    selflist << "   安装日期:               " + CSystemMain::nodeInfoList->at(i).installDate.toString("yyyy-MM-dd-hh-mm-ss");
-    selflist << "   上次更新日期:       " + CSystemMain::nodeInfoList->at(i).lastUpload.toString("yyyy-MM-dd-hh-mm-ss");
-    selflist << "   上次自检日期:       " + CSystemMain::nodeInfoList->at(i).selfDate.toString("yyyy-MM-dd-hh-mm-ss");
-    selflist << "   自检结果:               " + CSystemMain::nodeInfoList->at(i).selfInfo;
-    ui->selflist->addItems(selflist);
 }
 
 void nodeinformation::on_modSwitch_btn_clicked()
