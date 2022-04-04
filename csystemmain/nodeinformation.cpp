@@ -7,7 +7,7 @@
 #include <QTableWidgetItem>
 #include <QStackedBarSeries>
 #include <QBarSet>
-#include <QHorizontalPercentBarSeries>
+#include <QHorizontalBarSeries>
 #include <QBarCategoryAxis>
 #include <QValueAxis>
 #include <QBarSeries>
@@ -101,6 +101,9 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
     ui->selflist->clear();
     ui->graphicsView->chart()->removeAllSeries();
     ui->graphicsViewIron->chart()->removeAllSeries();
+    ui->graphicsViewOther1->chart()->removeAllSeries();
+    ui->graphicsViewOther2->chart()->removeAllSeries();
+    ui->graphicsViewOther3->chart()->removeAllSeries();
     // 设置表格行数
     ui->nodeinfo->setRowCount(25);
     ui->configwidget->setRowCount(14);
@@ -287,6 +290,7 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
             chart->setAnimationOptions(QtCharts::QChart::AllAnimations);
             ui->graphicsView->setChart(chart);
             ui->graphicsView->setRenderHint(QPainter::Antialiasing);
+
             // // 居中显示
             // for (int i = 0; i < 6; i++)
             // {
@@ -317,7 +321,7 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
             *set8 << CSystemMain::nodeDataList->at(index.row()).Cr6;
             QtCharts::QBarSet *set9 = new QtCharts::QBarSet("总铬");
             *set9 << CSystemMain::nodeDataList->at(index.row()).Cr;
-            QtCharts::QHorizontalPercentBarSeries *series11 = new QtCharts::QHorizontalPercentBarSeries();
+            QtCharts::QHorizontalBarSeries *series11 = new QtCharts::QHorizontalBarSeries();
             series11->append(set0);
             series11->append(set1);
             series11->append(set2);
@@ -328,13 +332,63 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
             series11->append(set7);
             series11->append(set8);
             series11->append(set9);
+            // 指定宽度
+            series11->setBarWidth(0.9);
+            series11->useOpenGL();
+            series11->setLabelsPosition(QtCharts::QAbstractBarSeries::LabelsOutsideEnd);
             QtCharts::QChart *chart11 = new QtCharts::QChart();
             chart11->addSeries(series11);
             QtCharts::QValueAxis *axisX11 = new QtCharts::QValueAxis();
-            axisX11->setRange(0, 10);
+            axisX11->setRange(0, 4);
+            series11->attachAxis(axisX11);
             chart11->setAxisX(axisX11, series11);
             chart11->legend()->setAlignment(Qt::AlignRight);
+            chart11->setAnimationOptions(QtCharts::QChart::AllAnimations);
             ui->graphicsViewIron->setChart(chart11);
+            ui->graphicsViewIron->setRenderHint(QPainter::Antialiasing);
+
+            // 水平条形图
+            QtCharts::QBarSet *set20 = new QtCharts::QBarSet("色度");
+            *set20 << CSystemMain::nodeDataList->at(index.row()).COLORDirect;
+            QtCharts::QBarSet *set21 = new QtCharts::QBarSet("悬浮物");
+            *set21 << CSystemMain::nodeDataList->at(index.row()).FSCDirectO;
+            QtCharts::QBarSet *set22 = new QtCharts::QBarSet("五日生化");
+            *set22 << CSystemMain::nodeDataList->at(index.row()).BOD5Direct;
+            QtCharts::QBarSet *set23 = new QtCharts::QBarSet("动植物油");
+            *set23 << CSystemMain::nodeDataList->at(index.row()).AFINDirect;
+            QtCharts::QBarSet *set24 = new QtCharts::QBarSet("硫化物");
+            *set24 << CSystemMain::nodeDataList->at(index.row()).SADirect;
+            QtCharts::QBarSet *set25 = new QtCharts::QBarSet("氨氮");
+            *set25 << CSystemMain::nodeDataList->at(index.row()).ANDirect;
+            QtCharts::QBarSet *set26 = new QtCharts::QBarSet("总氮");
+            *set26 << CSystemMain::nodeDataList->at(index.row()).TNDirect;
+            QtCharts::QBarSet *set27 = new QtCharts::QBarSet("总磷");
+            *set27 << CSystemMain::nodeDataList->at(index.row()).TPDirect;
+            // series21
+            QtCharts::QBarSeries *series21 = new QtCharts::QBarSeries();
+            series21->append(set20);
+            series21->append(set21);
+            series21->append(set22);
+            series21->append(set23);
+            series21->append(set24);
+            series21->append(set25);
+            series21->append(set26);
+            series21->append(set27);
+            series21->setBarWidth(0.9);
+            series21->setLabelsPosition(QtCharts::QAbstractBarSeries::LabelsOutsideEnd);
+            QtCharts::QChart *chart21 = new QtCharts::QChart();
+            chart21->addSeries(series21);
+            QtCharts::QValueAxis *axisY21 = new QtCharts::QValueAxis();
+            axisY21->setRange(0, 30);
+            series21->attachAxis(axisY21);
+            chart21->setAxisY(axisY21, series21);
+            chart21->legend()->setAlignment(Qt::AlignRight);
+            // 字体10
+            chart21->legend()->setFont(QFont("Times New Roman", 10));
+            chart21->setAnimationOptions(QtCharts::QChart::AllAnimations);
+            chart21->setTitle("皮革类核心指标");
+            ui->graphicsViewOther1->setRenderHint(QPainter::Antialiasing);
+            ui->graphicsViewOther1->setChart(chart21);
 
             QStringList resplist;
             resplist << "   机构号:    " + CSystemMain::nodeInfoList->at(i).belong;

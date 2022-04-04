@@ -8,31 +8,33 @@ rsa::~rsa()
 {
 }
 // 使用openssl生成公钥和私钥字符串
-void rsa::RSAmake(){
-    RSA * rsa = RSA_new();
-    BIGNUM * bn = BN_new();
+void rsa::RSAmake()
+{
+    RSA *rsa = RSA_new();
+    BIGNUM *bn = BN_new();
     BN_set_word(bn, RSA_F4);
     RSA_generate_key_ex(rsa, KEY_LENGTH, bn, NULL);
     // 生成公钥
-    BIO * bio_pub = BIO_new(BIO_s_mem());
+    BIO *bio_pub = BIO_new(BIO_s_mem());
     PEM_write_bio_RSAPublicKey(bio_pub, rsa);
-    char * pub_key = NULL;
+    char *pub_key = NULL;
     long len = BIO_get_mem_data(bio_pub, &pub_key);
     QString pub_key_str = QString(pub_key);
     // 去掉-----END RSA PUBLIC KEY-----后面的信息
-    pub_key_str = pub_key_str.mid(0, pub_key_str.indexOf("-----END RSA PUBLIC KEY-----")+29);
+    pub_key_str = pub_key_str.mid(0, pub_key_str.indexOf("-----END RSA PUBLIC KEY-----") + 29);
     CONFIG_CORE::RSA_PUBLIC_KEY = pub_key_str;
     // 生成私钥
-    BIO * bio_pri = BIO_new(BIO_s_mem());
+    BIO *bio_pri = BIO_new(BIO_s_mem());
     PEM_write_bio_RSAPrivateKey(bio_pri, rsa, NULL, NULL, 0, NULL, NULL);
-    char * pri_key = NULL;
+    char *pri_key = NULL;
     long len2 = BIO_get_mem_data(bio_pri, &pri_key);
     QString pri_key_str = QString(pri_key);
-     // 去掉-----END RSA PUBLIC KEY-----后面的信息
-    pri_key_str = pri_key_str.mid(0, pri_key_str.indexOf("-----END RSA PRIVATE KEY-----")+30);
+    // 去掉-----END RSA PUBLIC KEY-----后面的信息
+    pri_key_str = pri_key_str.mid(0, pri_key_str.indexOf("-----END RSA PRIVATE KEY-----") + 30);
     CONFIG_CORE::RSA_PRIVATE_KEY = pri_key_str;
+    qDebug() << CONFIG_CORE::RSA_PRIVATE_KEY;
+    qDebug() << CONFIG_CORE::RSA_PUBLIC_KEY;
 }
-
 
 QString rsa::rsaPubEncrypt(const QString &strPlainData, const QString &strPubKey)
 {
@@ -46,7 +48,7 @@ QString rsa::rsaPubEncrypt(const QString &strPlainData, const QString &strPubKey
     // 读取公钥
     RSA *pRsa = RSA_new();
     if (strPubKey.contains(BEGIN_RSA_PUBLIC_KEY))
-    {   
+    {
         // 读取pem格式的公钥
         pRsa = PEM_read_bio_RSAPublicKey(pKeyBio, &pRsa, NULL, NULL);
     }
