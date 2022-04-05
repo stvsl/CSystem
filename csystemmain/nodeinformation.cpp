@@ -12,6 +12,7 @@
 #include <QValueAxis>
 #include <QBarSeries>
 #include <QSplineSeries>
+#include <QScatterSeries>
 
 QGraphicsDropShadowEffect *shadow1;
 QGraphicsDropShadowEffect *shadow2;
@@ -287,6 +288,7 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
             chart->legend()->setAlignment(Qt::AlignRight);
             chart->createDefaultAxes();
             chart->axisX()->setVisible(false);
+            chart->legend()->setFont(QFont("Times New Roman", 10));
             chart->setAnimationOptions(QtCharts::QChart::AllAnimations);
             ui->graphicsView->setChart(chart);
             ui->graphicsView->setRenderHint(QPainter::Antialiasing);
@@ -332,7 +334,6 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
             series11->append(set7);
             series11->append(set8);
             series11->append(set9);
-            // 指定宽度
             series11->setBarWidth(0.9);
             series11->useOpenGL();
             series11->setLabelsPosition(QtCharts::QAbstractBarSeries::LabelsOutsideEnd);
@@ -343,11 +344,11 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
             series11->attachAxis(axisX11);
             chart11->setAxisX(axisX11, series11);
             chart11->legend()->setAlignment(Qt::AlignRight);
+            chart11->legend()->setFont(QFont("Times New Roman", 10));
             chart11->setAnimationOptions(QtCharts::QChart::AllAnimations);
             ui->graphicsViewIron->setChart(chart11);
             ui->graphicsViewIron->setRenderHint(QPainter::Antialiasing);
 
-            // 水平条形图
             QtCharts::QBarSet *set20 = new QtCharts::QBarSet("色度");
             *set20 << CSystemMain::nodeDataList->at(index.row()).COLORDirect;
             QtCharts::QBarSet *set21 = new QtCharts::QBarSet("悬浮物");
@@ -364,7 +365,6 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
             *set26 << CSystemMain::nodeDataList->at(index.row()).TNDirect;
             QtCharts::QBarSet *set27 = new QtCharts::QBarSet("总磷");
             *set27 << CSystemMain::nodeDataList->at(index.row()).TPDirect;
-            // series21
             QtCharts::QBarSeries *series21 = new QtCharts::QBarSeries();
             series21->append(set20);
             series21->append(set21);
@@ -383,12 +383,88 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
             series21->attachAxis(axisY21);
             chart21->setAxisY(axisY21, series21);
             chart21->legend()->setAlignment(Qt::AlignRight);
-            // 字体10
             chart21->legend()->setFont(QFont("Times New Roman", 10));
             chart21->setAnimationOptions(QtCharts::QChart::AllAnimations);
-            chart21->setTitle("皮革类核心指标");
+            chart21->setTitle("直观污染核心指标");
             ui->graphicsViewOther1->setRenderHint(QPainter::Antialiasing);
             ui->graphicsViewOther1->setChart(chart21);
+
+            QtCharts::QBarSet *set30 = new QtCharts::QBarSet("COD");
+            *set30 << CSystemMain::nodeDataList->at(index.row()).CODDirect;
+            QtCharts::QBarSet *set31 = new QtCharts::QBarSet("COD*");
+            *set31 << CSystemMain::nodeDataList->at(index.row()).CODIndirect;
+            QtCharts::QBarSet *set32 = new QtCharts::QBarSet("BOD5");
+            *set32 << CSystemMain::nodeDataList->at(index.row()).BOD5Direct;
+            QtCharts::QBarSet *set33 = new QtCharts::QBarSet("BOD5*");
+            *set33 << CSystemMain::nodeDataList->at(index.row()).BOD5Indirect;
+            QtCharts::QBarSet *set34 = new QtCharts::QBarSet("BOD");
+            *set34 << CSystemMain::nodeDataList->at(index.row()).BOD;
+            QtCharts::QBarSeries *series31 = new QtCharts::QBarSeries();
+            series31->append(set30);
+            series31->append(set31);
+            series31->append(set32);
+            series31->append(set33);
+            series31->append(set34);
+            series31->setBarWidth(0.6);
+            series31->setLabelsPosition(QtCharts::QAbstractBarSeries::LabelsOutsideEnd);
+            QtCharts::QChart *chart31 = new QtCharts::QChart();
+            chart31->addSeries(series31);
+            QtCharts::QValueAxis *axisX31 = new QtCharts::QValueAxis();
+            axisX31->setRange(0, 200);
+            series31->attachAxis(axisX31);
+            chart31->setAxisY(axisX31, series31);
+            chart31->legend()->setAlignment(Qt::AlignRight);
+            chart31->legend()->setFont(QFont("Times New Roman", 10));
+            chart31->setTitle("生化核心指标");
+            chart31->setAnimationOptions(QtCharts::QChart::AllAnimations);
+            ui->graphicsViewOther2->setChart(chart31);
+            ui->graphicsViewOther2->setRenderHint(QPainter::Antialiasing);
+
+            // 散点图
+            QtCharts::QChart *chart40 = new QtCharts::QChart();
+            QtCharts::QScatterSeries *series41 = new QtCharts::QScatterSeries(chart40);
+            series41->setMarkerShape(QtCharts::QScatterSeries::MarkerShapeCircle);
+            series41->setMarkerSize(12);
+            series41->setColor(QColor(Qt::red));
+            series41->setName("自然");
+            series41->setVisible();
+            series41->append(CSystemMain::nodeDataList->at(index.row()).FSCDirectO, CSystemMain::nodeDataList->at(index.row()).FSCIndirectO);
+            series41->append(CSystemMain::nodeDataList->at(index.row()).PhDirectHigh, CSystemMain::nodeDataList->at(index.row()).PhDirectHigh);
+            series41->append(CSystemMain::nodeDataList->at(index.row()).SLC / 5, CSystemMain::nodeDataList->at(index.row()).SLC / 5);
+            series41->append(CSystemMain::nodeDataList->at(index.row()).Sc, CSystemMain::nodeDataList->at(index.row()).Conductivity);
+            QtCharts::QScatterSeries *series42 = new QtCharts::QScatterSeries(chart40);
+            series42->setMarkerShape(QtCharts::QScatterSeries::MarkerShapeCircle);
+            series42->setMarkerSize(12);
+            series42->setColor(QColor(Qt::green));
+            series42->setName("生化");
+            series42->append(CSystemMain::nodeDataList->at(index.row()).BOD5Direct, CSystemMain::nodeDataList->at(index.row()).BOD5Indirect);
+            series42->append(CSystemMain::nodeDataList->at(index.row()).CODIndirect, CSystemMain::nodeDataList->at(index.row()).CODDirect);
+            QtCharts::QScatterSeries *series43 = new QtCharts::QScatterSeries(chart40);
+            series43->setMarkerShape(QtCharts::QScatterSeries::MarkerShapeCircle);
+            series43->setMarkerSize(12);
+            series43->setColor(QColor(Qt::blue));
+            series43->setName("重金属");
+            series43->append(CSystemMain::nodeDataList->at(index.row()).Cu * 60, CSystemMain::nodeDataList->at(index.row()).Zn * 60);
+            series43->append(CSystemMain::nodeDataList->at(index.row()).Hg * 60, CSystemMain::nodeDataList->at(index.row()).Cd * 60);
+            series43->append(CSystemMain::nodeDataList->at(index.row()).Cr * 60, CSystemMain::nodeDataList->at(index.row()).Pb * 60);
+            QtCharts::QScatterSeries *series44 = new QtCharts::QScatterSeries(chart40);
+            series44->setMarkerShape(QtCharts::QScatterSeries::MarkerShapeCircle);
+            series44->setMarkerSize(12);
+            series44->setColor(QColor(Qt::yellow));
+            series44->setName("有机物");
+            series44->append(CSystemMain::nodeDataList->at(index.row()).TNDirect * 5, CSystemMain::nodeDataList->at(index.row()).TNDirect * 5);
+            series44->append(CSystemMain::nodeDataList->at(index.row()).ANDirect * 3, CSystemMain::nodeDataList->at(index.row()).ANINDirect * 3);
+            series44->append(CSystemMain::nodeDataList->at(index.row()).AFDirect * 5, CSystemMain::nodeDataList->at(index.row()).AFINDirect * 5);
+            chart40->addSeries(series41);
+            chart40->addSeries(series42);
+            chart40->addSeries(series43);
+            chart40->addSeries(series44);
+            chart40->setTitle("指标散点分析");
+            chart40->createDefaultAxes();
+            chart40->legend()->setAlignment(Qt::AlignRight);
+            chart40->legend()->setFont(QFont("Times New Roman", 10));
+            chart40->setAnimationOptions(QtCharts::QChart::AllAnimations);
+            ui->graphicsViewOther3->setChart(chart40);
 
             QStringList resplist;
             resplist << "   机构号:    " + CSystemMain::nodeInfoList->at(i).belong;
