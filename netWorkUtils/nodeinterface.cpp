@@ -120,65 +120,65 @@ QVector<NodeData> *NodeInterface::getNodeData()
     // 最终数据存储
     for (int i = 0; i < list.size(); i++)
     {
-        QJsonObject obj = list.at(i).toJsonObject();
+        QVariantMap map = list.at(i).toMap();
         NodeData nodeData;
-        nodeData.id = obj.value("id").toString();
-        nodeData.Community = obj.value("community").toString();
-        nodeData.ComId = obj.value("comId").toString();
-        nodeData.Time = obj.value("time").toString();
-        nodeData.Status = obj.value("status").toInt();
-        nodeData.PhDirectHigh = obj.value("phdirecthigh").toDouble();
-        nodeData.PhDirectLow = obj.value("phdirectlow").toDouble();
-        nodeData.PhIndirectHigh = obj.value("phindirecthigh").toDouble();
-        nodeData.PhIndirectLow = obj.value("phindirectlow").toDouble();
-        nodeData.CODDirect = obj.value("coddirect").toDouble();
-        nodeData.CODIndirect = obj.value("codindirect").toDouble();
-        nodeData.TPDirect = obj.value("tpdirect").toDouble();
-        nodeData.TPIndirect = obj.value("tpindirect").toDouble();
-        nodeData.TNDirect = obj.value("tndirect").toDouble();
-        nodeData.IPIndirect = obj.value("ipindirect").toDouble();
-        nodeData.ANDirect = obj.value("andirect").toDouble();
-        nodeData.ANINDirect = obj.value("anindirect").toDouble();
-        nodeData.OCCDirect = obj.value("occdirect").toDouble();
-        nodeData.OCCIndirect = obj.value("occindirect").toDouble();
-        nodeData.FSCDirectT = obj.value("fscdirectt").toDouble();
-        nodeData.FSCIndirectT = obj.value("fscindirectt").toDouble();
-        nodeData.FSCDirectO = obj.value("fscdirecto").toDouble();
-        nodeData.FSCIndirectO = obj.value("fscindirecto").toDouble();
-        nodeData.SADirect = obj.value("sadirect").toDouble();
-        nodeData.SAIndirect = obj.value("saindirect").toDouble();
-        nodeData.FDirect = obj.value("fdirect").toDouble();
-        nodeData.FIndirect = obj.value("findirect").toDouble();
-        nodeData.Cu = obj.value("cu").toDouble();
-        nodeData.Zn = obj.value("zn").toDouble();
-        nodeData.Sn = obj.value("sn").toDouble();
-        nodeData.Sb = obj.value("sb").toDouble();
-        nodeData.Hg = obj.value("hg").toDouble();
-        nodeData.Cd = obj.value("cd").toDouble();
-        nodeData.Pb = obj.value("pb").toDouble();
-        nodeData.As = obj.value("as").toDouble();
-        nodeData.Cr6 = obj.value("cr6").toDouble();
-        nodeData.Gc = obj.value("gc").toDouble();
-        nodeData.Density = obj.value("density").toDouble();
-        nodeData.Conductivity = obj.value("conductivity").toDouble();
-        nodeData.Mc = obj.value("mc").toDouble();
-        nodeData.Sc = obj.value("sc").toDouble();
-        nodeData.Toc = obj.value("toc").toDouble();
-        nodeData.BOD5Direct = obj.value("bod5direct").toDouble();
-        nodeData.BOD5Indirect = obj.value("bod5indirect").toDouble();
-        nodeData.BOD = obj.value("bod").toDouble();
-        nodeData.PDirect = obj.value("pdirect").toDouble();
-        nodeData.BC = obj.value("bc").toDouble();
-        nodeData.SLC = obj.value("slc").toDouble();
-        nodeData.COLORDirect = obj.value("colordirect").toDouble();
-        nodeData.COLORIndirect = obj.value("colorindirect").toDouble();
-        nodeData.AFDirect = obj.value("afdirect").toDouble();
-        nodeData.AFINDirect = obj.value("afindirect").toDouble();
-        nodeData.CLDirect = obj.value("cldirect").toDouble();
-        nodeData.CLIndirect = obj.value("clindirect").toDouble();
-        nodeData.PINDirect = obj.value("pindirect").toDouble();
-        nodeData.Cr = obj.value("cr").toDouble();
-        nodeData.Ton = obj.value("ton").toDouble();
+        nodeData.id = map.value("id").toString();
+        nodeData.Community = map.value("community").toString();
+        nodeData.ComId = map.value("comId").toString();
+        nodeData.Time = map.value("time").toString();
+        nodeData.Status = map.value("status").toInt();
+        nodeData.PhDirectHigh = map.value("phdirecthigh").toFloat();
+        nodeData.PhDirectLow = map.value("phdirectlow").toFloat();
+        nodeData.PhIndirectHigh = map.value("phindirecthigh").toFloat();
+        nodeData.PhIndirectLow = map.value("phindirectlow").toFloat();
+        nodeData.CODDirect = map.value("coddirect").toFloat();
+        nodeData.CODIndirect = map.value("codindirect").toFloat();
+        nodeData.TPDirect = map.value("tpdirect").toFloat();
+        nodeData.TPIndirect = map.value("tpindirect").toFloat();
+        nodeData.TNDirect = map.value("tndirect").toFloat();
+        nodeData.IPIndirect = map.value("ipindirect").toFloat();
+        nodeData.ANDirect = map.value("andirect").toFloat();
+        nodeData.ANINDirect = map.value("anindirect").toFloat();
+        nodeData.OCCDirect = map.value("occdirect").toFloat();
+        nodeData.OCCIndirect = map.value("occindirect").toFloat();
+        nodeData.FSCDirectT = map.value("fscdirectt").toFloat();
+        nodeData.FSCIndirectT = map.value("fscindirectt").toFloat();
+        nodeData.FSCDirectO = map.value("fscdirecto").toFloat();
+        nodeData.FSCIndirectO = map.value("fscindirecto").toFloat();
+        nodeData.SADirect = map.value("sadirect").toFloat();
+        nodeData.SAIndirect = map.value("saindirect").toFloat();
+        nodeData.FDirect = map.value("fdirect").toFloat();
+        nodeData.FIndirect = map.value("findirect").toFloat();
+        nodeData.Cu = map.value("cu").toFloat();
+        nodeData.Zn = map.value("zn").toFloat();
+        nodeData.Sn = map.value("sn").toFloat();
+        nodeData.Sb = map.value("sb").toFloat();
+        nodeData.Hg = map.value("hg").toFloat();
+        nodeData.Cd = map.value("cd").toFloat();
+        nodeData.Pb = map.value("pb").toFloat();
+        nodeData.As = map.value("as").toFloat();
+        nodeData.Cr6 = map.value("cr6").toFloat();
+        nodeData.Gc = map.value("gc").toFloat();
+        nodeData.Density = map.value("density").toFloat();
+        nodeData.COLORIndirect = map.value("colorindirect").toFloat();
+        nodeData.AFDirect = map.value("afdirect").toFloat();
+        nodeData.AFINDirect = map.value("afindirect").toFloat();
+        nodeData.CLDirect = map.value("cldirect").toFloat();
+        nodeData.CLIndirect = map.value("clindirect").toFloat();
+        nodeData.PINDirect = map.value("pindirect").toFloat();
+        nodeData.Cr = map.value("cr").toFloat();
+        nodeData.Conductivity = map.value("conductivity").toFloat();
+        nodeData.Mc = map.value("mc").toFloat();
+        nodeData.Sc = map.value("sc").toFloat();
+        nodeData.Toc = map.value("toc").toFloat();
+        nodeData.BOD5Direct = map.value("bod5direct").toFloat();
+        nodeData.BOD5Indirect = map.value("bod5indirect").toFloat();
+        nodeData.BOD = map.value("bod").toFloat();
+        nodeData.PDirect = map.value("pdirect").toFloat();
+        nodeData.BC = map.value("bc").toFloat();
+        nodeData.SLC = map.value("slc").toFloat();
+        nodeData.COLORDirect = map.value("colordirect").toFloat();
+        nodeData.Ton = map.value("ton").toFloat();
         nodeDataList->append(nodeData);
     }
     return nodeDataList;
@@ -243,6 +243,8 @@ QVector<InfluxData> *NodeInterface::getNodeInfluxData(QString startTime, QString
     // 快速排序
     qSort(influxList->begin(), influxList->end(), [](const InfluxData &a, const InfluxData &b)
           { return a.time < b.time; });
+    // 逆置
+    std::reverse(influxList->begin(), influxList->end());
     return influxList;
 }
 
@@ -338,6 +340,8 @@ QVector<ProData> *NodeInterface::getNodeProData(QString startTime, QString endTi
         proInfo.Cr = map.value("cr").toFloat();
         proList->append(proInfo);
     }
+    // 逆置
+    std::reverse(proList->begin(), proList->end());
     return proList;
 }
 

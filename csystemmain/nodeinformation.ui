@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1675</width>
-    <height>895</height>
+    <width>1671</width>
+    <height>891</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
   <widget class="QWidget" name="widget" native="true">
    <property name="geometry">
     <rect>
-     <x>-3</x>
+     <x>0</x>
      <y>0</y>
      <width>1671</width>
      <height>891</height>
@@ -562,8 +562,8 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
        <rect>
         <x>1</x>
         <y>11</y>
-        <width>461</width>
-        <height>831</height>
+        <width>431</width>
+        <height>381</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -576,15 +576,15 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
     margin-top:0ex;</string>
       </property>
       <property name="title">
-       <string>详细监控信息</string>
+       <string>常规指标</string>
       </property>
       <widget class="QtCharts::QChartView" name="graphicsView">
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>30</y>
-         <width>461</width>
-         <height>801</height>
+         <y>20</y>
+         <width>431</width>
+         <height>361</height>
         </rect>
        </property>
       </widget>
@@ -592,10 +592,10 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
      <widget class="QGroupBox" name="groupBox_2">
       <property name="geometry">
        <rect>
-        <x>800</x>
-        <y>11</y>
-        <width>511</width>
-        <height>441</height>
+        <x>890</x>
+        <y>10</y>
+        <width>481</width>
+        <height>331</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -613,10 +613,10 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
       <widget class="QWebEngineView" name="webEngineView">
        <property name="geometry">
         <rect>
-         <x>1</x>
+         <x>0</x>
          <y>30</y>
-         <width>506</width>
-         <height>407</height>
+         <width>471</width>
+         <height>291</height>
         </rect>
        </property>
        <property name="url">
@@ -625,6 +625,153 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
         </url>
        </property>
       </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>410</y>
+        <width>431</width>
+        <height>431</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    /* 右边和底部2px */
+    border-right: 1px solid #8aa0eb;
+    border-bottom: 1px solid #8aa0eb;
+    margin-top:0ex;</string>
+      </property>
+      <property name="title">
+       <string>重金属类核心指标</string>
+      </property>
+      <widget class="QtCharts::QChartView" name="graphicsViewIron">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>431</width>
+         <height>401</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>10</y>
+        <width>421</width>
+        <height>831</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    /* 右边和底部2px */
+    border-right: 1px solid #8aa0eb;
+    border-bottom: 1px solid #8aa0eb;
+    margin-top:0ex;</string>
+      </property>
+      <property name="title">
+       <string>其它指标</string>
+      </property>
+      <widget class="QtCharts::QChartView" name="graphicsViewOther1">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>411</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;</string>
+       </property>
+      </widget>
+      <widget class="QtCharts::QChartView" name="graphicsViewOther2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>300</y>
+         <width>411</width>
+         <height>261</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;</string>
+       </property>
+      </widget>
+      <widget class="QtCharts::QChartView" name="graphicsViewOther3">
+       <property name="geometry">
+        <rect>
+         <x>3</x>
+         <y>563</y>
+         <width>411</width>
+         <height>261</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QtCharts::QChartView" name="graphView_Diag1">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>350</y>
+        <width>481</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    /* 右边和底部2px */
+    border-right: 1px solid #8aa0eb;
+    border-bottom: 1px solid #8aa0eb;
+    margin-top:0ex;</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="horizontalWidget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>580</y>
+        <width>481</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:#ffffff;
+    border-radius: 8px;
+    border: 0px;
+    /* 右边和底部2px */
+    border-right: 1px solid #8aa0eb;
+    border-bottom: 1px solid #8aa0eb;
+    margin-top:0ex;</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QtCharts::QChartView" name="graphicsViewDiag2">
+         <property name="styleSheet">
+          <string notr="true">border:none;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QtCharts::QChartView" name="graphicsViewDiag3">
+         <property name="styleSheet">
+          <string notr="true">border:none;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
    </widget>

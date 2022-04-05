@@ -19,7 +19,7 @@ MapView::MapView(QWidget *parent) : QWidget(parent),
                                     ui(new Ui::MapView)
 {
     // debug
-    // qputenv("QTWEBENGINE_REMOTE_DEBUGGING", "1112");
+    qputenv("QTWEBENGINE_REMOTE_DEBUGGING", "1112");
     ui->setupUi(this);
     this->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
     this->setAttribute(Qt::WA_DeleteOnClose);
@@ -60,31 +60,28 @@ void MapView::init()
     for (int i = 0; i < CSystemMain::nodeInfoList->size(); i++)
     {
         // 表格模板,防止挤压
-        QString info = "<table class=\"table - ui\"style = \"width: 350px; \" >"
+        QString info = "<table class=\"table - ui\"style = \"width: 590px; \" >"
                        "<tr>"
                        "<td>节点编号</td>"
                        "<td>" +
-                       CSystemMain::nodeInfoList->at(i).id + "</td>" +
-                       "</tr>"
-                       "<tr>"
-                       "<td>节点归属</td>"
-                       "<td>" +
+                       CSystemMain::nodeInfoList->at(i).id + "</td>"
+                                                             "<td>节点归属</td>"
+                                                             "<td>" +
                        CSystemMain::nodeInfoList->at(i).COMNAME + "</td>" +
                        "</tr>"
                        "<tr>"
                        "<td>数据上传日期</td>"
                        "<td>" +
                        CSystemMain::nodeInfoList->at(i).lastUpload.toString("yyyy-MM-dd-hh-mm-ss") + "</td>" +
-                       "</tr>"
-                       "<tr>"
                        "<td>系统自检日期</td>"
                        "<td>" +
                        CSystemMain::nodeInfoList->at(i).selfDate.toString("yyyy-MM-dd-hh-mm-ss") + "</td>" +
                        "</tr>"
-                       "</table>";
+                       "</table> <div id=\"chartview\" style=\"width: 590px;height:200px\"></div>";
         float x = CSystemMain::nodeInfoList->at(i).lo;
         float y = CSystemMain::nodeInfoList->at(i).li;
-        addPoint(info, x, y);
+        QTimer::singleShot(1200, [=]()
+                           { addPoint(info, x, y); });
         list.append("   " + CSystemMain::nodeInfoList->at(i).id);
     }
     ui->NodeList->setModel(new QStringListModel(list));
