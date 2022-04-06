@@ -12,6 +12,10 @@ MapSetting::MapSetting(QWidget *parent) : QWidget(parent),
     ui->setupUi(this);
     this->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
     this->setAttribute(Qt::WA_DeleteOnClose);
+    ui->webView->setUrl(QUrl("http://127.0.0.1:10241/pages/default/map"));
+    channelsetting = new QWebChannel(this);             //通讯对象
+    channelsetting->registerObject("trans", this);      //通信介质注册
+    ui->webView->page()->setWebChannel(channelsetting); //通讯附加
     // 阴影效果
     effect1 = new QGraphicsDropShadowEffect(ui->label);
     effect1->setOffset(0, 0);
@@ -21,7 +25,6 @@ MapSetting::MapSetting(QWidget *parent) : QWidget(parent),
     configManager config;
     config.config_Recovery();
     init();
-    ui->webView->setUrl(QUrl("http://127.0.0.1:10241/pages/default/map"));
 }
 
 MapSetting::~MapSetting()

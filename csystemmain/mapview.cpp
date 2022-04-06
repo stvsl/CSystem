@@ -23,13 +23,12 @@ MapView::MapView(QWidget *parent) : QWidget(parent),
     ui->setupUi(this);
     this->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
     this->setAttribute(Qt::WA_DeleteOnClose);
-    ui->webView->setUrl(QUrl("http://127.0.0.1:10241/pages/default/map"));
-
-    channel = new QWebChannel(this);             //通讯对象
-    channel->registerObject("trans", this);      //通信介质注册
-    ui->webView->page()->setWebChannel(channel); //通讯附加
     ui->nodeinfoview->setHorizontalHeaderLabels(QStringList() << "监测项目"
                                                               << "检测值");
+    ui->webView->setUrl(QUrl("http://127.0.0.1:10241/pages/default/map"));
+    channel = new QWebChannel(this);                                                  //通讯对象
+    channel->registerObject("trans", this);                                           //通信介质注册
+    ui->webView->page()->setWebChannel(channel);                                      //通讯附加
     ui->nodeinfoview->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch); //自适应宽度
     ui->nodeinfoview->setSelectionBehavior(QAbstractItemView::SelectRows);            //整行选中
     ui->nodeinfoview->setEditTriggers(QAbstractItemView::NoEditTriggers);             //禁止编辑
@@ -59,29 +58,6 @@ void MapView::init()
     // 将节点信息添加到地图上
     for (int i = 0; i < CSystemMain::nodeInfoList->size(); i++)
     {
-        // 表格模板,防止挤压
-        QString info = "<table class=\"table - ui\"style = \"width: 590px; \" >"
-                       "<tr>"
-                       "<td>节点编号</td>"
-                       "<td>" +
-                       CSystemMain::nodeInfoList->at(i).id + "</td>"
-                                                             "<td>节点归属</td>"
-                                                             "<td>" +
-                       CSystemMain::nodeInfoList->at(i).COMNAME + "</td>" +
-                       "</tr>"
-                       "<tr>"
-                       "<td>数据上传日期</td>"
-                       "<td>" +
-                       CSystemMain::nodeInfoList->at(i).lastUpload.toString("yyyy-MM-dd-hh-mm-ss") + "</td>" +
-                       "<td>系统自检日期</td>"
-                       "<td>" +
-                       CSystemMain::nodeInfoList->at(i).selfDate.toString("yyyy-MM-dd-hh-mm-ss") + "</td>" +
-                       "</tr>"
-                       "</table> <div id=\"chartview\" style=\"width: 590px;height:200px\"></div>";
-        float x = CSystemMain::nodeInfoList->at(i).lo;
-        float y = CSystemMain::nodeInfoList->at(i).li;
-        QTimer::singleShot(1200, [=]()
-                           { addPoint(info, x, y); });
         list.append("   " + CSystemMain::nodeInfoList->at(i).id);
     }
     ui->NodeList->setModel(new QStringListModel(list));
@@ -158,9 +134,29 @@ void MapView::on_NodeList_clicked(const QModelIndex &index)
     {
         if (id == CSystemMain::nodeInfoList->at(i).id)
         {
-            // 获取结点坐标
+            // 表格模板,防止挤压
+            QString info = "<table class=\"table - ui\"style = \"width: 570px; \" >"
+                           "<tr>"
+                           "<td>节点编号</td>"
+                           "<td>" +
+                           CSystemMain::nodeInfoList->at(i).id + "</td>"
+                                                                 "<td>节点归属</td>"
+                                                                 "<td>" +
+                           CSystemMain::nodeInfoList->at(i).COMNAME + "</td>" +
+                           "</tr>"
+                           "<tr>"
+                           "<td>数据上传日期</td>"
+                           "<td>" +
+                           CSystemMain::nodeInfoList->at(i).lastUpload.toString("yyyy-MM-dd-hh-mm-ss") + "</td>" +
+                           "<td>系统自检日期</td>"
+                           "<td>" +
+                           CSystemMain::nodeInfoList->at(i).selfDate.toString("yyyy-MM-dd-hh-mm-ss") + "</td>" +
+                           "</tr>"
+                           "</table> <div id=\"chartview\" style=\"width: 570px;height:180px\"></div>";
             float x = CSystemMain::nodeInfoList->at(i).lo;
             float y = CSystemMain::nodeInfoList->at(i).li;
+            QTimer::singleShot(1200, [=]()
+                               { addPoint(info, x, y); });
             // 设置地图中心
             emit setCenter(x, y);
             // 填充表格

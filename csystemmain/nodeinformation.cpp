@@ -48,6 +48,10 @@ nodeinformation::nodeinformation(QWidget *parent) : QWidget(parent),
     shadow4->setColor(QColor(125, 164, 255, 80));
     shadow4->setBlurRadius(10);
     ui->modSwitch_btn->setGraphicsEffect(shadow4);
+    ui->webEngineView->setUrl(QUrl("http://127.0.0.1:10241/pages/default/map"));
+    channel_ni = new QWebChannel(this);                   //通讯对象
+    channel_ni->registerObject("trans", this);            //通信介质注册
+    ui->webEngineView->page()->setWebChannel(channel_ni); //通讯附加
     QStringList nodelist;
     // 初始化结点列表
     for (int i = 0; i < CSystemMain::nodeInfoList->size(); i++)
@@ -528,6 +532,12 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
             selflist << "   上次自检日期:       " + CSystemMain::nodeInfoList->at(i).selfDate.toString("yyyy-MM-dd-hh-mm-ss");
             selflist << "   自检结果:               " + CSystemMain::nodeInfoList->at(i).selfInfo;
             ui->selflist->addItems(selflist);
+            float x = CSystemMain::nodeInfoList->at(i).lo;
+            float y = CSystemMain::nodeInfoList->at(i).li;
+            emit setCenter(x, y);
+            // 表格模板,防止挤压
+            QString info = "位置信息:" + CSystemMain::nodeInfoList->at(i).locate;
+            addPoint(info, x, y);
             break;
         }
     }

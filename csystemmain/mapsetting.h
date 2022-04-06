@@ -2,6 +2,7 @@
 #define MAPSETTING_H
 
 #include <QWidget>
+#include <QWebChannel>
 
 namespace Ui
 {
@@ -51,7 +52,7 @@ private slots:
 
 private:
     Ui::MapSetting *ui;
-
+    QWebChannel *channelsetting;
     void init();
 };
 
