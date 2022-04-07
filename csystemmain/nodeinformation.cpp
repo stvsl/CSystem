@@ -13,6 +13,8 @@
 #include <QBarSeries>
 #include <QSplineSeries>
 #include <QScatterSeries>
+#include <QPieSeries>
+#include <QDateTime>
 
 QGraphicsDropShadowEffect *shadow1;
 QGraphicsDropShadowEffect *shadow2;
@@ -293,7 +295,7 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
             chart->createDefaultAxes();
             chart->axisX()->setVisible(false);
             chart->legend()->setFont(QFont("Times New Roman", 10));
-            chart->setAnimationOptions(QtCharts::QChart::AllAnimations);
+            chart->setAnimationOptions(QtCharts::QChart::SeriesAnimations);
             ui->graphicsView->setChart(chart);
             ui->graphicsView->setRenderHint(QPainter::Antialiasing);
 
@@ -470,6 +472,49 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
             chart40->setAnimationOptions(QtCharts::QChart::AllAnimations);
             ui->graphicsViewOther3->setChart(chart40);
 
+            // 饼图
+            QtCharts::QChart *chart50 = new QtCharts::QChart();
+            QtCharts::QPieSlice *slice51 = new QtCharts::QPieSlice(chart50);
+            slice51->setLabel("生物直接需氧量");
+            slice51->setValue(CSystemMain::nodeDataList->at(index.row()).BOD5Direct);
+            slice51->setColor(QColor(Qt::red));
+            QtCharts::QPieSlice *slice52 = new QtCharts::QPieSlice(chart50);
+            slice52->setLabel("化学直接需氧量");
+            slice52->setValue(CSystemMain::nodeDataList->at(index.row()).CODDirect);
+            slice52->setColor(QColor(Qt::green));
+            QtCharts::QPieSlice *slice53 = new QtCharts::QPieSlice(chart50);
+            slice53->setLabel("生物间接需氧量");
+            slice53->setValue(CSystemMain::nodeDataList->at(index.row()).BOD5Indirect);
+            slice53->setColor(QColor(Qt::blue));
+            QtCharts::QPieSlice *slice54 = new QtCharts::QPieSlice(chart50);
+            slice54->setLabel("化学间接需氧量");
+            slice54->setValue(CSystemMain::nodeDataList->at(index.row()).CODIndirect);
+            slice54->setColor(QColor(Qt::yellow));
+            // 将所有的饼图切片加入到饼图中
+            QtCharts::QPieSeries *series50 = new QtCharts::QPieSeries(chart50);
+            series50->append(slice51);
+            series50->append(slice52);
+            series50->append(slice53);
+            series50->append(slice54);
+            series50->setLabelsVisible();
+            // 防止饼图的标签超出范围
+            series50->setLabelsPosition(QtCharts::QPieSlice::LabelOutside);
+            // 设置饼图的标签的字体
+            // 饼图大小
+            series50->setPieSize(0.5);
+            series50->setPieStartAngle(12);
+            series50->setPieEndAngle(372);
+            chart50->legend()->hide();
+            chart50->addSeries(series50);
+            chart50->setTitle("需氧量总占比");
+            chart50->legend()->setAlignment(Qt::AlignRight);
+            chart50->legend()->setFont(QFont("Times New Roman", 10));
+            chart50->setAnimationOptions(QtCharts::QChart::AllAnimations);
+            // 减小上下边距
+            chart50->setMargins(QMargins(0, 0, 0, 0));
+            ui->graphView_Diag1->setChart(chart50);
+            ui->graphView_Diag1->setRenderHint(QPainter::Antialiasing);
+
             QStringList resplist;
             resplist << "   机构号:    " + CSystemMain::nodeInfoList->at(i).belong;
             resplist << "   企业名称:  " + CSystemMain::nodeInfoList->at(i).COMNAME;
@@ -534,10 +579,12 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
             ui->selflist->addItems(selflist);
             float x = CSystemMain::nodeInfoList->at(i).lo;
             float y = CSystemMain::nodeInfoList->at(i).li;
-            emit setCenter(x, y);
+            QTimer::singleShot(100, this, [=]()
+                               {
+                            emit setCenter(x, y);
             // 表格模板,防止挤压
             QString info = "位置信息:" + CSystemMain::nodeInfoList->at(i).locate;
-            addPoint(info, x, y);
+            addPoint(info, x, y); });
             break;
         }
     }

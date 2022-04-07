@@ -613,7 +613,7 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
       <widget class="QWebEngineView" name="webEngineView">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>4</x>
          <y>30</y>
          <width>471</width>
          <height>291</height>
@@ -723,9 +723,9 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
       <property name="geometry">
        <rect>
         <x>890</x>
-        <y>350</y>
+        <y>355</y>
         <width>481</width>
-        <height>211</height>
+        <height>231</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -742,9 +742,9 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
       <property name="geometry">
        <rect>
         <x>890</x>
-        <y>580</y>
+        <y>600</y>
         <width>481</width>
-        <height>261</height>
+        <height>241</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -842,7 +842,7 @@ padding:4px;
       <rect>
        <x>1</x>
        <y>30</y>
-       <width>227</width>
+       <width>231</width>
        <height>791</height>
       </rect>
      </property>
