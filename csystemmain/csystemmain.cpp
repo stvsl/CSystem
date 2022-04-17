@@ -31,6 +31,7 @@ QVector<NodeInfo> *CSystemMain::nodeInfoList;
 QVector<NodeData> *CSystemMain::nodeDataList;
 QVector<InfluxData> *CSystemMain::nodeinfluxData_temp;
 QVector<ProData> *CSystemMain::nodePro_temp;
+Standard *CSystemMain::standard;
 
 QStringList global_list;
 QStringList warn_list;
@@ -293,24 +294,38 @@ void CSystemMain::bottombarchanged()
 
 void CSystemMain::showEvent()
 {
-    this->show();
     if (CSystemMain::nodeInfoList == nullptr || CSystemMain::nodeDataList == nullptr)
     {
-
         global_list.append("正在加载数据...请稍候...");
         QStringListModel *model = new QStringListModel(global_list);
+        model->setStringList(global_list);
         ui->Global_Info->setModel(model);
         NodeInterface ni;
         // 拉取数据
         // 网络错误弹出提示
         CSystemMain::nodeInfoList = ni.getNodeInfo();
+        this->show();
         CSystemMain::WINDOW_MAP_VIEW->init();
-        CSystemMain::nodeDataList = ni.getNodeData();
         global_list.append("数据加载完成,正在计算数据...");
+        ui->Global_Info->setModel(model);
+        ui->Global_Info->setModel(model);
+        CSystemMain::nodeDataList = ni.getNodeData();
+        global_list.append("数据计算完毕");
         model->setStringList(global_list);
+        ui->Global_Info->setModel(model);
+        ui->warningInfo->setModel(new QStringListModel(QStringList() << "暂无警告数据"));
+        ui->errInfo->setModel(new QStringListModel(QStringList() << "暂无异常数据"));
+        QTimer::singleShot(1000, this, [=]()
+                           { ui->side_menu->setCurrentIndex(QModelIndex(ui->side_menu->model()->index(0, 0))); });
     }
     else
     {
         CSystemMain::WINDOW_MAP_VIEW->init();
     }
+}
+
+void CSystemMain::dataCheck()
+{
+    // 委托新线程检查数据
+    QThread *thread = new QThread;
 }

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1920</width>
-    <height>1054</height>
+    <height>1024</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -17,7 +17,11 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>水质数据监测平台  v1.0.1 alpha</string>
+   <string>星眼水质数据监测平台  v1.3.2 alpha</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../source/source.qrc">
+    <normaloff>:/logo/logo/logo.png</normaloff>:/logo/logo/logo.png</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>true</bool>
@@ -79,7 +83,7 @@ border: none;
 color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
-         <string>水质数据监测平台</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;星眼&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-style:italic;&quot;&gt;水质数据可视化监测平台&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -184,8 +188,8 @@ border-left-width:0px;</string>
      <widget class="QStackedWidget" name="bottombar">
       <property name="geometry">
        <rect>
-        <x>19</x>
-        <y>3</y>
+        <x>29</x>
+        <y>8</y>
         <width>1651</width>
         <height>121</height>
        </rect>
@@ -226,7 +230,7 @@ border-left-width:0px;</string>
            </property>
            <property name="geometry">
             <rect>
-             <x>11</x>
+             <x>10</x>
              <y>25</y>
              <width>681</width>
              <height>80</height>
@@ -277,6 +281,26 @@ border-left-width:0px;</string>
           <property name="title">
            <string>提醒</string>
           </property>
+          <widget class="QListView" name="warningInfo">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>25</y>
+             <width>441</width>
+             <height>80</height>
+            </rect>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgba(255, 255, 255, 0);
+</string>
+           </property>
+          </widget>
          </widget>
         </item>
         <item>
@@ -314,6 +338,26 @@ border-left-width:0px;</string>
           <property name="title">
            <string>警报</string>
           </property>
+          <widget class="QListView" name="errInfo">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>25</y>
+             <width>441</width>
+             <height>80</height>
+            </rect>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgba(255, 255, 255, 0);
+</string>
+           </property>
+          </widget>
          </widget>
         </item>
        </layout>
@@ -334,6 +378,19 @@ border-left-width:0px;</string>
         <property name="title">
          <string>功能说明</string>
         </property>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>30</y>
+           <width>1591</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1.  请谨慎操作，防止信息与实际不符，这将会造成节点无法正常上传数据&lt;/p&gt;&lt;p&gt;2.  若配置出错可点击重置按钮快速回退到修改前&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="page3">

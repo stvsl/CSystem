@@ -16,6 +16,9 @@ public:
     explicit DataView(QWidget *parent = nullptr);
     ~DataView();
 
+private slots:
+    void on_pushButton_8_clicked();
+
 private:
     Ui::DataView *ui;
     void initTable();

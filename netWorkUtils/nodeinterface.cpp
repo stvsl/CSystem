@@ -290,7 +290,7 @@ QVector<ProData> *NodeInterface::getNodeProData(QString startTime, QString endTi
         proInfo.PhDirectHigh = map.value("phdirecthigh").toFloat();
         proInfo.PhDirectLow = map.value("phdirectlow").toFloat();
         proInfo.PhIndirectHigh = map.value("phindirecthigh").toFloat();
-        proInfo.PhIndirectLow = map.value("phindirectlow").toFloat();
+        proInfo.PhIndirectLow = map.value("phindorectlow").toFloat();
         proInfo.CODDirect = map.value("coddirect").toFloat();
         proInfo.CODIndirect = map.value("codindirect").toFloat();
         proInfo.TPDirect = map.value("tpdirect").toFloat();
@@ -318,7 +318,7 @@ QVector<ProData> *NodeInterface::getNodeProData(QString startTime, QString endTi
         proInfo.Pb = map.value("pb").toFloat();
         proInfo.As = map.value("as").toFloat();
         proInfo.Cr6 = map.value("cr6").toFloat();
-        proInfo.Gc = map.value("gc").toFloat();
+        proInfo.Gc = map.value("gs").toFloat();
         proInfo.Density = map.value("density").toFloat();
         proInfo.Conductivity = map.value("conductivity").toFloat();
         proInfo.Mc = map.value("mc").toFloat();
@@ -343,6 +343,92 @@ QVector<ProData> *NodeInterface::getNodeProData(QString startTime, QString endTi
     // 逆置
     std::reverse(proList->begin(), proList->end());
     return proList;
+}
+
+Standard *NodeInterface::getStandard(QString standard)
+{
+    // 获取标准
+    netWorkUtils nwu;
+    nwu.get("/standard");
+    nwu.addQuery("id", standard);
+    // 连接信号
+    connect(&nwu, SIGNAL(netError(QString)), this, SLOT(onnetError(QString)));
+    // 获取返回的byte数据转换为json
+    QJsonParseError jsonError;
+    QJsonDocument jsondoc = QJsonDocument::fromJson(nwu.exec(), &jsonError);
+    // 断开信号
+    disconnect(&nwu, SIGNAL(netError(QString)), this, SLOT(onnetError(QString)));
+    QJsonObject jsonObjo = jsondoc.object();
+    // 读取data
+    QString data = jsonObjo.value("data").toString();
+    if (data == "")
+    {
+        emit netError("服务器返回为null");
+        qDebug() << "服务器返回为null";
+        return nullptr;
+    }
+    // 转换为json
+    jsondoc = QJsonDocument::fromJson(data.toUtf8());
+    QJsonObject jsonObj = jsondoc.object();
+    qDebug() << jsonObj;
+    // // 最终数据储存
+    Standard *fstandard = new Standard();
+    fstandard->ID = jsonObj.value("id").toString();
+    fstandard->Description = jsonObj.value("description").toString();
+    fstandard->Name = jsonObj.value("name").toString();
+    fstandard->PhDirectHigh = jsonObj.value("phdirecthigh").toDouble();
+    fstandard->PhDirectLow = jsonObj.value("phdirectlow").toDouble();
+    fstandard->PhIndirectHigh = jsonObj.value("phindirecthigh").toDouble();
+    fstandard->PhIndirectLow = jsonObj.value("phindirectlow").toDouble();
+    fstandard->CODDirect = jsonObj.value("coddirect").toDouble();
+    fstandard->CODIndirect = jsonObj.value("codindirect").toDouble();
+    fstandard->TPDirect = jsonObj.value("tpdirect").toDouble();
+    fstandard->TPIndirect = jsonObj.value("tpindirect").toDouble();
+    fstandard->TNDirect = jsonObj.value("tndirect").toDouble();
+    fstandard->IPIndirect = jsonObj.value("ipindirect").toDouble();
+    fstandard->ANDirect = jsonObj.value("andirect").toDouble();
+    fstandard->ANINDirect = jsonObj.value("anindirect").toDouble();
+    fstandard->OCCDirect = jsonObj.value("occdirect").toDouble();
+    fstandard->OCCIndirect = jsonObj.value("occindirect").toDouble();
+    fstandard->FSCDirectT = jsonObj.value("fscdirectt").toDouble();
+    fstandard->FSCIndirectT = jsonObj.value("fscindirectt").toDouble();
+    fstandard->FSCDirectO = jsonObj.value("fscdirecto").toDouble();
+    fstandard->FSCIndirectO = jsonObj.value("fscindirecto").toDouble();
+    fstandard->SADirect = jsonObj.value("sadirect").toDouble();
+    fstandard->SAIndirect = jsonObj.value("saindirect").toDouble();
+    fstandard->FDirect = jsonObj.value("fdirect").toDouble();
+    fstandard->FIndirect = jsonObj.value("findirect").toDouble();
+    fstandard->Cu = jsonObj.value("cu").toDouble();
+    fstandard->Zn = jsonObj.value("zn").toDouble();
+    fstandard->Sn = jsonObj.value("sn").toDouble();
+    fstandard->Sb = jsonObj.value("sb").toDouble();
+    fstandard->Hg = jsonObj.value("hg").toDouble();
+    fstandard->Cd = jsonObj.value("cd").toDouble();
+    fstandard->Pb = jsonObj.value("pb").toDouble();
+    fstandard->As = jsonObj.value("as").toDouble();
+    fstandard->Cr6 = jsonObj.value("cr6").toDouble();
+    fstandard->Ton = jsonObj.value("ton").toDouble();
+    fstandard->Gc = jsonObj.value("gc").toDouble();
+    fstandard->Density = jsonObj.value("density").toDouble();
+    fstandard->Conductivity = jsonObj.value("conductivity").toDouble();
+    fstandard->Mc = jsonObj.value("mc").toDouble();
+    fstandard->Sc = jsonObj.value("sc").toDouble();
+    fstandard->Toc = jsonObj.value("toc").toDouble();
+    fstandard->BOD5Direct = jsonObj.value("bod5direct").toDouble();
+    fstandard->BOD5Indirect = jsonObj.value("bod5indirect").toDouble();
+    fstandard->BOD = jsonObj.value("bod").toDouble();
+    fstandard->PDirect = jsonObj.value("pdirect").toDouble();
+    fstandard->Bc = jsonObj.value("bc").toDouble();
+    fstandard->Slc = jsonObj.value("slc").toDouble();
+    fstandard->COLORDirect = jsonObj.value("colordirect").toDouble();
+    fstandard->COLORIndirect = jsonObj.value("colorindirect").toDouble();
+    fstandard->AFDirect = jsonObj.value("afdirect").toDouble();
+    fstandard->AFINDirect = jsonObj.value("afindirect").toDouble();
+    fstandard->CLDirect = jsonObj.value("cldirect").toDouble();
+    fstandard->CLIndirect = jsonObj.value("clindirect").toDouble();
+    fstandard->PINDirect = jsonObj.value("pindirect").toDouble();
+    fstandard->Cr = jsonObj.value("cr").toDouble();
+    return fstandard;
 }
 
 void NodeInterface::onnetError(QString err)

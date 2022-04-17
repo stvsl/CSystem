@@ -18,7 +18,7 @@
     <rect>
      <x>15</x>
      <y>13</y>
-     <width>1291</width>
+     <width>1287</width>
      <height>871</height>
     </rect>
    </property>
@@ -57,7 +57,7 @@ border-radius:8px;</string>
      </column>
      <column>
       <property name="text">
-       <string> 气体浓度 </string>
+       <string>气体浓度</string>
       </property>
      </column>
      <column>
@@ -117,22 +117,22 @@ border-radius:8px;</string>
      </column>
      <column>
       <property name="text">
-       <string>  生物需氧量  </string>
+       <string>BOD</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>  化学需氧量  </string>
+       <string>COD</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string> 细菌总数 </string>
+       <string>细菌</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>  大肠杆菌数  </string>
+       <string>大肠杆菌</string>
       </property>
      </column>
     </widget>

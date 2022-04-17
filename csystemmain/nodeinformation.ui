@@ -38,7 +38,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="ustackedWidgetPage1">
      <layout class="QGridLayout" name="gridLayout_5" rowstretch="10,1,2" columnstretch="1">
@@ -105,7 +105,7 @@
              <number>1</number>
             </property>
             <item>
-             <widget class="QPushButton" name="pushButton_2">
+             <widget class="QPushButton" name="output_btn">
               <property name="minimumSize">
                <size>
                 <width>110</width>
@@ -124,7 +124,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_3">
+             <widget class="QPushButton" name="chear_btn">
               <property name="maximumSize">
                <size>
                 <width>110</width>
@@ -168,7 +168,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit">
+              <widget class="QLineEdit" name="pathInput">
                <property name="styleSheet">
                 <string notr="true">border:0px;
 border-bottom: 2px solid ;
@@ -193,7 +193,7 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
               </spacer>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton">
+              <widget class="QPushButton" name="pathSelect_btn">
                <property name="text">
                 <string>选择路径</string>
                </property>
@@ -207,7 +207,7 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
               <x>1</x>
               <y>37</y>
               <width>571</width>
-              <height>29</height>
+              <height>30</height>
              </rect>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -219,28 +219,28 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
               </widget>
              </item>
              <item>
-              <widget class="QCheckBox" name="checkBox">
+              <widget class="QCheckBox" name="locateInfo">
                <property name="text">
                 <string>位置信息</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QCheckBox" name="checkBox_2">
+              <widget class="QCheckBox" name="dataInfo">
                <property name="text">
                 <string>监控信息</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QCheckBox" name="checkBox_3">
+              <widget class="QCheckBox" name="selfInfo">
                <property name="text">
                 <string>自检信息</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QCheckBox" name="checkBox_4">
+              <widget class="QCheckBox" name="comInfo">
                <property name="text">
                 <string>负责人信息</string>
                </property>
@@ -272,14 +272,14 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
               </spacer>
              </item>
              <item>
-              <widget class="QCheckBox" name="checkBox_5">
+              <widget class="QCheckBox" name="timeset">
                <property name="text">
                 <string>导出从</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QDateTimeEdit" name="dateTimeEdit"/>
+              <widget class="QDateTimeEdit" name="startTime"/>
              </item>
              <item>
               <widget class="QLabel" name="label_6">
@@ -289,7 +289,7 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
               </widget>
              </item>
              <item>
-              <widget class="QDateTimeEdit" name="dateTimeEdit_2"/>
+              <widget class="QDateTimeEdit" name="endtime"/>
              </item>
              <item>
               <widget class="QLabel" name="label_7">
@@ -613,7 +613,7 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
       <widget class="QWebEngineView" name="webEngineView">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>4</x>
          <y>30</y>
          <width>471</width>
          <height>291</height>
@@ -723,9 +723,9 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
       <property name="geometry">
        <rect>
         <x>890</x>
-        <y>350</y>
+        <y>355</y>
         <width>481</width>
-        <height>211</height>
+        <height>261</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -742,9 +742,9 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
       <property name="geometry">
        <rect>
         <x>890</x>
-        <y>580</y>
+        <y>630</y>
         <width>481</width>
-        <height>261</height>
+        <height>211</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -842,7 +842,7 @@ padding:4px;
       <rect>
        <x>1</x>
        <y>30</y>
-       <width>227</width>
+       <width>225</width>
        <height>791</height>
       </rect>
      </property>

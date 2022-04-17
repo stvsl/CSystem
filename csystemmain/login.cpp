@@ -171,13 +171,14 @@ void Login::on_login_btn_clicked()
     // // 上传密码残片
     // ec.uploadPasswordFragment();
     // 逐渐消失
+    ui->login_btn->setText("正在加载数据");
+    emit launch();
     QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
     animation->setDuration(230);
     animation->setStartValue(1);
     animation->setEndValue(0);
     animation->setEasingCurve(QEasingCurve::InQuad);
     animation->start(QAbstractAnimation::DeleteWhenStopped);
-    emit launch();
     QFile file(":/style/Style/defaultStyle.qss");
     file.open(QFile::ReadOnly);
     if (file.isOpen())
@@ -186,7 +187,7 @@ void Login::on_login_btn_clicked()
         qApp->setStyleSheet(qss);
         file.close();
     }
-    this->hide();
-    QTimer::singleShot(200, [=]()
-                       { this->close(); });
+    QTimer::singleShot(1000, [=]()
+                       { this->hide();
+                         this->close(); });
 }

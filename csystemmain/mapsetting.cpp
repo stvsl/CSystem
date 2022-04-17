@@ -12,6 +12,10 @@ MapSetting::MapSetting(QWidget *parent) : QWidget(parent),
     ui->setupUi(this);
     this->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
     this->setAttribute(Qt::WA_DeleteOnClose);
+    ui->webView->setUrl(QUrl("http://127.0.0.1:10241/pages/default/map"));
+    channelsetting = new QWebChannel(this);             //通讯对象
+    channelsetting->registerObject("trans", this);      //通信介质注册
+    ui->webView->page()->setWebChannel(channelsetting); //通讯附加
     // 阴影效果
     effect1 = new QGraphicsDropShadowEffect(ui->label);
     effect1->setOffset(0, 0);
@@ -21,12 +25,12 @@ MapSetting::MapSetting(QWidget *parent) : QWidget(parent),
     configManager config;
     config.config_Recovery();
     init();
-    ui->webView->setUrl(QUrl("http://127.0.0.1:10241/pages/default/map"));
 }
 
 MapSetting::~MapSetting()
 {
     delete effect1;
+    delete channelsetting;
     delete ui;
 }
 
@@ -167,10 +171,12 @@ void MapSetting::on_show_Poi_Icon_stateChanged(int arg1)
     if (arg1 == 2)
     {
         MAP_CONFIG::MAP_POIICON_ON = true;
+        ui->webView->page()->runJavaScript("setPoiIcon(1)");
     }
     else
     {
         MAP_CONFIG::MAP_POIICON_ON = false;
+        ui->webView->page()->runJavaScript("setPoiIcon(0)");
     }
 }
 
@@ -179,10 +185,12 @@ void MapSetting::on_show_Poi_Text_stateChanged(int arg1)
     if (arg1 == 2)
     {
         MAP_CONFIG::MAP_POITEXT_ON = true;
+        ui->webView->page()->runJavaScript("setPoiText(1)");
     }
     else
     {
         MAP_CONFIG::MAP_POITEXT_ON = false;
+        ui->webView->page()->runJavaScript("setPoiText(0)");
     }
 }
 
@@ -275,10 +283,16 @@ void MapSetting::on_model_Earth_stateChanged(int arg1)
     if (arg1 == 2)
     {
         MAP_CONFIG::MAP_EARTHMODEL = true;
+        // js函数
+        QString js = "setMapType(1);";
+        ui->webView->page()->runJavaScript(js);
     }
     else
     {
         MAP_CONFIG::MAP_EARTHMODEL = false;
+        // js函数
+        QString js = "setMapType(0);";
+        ui->webView->page()->runJavaScript(js);
     }
 }
 

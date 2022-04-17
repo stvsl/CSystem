@@ -24,7 +24,8 @@ public:
     QVector<InfluxData> *getNodeInfluxData(QString startTime, QString endTime);
     // 获取机构监测数据
     QVector<ProData> *getNodeProData(QString startTime, QString endTime);
-    QVector<Standard> *getStandard(QString standard);
+    // 获取标准数据
+    Standard *getStandard(QString standard);
 };
 
 #endif // NODEINTERFACE_H
