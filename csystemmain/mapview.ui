@@ -154,7 +154,7 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
         <item row="1" column="0">
          <widget class="QLabel" name="label_6">
           <property name="text">
-           <string>查找结点 :  </string>
+           <string>查找节点 :  </string>
           </property>
          </widget>
         </item>

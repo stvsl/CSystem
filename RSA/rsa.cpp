@@ -99,7 +99,7 @@ QString rsa::rsaPubEncrypt(const QString &strPlainData, const QString &strPubKey
 
     strEncryptData += arry.toBase64();
     //释放内存
-    delete pEncryptBuf;
+    delete[] pEncryptBuf;
     BIO_free_all(pKeyBio);
     RSA_free(pRsa);
     return strEncryptData;
@@ -154,7 +154,7 @@ QString rsa::rsaPriDecrypt(const QString &strDecryptData, const QString &strPriK
         }
     }
     //释放内存
-    delete pPlainBuf;
+    delete[] pPlainBuf;
     BIO_free_all(pKeyBio);
     RSA_free(pRsa);
     return strPlainData;

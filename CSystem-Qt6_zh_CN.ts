@@ -220,49 +220,57 @@
     <name>CSystemMain</name>
     <message>
         <location filename="csystemmain/csystemmain.ui" line="20"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="235"/>
-        <source>水质数据监测平台  v1.0.1 alpha</source>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="259"/>
+        <source>星眼水质数据监测平台  v1.3.2 alpha</source>
+        <oldsource>水质数据监测平台  v1.0.1 alpha</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/csystemmain.ui" line="82"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="236"/>
-        <source>水质数据监测平台</source>
+        <location filename="csystemmain/csystemmain.ui" line="86"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="260"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;星眼&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-style:italic;&quot;&gt;水质数据可视化监测平台&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;星眼水质数据监测平台&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/csystemmain.ui" line="124"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="237"/>
+        <location filename="csystemmain/csystemmain.ui" line="128"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="261"/>
         <source>键入以搜索功能......</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/csystemmain.ui" line="221"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="238"/>
+        <location filename="csystemmain/csystemmain.ui" line="225"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="262"/>
         <source>全局信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/csystemmain.ui" line="278"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="239"/>
+        <location filename="csystemmain/csystemmain.ui" line="282"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="263"/>
         <source>提醒</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/csystemmain.ui" line="315"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="240"/>
+        <location filename="csystemmain/csystemmain.ui" line="339"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="264"/>
         <source>警报</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/csystemmain.ui" line="335"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="241"/>
+        <location filename="csystemmain/csystemmain.ui" line="379"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="265"/>
         <source>功能说明</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/csystemmain.ui" line="353"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="242"/>
+        <location filename="csystemmain/csystemmain.ui" line="391"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="266"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1.  请谨慎操作，防止信息与实际不符，这将会造成节点无法正常上传数据&lt;/p&gt;&lt;p&gt;2.  若配置出错可点击重置按钮快速回退到修改前&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/csystemmain.ui" line="410"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_csystemmain.h" line="267"/>
         <source>系统警告</source>
         <translation type="unfinished"></translation>
     </message>
@@ -315,6 +323,18 @@
         <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="447"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="516"/>
         <source>重金属</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/dataview.ui" line="120"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="459"/>
+        <source>BOD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/dataview.ui" line="125"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="461"/>
+        <source>COD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -441,7 +461,9 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="csystemmain/dataview.ui" line="60"/>
         <location filename="csystemmain/dataview.ui" line="260"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="435"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="510"/>
         <source>气体浓度</source>
         <translation type="unfinished"></translation>
@@ -515,12 +537,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="60"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="435"/>
-        <source> 气体浓度 </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="csystemmain/dataview.ui" line="95"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="449"/>
         <source>  溶解性固体  </source>
@@ -535,30 +551,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/dataview.ui" line="120"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="459"/>
-        <source>  生物需氧量  </source>
-        <oldsource> 生物需氧量 </oldsource>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/dataview.ui" line="125"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="461"/>
-        <source>  化学需氧量  </source>
-        <oldsource> 化学需氧量 </oldsource>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="csystemmain/dataview.ui" line="130"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="463"/>
-        <source> 细菌总数 </source>
+        <source>细菌</source>
+        <oldsource> 细菌总数 </oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/dataview.ui" line="135"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_dataview.h" line="465"/>
-        <source>  大肠杆菌数  </source>
-        <oldsource> 大肠杆菌数 </oldsource>
+        <source>大肠杆菌</source>
+        <oldsource>  大肠杆菌数  </oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -723,19 +726,19 @@
     <name>Login</name>
     <message>
         <location filename="csystemmain/login.ui" line="14"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="435"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="443"/>
         <source>MainWindow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/login.ui" line="81"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="436"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="444"/>
         <source>     退出</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/login.ui" line="97"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="437"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="445"/>
         <source>developed by stvsl jl</source>
         <oldsource>made by stvsl jl</oldsource>
         <translation type="unfinished"></translation>
@@ -743,91 +746,95 @@
     <message>
         <location filename="csystemmain/login.ui" line="212"/>
         <location filename="csystemmain/login.ui" line="524"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="439"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="450"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="447"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="458"/>
         <source>请输入ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/login.ui" line="271"/>
         <location filename="csystemmain/login.ui" line="497"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="441"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="448"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="449"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="456"/>
         <source>请输入密码</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/login.ui" line="291"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="442"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="450"/>
         <source>   登录</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/login.ui" line="313"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="443"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="451"/>
         <source>登录</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/login.ui" line="393"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="444"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="452"/>
         <source>更多选择 &gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/login.ui" line="421"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="445"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="453"/>
         <source>自动登录</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/login.ui" line="442"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="446"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="454"/>
         <source>保存密码</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/login.ui" line="585"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="451"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="459"/>
         <source>   更多</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/login.ui" line="607"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="452"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="460"/>
         <source>忘记密码</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/login.ui" line="632"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="453"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="461"/>
         <source>解冻</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/login.ui" line="712"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="454"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="462"/>
         <source>&lt; 返回</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/login.ui" line="760"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="455"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="463"/>
         <source>冻结</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="csystemmain/login.ui" line="797"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="456"/>
-        <source>v 1.0.1 alpha</source>
-        <oldsource>v 0.0.1 develop</oldsource>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="464"/>
+        <source>v 1.3.2 alpha</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/login.ui" line="819"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="457"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt;&quot;&gt;水质数据监测平台&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;一个高端大气上档次&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;(尽管还没定下来)的名字&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
+        <location filename="csystemmain/login.ui" line="820"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="465"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;水质数据监测平台&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/login.ui" line="842"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_login.h" line="466"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/logo/logo/logo.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1018,7 +1025,8 @@
     <message>
         <location filename="csystemmain/mapview.ui" line="157"/>
         <location filename="build/CSystem-Qt6_autogen/include/ui_mapview.h" line="239"/>
-        <source>查找结点 :  </source>
+        <source>查找节点 :  </source>
+        <oldsource>查找结点 :  </oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1087,441 +1095,373 @@
     <name>NodeInstall</name>
     <message>
         <location filename="csystemmain/nodeinstall.ui" line="14"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1076"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="743"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="33"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1077"/>
-        <source>节点配置</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="52"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1079"/>
-        <source>PH</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="59"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1080"/>
-        <source>生物化学需氧量 </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="66"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1081"/>
-        <source>有机碳总量</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="82"/>
-        <location filename="csystemmain/nodeinstall.ui" line="138"/>
-        <location filename="csystemmain/nodeinstall.ui" line="194"/>
-        <location filename="csystemmain/nodeinstall.ui" line="257"/>
-        <location filename="csystemmain/nodeinstall.ui" line="313"/>
-        <location filename="csystemmain/nodeinstall.ui" line="389"/>
-        <location filename="csystemmain/nodeinstall.ui" line="445"/>
-        <location filename="csystemmain/nodeinstall.ui" line="528"/>
-        <location filename="csystemmain/nodeinstall.ui" line="584"/>
-        <location filename="csystemmain/nodeinstall.ui" line="640"/>
-        <location filename="csystemmain/nodeinstall.ui" line="812"/>
-        <location filename="csystemmain/nodeinstall.ui" line="934"/>
-        <location filename="csystemmain/nodeinstall.ui" line="997"/>
-        <location filename="csystemmain/nodeinstall.ui" line="1079"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1082"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1086"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1090"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1095"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1099"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1104"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1108"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1114"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1118"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1122"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1129"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1135"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1140"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1144"/>
-        <source>自动上报</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="95"/>
-        <location filename="csystemmain/nodeinstall.ui" line="151"/>
-        <location filename="csystemmain/nodeinstall.ui" line="207"/>
-        <location filename="csystemmain/nodeinstall.ui" line="270"/>
-        <location filename="csystemmain/nodeinstall.ui" line="326"/>
-        <location filename="csystemmain/nodeinstall.ui" line="402"/>
-        <location filename="csystemmain/nodeinstall.ui" line="458"/>
-        <location filename="csystemmain/nodeinstall.ui" line="541"/>
-        <location filename="csystemmain/nodeinstall.ui" line="597"/>
-        <location filename="csystemmain/nodeinstall.ui" line="653"/>
-        <location filename="csystemmain/nodeinstall.ui" line="825"/>
-        <location filename="csystemmain/nodeinstall.ui" line="947"/>
-        <location filename="csystemmain/nodeinstall.ui" line="1010"/>
-        <location filename="csystemmain/nodeinstall.ui" line="1092"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1083"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1087"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1091"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1096"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1100"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1105"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1109"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1115"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1119"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1123"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1130"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1136"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1141"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1145"/>
-        <source>手动录入</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="108"/>
-        <location filename="csystemmain/nodeinstall.ui" line="164"/>
-        <location filename="csystemmain/nodeinstall.ui" line="220"/>
-        <location filename="csystemmain/nodeinstall.ui" line="283"/>
-        <location filename="csystemmain/nodeinstall.ui" line="339"/>
-        <location filename="csystemmain/nodeinstall.ui" line="415"/>
-        <location filename="csystemmain/nodeinstall.ui" line="471"/>
-        <location filename="csystemmain/nodeinstall.ui" line="554"/>
-        <location filename="csystemmain/nodeinstall.ui" line="610"/>
-        <location filename="csystemmain/nodeinstall.ui" line="666"/>
-        <location filename="csystemmain/nodeinstall.ui" line="838"/>
-        <location filename="csystemmain/nodeinstall.ui" line="960"/>
-        <location filename="csystemmain/nodeinstall.ui" line="1023"/>
-        <location filename="csystemmain/nodeinstall.ui" line="1105"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1084"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1088"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1092"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1097"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1101"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1106"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1110"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1116"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1120"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1124"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1131"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1137"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1142"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1146"/>
-        <source>双支持</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="121"/>
-        <location filename="csystemmain/nodeinstall.ui" line="177"/>
-        <location filename="csystemmain/nodeinstall.ui" line="233"/>
-        <location filename="csystemmain/nodeinstall.ui" line="296"/>
-        <location filename="csystemmain/nodeinstall.ui" line="352"/>
-        <location filename="csystemmain/nodeinstall.ui" line="428"/>
-        <location filename="csystemmain/nodeinstall.ui" line="484"/>
-        <location filename="csystemmain/nodeinstall.ui" line="567"/>
-        <location filename="csystemmain/nodeinstall.ui" line="623"/>
-        <location filename="csystemmain/nodeinstall.ui" line="679"/>
-        <location filename="csystemmain/nodeinstall.ui" line="851"/>
-        <location filename="csystemmain/nodeinstall.ui" line="973"/>
-        <location filename="csystemmain/nodeinstall.ui" line="1036"/>
-        <location filename="csystemmain/nodeinstall.ui" line="1118"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1085"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1089"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1093"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1098"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1102"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1107"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1111"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1117"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1121"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1125"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1132"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1138"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1143"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1147"/>
-        <source>不记录</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="241"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1094"/>
-        <source>溶解性固体</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="360"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1103"/>
-        <source>特殊气体</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="505"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1112"/>
-        <source>大肠杆菌</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="512"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1113"/>
-        <source>重金属</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="726"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1126"/>
-        <source>总氮</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="761"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1127"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1658"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="829"/>
         <source>重置</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="781"/>
-        <location filename="csystemmain/nodeinstall.ui" line="1380"/>
-        <location filename="csystemmain/nodeinstall.ui" line="1429"/>
-        <location filename="csystemmain/nodeinstall.ui" line="1729"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1128"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1160"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1163"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1171"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1684"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="830"/>
+        <source>节点配置</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="849"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="788"/>
+        <source>PH</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="719"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="780"/>
+        <source>生物化学需氧量 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="91"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="746"/>
+        <source>添加</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="104"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="747"/>
+        <source>删除</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="273"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="753"/>
+        <source>上传配置</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="411"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="761"/>
+        <source>有机碳总量</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="322"/>
+        <location filename="csystemmain/nodeinstall.ui" line="371"/>
+        <location filename="csystemmain/nodeinstall.ui" line="436"/>
+        <location filename="csystemmain/nodeinstall.ui" line="485"/>
+        <location filename="csystemmain/nodeinstall.ui" line="550"/>
+        <location filename="csystemmain/nodeinstall.ui" line="679"/>
+        <location filename="csystemmain/nodeinstall.ui" line="744"/>
+        <location filename="csystemmain/nodeinstall.ui" line="809"/>
+        <location filename="csystemmain/nodeinstall.ui" line="874"/>
+        <location filename="csystemmain/nodeinstall.ui" line="939"/>
+        <location filename="csystemmain/nodeinstall.ui" line="988"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1037"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1086"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1167"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="755"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="758"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="762"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="765"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="769"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="777"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="781"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="785"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="789"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="793"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="796"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="799"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="802"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="807"/>
+        <source>自动上报</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="335"/>
+        <location filename="csystemmain/nodeinstall.ui" line="384"/>
+        <location filename="csystemmain/nodeinstall.ui" line="449"/>
+        <location filename="csystemmain/nodeinstall.ui" line="498"/>
+        <location filename="csystemmain/nodeinstall.ui" line="563"/>
+        <location filename="csystemmain/nodeinstall.ui" line="692"/>
+        <location filename="csystemmain/nodeinstall.ui" line="757"/>
+        <location filename="csystemmain/nodeinstall.ui" line="822"/>
+        <location filename="csystemmain/nodeinstall.ui" line="887"/>
+        <location filename="csystemmain/nodeinstall.ui" line="952"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1001"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1050"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1099"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1180"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="756"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="759"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="763"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="766"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="770"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="778"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="782"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="786"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="790"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="794"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="797"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="800"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="803"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="808"/>
+        <source>手动录入</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="348"/>
+        <location filename="csystemmain/nodeinstall.ui" line="397"/>
+        <location filename="csystemmain/nodeinstall.ui" line="462"/>
+        <location filename="csystemmain/nodeinstall.ui" line="511"/>
+        <location filename="csystemmain/nodeinstall.ui" line="576"/>
+        <location filename="csystemmain/nodeinstall.ui" line="705"/>
+        <location filename="csystemmain/nodeinstall.ui" line="770"/>
+        <location filename="csystemmain/nodeinstall.ui" line="835"/>
+        <location filename="csystemmain/nodeinstall.ui" line="900"/>
+        <location filename="csystemmain/nodeinstall.ui" line="965"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1014"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1063"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1112"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1193"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="757"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="760"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="764"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="767"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="771"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="779"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="783"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="787"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="791"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="795"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="798"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="801"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="804"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="809"/>
+        <source>双支持</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="914"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="792"/>
+        <source>溶解性固体</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="606"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="773"/>
+        <source>特殊气体</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="784"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="784"/>
+        <source>大肠杆菌</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="622"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="774"/>
+        <source>重金属</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="638"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="775"/>
+        <source>总氮</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="1639"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="828"/>
         <source>确定</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="898"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1133"/>
+        <location filename="csystemmain/nodeinstall.ui" line="590"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="772"/>
         <source>细菌总数</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="918"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1134"/>
+        <location filename="csystemmain/nodeinstall.ui" line="525"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="768"/>
         <source>电导率</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="981"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1139"/>
+        <location filename="csystemmain/nodeinstall.ui" line="297"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="754"/>
         <source>悬浮性固体</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1139"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1148"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1126"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="805"/>
         <source>浑浊度</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1146"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1149"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1142"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="806"/>
         <source>温度</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1166"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1150"/>
+        <location filename="csystemmain/nodeinstall.ui" line="654"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="776"/>
         <source>溶解氧</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1215"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1151"/>
+        <location filename="csystemmain/nodeinstall.ui" line="29"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="744"/>
         <source>节点列表</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1241"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1152"/>
+        <location filename="csystemmain/nodeinstall.ui" line="154"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="748"/>
         <source>位置信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1255"/>
+        <location filename="csystemmain/nodeinstall.ui" line="173"/>
         <source>about:blank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1265"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1153"/>
-        <source>节点所在位置：</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1275"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1154"/>
-        <source>修改</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1282"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1155"/>
-        <source>使用本机IP定位</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1289"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1156"/>
-        <source>使用结点IP定位</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1315"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1157"/>
-        <source>当前配置的节点ID</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1343"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1158"/>
-        <source>ID00000000</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1363"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1159"/>
-        <source>指定节点</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1400"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1161"/>
-        <source>添加结点</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1407"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1162"/>
-        <source>删除结点</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1469"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1164"/>
-        <source>节点备注</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1476"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1165"/>
-        <source>还原</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1571"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1166"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1418"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="818"/>
         <source>所属信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1653"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1167"/>
-        <source>节点信息设置</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1660"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1168"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1451"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="820"/>
         <source>维护人</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1667"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1169"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1408"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="817"/>
         <source>负责人</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1680"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1170"/>
-        <source>清除</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1736"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1172"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1389"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="816"/>
         <source>安装人</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1768"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1173"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1300"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="814"/>
         <source>自检周期</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1785"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1174"/>
-        <source>节点自检</source>
+        <location filename="csystemmain/nodeinstall.ui" line="75"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="745"/>
+        <source>查找</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1792"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1175"/>
+        <location filename="csystemmain/nodeinstall.ui" line="202"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="749"/>
+        <source>节点位置：</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="230"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="750"/>
+        <source>手动修改</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="243"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="751"/>
+        <source>锚点修改</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="256"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="752"/>
+        <source>定位</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="1256"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="811"/>
         <source>发送自检请求</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1838"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1176"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1273"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="812"/>
         <source>启用自检接入</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1858"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1177"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1287"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="813"/>
+        <source>自检信息</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="1332"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="815"/>
         <source>天</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1894"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1178"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1435"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="819"/>
         <source>节点信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1951"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1179"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1500"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="821"/>
+        <source>备注信息</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="csystemmain/nodeinstall.ui" line="1573"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="825"/>
         <source>柠檬酸工业结点</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1958"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1180"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1559"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="823"/>
         <source>锡、锑、汞工业结点</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1965"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1181"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1566"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="824"/>
         <source>制革及毛皮加工工业结点</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1972"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1182"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1580"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="826"/>
         <source>缫丝工业结点</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1979"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1183"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1552"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="822"/>
         <source>普通结点</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="csystemmain/nodeinstall.ui" line="1993"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1184"/>
+        <location filename="csystemmain/nodeinstall.ui" line="1590"/>
+        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="827"/>
         <source>节点类型</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="csystemmain/nodeinstall.ui" line="2052"/>
-        <location filename="build/CSystem-Qt6_autogen/include/ui_nodeinstall.h" line="1185"/>
-        <source>数据来源设置</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

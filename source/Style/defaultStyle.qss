@@ -7,7 +7,12 @@ QWidget {
     selection-color: palette(highlighted-text);
 }
 
-* [frameShape="1"], * [frameShape="2"], * [frameShape="3"], * [frameShape="4"], * [frameShape="5"], * [frameShape="6"] {
+* [frameShape="1"],
+* [frameShape="2"],
+* [frameShape="3"],
+* [frameShape="4"],
+* [frameShape="5"],
+* [frameShape="6"] {
     border: 1px solid palette(base);
 }
 
@@ -18,13 +23,14 @@ QWidget::disabled {
     color: 2px solid palette(bright-text);
 }
 
-QAbstractItemView, QStackedWidget#stackedMixerArea QWidget {
+QAbstractItemView,
+QStackedWidget#stackedMixerArea QWidget {
     background-color: palette(base);
 }
 
 QToolTip {
     background-color: palette(base);
-    color: rgb(205,205,205);
+    color: rgb(205, 205, 205);
     border: none;
 }
 
@@ -57,21 +63,25 @@ QScrollBar:vertical {
 }
 
 QScrollBar::handle:vertical {
-    background-color: rgb(76,76,76);
+    background-color: rgb(76, 76, 76);
     min-height: 20px;
     margin: 2px;
     border-radius: 5px;
     border-width: 1px;
-    border: 1px solid rgb(76,76,76);
+    border: 1px solid rgb(76, 76, 76);
 }
 
-QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
     border: none;
     background: none;
     height: 0px;
 }
 
-QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical, QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+QScrollBar::up-arrow:vertical,
+QScrollBar::down-arrow:vertical,
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
     border: none;
     background: none;
     color: none;
@@ -84,21 +94,25 @@ QScrollBar:horizontal {
 }
 
 QScrollBar::handle:horizontal {
-    background-color: rgb(76,76,76);
+    background-color: rgb(76, 76, 76);
     min-width: 20px;
     margin: 2px;
     border-radius: 5px;
     border-width: 1px;
-    border: 1px solid rgb(76,76,76);
+    border: 1px solid rgb(76, 76, 76);
 }
 
-QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
     border: none;
     background: none;
     width: 0px;
 }
 
-QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal, QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+QScrollBar::left-arrow:horizontal,
+QScrollBar::right-arrow:horizontal,
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
     border: none;
     background: none;
     color: none;
@@ -106,7 +120,9 @@ QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal, QScrollBa
 
 /* Textedits etc */
 
-QLineEdit, QTextEdit, QPlainTextEdit {
+QLineEdit,
+QTextEdit,
+QPlainTextEdit {
     background-color: palette(base);
     border: none;
     border-radius: 3px;
@@ -139,23 +155,24 @@ QPushButton:disabled {
 /* Sliders */
 
 QSlider::groove:horizontal {
-    background-color: rgb(76,76,76);
+    background-color: rgb(76, 76, 76);
     height: 4px;
     border: none;
     border-radius: 2px;
 }
 
 QSlider::handle:horizontal {
-    background-color: rgb(210,210,210);
+    background-color: rgb(210, 210, 210);
     border: 1px solid palette(window);
     border-radius: 3px;
     height: 10px;
     width: 18px;
-    margin: -3px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+    margin: -3px 0;
+    /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
 }
 
 QSlider::handle:horizontal:pressed {
-    background-color: rgb(210,210,210);
+    background-color: rgb(210, 210, 210);
 }
 
 QSlider::sub-page:horizontal {
@@ -164,28 +181,30 @@ QSlider::sub-page:horizontal {
 }
 
 QSlider::sub-page:horizontal:disabled {
-    background-color: rgb(50,49,50); /* dark */
+    background-color: rgb(50, 49, 50);
+    /* dark */
     border-radius: 2px;
 }
 
 QSlider::groove:vertical {
-    background-color: rgb(76,76,76);
+    background-color: rgb(76, 76, 76);
     width: 4px;
     border: none;
     border-radius: 2px;
 }
 
 QSlider::handle:vertical {
-    background-color: rgb(210,210,210);
+    background-color: rgb(210, 210, 210);
     border: 1px solid palette(window);
     border-radius: 3px;
     width: 10px;
     height: 18px;
-    margin: 0 -3px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+    margin: 0 -3px;
+    /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
 }
 
 QSlider::handle:vertical:pressed {
-    background-color: rgb(210,210,210);
+    background-color: rgb(210, 210, 210);
 }
 
 QSlider::add-page:vertical {
@@ -194,7 +213,8 @@ QSlider::add-page:vertical {
 }
 
 QSlider::add-page:vertical:disabled {
-    background-color: rgb(50,49,50); /* dark */
+    background-color: rgb(50, 49, 50);
+    /* dark */
     border-radius: 2px;
 }
 
@@ -203,7 +223,8 @@ QSlider::handle:hover {
 }
 
 QSlider::handle:disabled {
-    background-color: rgb(122,121,122); /* light */
+    background-color: rgb(122, 121, 122);
+    /* light */
 }
 
 QStatusBar::item {
@@ -213,7 +234,7 @@ QStatusBar::item {
 QGroupBox {
     border-radius: 5px;
     border: 0px;
-    margin-top:0ex;
+    margin-top: 0ex;
 }
 
 QGroupBox::title {
@@ -230,7 +251,7 @@ QGroupBox::item {
 }
 
 /* 主界面侧边菜单栏 */
-#side_menu{
+#side_menu {
     border: none;
     background-color: palette(base);
 }
@@ -253,28 +274,70 @@ QGroupBox::item {
     border-left: 5px solid #8aa0eb;
 }
 
-#Global_Info{
+#Global_Info {
     color: #555555;
     font-size: 12px;
 }
 
-Q#Global_Info::item {
+#Global_Info::item {
     height: 16px;
     border: none;
     padding: 5px;
 }
 
-#Global_Info::item:hover{
+#Global_Info::item:hover {
     background-color: #FFFFFF;
     height: 16px;
 }
 
-#Global_Info::item:selected{
+#Global_Info::item:selected {
     background-color: #FFFFFF;
     height: 18px;
 }
 
-QListView::item#NodeList{
+#warningInfo {
+    color: #555555;
+    font-size: 12px;
+}
+
+#warningInfo::item {
+    height: 16px;
+    border: none;
+    padding: 5px;
+}
+
+#warningInfo::item:hover {
+    background-color: #FFFFFF;
+    height: 16px;
+}
+
+#warningInfo::item:selected {
+    background-color: #FFFFFF;
+    height: 18px;
+}
+
+#errInfo {
+    color: #555555;
+    font-size: 12px;
+}
+
+#errInfo::item {
+    height: 16px;
+    border: none;
+    padding: 5px;
+}
+
+#errInfo::item:hover {
+    background-color: #FFFFFF;
+    height: 16px;
+}
+
+#errInfo::item:selected {
+    background-color: #FFFFFF;
+    height: 18px;
+}
+
+QListView::item#NodeList {
     height: 20px;
     border: none;
     padding: 5px;
@@ -288,33 +351,30 @@ QListView::item:selected#NodeList {
 }
 
 /* 滚动条样式 */
-QScrollBar:vertical
-{
+QScrollBar:vertical {
     border: none;
     background: #ffffff;
     width: 5px;
 }
 
 /* 水平滚动条 */
-QScrollBar:horizontal
-{
+QScrollBar:horizontal {
     border: none;
     background: #ffffff;
     height: 10px;
 }
 
-QScrollBar::handle:horizontal
-{
+QScrollBar::handle:horizontal {
     border: none;
     background: #7da4ff;
     border-radius: 10px;
 }
 
-QTableWidget{
+QTableWidget {
     font-size: 12px;
 }
 
-QHeaderView{
+QHeaderView {
     font-size: 13px;
 }
 
@@ -328,21 +388,21 @@ QHeaderView::section {
     color: #000000;
 }
 
-QTableWidget::section{
+QTableWidget::section {
     background-color: #ffffff;
     border: none;
 }
 
-QTableWidget::item{
+QTableWidget::item {
     border: none;
 }
 
-QTableWidget::item:selected{
+QTableWidget::item:selected {
     background-color: #FFFFFF;
     color: #000000;
 }
 
-QTableWidget::item:hover{
+QTableWidget::item:hover {
     background-color: #7da4ff;
     color: #000000;
     border-radius: 5px;
@@ -350,117 +410,127 @@ QTableWidget::item:hover{
 
 
 #nodeinfogroup1 {
-    background-color:#ffffff;
+    background-color: #ffffff;
     border-radius: 8px;
     border: 0px;
-    margin-top:0ex;
+    margin-top: 0ex;
     border-right: 1px solid #aaaaaa;
     border-bottom: 1px solid #aaaaaa;
 }
+
 #nodeinfogroup2 {
-    background-color:#ffffff;
+    background-color: #ffffff;
     border-radius: 8px;
     border: 0px;
     border-right: 1px solid #7da4ff;
     border-bottom: 1px solid #7da4ff;
-    margin-top:0ex;
+    margin-top: 0ex;
 }
+
 #nodeinfogroup3 {
-    background-color:#ffffff;
+    background-color: #ffffff;
     border-radius: 8px;
     border: 0px;
     border-right: 1px solid #7da4ff;
     border-bottom: 1px solid #7da4ff;
-    margin-top:0ex;
+    margin-top: 0ex;
 }
+
 #nodeinfogroup4 {
-    background-color:#ffffff;
+    background-color: #ffffff;
     border-radius: 8px;
     border: 0px;
     border-right: 1px solid #7da4ff;
     border-bottom: 1px solid #7da4ff;
-    margin-top:0ex;
+    margin-top: 0ex;
 }
+
 #nodeinfogroup5 {
-    background-color:#ffffff;
+    background-color: #ffffff;
     border-radius: 8px;
     border: 0px;
     border-right: 1px solid #7da4ff;
     border-bottom: 1px solid #7da4ff;
-    margin-top:0ex;
+    margin-top: 0ex;
 }
+
 #nodeinfogroup6 {
-    background-color:#ffffff;
+    background-color: #ffffff;
     border-radius: 8px;
     border: 0px;
     /* 右边和底部2px */
     border-right: 1px solid #8aa0eb;
     border-bottom: 1px solid #8aa0eb;
-    margin-top:0ex;
+    margin-top: 0ex;
 }
+
 #nodeinfogroup7 {
-    background-color:#ffffff;
+    background-color: #ffffff;
     border-radius: 8px;
     border: 0px;
     /* 右边和底部2px */
     border-right: 2px solid #7da4ff;
     border-bottom: 2px solid #7da4ff;
-    margin-top:0ex;
+    margin-top: 0ex;
 }
+
 #nodeinfogroup8 {
-    background-color:#ffffff;
+    background-color: #ffffff;
     border-radius: 8px;
     border: 0px;
     /* 右边和底部2px */
     border-right: 1px solid #8aa0eb;
     border-bottom: 1px solid #8aa0eb;
-    margin-top:0ex;
+    margin-top: 0ex;
 }
 
-#resplist::item{
+#resplist::item {
     height: 26px;
     border: none;
 }
 
-#resplist::item:selected{
+#resplist::item:selected {
     background-color: #ffffff;
 }
 
-#resplist::item:hover{
+#resplist::item:hover {
     background-color: #7da4ff;
 }
 
-#locateinfo::item{
+#locateinfo::item {
     height: 30px;
     border: none;
 }
 
-#locateinfo::item:selected{
+#locateinfo::item:selected {
     background-color: #ffffff;
 }
-#locateinfo::item:hover{
+
+#locateinfo::item:hover {
     background-color: #7da4ff;
 }
 
-#selflist::item{
+#selflist::item {
     height: 26px;
     border: none;
 }
 
-#selflist::item:selected{
+#selflist::item:selected {
     background-color: #ffffff;
 }
-#selflist::item:hover{
+
+#selflist::item:hover {
     background-color: #7da4ff;
 }
 
-QTabWidget{
+QTabWidget {
     border-radius: 8px;
     background-color: #ffffff;
     border: 1px solid #ffffff;
 }
 
-QTabWidget::pane{ /* The tab widget frame */
+QTabWidget::pane {
+    /* The tab widget frame */
     position: absolute;
     top: 11px;
     background: #ffffff33;
@@ -471,5 +541,10 @@ QTabWidget::tab-bar {
     height: 26px;
     alignment: left;
     border-radius: 8px;
+    border: 1px solid #7da4ff;
+}
+
+Line {
+    background-color: #7da4ff;
     border: 1px solid #7da4ff;
 }

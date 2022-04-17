@@ -29,6 +29,7 @@ public:
     static QVector<NodeData> *nodeDataList;          // 节点详细数据缓存指针
     static QVector<InfluxData> *nodeinfluxData_temp; // 节点时序数据缓存指针
     static QVector<ProData> *nodePro_temp;           // 节点机构监测数据缓存指针
+    static Standard *standard;                       // 标准数据缓存指针
 
     ~CSystemMain();
 
@@ -117,6 +118,11 @@ private:
     /// \brief 界面呈现状态控制器
     ///
     int widgetstatus = 0;
+
+    ///
+    /// \brief 数据检查
+    ///
+    void dataCheck();
 };
 
 #endif // CSYSTEMMAIN_H

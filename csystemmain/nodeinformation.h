@@ -11,6 +11,7 @@ namespace Ui
     class nodeinformation;
     QT_CHARTS_USE_NAMESPACE
 }
+
 QT_CHARTS_BEGIN_NAMESPACE
 class QChartView;
 class QChart;
@@ -36,7 +37,7 @@ signals:
 
     void setMapType();
 
-    void addPoint(QString info, float x, float y);
+    void addPoint(QString info, float x, float y, QString data);
 
     void requestPointLocate(QString str);
 
@@ -44,6 +45,12 @@ private slots:
     void on_NodeList_clicked(const QModelIndex &index);
 
     void on_modSwitch_btn_clicked();
+
+    void on_pathSelect_btn_clicked();
+
+    void on_output_btn_clicked();
+
+    void on_chear_btn_clicked();
 
 private:
     Ui::nodeinformation *ui;

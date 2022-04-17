@@ -31,6 +31,7 @@ QVector<NodeInfo> *CSystemMain::nodeInfoList;
 QVector<NodeData> *CSystemMain::nodeDataList;
 QVector<InfluxData> *CSystemMain::nodeinfluxData_temp;
 QVector<ProData> *CSystemMain::nodePro_temp;
+Standard *CSystemMain::standard;
 
 QStringList global_list;
 QStringList warn_list;
@@ -312,10 +313,19 @@ void CSystemMain::showEvent()
         global_list.append("数据计算完毕");
         model->setStringList(global_list);
         ui->Global_Info->setModel(model);
-        ui->side_menu->setCurrentIndex(QModelIndex(ui->side_menu->model()->index(0, 0)));
+        ui->warningInfo->setModel(new QStringListModel(QStringList() << "暂无警告数据"));
+        ui->errInfo->setModel(new QStringListModel(QStringList() << "暂无异常数据"));
+        QTimer::singleShot(1000, this, [=]()
+                           { ui->side_menu->setCurrentIndex(QModelIndex(ui->side_menu->model()->index(0, 0))); });
     }
     else
     {
         CSystemMain::WINDOW_MAP_VIEW->init();
     }
+}
+
+void CSystemMain::dataCheck()
+{
+    // 委托新线程检查数据
+    QThread *thread = new QThread;
 }

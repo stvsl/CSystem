@@ -53,7 +53,7 @@ signals:
     ///
     /// \brief 添加结点
     ///
-    void addPoint(QString info, float x, float y);
+    void addPoint(QString info, float x, float y, QString data);
 
     ///
     /// \brief 请求获取地址信息

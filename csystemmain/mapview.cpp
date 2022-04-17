@@ -1,17 +1,16 @@
 #include "mapview.h"
 #include "ui_mapview.h"
 #include "configManager/configmanager.h"
-#include <QWebEngineSettings>
 #include <configManager/mapconfig.h>
 #include <QTimer>
 #include <QDebug>
-#include <QEventLoop>
 #include "csystemmain/csystemmain.h"
 #include "cacheManager/CacheManager.h"
 #include <QStringList>
 #include <QStringListModel>
 #include <QTableWidgetItem>
 #include <QGraphicsDropShadowEffect>
+#include <QJsonArray>
 
 QGraphicsDropShadowEffect *mapviewshadow;
 
@@ -26,7 +25,7 @@ MapView::MapView(QWidget *parent) : QWidget(parent),
     ui->nodeinfoview->setHorizontalHeaderLabels(QStringList() << "监测项目"
                                                               << "检测值");
     ui->webView->setUrl(QUrl("http://127.0.0.1:10241/pages/default/map"));
-    channel = new QWebChannel(this);                                                  //通讯对象
+    channel = new QWebChannel(ui->webView->page());                                   //通讯对象
     channel->registerObject("trans", this);                                           //通信介质注册
     ui->webView->page()->setWebChannel(channel);                                      //通讯附加
     ui->nodeinfoview->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch); //自适应宽度
@@ -47,15 +46,13 @@ MapView::MapView(QWidget *parent) : QWidget(parent),
 MapView::~MapView()
 {
     delete channel;
-    delete mapviewshadow;
     delete ui;
+    mapviewshadow->deleteLater();
 }
 
 void MapView::init()
 {
     QStringList list;
-    // 遍历CSystemMain::nodeInfoList
-    // 将节点信息添加到地图上
     for (int i = 0; i < CSystemMain::nodeInfoList->size(); i++)
     {
         list.append("   " + CSystemMain::nodeInfoList->at(i).id);
@@ -155,8 +152,12 @@ void MapView::on_NodeList_clicked(const QModelIndex &index)
                            "</table> <div id=\"chartview\" style=\"width: 570px;height:180px\"></div>";
             float x = CSystemMain::nodeInfoList->at(i).lo;
             float y = CSystemMain::nodeInfoList->at(i).li;
-            QTimer::singleShot(1200, [=]()
-                               { addPoint(info, x, y); });
+            QTimer::singleShot(120, [=]()
+                               { 
+                                // 转换为json字符串
+                                QString json = QString::number(CSystemMain::nodeInfoList->at(i).gasConcentration, 'f', 2) + "," + QString::number(CSystemMain::nodeInfoList->at(i).temperature, 'f', 2) + "," + QString::number(CSystemMain::nodeInfoList->at(i).pH, 'f', 2) + "," + QString::number(CSystemMain::nodeInfoList->at(i).conductivity, 'f', 2) +","+ QString::number(CSystemMain::nodeInfoList->at(i).oxygenConcentration, 'f', 2)+ ","+QString::number(CSystemMain::nodeInfoList->at(i).metalConcentration, 'f', 2)+","+QString::number(CSystemMain::nodeInfoList->at(i).BOD, 'f', 2)+ "," +QString::number(CSystemMain::nodeInfoList->at(i).metalConcentration, 'f', 2) + ","+QString::number(CSystemMain::nodeInfoList->at(i).SC + CSystemMain::nodeInfoList->at(i).FSC, 'f', 2)+","+QString::number((float)CSystemMain::nodeInfoList->at(i).BC, 'f', 2) +","+QString::number(CSystemMain::nodeInfoList->at(i).COD, 'f', 2);
+                                qDebug()<<json;
+                                addPoint(info, x, y, json); });
             // 设置地图中心
             emit setCenter(x, y);
             // 填充表格

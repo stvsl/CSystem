@@ -31,6 +31,7 @@ endif()
 set(TS_FILES CSystem-Qt6_zh_CN.ts)
 
 set(PROJECT_SOURCES
+       dataChecker/datachecker.cpp
        configManager/configmanager.cpp
        configManager/encryptionconfig.cpp
        csystemmain/accountmanagement.cpp
@@ -52,6 +53,7 @@ set(PROJECT_SOURCES
        netWorkUtils/security.cpp
        netWorkUtils/nodeinterface.cpp
        DButils/dbutils.cpp
+       dataChecker/datachecker.h
        configManager/configmanager.h
        configManager/mapconfig.h
        configManager/encryptionconfig.h

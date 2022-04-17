@@ -210,7 +210,7 @@ public:
 
 class Standard
 {
-
+public:
     QString ID;           // 标准ID json:"id"
     QString Description;  // 标准描述 json:"description"
     QString Name;         // 标准名称 json:"name"

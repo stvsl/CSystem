@@ -30,6 +30,7 @@ MapSetting::MapSetting(QWidget *parent) : QWidget(parent),
 MapSetting::~MapSetting()
 {
     delete effect1;
+    delete channelsetting;
     delete ui;
 }
 
@@ -170,10 +171,12 @@ void MapSetting::on_show_Poi_Icon_stateChanged(int arg1)
     if (arg1 == 2)
     {
         MAP_CONFIG::MAP_POIICON_ON = true;
+        ui->webView->page()->runJavaScript("setPoiIcon(1)");
     }
     else
     {
         MAP_CONFIG::MAP_POIICON_ON = false;
+        ui->webView->page()->runJavaScript("setPoiIcon(0)");
     }
 }
 
@@ -182,10 +185,12 @@ void MapSetting::on_show_Poi_Text_stateChanged(int arg1)
     if (arg1 == 2)
     {
         MAP_CONFIG::MAP_POITEXT_ON = true;
+        ui->webView->page()->runJavaScript("setPoiText(1)");
     }
     else
     {
         MAP_CONFIG::MAP_POITEXT_ON = false;
+        ui->webView->page()->runJavaScript("setPoiText(0)");
     }
 }
 
@@ -278,10 +283,16 @@ void MapSetting::on_model_Earth_stateChanged(int arg1)
     if (arg1 == 2)
     {
         MAP_CONFIG::MAP_EARTHMODEL = true;
+        // js函数
+        QString js = "setMapType(1);";
+        ui->webView->page()->runJavaScript(js);
     }
     else
     {
         MAP_CONFIG::MAP_EARTHMODEL = false;
+        // js函数
+        QString js = "setMapType(0);";
+        ui->webView->page()->runJavaScript(js);
     }
 }
 
