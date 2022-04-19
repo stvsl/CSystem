@@ -18,7 +18,7 @@ DataView::DataView(QWidget *parent) : QWidget(parent),
     shadow_effect->setColor(QColor(125, 164, 255, 100));
     shadow_effect->setBlurRadius(10);
     ui->tabWidget->setGraphicsEffect(shadow_effect);
-    if (CSystemMain::nodeinfluxData_temp == nullptr)
+    if (CSystemMain::nodeinfluxData_temp == nullptr || CSystemMain::nodePro_temp == nullptr)
     {
         NodeInterface nif;
         // 获取时间戳

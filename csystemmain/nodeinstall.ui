@@ -16,7 +16,7 @@
   <widget class="QGroupBox" name="nodeinfogroup">
    <property name="geometry">
     <rect>
-     <x>27</x>
+     <x>26</x>
      <y>45</y>
      <width>281</width>
      <height>841</height>
@@ -34,7 +34,7 @@
       <x>0</x>
       <y>30</y>
       <width>275</width>
-      <height>701</height>
+      <height>711</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -46,14 +46,17 @@
     <property name="styleSheet">
      <string notr="true">border-color: rgb(255, 255, 255);</string>
     </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
+    </property>
    </widget>
    <widget class="QWidget" name="operatewidget" native="true">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>736</y>
-      <width>280</width>
-      <height>101</height>
+      <y>756</y>
+      <width>271</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -84,7 +87,7 @@
        <property name="minimumSize">
         <size>
          <width>100</width>
-         <height>35</height>
+         <height>0</height>
         </size>
        </property>
        <property name="text">
@@ -97,7 +100,7 @@
        <property name="minimumSize">
         <size>
          <width>100</width>
-         <height>35</height>
+         <height>0</height>
         </size>
        </property>
        <property name="text">
@@ -253,7 +256,10 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
         </size>
        </property>
        <property name="text">
-        <string>定位</string>
+        <string>使用定位</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -284,916 +290,856 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
     <property name="styleSheet">
      <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
     </property>
-    <widget class="QLabel" name="label_17">
-     <property name="geometry">
-      <rect>
-       <x>4</x>
-       <y>327</y>
-       <width>75</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>悬浮性固体</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
-    </widget>
-    <widget class="QWidget" name="L6" native="true">
-     <property name="geometry">
-      <rect>
-       <x>115</x>
-       <y>206</y>
-       <width>252</width>
-       <height>38</height>
-      </rect>
-     </property>
-     <widget class="QRadioButton" name="oxy_Auto">
-      <property name="geometry">
-       <rect>
-        <x>4</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>自动上报</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="oxy_Do">
-      <property name="geometry">
-       <rect>
-        <x>92</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>手动录入</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="oxy_All">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>4</y>
-        <width>71</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>双支持</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="L7" native="true">
-     <property name="geometry">
-      <rect>
-       <x>115</x>
-       <y>246</y>
-       <width>252</width>
-       <height>38</height>
-      </rect>
-     </property>
-     <widget class="QRadioButton" name="met_Auto">
-      <property name="geometry">
-       <rect>
-        <x>4</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>自动上报</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="met_Do">
-      <property name="geometry">
-       <rect>
-        <x>92</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>手动录入</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="met_All">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>4</y>
-        <width>71</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>双支持</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QLabel" name="label_18">
-     <property name="geometry">
-      <rect>
-       <x>4</x>
-       <y>408</y>
-       <width>75</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>有机碳总量</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
-    </widget>
-    <widget class="QWidget" name="L8" native="true">
-     <property name="geometry">
-      <rect>
-       <x>115</x>
-       <y>286</y>
-       <width>252</width>
-       <height>39</height>
-      </rect>
-     </property>
-     <widget class="QRadioButton" name="dso_Auto">
-      <property name="geometry">
-       <rect>
-        <x>4</x>
-        <y>4</y>
-        <width>86</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>自动上报</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="dso_Do">
-      <property name="geometry">
-       <rect>
-        <x>92</x>
-        <y>4</y>
-        <width>86</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>手动录入</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="dso_All">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>4</y>
-        <width>71</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>双支持</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="L14" native="true">
-     <property name="geometry">
-      <rect>
-       <x>115</x>
-       <y>529</y>
-       <width>252</width>
-       <height>38</height>
-      </rect>
-     </property>
-     <widget class="QRadioButton" name="ec_Auto">
-      <property name="geometry">
-       <rect>
-        <x>4</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>自动上报</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="ec_Do">
-      <property name="geometry">
-       <rect>
-        <x>92</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>手动录入</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="ec_All">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>4</y>
-        <width>71</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>双支持</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QLabel" name="label_9">
-     <property name="geometry">
-      <rect>
-       <x>4</x>
-       <y>165</y>
-       <width>45</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>电导率</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
-    </widget>
-    <widget class="QWidget" name="L10" native="true">
-     <property name="geometry">
-      <rect>
-       <x>115</x>
-       <y>367</y>
-       <width>252</width>
-       <height>39</height>
-      </rect>
-     </property>
-     <widget class="QRadioButton" name="tn_Auto">
-      <property name="geometry">
-       <rect>
-        <x>4</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>自动上报</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="tn_Do">
-      <property name="geometry">
-       <rect>
-        <x>92</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>手动录入</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="tn_All">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>4</y>
-        <width>71</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>双支持</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QLabel" name="label_19">
-     <property name="geometry">
-      <rect>
-       <x>4</x>
-       <y>488</y>
-       <width>60</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>细菌总数</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_7">
-     <property name="geometry">
-      <rect>
-       <x>4</x>
-       <y>4</y>
-       <width>60</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>特殊气体</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_13">
-     <property name="geometry">
-      <rect>
-       <x>4</x>
-       <y>246</y>
-       <width>45</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>重金属</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_16">
-     <property name="geometry">
-      <rect>
-       <x>4</x>
-       <y>367</y>
-       <width>30</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>总氮</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_11">
-     <property name="geometry">
-      <rect>
-       <x>4</x>
-       <y>206</y>
-       <width>45</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>溶解氧</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
-    </widget>
-    <widget class="QWidget" name="L5" native="true">
-     <property name="geometry">
-      <rect>
-       <x>115</x>
-       <y>165</y>
-       <width>252</width>
-       <height>39</height>
-      </rect>
-     </property>
-     <widget class="QRadioButton" name="con_Auto">
-      <property name="geometry">
-       <rect>
-        <x>4</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>自动上报</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="con_Do">
-      <property name="geometry">
-       <rect>
-        <x>92</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>手动录入</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="con_All">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>4</y>
-        <width>71</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>双支持</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QLabel" name="label_14">
-     <property name="geometry">
-      <rect>
-       <x>4</x>
-       <y>448</y>
-       <width>109</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>生物化学需氧量 </string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
-    </widget>
-    <widget class="QWidget" name="L1" native="true">
-     <property name="geometry">
-      <rect>
-       <x>115</x>
-       <y>4</y>
-       <width>252</width>
-       <height>38</height>
-      </rect>
-     </property>
-     <widget class="QRadioButton" name="GasAuto">
-      <property name="geometry">
-       <rect>
-        <x>4</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>自动上报</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="Gas_Do">
-      <property name="geometry">
-       <rect>
-        <x>92</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>手动录入</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="Gas_All">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>4</y>
-        <width>71</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>双支持</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QLabel" name="label_20">
-     <property name="geometry">
-      <rect>
-       <x>4</x>
-       <y>529</y>
-       <width>60</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>大肠杆菌</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
-    </widget>
-    <widget class="QWidget" name="L13" native="true">
-     <property name="geometry">
-      <rect>
-       <x>115</x>
-       <y>488</y>
-       <width>252</width>
-       <height>39</height>
-      </rect>
-     </property>
-     <widget class="QRadioButton" name="tnb_Auto">
-      <property name="geometry">
-       <rect>
-        <x>4</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>自动上报</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="tnb_Do">
-      <property name="geometry">
-       <rect>
-        <x>92</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>手动录入</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="tnb_All">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>4</y>
-        <width>71</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>双支持</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QLabel" name="label_10">
-     <property name="geometry">
-      <rect>
-       <x>4</x>
-       <y>125</y>
-       <width>20</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>PH</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
-    </widget>
-    <widget class="QWidget" name="L3" native="true">
-     <property name="geometry">
-      <rect>
-       <x>115</x>
-       <y>85</y>
-       <width>252</width>
-       <height>38</height>
-      </rect>
-     </property>
-     <widget class="QRadioButton" name="den_Auto">
-      <property name="geometry">
-       <rect>
-        <x>4</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>自动上报</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="den_Do">
-      <property name="geometry">
-       <rect>
-        <x>92</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>手动录入</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="den_All">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>4</y>
-        <width>71</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>双支持</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QLabel" name="label_15">
-     <property name="geometry">
-      <rect>
-       <x>4</x>
-       <y>286</y>
-       <width>75</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>溶解性固体</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
-    </widget>
-    <widget class="QWidget" name="L11" native="true">
-     <property name="geometry">
-      <rect>
-       <x>115</x>
-       <y>408</y>
-       <width>252</width>
-       <height>38</height>
-      </rect>
-     </property>
-     <widget class="QRadioButton" name="oc_Auto">
-      <property name="geometry">
-       <rect>
-        <x>4</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>自动上报</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="oc_Do">
-      <property name="geometry">
-       <rect>
-        <x>92</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>手动录入</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="oc_All">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>4</y>
-        <width>71</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>双支持</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="L9" native="true">
-     <property name="geometry">
-      <rect>
-       <x>115</x>
-       <y>327</y>
-       <width>252</width>
-       <height>38</height>
-      </rect>
-     </property>
-     <widget class="QRadioButton" name="fso_Auto">
-      <property name="geometry">
-       <rect>
-        <x>4</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>自动上报</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="fso_Do">
-      <property name="geometry">
-       <rect>
-        <x>92</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>手动录入</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="fso_All">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>4</y>
-        <width>71</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>双支持</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="L12" native="true">
-     <property name="geometry">
-      <rect>
-       <x>115</x>
-       <y>448</y>
-       <width>252</width>
-       <height>38</height>
-      </rect>
-     </property>
-     <widget class="QRadioButton" name="boc_Auto">
-      <property name="geometry">
-       <rect>
-        <x>4</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>自动上报</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="boc_Do">
-      <property name="geometry">
-       <rect>
-        <x>92</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>手动录入</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="boc_All">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>4</y>
-        <width>71</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>双支持</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="L4" native="true">
-     <property name="geometry">
-      <rect>
-       <x>115</x>
-       <y>125</y>
-       <width>252</width>
-       <height>38</height>
-      </rect>
-     </property>
-     <widget class="QRadioButton" name="ph_Auto">
-      <property name="geometry">
-       <rect>
-        <x>4</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>自动上报</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="ph_Do">
-      <property name="geometry">
-       <rect>
-        <x>92</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>手动录入</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="ph_All">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>4</y>
-        <width>71</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>双支持</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QLabel" name="label_12">
-     <property name="geometry">
-      <rect>
-       <x>4</x>
-       <y>85</y>
-       <width>45</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>浑浊度</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_8">
-     <property name="geometry">
-      <rect>
-       <x>4</x>
-       <y>44</y>
-       <width>30</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>温度</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
-    </widget>
-    <widget class="QWidget" name="L2" native="true">
-     <property name="geometry">
-      <rect>
-       <x>115</x>
-       <y>44</y>
-       <width>252</width>
-       <height>39</height>
-      </rect>
-     </property>
-     <widget class="QRadioButton" name="Tem_Auto">
-      <property name="geometry">
-       <rect>
-        <x>4</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>自动上报</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="Tem_Do">
-      <property name="geometry">
-       <rect>
-        <x>92</x>
-        <y>4</y>
-        <width>86</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>手动录入</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="Tem_ALL">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>4</y>
-        <width>71</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>双支持</string>
-      </property>
-     </widget>
-    </widget>
+    <layout class="QGridLayout" name="gridLayout_6" columnstretch="2,5">
+     <item row="9" column="1">
+      <widget class="QWidget" name="L9" native="true">
+       <widget class="QRadioButton" name="fso_Auto">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>自动上报</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="fso_Do">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>手动录入</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="fso_All">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>4</y>
+          <width>71</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>双支持</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QWidget" name="L8" native="true">
+       <widget class="QRadioButton" name="dso_Auto">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>4</y>
+          <width>86</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>自动上报</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="dso_Do">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>4</y>
+          <width>86</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>手动录入</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="dso_All">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>4</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>双支持</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="12" column="1">
+      <widget class="QWidget" name="L11" native="true">
+       <widget class="QRadioButton" name="oc_Auto">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>自动上报</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="oc_Do">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>手动录入</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="oc_All">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>4</y>
+          <width>71</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>双支持</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>电导率</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QWidget" name="L6" native="true">
+       <widget class="QRadioButton" name="oxy_Auto">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>自动上报</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="oxy_Do">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>手动录入</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="oxy_All">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>4</y>
+          <width>71</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>双支持</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="15" column="1">
+      <widget class="QWidget" name="L13" native="true">
+       <widget class="QRadioButton" name="tnb_Auto">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>自动上报</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="tnb_Do">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>手动录入</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="tnb_All">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>4</y>
+          <width>71</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>双支持</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>特殊气体</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QWidget" name="L2" native="true">
+       <widget class="QRadioButton" name="Tem_Auto">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>自动上报</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="Tem_Do">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>手动录入</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="Tem_ALL">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>4</y>
+          <width>71</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>双支持</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QWidget" name="L3" native="true">
+       <widget class="QRadioButton" name="den_Auto">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>自动上报</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="den_Do">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>手动录入</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="den_All">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>4</y>
+          <width>71</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>双支持</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="11" column="0">
+      <widget class="QLabel" name="label_22">
+       <property name="text">
+        <string>总磷</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="1">
+      <widget class="QWidget" name="L12" native="true">
+       <widget class="QRadioButton" name="bod_Auto">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>自动上报</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="bod_Do">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>手动录入</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="bod_All">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>4</y>
+          <width>71</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>双支持</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="label_16">
+       <property name="text">
+        <string>总氮</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="16" column="1">
+      <widget class="QWidget" name="L14" native="true">
+       <widget class="QRadioButton" name="ec_Auto">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>自动上报</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="ec_Do">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>手动录入</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="ec_All">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>4</y>
+          <width>71</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>双支持</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>浑浊度</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="label_17">
+       <property name="text">
+        <string>悬浮性固体</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>PH</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QWidget" name="L1" native="true">
+       <widget class="QRadioButton" name="GasAuto">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>自动上报</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="Gas_Do">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>手动录入</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="Gas_All">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>4</y>
+          <width>71</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>双支持</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="16" column="0">
+      <widget class="QLabel" name="label_20">
+       <property name="text">
+        <string>大肠杆菌</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="1">
+      <widget class="QWidget" name="L10" native="true">
+       <widget class="QRadioButton" name="tn_Auto">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>自动上报</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="tn_Do">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>手动录入</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="tn_All">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>4</y>
+          <width>71</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>双支持</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_15">
+       <property name="text">
+        <string>溶解性固体</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>温度</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="0">
+      <widget class="QLabel" name="label_14">
+       <property name="text">
+        <string>生物需氧量 </string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QWidget" name="L7" native="true">
+       <widget class="QRadioButton" name="met_Auto">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>自动上报</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="met_Do">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>手动录入</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="met_All">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>4</y>
+          <width>71</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>双支持</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_13">
+       <property name="text">
+        <string>重金属</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="1">
+      <widget class="QWidget" name="L10_2" native="true">
+       <widget class="QRadioButton" name="tp_Auto">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>自动上报</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="tp_Do">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>手动录入</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="tp_All">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>4</y>
+          <width>71</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>双支持</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QWidget" name="L4" native="true">
+       <widget class="QRadioButton" name="ph_Auto">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>自动上报</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="ph_Do">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>手动录入</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="ph_All">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>4</y>
+          <width>71</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>双支持</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="12" column="0">
+      <widget class="QLabel" name="label_18">
+       <property name="text">
+        <string>有机碳总量</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="0">
+      <widget class="QLabel" name="label_19">
+       <property name="text">
+        <string>细菌总数</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>溶解氧</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QWidget" name="L5" native="true">
+       <widget class="QRadioButton" name="con_Auto">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>自动上报</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="con_Do">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>手动录入</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="con_All">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>4</y>
+          <width>71</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>双支持</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="14" column="0">
+      <widget class="QLabel" name="label_23">
+       <property name="text">
+        <string>化学需氧量 </string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="1">
+      <widget class="QWidget" name="L12_2" native="true">
+       <widget class="QRadioButton" name="cod_Auto">
+        <property name="geometry">
+         <rect>
+          <x>4</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>自动上报</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="cod_Do">
+        <property name="geometry">
+         <rect>
+          <x>92</x>
+          <y>4</y>
+          <width>86</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>手动录入</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="cod_All">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>4</y>
+          <width>71</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>双支持</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QGroupBox" name="nodeinfogroup5">
@@ -1279,7 +1225,6 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
        <property name="font">
         <font>
          <pointsize>12</pointsize>
-         <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
@@ -1295,6 +1240,9 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
          <width>0</width>
          <height>25</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(117, 117, 117);</string>
        </property>
        <property name="text">
         <string>自检周期</string>
@@ -1327,6 +1275,9 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
          <width>0</width>
          <height>25</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(117, 117, 117);</string>
        </property>
        <property name="text">
         <string>天</string>
@@ -1427,7 +1378,6 @@ border-bottom-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 
        <property name="font">
         <font>
          <pointsize>12</pointsize>
-         <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
@@ -1547,7 +1497,7 @@ border-color: rgba(237, 237, 237,100);</string>
          <number>10</number>
         </property>
         <item>
-         <widget class="QRadioButton" name="typr_normal">
+         <widget class="QRadioButton" name="type_normal">
           <property name="text">
            <string>普通结点</string>
           </property>
@@ -1670,7 +1620,6 @@ border-color: rgba(237, 237, 237,100);</string>
    <property name="font">
     <font>
      <pointsize>12</pointsize>
-     <weight>50</weight>
      <bold>false</bold>
     </font>
    </property>

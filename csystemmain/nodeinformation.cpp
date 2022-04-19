@@ -125,7 +125,7 @@ void nodeinformation::on_NodeList_clicked(const QModelIndex &index)
     ui->graphicsViewDiag3->chart()->removeAllSeries();
     // 设置表格行数
     ui->nodeinfo->setRowCount(25);
-    ui->configwidget->setRowCount(14);
+    ui->configwidget->setRowCount(16);
     // 获取点击的节点编号
     QString nodeid = ui->NodeList->model()->data(index).toString();
     nodeid.remove(QRegExp("\\s"));
